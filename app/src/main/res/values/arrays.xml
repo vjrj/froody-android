@@ -1,0 +1,138 @@
+<resources>
+    <array name="gps_colors">
+        <item>@color/very_red</item>
+        <item>@color/some_orange</item>
+        <item>@color/much_green</item>
+    </array>
+
+    <string-array name="certification_types">
+        <item>@string/certification_type__none</item>
+        <item>@string/certification_type__bio</item>
+        <item>@string/certification_type__demeter</item>
+    </string-array>
+
+    <string-array name="distribution_types">
+        <item>@string/distribution_type__free</item>
+        <item>@string/distribution_type__donate</item>
+        <item>@string/distribution_type__sale</item>
+    </string-array>
+
+    <string-array name="gps_types_header">
+        <item>@string/gps_type__none</item>
+        <item>@string/gps_type__old</item>
+        <item>@string/gps_type__ok</item>
+    </string-array>
+
+    <string-array name="gps_types_text">
+        <item>@string/gps_locating_user</item>
+        <item>@string/gps_located_user</item>
+        <item>@string/gps_located_user</item>
+    </string-array>
+
+    <string-array name="entry_type__names">
+        <!-- 000 -->
+        <item>@string/entry_type__special__miscellaneous</item>
+        <item>@string/entry_type__special__unknown</item>
+        <item>@string/entry_type__apple</item>
+        <item>@string/entry_type__pear</item>
+        <item>@string/entry_type__cherry</item>
+        <!-- 005 -->
+        <item>@string/entry_type__plum</item>
+        <item>@string/entry_type__current</item>
+        <item>@string/entry_type__grape</item>
+        <item>@string/entry_type__hazelnut</item>
+        <item>@string/entry_type__milk</item>
+        <!-- 010+ -->
+        <item>@string/entry_type__raspberry</item>
+        <item>@string/entry_type__walnut</item>
+        <item>@string/entry_type__carrot</item>
+        <item>@string/entry_type__cereal</item>
+        <item>@string/entry_type__chili</item>
+        <!-- 015+ -->
+        <item>@string/entry_type__corn</item>
+        <item>@string/entry_type__cucumber</item>
+        <item>@string/entry_type__egg</item>
+        <item>@string/entry_type__fish</item>
+        <item>@string/entry_type__flower</item>
+        <!-- 020+ -->
+        <item>@string/entry_type__honey</item>
+        <item>@string/entry_type__lemon</item>
+        <item>@string/entry_type__mushroom</item>
+        <item>@string/entry_type__orange</item>
+        <item>@string/entry_type__peach</item>
+        <!-- 025+ -->
+        <item>@string/entry_type__potato</item>
+        <item>@string/entry_type__special__bread</item>
+        <item>@string/entry_type__special__cloth</item>
+        <item>@string/entry_type__special__sleep_place</item>
+        <item>@string/entry_type__special__water</item>
+        <!-- 030+ -->
+        <item>@string/entry_type__strawberry</item>
+        <item>@string/entry_type__tomato</item>
+        <item>@string/entry_type__sapling</item>
+        <item>@string/entry_type__wood</item>
+    </string-array>
+
+    <integer-array name="entry_type__images">
+        <!-- 000+ -->
+        <item>@drawable/entry_type__special__custom</item>
+        <item>@drawable/entry_type__special__unknown</item>
+        <item>@drawable/entry_type__apple</item>
+        <item>@drawable/entry_type__pear</item>
+        <item>@drawable/entry_type__cherry</item>
+        <!-- 005+ -->
+        <item>@drawable/entry_type__plum</item>
+        <item>@drawable/entry_type__current</item>
+        <item>@drawable/entry_type__grape</item>
+        <item>@drawable/entry_type__hazelnut</item>
+        <item>@drawable/entry_type__milk</item>
+        <!-- 010+ -->
+        <item>@drawable/entry_type__raspberry</item>
+        <item>@drawable/entry_type__walnut</item>
+        <item>@drawable/entry_type__carrot</item>
+        <item>@drawable/entry_type__cereal</item>
+        <item>@drawable/entry_type__chili</item>
+        <!-- 015+ -->
+        <item>@drawable/entry_type__corn</item>
+        <item>@drawable/entry_type__cucumber</item>
+        <item>@drawable/entry_type__egg</item>
+        <item>@drawable/entry_type__fish</item>
+        <item>@drawable/entry_type__flower</item>
+        <!-- 20+ -->
+        <item>@drawable/entry_type__honey</item>
+        <item>@drawable/entry_type__lemon</item>
+        <item>@drawable/entry_type__mushroom</item>
+        <item>@drawable/entry_type__orange</item>
+        <item>@drawable/entry_type__peach</item>
+        <!-- 025+ -->
+        <item>@drawable/entry_type__potato</item>
+        <item>@drawable/entry_type__special__bread</item>
+        <item>@drawable/entry_type__special__cloth</item>
+        <item>@drawable/entry_type__special__sleep_place</item>
+        <item>@drawable/entry_type__special__water</item>
+        <!-- 030+ -->
+        <item>@drawable/entry_type__strawberry</item>
+        <item>@drawable/entry_type__tomato</item>
+        <item>@drawable/entry_type__sapling</item>
+        <item>@drawable/entry_type__wood</item>
+    </integer-array>
+
+    <!-- Index of entry types which are not allowed to be sold-->
+    <integer-array name="entry_type__distribution_types__not_allowed_sell">
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+    </integer-array>
+
+    <!-- Index of entry types which are not allowed to be certified-->
+    <integer-array name="entry_type__certification_types__not_allowed_certify">
+        <item>0</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>32</item>
+        <item>33</item>
+    </integer-array>
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="address_most_near">In der Nähe</string>
+    <string name="all">Alle</string>
+    <string name="blog">Blog</string>
+    <string name="certification">Zertifizierung</string>
+    <string name="contact">Contact</string>
+    <string name="contributors">Beitragende</string>
+    <string name="description">Beschreibung</string>
+    <string name="distribution_type">Verteilung</string>
+    <string name="error">Fehler</string>
+    <string name="error_bad_permissions">Bitte der Froody App die Berechtigungen für Speicher und Ortsinformationen erteilen, damit die App verwendet werden kann.</string>
+    <string name="more">Mehr</string>
+    <string name="reset">Zurücksetzen</string>
+    <string name="request_location">Ortsinformationen laden</string>
+    <string name="really_delete_entry">Möchtest du wirklich diesen Eintrag löschen?</string>
+    <string name="publish_entry">Eintragen</string>
+    <string name="suggested">Vorgeschlagen</string>
+    <string name="show_licenses">Lizenzen anzeigen</string>
+    <string name="share_my_entry_at_froody">Meine Eintrag bei der Froody App</string>
+    <string name="no_entries_were_published_by_me">Keine Einträge verfügbar</string>
+    <string name="navigation_drawer_open">Nav-Drawer öffnen</string>
+    <string name="navigation_drawer_close">Nav-Drawer schließen</string>
+    <string name="nav__my_entries">Meine Eiinträge</string>
+    <string name="map">Karte</string>
+    <string name="maintainers">Maintainer</string>
+    <string name="share_chooser_share_entry">Eintrag teilen</string>
+    <string name="share_entry_ask">Eintrag teilen?</string>
+    <string name="show_map_on_current_location">Karte an aktueller Position anzeigen?</string>
+    <string name="gps_locating_user">Ortung…</string>
+    <string name="help_and_share"><![CDATA[Helfen & Teilen]]></string>
+    <string name="hint_please_insert_contact">Kontaktdaten hier eingeben…</string>
+    <string name="hint_please_insert_description">Beschreibung hier eingeben…</string>
+    <string name="image">Bild</string>
+    <string name="informations">Informationen</string>
+    <string name="license">Lizenz</string>
+    <string name="limited_time_active_notice">Achtung! Dieser Eintrag ist ab jetzt 3 Wochen gültig.</string>
+    <string name="location">Ort</string>
+    <string name="search_dotdotdot">Suche…</string>
+    <string name="select_froody">Froody auswählen…</string>
+    <string name="settings">Einstellungen</string>
+</resources>

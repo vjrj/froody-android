@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- GPS Types -->
+    <string name="gps_type__none">Keine Position verfübar</string>
+    <string name="gps_type__old">Aktuelle Position</string>
+    <string name="gps_type__ok">Letzte Position</string>
+
+    <!-- Certification Types -->
+    <string name="certification_type__none">Keine</string>
+    <string name="certification_type__bio">Bio</string>
+    <string name="certification_type__demeter">Demeter</string>
+
+    <!-- Distribution Types -->
+    <string name="distribution_type__free">Gratis</string>
+    <string name="distribution_type__donate">Spende</string>
+    <string name="distribution_type__sale">Verkauf</string>
+
+    <!-- Entry Types (Special) -->
+    <string name="entry_type__special__unknown">Unbekannt</string>
+    <string name="entry_type__special__miscellaneous">Diverses</string>
+    <string name="entry_type__special__bread">Brot</string>
+    <string name="entry_type__special__cloth">Kleidung</string>
+    <string name="entry_type__special__sleep_place">Schlafplatz</string>
+    <string name="entry_type__special__water">Wasser</string>
+
+    <!-- Entry Types -->
+    <string name="entry_type__apple">Apfel</string>
+    <string name="entry_type__pear">Birne</string>
+    <string name="entry_type__cherry">Kirsche</string>
+    <string name="entry_type__plum">Zwetschke</string>
+    <string name="entry_type__current">Ribisel</string>
+    <string name="entry_type__grape">Weintraube</string>
+    <string name="entry_type__hazelnut">Haselnuss</string>
+    <string name="entry_type__milk">Milch</string>
+    <string name="entry_type__raspberry">Himbeere</string>
+    <string name="entry_type__walnut">Walnuss</string>
+    <string name="entry_type__carrot">Karotte</string>
+    <string name="entry_type__cereal">Getreide</string>
+    <string name="entry_type__chili">Chili</string>
+    <string name="entry_type__corn">Mais</string>
+    <string name="entry_type__cucumber">Gurke</string>
+    <string name="entry_type__egg">Ei</string>
+    <string name="entry_type__fish">Fisch</string>
+    <string name="entry_type__flower">Blume</string>
+    <string name="entry_type__honey">Honig</string>
+    <string name="entry_type__lemon">Zitrone</string>
+    <string name="entry_type__mushroom">Pilz</string>
+    <string name="entry_type__orange">Orange</string>
+    <string name="entry_type__peach">Pfirsich</string>
+    <string name="entry_type__potato">Kartoffel</string>
+    <string name="entry_type__sapling">Setzling</string>
+    <string name="entry_type__strawberry">Erdbeere</string>
+    <string name="entry_type__tomato">Tomate</string>
+    <string name="entry_type__wood">Holz</string>
+</resources>

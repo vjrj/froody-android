@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:key="@string/pref_catkey__network"
+        android:title="@string/pref_cat__network">
+
+        <EditTextPreference
+            android:defaultValue="@string/server_default"
+            android:icon="@drawable/ic_public_black_48px"
+            android:key="@string/pref_key__froody_server"
+            android:summary="@string/pref_desc__froody_server"
+            android:title="@string/pref_title__froody_server" />
+
+        <Preference
+            android:icon="@drawable/ic_close_black_48px"
+            android:key="@string/pref_key__clear_cache"
+            android:summary="@string/pref_desc__clear_cache"
+            android:title="@string/pref_title__clear_cache" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="@string/pref_catkey__app"
+        android:title="@string/pref_cat__app">
+
+        <Preference
+            android:icon="@drawable/ic_close_black_48px"
+            android:key="@string/pref_key__reset_app"
+            android:summary="@string/pref_desc__reset_app"
+            android:title="@string/pref_title__reset_app" />
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- GPS Types -->
+    <string name="gps_type__none">No location</string>
+    <string name="gps_type__old">Current location</string>
+    <string name="gps_type__ok">Previous location</string>
+
+    <!-- Certification Types -->
+    <string name="certification_type__none">None</string>
+    <string name="certification_type__bio">Bio</string>
+    <string name="certification_type__demeter">Demeter</string>
+
+    <!-- Distribution Types -->
+    <string name="distribution_type__free">Free</string>
+    <string name="distribution_type__donate">Donation</string>
+    <string name="distribution_type__sale">Sale</string>
+
+    <!-- Entry Types (Special) -->
+    <string name="entry_type__special__unknown">Unknown</string>
+    <string name="entry_type__special__miscellaneous">Miscellaneous</string>
+    <string name="entry_type__special__bread">Bread</string>
+    <string name="entry_type__special__cloth">Cloth</string>
+    <string name="entry_type__special__sleep_place">Sleep place</string>
+    <string name="entry_type__special__water">Water</string>
+
+    <!-- Entry Types -->
+    <string name="entry_type__apple">Apple</string>
+    <string name="entry_type__pear">Pear</string>
+    <string name="entry_type__cherry">Cherry</string>
+    <string name="entry_type__plum">Plum</string>
+    <string name="entry_type__current">Current</string>
+    <string name="entry_type__grape">Grape</string>
+    <string name="entry_type__hazelnut">Hazelnut</string>
+    <string name="entry_type__milk">Milk</string>
+    <string name="entry_type__raspberry">Raspberry</string>
+    <string name="entry_type__walnut">Walnut</string>
+    <string name="entry_type__carrot">Carrot</string>
+    <string name="entry_type__cereal">Cereal</string>
+    <string name="entry_type__chili">Chili</string>
+    <string name="entry_type__corn">Corn</string>
+    <string name="entry_type__cucumber">Cucumber</string>
+    <string name="entry_type__egg">Egg</string>
+    <string name="entry_type__fish">Fish</string>
+    <string name="entry_type__flower">Flower</string>
+    <string name="entry_type__honey">Honey</string>
+    <string name="entry_type__lemon">Lemon</string>
+    <string name="entry_type__mushroom">Mushroom</string>
+    <string name="entry_type__orange">Orange</string>
+    <string name="entry_type__peach">Peach</string>
+    <string name="entry_type__potato">Potato</string>
+    <string name="entry_type__sapling">Sapling</string>
+    <string name="entry_type__strawberry">Strawberry</string>
+    <string name="entry_type__tomato">Tomato</string>
+    <string name="entry_type__wood">Wood</string>
+</resources>
