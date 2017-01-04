@@ -32,7 +32,7 @@ public class AppCast {
         return ((ArrayList<FroodyEntryPlus>) (intent.getSerializableExtra(extra)));
     }
 
-    public static FroodyEntryPlus getFroodyEntryFromIntent(Intent intent) {
+    public static FroodyEntryPlus getEntryFromIntent(Intent intent) {
         return (FroodyEntryPlus) (intent.getSerializableExtra(FroodyEntryInfoExtra.EXTRA_FROODY_ENTRY));
     }
 
@@ -121,7 +121,7 @@ public class AppCast {
     public static class NO_FOUND_LOCATION {
         public static final String ACTION = "NO_FOUND_LOCATION";
 
-        public static void send(Context c){
+        public static void send(Context c) {
             sendBroadcast(c, new Intent(ACTION));
         }
 
@@ -192,9 +192,13 @@ public class AppCast {
 
     public static class FROODY_ENTRY_DETAILS_LOADED extends FroodyEntryInfoExtra {
         public static final String ACTION = "FROODY_ENTRY_DETAILS_LOADED";
+        public static final String EXTRA_REQUESTED_BY = "EXTRA_REQUESTED_BY";
 
-        public static void send(Context c, FroodyEntryPlus entry) {
-            sendEntry(c, entry, ACTION);
+        public static void send(Context c, FroodyEntryPlus entry, String requestedBy) {
+            Intent i = new Intent(ACTION);
+            putFroodyEntryExtra(i, entry);
+            i.putExtra(EXTRA_REQUESTED_BY, requestedBy);
+            sendBroadcast(c, i);
         }
     }
 

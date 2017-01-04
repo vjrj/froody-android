@@ -35,7 +35,20 @@
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustResize">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="froodyapp.github.io"
+                    android:pathPattern="/share.html.*"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".activity.SettingActivity"

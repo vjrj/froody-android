@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.google.gson.JsonParseException;
 
+import org.apache.commons.lang3.ObjectUtils;
 import org.joda.time.DateTime;
 
 import java.util.List;
@@ -82,7 +83,7 @@ public class EntryByBlockLoader extends Thread {
                 }
             }
 
-        } catch (ApiException | JsonParseException e) {
+        } catch (ApiException | JsonParseException | NullPointerException e) {
             App.log(getClass(), "ERROR: Getting BlockInfo " + e.getMessage());
         }
     }

@@ -31,10 +31,12 @@ import butterknife.ButterKnife;
 import ch.hsr.geohash.GeoHash;
 import io.github.froodyapp.App;
 import io.github.froodyapp.R;
+import io.github.froodyapp.api.model_.FroodyEntry;
 import io.github.froodyapp.listener.FroodyEntrySelectedListener;
 import io.github.froodyapp.location.LocationTool;
 import io.github.froodyapp.model.FroodyEntryPlus;
 import io.github.froodyapp.service.EntryByBlockLoader;
+import io.github.froodyapp.service.EntryDetailsLoader;
 import io.github.froodyapp.ui.BaseFragment;
 import io.github.froodyapp.util.AppCast;
 import io.github.froodyapp.util.AppSettings;
@@ -49,6 +51,10 @@ import io.github.froodyapp.util.MyEntriesHelper;
 public class MainActivity extends AppCompatActivity implements FroodyEntrySelectedListener,
         NavigationView.OnNavigationItemSelectedListener,
         PublishEntryFragment.FroodyEntryPublishedListener {
+    //########################
+    //## Static
+    //########################
+    private static final String REQUEST_BY_SHARED_INTO_APP = "REQUEST_BY_SHARED_INTO_APP";
 
     //########################
     //## UI Binding
@@ -108,6 +114,7 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
             MapOSMFragment mapOSMFragment = (MapOSMFragment) getFragment(MapOSMFragment.FRAGMENT_TAG);
             showFragment(mapOSMFragment);
         }
+        handleIntent(getIntent());
     }
 
     /**
@@ -218,6 +225,46 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
     }
 
     @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        handleIntent(intent);
+    }
+
+    private void handleIntent(Intent intent) {
+        String action;
+        Uri data;
+        if (intent == null || (action = intent.getAction()) == null) {
+            return;
+        }
+
+        switch (action) {
+            case Intent.ACTION_VIEW: {
+                if ((data = intent.getData()) != null) {
+                    String server = data.getQueryParameter("server");
+                    String sEntryId = data.getQueryParameter("entryId");
+                    try {
+                        long entryId = Long.parseLong(data.getQueryParameter("entryId"));
+                        // Check if server is default server
+                        boolean wasRequestForMyServer = server == null && appSettings.getFroodyServer().equals(getString(R.string.server_default));
+                        if (server != null && appSettings.getFroodyServer().equals(server)) {
+                            wasRequestForMyServer = true;
+                        }
+                        if (wasRequestForMyServer) {
+                            FroodyEntryPlus entry = new FroodyEntryPlus(new FroodyEntry());
+                            entry.setEntryId(entryId);
+                            new EntryDetailsLoader(this, entry, null, REQUEST_BY_SHARED_INTO_APP).start();
+                        }
+                    } catch (NumberFormatException | NullPointerException ex) {
+                        return;
+                    }
+                }
+                break;
+            }
+        }
+
+    }
+
+    @Override
     public void onBackPressed() {
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
@@ -261,15 +308,6 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
 
             case R.id.action_get_location: {
                 locationTool.requestLocation(this, "MainActivity");
-                return true;
-            }
-
-            case R.id.action_zoom_out: {
-                BaseFragment baseFragment = getCurrentVisibleFragment();
-                if (baseFragment != null && baseFragment.isAdded() && baseFragment.getFragmentTag().equals(MapOSMFragment.FRAGMENT_TAG)) {
-                    MapOSMFragment mapFragment = (MapOSMFragment) baseFragment;
-                    mapFragment.setZoomLevel(12, true);
-                }
                 return true;
             }
         }
@@ -394,7 +432,7 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
                 }
 
                 case AppCast.FROODY_ENTRY_TAPPED.ACTION: {
-                    FroodyEntryPlus entry = AppCast.getFroodyEntryFromIntent(intent);
+                    FroodyEntryPlus entry = AppCast.getEntryFromIntent(intent);
                     onFroodyEntrySelected(entry);
                     break;
                 }
@@ -429,8 +467,24 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
                 }
 
                 case AppCast.FROODY_ENTRY_DELETED.ACTION: {
-                    FroodyEntryPlus entry = AppCast.getFroodyEntryFromIntent(intent);
+                    FroodyEntryPlus entry = AppCast.getEntryFromIntent(intent);
                     onFroodyEntryDeleted(entry, intent.getBooleanExtra(AppCast.FROODY_ENTRY_DELETED.EXTRA_WAS_DELETED, false));
+                    break;
+                }
+
+                case AppCast.FROODY_ENTRY_DETAILS_LOADED.ACTION: {
+                    if (REQUEST_BY_SHARED_INTO_APP.equals(intent.getStringExtra(AppCast.FROODY_ENTRY_DETAILS_LOADED.EXTRA_REQUESTED_BY))) {
+                        FroodyEntryPlus entry = AppCast.getEntryFromIntent(intent);
+                        onFroodyEntrySelected(entry);
+
+                        BaseFragment baseFrag = getCurrentVisibleFragment();
+                        if (baseFrag != null && baseFrag.isAdded() && baseFrag.getFragmentTag().equals(MapOSMFragment.FRAGMENT_TAG)) {
+                            MapOSMFragment mapFragment = (MapOSMFragment) baseFrag;
+                            mapFragment.addOrUpdateFroodyEntryToCluster(entry, true);
+                            mapFragment.zoomToPosition(entry.getLatitude(), entry.getLongitude(), 17);
+                        }
+                    }
+
                     break;
                 }
             }

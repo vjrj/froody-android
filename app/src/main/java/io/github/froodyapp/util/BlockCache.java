@@ -143,7 +143,7 @@ public class BlockCache {
         return retEntries;
     }
 
-    public void processExtendedEntry(FroodyEntryPlus entry) {
+    public void processEntryWithDetails(FroodyEntryPlus entry) {
         String block6 = entry.getGeohashWithPrecision(6);
         BlockCacheItem cacheItem = getBlockCacheItemAt(block6);
         if (block6 != null) {

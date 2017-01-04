@@ -52,7 +52,7 @@ public class FroodyEntryPlus extends FroodyEntry implements Serializable {
         this.longitude = point.getLongitude();
     }
 
-    protected boolean loadLocationFromGeohash() {
+    public boolean loadLocationFromGeohash() {
         if (hasGeohash()) {
             WGS84Point pt = GeoHash.fromGeohashString(entry.getGeohash()).getPoint();
             longitude = pt.getLongitude();

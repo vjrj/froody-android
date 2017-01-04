@@ -255,15 +255,14 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
             case GPS_Types.CURRENT: {
                 froodyEntry.loadGeohashFromLocation(location.lat, location.lng, 9);
 
-                // Location setzen solange nicht mehr verfügbar
+                // Set Location while no more date available
                 locationText = locationText.replace("$LOCATION$", String.format(Locale.getDefault(), "(%.5f ; %.5f)", location.lat, location.lng));
 
-                // Wird später mit Daten aus ReverseGeoCode ersetzt
+                // Replace later with reverse geocode data
                 new EntryReverseGeocoder(getContext(), froodyEntry).start();
                 break;
             }
             case GPS_Types.PREVIOUS: {
-
                 break;
             }
         }
@@ -297,7 +296,7 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
         public void onReceive(Context context, Intent intent) {
             switch (intent.getAction()) {
                 case AppCast.FROODY_ENTRY_GEOCODED.ACTION: {
-                    froodyEntry.setAddress(AppCast.getFroodyEntryFromIntent(intent).getAddress());
+                    froodyEntry.setAddress(AppCast.getEntryFromIntent(intent).getAddress());
                     textLocation.setText(froodyEntry.getAddress());
                     recheckInput();
                     break;
@@ -366,7 +365,7 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
             froodyEntry.setManagementCode(response.getManagementCode());
             froodyEntry.setCreationDate(response.getCreationDate());
             froodyEntry.setModificationDate(response.getCreationDate());
-            BlockCache.getInstance().processExtendedEntry(froodyEntry);
+            BlockCache.getInstance().processEntryWithDetails(froodyEntry);
             new MyEntriesHelper(context).addToMyEntries(froodyEntry);
 
             CustomDialogs.showShareDialog(context, froodyEntry, new DialogInterface.OnClickListener() {

@@ -24,14 +24,14 @@ import io.github.froodyapp.api.invoker.ApiCallback;
 import io.github.froodyapp.api.invoker.ApiException;
 import io.github.froodyapp.api.model_.ResponseOk;
 import io.github.froodyapp.model.FroodyEntryPlus;
-import io.github.froodyapp.service.EntryExtendedInfoLoader;
+import io.github.froodyapp.service.EntryDetailsLoader;
 import io.github.froodyapp.ui.CustomDialogs;
 import io.github.froodyapp.util.AppCast;
 import io.github.froodyapp.util.AppSettings;
 import io.github.froodyapp.util.FroodyEntryFormatter;
 import io.github.froodyapp.util.MyEntriesHelper;
 
-public class BotsheetEntrySingle extends BottomSheetDialogFragment implements EntryExtendedInfoLoader.ExtendedInfoLoaderListener {
+public class BotsheetEntrySingle extends BottomSheetDialogFragment implements EntryDetailsLoader.ExtendedInfoLoaderListener {
     //########################
     //## Static
     //########################
@@ -116,7 +116,7 @@ public class BotsheetEntrySingle extends BottomSheetDialogFragment implements En
 
         if (!froodyUtil.hasExtendedInfoLoaded() && extendedInfoLoadTryCount < 3) {
             extendedInfoLoadTryCount++;
-            new EntryExtendedInfoLoader(getActivity(), froodyEntry, this).start();
+            new EntryDetailsLoader(getActivity(), froodyEntry, this, "BotSheetSingle").start();
         }
 
         // Set UI

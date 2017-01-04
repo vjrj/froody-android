@@ -71,6 +71,8 @@
         <item>@string/entry_type__tomato</item>
         <item>@string/entry_type__sapling</item>
         <item>@string/entry_type__wood</item>
+        <item>@string/entry_type__zucchini</item>
+        <item>@string/entry_type__aubergine</item>
     </string-array>
 
     <integer-array name="entry_type__images">
@@ -115,6 +117,8 @@
         <item>@drawable/entry_type__tomato</item>
         <item>@drawable/entry_type__sapling</item>
         <item>@drawable/entry_type__wood</item>
+        <item>@drawable/entry_type__cucumber</item>
+        <item>@drawable/entry_type__aubergine</item>
     </integer-array>
 
     <!-- Index of entry types which are not allowed to be sold-->

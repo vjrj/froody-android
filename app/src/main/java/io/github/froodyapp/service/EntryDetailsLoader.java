@@ -4,12 +4,8 @@ import android.app.Activity;
 
 import com.google.gson.JsonParseException;
 
-import java.util.List;
-import java.util.Map;
-
 import io.github.froodyapp.App;
 import io.github.froodyapp.api.api.EntryApi;
-import io.github.froodyapp.api.invoker.ApiCallback;
 import io.github.froodyapp.api.invoker.ApiException;
 import io.github.froodyapp.api.model_.FroodyEntry;
 import io.github.froodyapp.model.FroodyEntryPlus;
@@ -18,13 +14,14 @@ import io.github.froodyapp.util.AppCast;
 /**
  * Helper for loading extended informations about an FroodyEntry
  */
-public class EntryExtendedInfoLoader extends Thread implements ApiCallback<FroodyEntry> {
+public class EntryDetailsLoader extends Thread {
     //########################
     //## Member
     //########################
     final Activity activity;
     final FroodyEntryPlus entry;
     final ExtendedInfoLoaderListener listener;
+    final String requestedBy;
 
     //########################
     //## Methods
@@ -37,50 +34,44 @@ public class EntryExtendedInfoLoader extends Thread implements ApiCallback<Frood
      * @param entry    the froodyEntry
      * @param listener callback listener (activity)
      */
-    public EntryExtendedInfoLoader(final Activity activity, final FroodyEntryPlus entry, final ExtendedInfoLoaderListener listener) {
+    public EntryDetailsLoader(final Activity activity, final FroodyEntryPlus entry, final ExtendedInfoLoaderListener listener, String requestedBy) {
         this.activity = activity;
         this.entry = entry;
         this.listener = listener;
+        this.requestedBy = requestedBy;
     }
 
     @Override
     public void run() {
         EntryApi api = new EntryApi();
         try {
-            api.entryByIdGetAsync(entry.getEntryId(), this);
+            FroodyEntry result = api.entryByIdGet(entry.getEntryId());
+            if (result != null) {
+                entry.setContact(result.getContact());
+                entry.setDescription(result.getDescription());
+                entry.setAddress(result.getAddress());
+                entry.setGeohash(result.getGeohash());
+                entry.loadLocationFromGeohash();
+                entry.setCreationDate(result.getCreationDate());
+                entry.setModificationDate(result.getModificationDate());
+                entry.setEntryType(result.getEntryType());
+                entry.setCertificationType(result.getCertificationType());
+                entry.setDistributionType(result.getDistributionType());
+                entry.setWasDeleted(result.getWasDeleted());
+
+                postResult();
+            }
         } catch (ApiException | JsonParseException e) {
             App.log(getClass(), "ERROR: Could not get details of froodyEntry " + e.getMessage());
         }
-    }
-
-    @Override
-    public void onFailure(ApiException e, int statusCode, Map<String, List<String>> responseHeaders) {
-        App.log(getClass(), "ERROR: Could not get details of froodyEntry " + e.getMessage());
-    }
-
-    @Override
-    public void onSuccess(FroodyEntry result, int statusCode, Map<String, List<String>> responseHeaders) {
-        if (result != null) {
-            entry.setContact(result.getContact());
-            entry.setDescription(result.getDescription());
-            entry.setAddress(result.getAddress());
-
-            postResult();
-        }
-    }
-
-    public void onUploadProgress(long bytesWritten, long contentLength, boolean done) {
-    }
-
-    public void onDownloadProgress(long bytesRead, long contentLength, boolean done) {
     }
 
     /**
      * Post the result to activity
      */
     private void postResult() {
-        AppCast.FROODY_ENTRY_DETAILS_LOADED.send(activity.getApplicationContext(), entry);
-        if (activity != null) {
+        AppCast.FROODY_ENTRY_DETAILS_LOADED.send(activity.getApplicationContext(), entry, requestedBy);
+        if (activity != null && listener != null) {
             activity.runOnUiThread(new Runnable() {
                 public void run() {
                     listener.onFroodyEntryExtendedInfoLoaded(entry);

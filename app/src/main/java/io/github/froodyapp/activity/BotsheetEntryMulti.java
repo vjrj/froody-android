@@ -169,7 +169,7 @@ public class BotsheetEntryMulti extends BottomSheetDialogFragment implements Fro
         public void onReceive(Context context, Intent intent) {
             switch (intent.getAction()) {
                 case AppCast.FROODY_ENTRY_DELETED.ACTION: {
-                    FroodyEntryPlus entry = AppCast.getFroodyEntryFromIntent(intent);
+                    FroodyEntryPlus entry = AppCast.getEntryFromIntent(intent);
                     if (intent.getBooleanExtra(AppCast.FROODY_ENTRY_DELETED.EXTRA_WAS_DELETED, false)) {
                         for (int i = 0; i < froodyEntries.size(); i++) {
                             if (froodyEntries.get(i).getEntryId().equals(entry.getEntryId())) {
@@ -185,7 +185,7 @@ public class BotsheetEntryMulti extends BottomSheetDialogFragment implements Fro
                 }
 
                 case AppCast.FROODY_ENTRY_DETAILS_LOADED.ACTION: {
-                    FroodyEntryPlus entry = AppCast.getFroodyEntryFromIntent(intent);
+                    FroodyEntryPlus entry = AppCast.getEntryFromIntent(intent);
                     for (int i = 0; i < froodyEntries.size(); i++) {
                         if (froodyEntries.get(i).getEntryId().equals(entry.getEntryId())) {
                             froodyEntries.remove(i);

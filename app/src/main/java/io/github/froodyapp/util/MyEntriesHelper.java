@@ -8,6 +8,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -116,7 +118,7 @@ public class MyEntriesHelper {
                 inCache.setAddress(entry.getAddress());
                 inCache.setContact(entry.getContact());
             } else {
-                cache.processExtendedEntry(entry);
+                cache.processEntryWithDetails(entry);
             }
         }
     }
@@ -126,8 +128,17 @@ public class MyEntriesHelper {
             return false;
         }
 
+
+        AppSettings appSettings = new AppSettings(context);
         String subject = context.getString(R.string.share_my_entry_at_froody);
         String url = context.getString(R.string.share_link_url_with_entryid_param, entry.getEntryId());
+        if (!context.getString(R.string.server_default).equals(appSettings.getFroodyServer())) {
+            try {
+                url = context.getString(R.string.share_link_url_with_entryid__and_server_param, entry.getEntryId(),
+                        URLEncoder.encode(appSettings.getFroodyServer(), "UTF-8"));
+            } catch (UnsupportedEncodingException ignored) {
+            }
+        }
 
         Intent i = new Intent(Intent.ACTION_SEND);
         i.setType("text/plain");

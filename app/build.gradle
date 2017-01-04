@@ -9,7 +9,7 @@ android {
         applicationId "io.github.froodyapp"
         minSdkVersion 17
         targetSdkVersion 24
-        versionCode 2
+        versionCode 3
         versionName "0.2"
     }
     buildTypes {

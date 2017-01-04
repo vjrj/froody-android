@@ -24,7 +24,7 @@
   <string name="entry_type__apple">Apfel</string>
   <string name="entry_type__pear">Birne</string>
   <string name="entry_type__cherry">Kirsche</string>
-  <string name="entry_type__plum">Zwetschke</string>
+  <string name="entry_type__plum">Zwetschge</string>
   <string name="entry_type__current">Ribisel</string>
   <string name="entry_type__grape">Weintraube</string>
   <string name="entry_type__hazelnut">Haselnuss</string>
@@ -49,4 +49,6 @@
   <string name="entry_type__strawberry">Erdbeere</string>
   <string name="entry_type__tomato">Tomate</string>
   <string name="entry_type__wood">Holz</string>
+  <string name="entry_type__zucchini">Zuchini</string>
+  <string name="entry_type__aubergine">Aubergine</string>
 </resources>

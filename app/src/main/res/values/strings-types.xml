@@ -52,4 +52,6 @@
     <string name="entry_type__strawberry">Strawberry</string>
     <string name="entry_type__tomato">Tomato</string>
     <string name="entry_type__wood">Wood</string>
+    <string name="entry_type__zucchini">Zucchini</string>
+    <string name="entry_type__aubergine">Aubergine</string>
 </resources>
