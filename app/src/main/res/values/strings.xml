@@ -64,4 +64,5 @@
     <string name="address_most_near">Nearby</string>
     <string name="error_bad_permissions">Please give Froody the permissions to access locations and write data to function properly. The app cannot be used without these.</string>
     <string name="show_map_on_current_location">Show map on current location?</string>
+    <string name="zoom_out">Zoom out</string>
 </resources>

@@ -42,6 +42,7 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
     //##      Statics
     //#####################
     public static final int ZOOMLEVEL_BLOCK5_TRESHOLD = 13;
+    public static final int ZOOMLEVEL_BLOCK6_TRESHOLD = 16;
     public static final String FRAGMENT_TAG = "MapOSMFragment";
 
     public static MapOSMFragment newInstance() {
@@ -222,8 +223,8 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
      */
     public boolean zoomToPosition(double latitude, double longitude, int zoom) {
         if (mapController != null) {
-            mapController.setCenter(new GeoPoint(latitude, longitude));
             mapController.setZoom(zoom);
+            mapController.setCenter(new GeoPoint(latitude, longitude));
             return true;
         }
         return false;
@@ -274,12 +275,18 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
     @Override
     public boolean onScroll(ScrollEvent scrollEvent) {
         new MapListenerNotifier(map).start();
+        if (map.getZoomLevel() >= ZOOMLEVEL_BLOCK5_TRESHOLD){
+            map.setMinZoomLevel(ZOOMLEVEL_BLOCK5_TRESHOLD);
+        }
         return false;
     }
 
     @Override
     public boolean onZoom(ZoomEvent zoomEvent) {
         new MapListenerNotifier(map).start();
+        if (map.getZoomLevel() >= ZOOMLEVEL_BLOCK5_TRESHOLD){
+            map.setMinZoomLevel(ZOOMLEVEL_BLOCK5_TRESHOLD);
+        }
         return false;
     }
 
@@ -312,5 +319,16 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
     @Override
     public boolean onBackPressed() {
         return false;
+    }
+
+    public int getZoomLevel() {
+        return map.getZoomLevel();
+    }
+
+    public void setZoomLevel(int zoom, boolean zoomToThisLevel) {
+        map.setMinZoomLevel(zoom);
+        if (zoomToThisLevel) {
+            zoomToPosition(map.getMapCenter().getLatitude(), map.getMapCenter().getLongitude(), zoom);
+        }
     }
 }

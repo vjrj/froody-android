@@ -260,6 +260,15 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
                 locationTool.requestLocation(this, "MainActivity");
                 return true;
             }
+
+            case R.id.action_zoom_out: {
+                BaseFragment baseFragment = getCurrentVisibleFragment();
+                if (baseFragment != null && baseFragment.isAdded() && baseFragment.getFragmentTag().equals(MapOSMFragment.FRAGMENT_TAG)) {
+                    MapOSMFragment mapFragment = (MapOSMFragment) baseFragment;
+                    mapFragment.setZoomLevel(12, true);
+                }
+                return true;
+            }
         }
         return super.onOptionsItemSelected(item);
     }

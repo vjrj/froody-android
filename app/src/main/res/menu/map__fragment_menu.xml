@@ -9,9 +9,15 @@
         app:showAsAction="ifRoom" />
 
     <item
+        android:id="@+id/action_zoom_out"
+        android:icon="@drawable/ic_zoom_out_map_white_48px"
+        android:title="@string/zoom_out"
+        app:showAsAction="ifRoom" />
+
+    <item
         android:id="@+id/action_add"
         android:icon="@drawable/ic_add_white_48px"
         android:title="@string/publish_entry"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
 
 </menu>

@@ -51,7 +51,7 @@ public class EntryByBlockLoader extends Thread {
 
     @Override
     public void run() {
-        int precisionToLoad = zoom <= MapOSMFragment.ZOOMLEVEL_BLOCK5_TRESHOLD ? 5 : 6;
+        int precisionToLoad = zoom < MapOSMFragment.ZOOMLEVEL_BLOCK6_TRESHOLD ? 5 : 6;
         String geohash = GeoHash.withCharacterPrecision(lat, lng, precisionToLoad).toBase32();
         BlockCache blockCache = BlockCache.getInstance();
 
@@ -85,7 +85,7 @@ public class EntryByBlockLoader extends Thread {
         } catch (ApiException | JsonParseException e) {
             App.log(getClass(), "ERROR: Getting BlockInfo " + e.getMessage());
         }
-    }
+     }
 
     private void publishNewOrModifiedEntries(List<FroodyEntryPlus> response) {
         if (response != null && response.size() > 0 && context != null) {

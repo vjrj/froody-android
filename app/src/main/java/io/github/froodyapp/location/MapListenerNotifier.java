@@ -3,6 +3,7 @@ package io.github.froodyapp.location;
 import org.osmdroid.api.IGeoPoint;
 import org.osmdroid.views.MapView;
 
+import io.github.froodyapp.activity.MapOSMFragment;
 import io.github.froodyapp.util.AppCast;
 
 public class MapListenerNotifier extends Thread {
@@ -37,10 +38,11 @@ public class MapListenerNotifier extends Thread {
         } catch (InterruptedException ignored) {
         }
         long now = System.currentTimeMillis();
-        if ((now - LAST_HAPPENING_TIME) >= HAPPENING_INTERVAL && map != null) {
+        if ((now - LAST_HAPPENING_TIME) >= HAPPENING_INTERVAL && map != null && map.getZoomLevel() >= MapOSMFragment.ZOOMLEVEL_BLOCK5_TRESHOLD-1) {
             setLastHappeningTime(now);
             IGeoPoint center = map.getMapCenter();
             AppCast.MAP_POSITION_CHANGED.send(map.getContext(), center.getLatitude(), center.getLongitude(), map.getZoomLevel());
+            System.out.println("Zoom:" + map.getZoomLevel());
         }
     }
 }
