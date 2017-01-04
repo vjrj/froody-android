@@ -50,7 +50,8 @@ public class AppCast {
                 FROODY_ENTRY_GEOCODED.ACTION,
                 FROODY_ENTRY_DELETED.ACTION,
                 MAP_POSITION_CHANGED.ACTION,
-                LOCATION_FOUND.ACTION
+                LOCATION_FOUND.ACTION,
+                NO_FOUND_LOCATION.ACTION
         };
         for (String action : BROADCAST_ACTIONS) {
             intentFilter.addAction(action);
@@ -115,6 +116,16 @@ public class AppCast {
                     AppCast.LOCATION_FOUND.EXTRA_LOCATION_TOOL_RESPONSE);
             return ((LocationTool.LocationToolResponse) s);
         }
+    }
+
+    public static class NO_FOUND_LOCATION {
+        public static final String ACTION = "NO_FOUND_LOCATION";
+
+        public static void send(Context c){
+            sendBroadcast(c, new Intent(ACTION));
+        }
+
+
     }
 
 

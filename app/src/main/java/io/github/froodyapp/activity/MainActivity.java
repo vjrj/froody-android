@@ -202,14 +202,17 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
     @Override
     protected void onResume() {
         LocalBroadcastManager.getInstance(this).registerReceiver(localBroadcastReceiver, AppCast.getLocalBroadcastFilter());
-        requestLocation("MainActivity");
+        requestLocation(getClass().getName());
         super.onResume();
     }
 
     public void requestLocation(String requestedBy) {
         if (locationTool.askForLocationPermission(this)) {
             if (appSettings.getAllowLocationListeningAny()) {
-                locationTool.requestLocation(this, requestedBy);
+                boolean enabled = locationTool.requestLocation(this, requestedBy);
+                if (!enabled && getClass().getName().equals(requestedBy)) {
+                    Toast.makeText(getApplicationContext(), R.string.cannot_locate_user, Toast.LENGTH_LONG).show();
+                }
             }
         }
     }
@@ -396,7 +399,6 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
                     break;
                 }
 
-
                 case AppCast.FROODY_ENTRIES_TAPPED.ACTION: {
                     ArrayList<FroodyEntryPlus> entries = AppCast.getFroodyEntryListFromIntent(
                             intent, AppCast.FROODY_ENTRIES_LOADED.EXTRA_FROODY_ENTRIES);
@@ -418,6 +420,11 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
 
                 case AppCast.LOCATION_FOUND.ACTION: {
                     onLocationFound(AppCast.LOCATION_FOUND.getResponseFromIntent(intent));
+                    break;
+                }
+
+                case AppCast.NO_FOUND_LOCATION.ACTION: {
+                    Toast.makeText(getApplicationContext(), R.string.cannot_locate_user, Toast.LENGTH_LONG).show();
                     break;
                 }
 
