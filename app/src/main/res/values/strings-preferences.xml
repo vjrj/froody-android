@@ -2,9 +2,11 @@
 <resources>
     <!-- Keys (not translate able -->
     <string name="pref_key__user_id" translatable="false">pref_key__user_id</string>
-    <string name="pref_key__lastlocation_latitude" translatable="false">pref_key__lastlocation_latitude</string>
-    <string name="pref_key__lastlocation_longitude" translatable="false">pref_key__lastlocation_longitude</string>
-    <string name="pref_key__lastlocation_zoom" translatable="false">pref_key__lastlocation_zoom</string>
+    <string name="pref_key__last_map_location_latitude" translatable="false">pref_key__last_map_location_latitude</string>
+    <string name="pref_key__last_map_location_longitude" translatable="false">pref_key__last_map_location_longitude</string>
+    <string name="pref_key__last_map_location_zoom" translatable="false">pref_key__last_map_location_zoom</string>
+    <string name="pref_key__last_found_location_geohash" translatable="false">pref_key__last_found_location_geohash</string>
+    <string name="pref_key__last_found_location_address" translatable="false">pref_key__last_found_location_address</string>
     <string name="pref_key__entry__last_contact_info" translatable="false">pref_key__entry__last_contact_info</string>
     <string name="pref_key__entry__last_certification" translatable="false">pref_key__entry__last_certification</string>
     <string name="pref_key__entry__last_distribution" translatable="false">pref_key__entry__last_distribution</string>

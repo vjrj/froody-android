@@ -53,6 +53,17 @@ public class Helpers {
         return GeoHash.withCharacterPrecision(lat, lng, precision).toBase32();
     }
 
+    public static Double[] geohashToLatLng(String geohash) {
+        GeoHash gh = GeoHash.fromGeohashString(geohash);
+        if (gh != null && gh.getPoint() != null) {
+            return new Double[]{
+                    gh.getPoint().getLatitude(),
+                    gh.getPoint().getLongitude()
+            };
+        }
+        return null;
+    }
+
     public static DateTime getNow() {
         return DateTime.now(DateTimeZone.UTC);
     }

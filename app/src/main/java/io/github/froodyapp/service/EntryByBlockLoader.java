@@ -85,7 +85,7 @@ public class EntryByBlockLoader extends Thread {
         } catch (ApiException | JsonParseException e) {
             App.log(getClass(), "ERROR: Getting BlockInfo " + e.getMessage());
         }
-     }
+    }
 
     private void publishNewOrModifiedEntries(List<FroodyEntryPlus> response) {
         if (response != null && response.size() > 0 && context != null) {

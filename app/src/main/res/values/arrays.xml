@@ -19,8 +19,8 @@
 
     <string-array name="gps_types_header">
         <item>@string/gps_type__none</item>
-        <item>@string/gps_type__old</item>
-        <item>@string/gps_type__ok</item>
+        <item>@string/gps_type__previous</item>
+        <item>@string/gps_type__current</item>
     </string-array>
 
     <string-array name="gps_types_text">

@@ -117,11 +117,11 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
         recluster();
 
         // Load position from last creation of map
-        if (settings.hasLastLocationOnMap()) {
+        if (settings.hasLastMapLocation()) {
             zoomToPosition(
-                    settings.getLastLocationLatitude(),
-                    settings.getLastLocationLongitude(),
-                    settings.getLastLocationZoom()
+                    settings.getLastMapLocationLatitude(),
+                    settings.getLastMapLocationLongitude(),
+                    settings.getLastMapLocationZoom()
             );
         }
     }
@@ -275,7 +275,7 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
     @Override
     public boolean onScroll(ScrollEvent scrollEvent) {
         new MapListenerNotifier(map).start();
-        if (map.getZoomLevel() >= ZOOMLEVEL_BLOCK5_TRESHOLD){
+        if (map.getZoomLevel() >= ZOOMLEVEL_BLOCK5_TRESHOLD) {
             map.setMinZoomLevel(ZOOMLEVEL_BLOCK5_TRESHOLD);
         }
         return false;
@@ -284,7 +284,7 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
     @Override
     public boolean onZoom(ZoomEvent zoomEvent) {
         new MapListenerNotifier(map).start();
-        if (map.getZoomLevel() >= ZOOMLEVEL_BLOCK5_TRESHOLD){
+        if (map.getZoomLevel() >= ZOOMLEVEL_BLOCK5_TRESHOLD) {
             map.setMinZoomLevel(ZOOMLEVEL_BLOCK5_TRESHOLD);
         }
         return false;

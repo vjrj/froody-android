@@ -2,8 +2,8 @@
 <resources>
     <!-- GPS Types -->
     <string name="gps_type__none">No location</string>
-    <string name="gps_type__old">Current location</string>
-    <string name="gps_type__ok">Previous location</string>
+    <string name="gps_type__previous">Previous location</string>
+    <string name="gps_type__current">Current location</string>
 
     <!-- Certification Types -->
     <string name="certification_type__none">None</string>

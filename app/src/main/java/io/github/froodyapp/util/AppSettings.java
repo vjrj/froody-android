@@ -153,26 +153,26 @@ public class AppSettings {
         setString(R.string.pref_key__froody_server, value);
     }
 
-    public boolean hasLastLocationOnMap() {
-        return getLastLocationZoom() >= MapOSMFragment.ZOOMLEVEL_BLOCK5_TRESHOLD;
+    public boolean hasLastMapLocation() {
+        return getLastMapLocationZoom() >= MapOSMFragment.ZOOMLEVEL_BLOCK5_TRESHOLD;
     }
 
-    public double getLastLocationLatitude() {
-        return getDouble(R.string.pref_key__lastlocation_latitude, 0);
+    public double getLastMapLocationLatitude() {
+        return getDouble(R.string.pref_key__last_map_location_latitude, 0);
     }
 
-    public double getLastLocationLongitude() {
-        return getDouble(R.string.pref_key__lastlocation_longitude, 0);
+    public double getLastMapLocationLongitude() {
+        return getDouble(R.string.pref_key__last_map_location_longitude, 0);
     }
 
-    public int getLastLocationZoom() {
-        return getInt(R.string.pref_key__lastlocation_zoom, 0);
+    public int getLastMapLocationZoom() {
+        return getInt(R.string.pref_key__last_map_location_zoom, 0);
     }
 
-    public void setLastLocation(double lat, double lng, int zoom) {
-        setDouble(R.string.pref_key__lastlocation_latitude, lat);
-        setDouble(R.string.pref_key__lastlocation_longitude, lng);
-        setInt(R.string.pref_key__lastlocation_zoom, zoom);
+    public void setLastMapLocation(double lat, double lng, int zoom) {
+        setDouble(R.string.pref_key__last_map_location_latitude, lat);
+        setDouble(R.string.pref_key__last_map_location_longitude, lng);
+        setInt(R.string.pref_key__last_map_location_zoom, zoom);
     }
 
     public int getLastCertification() {
@@ -248,4 +248,15 @@ public class AppSettings {
         setString(R.string.pref_key__entry__blockcache, json);
     }
 
+    public void setLastFoundLocation(String geohash, String address) {
+        setString(R.string.pref_key__last_found_location_address, address);
+        setString(R.string.pref_key__last_found_location_geohash, geohash);
+    }
+
+    public String[] getLastFoundLocation() {
+        return new String[]{
+                getString(R.string.pref_key__last_found_location_geohash, ""),
+                getString(R.string.pref_key__last_found_location_address, "")
+        };
+    }
 }

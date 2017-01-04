@@ -31,8 +31,8 @@ public class LocationTool {
     private static final double[] DEBUG_FAKE_LOCATION = {48.378765, 14.512982};
 
     public static class LocationToolResponse implements Serializable {
-        public String requestedBy;
-        public String provider;
+        public String requestedBy = "";
+        public String provider = "";
         public double lat;
         public double lng;
     }

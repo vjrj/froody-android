@@ -411,7 +411,7 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
                     int zoom = intent.getIntExtra(AppCast.MAP_POSITION_CHANGED.EXTRA_ZOOM, 15);
 
                     new EntryByBlockLoader(context, lat, lng, zoom).start();
-                    appSettings.setLastLocation(lat, lng, zoom);
+                    appSettings.setLastMapLocation(lat, lng, zoom);
 
                     break;
                 }

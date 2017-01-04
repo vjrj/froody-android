@@ -14,6 +14,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import io.github.froodyapp.model.FroodyEntryPlus;
 import io.github.froodyapp.util.AppCast;
+import io.github.froodyapp.util.AppSettings;
 
 /**
  * Task for reverse geo coding lat/lng
@@ -59,6 +60,8 @@ public class EntryReverseGeocoder extends Thread {
         entry.setAddress(address);
 
         AppCast.FROODY_ENTRY_GEOCODED.send(context, entry);
+        AppSettings appSettings = new AppSettings(context);
+        appSettings.setLastFoundLocation(geohash, address);
     }
 
     /**

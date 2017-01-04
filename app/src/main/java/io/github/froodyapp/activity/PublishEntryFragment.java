@@ -45,6 +45,7 @@ import io.github.froodyapp.util.AppCast;
 import io.github.froodyapp.util.AppSettings;
 import io.github.froodyapp.util.BlockCache;
 import io.github.froodyapp.util.FroodyEntryFormatter;
+import io.github.froodyapp.util.Helpers;
 import io.github.froodyapp.util.MyEntriesHelper;
 
 /**
@@ -246,16 +247,25 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
         int color = getResources().getIntArray(R.array.gps_colors)[_type];
         String locationText = getResources().getStringArray(R.array.gps_types_text)[_type];
 
-        if (_type == GPS_Types.NONE) {
-            location = null;
-        } else {
-            froodyEntry.loadGeohashFromLocation(location.lat, location.lng, 9);
+        switch (_type) {
+            case GPS_Types.NONE: {
+                location = null;
+                break;
+            }
+            case GPS_Types.CURRENT: {
+                froodyEntry.loadGeohashFromLocation(location.lat, location.lng, 9);
 
-            // Location setzen solange nicht mehr verfügbar
-            locationText = locationText.replace("$LOCATION$", String.format(Locale.getDefault(), "(%.5f ; %.5f)", location.lat, location.lng));
+                // Location setzen solange nicht mehr verfügbar
+                locationText = locationText.replace("$LOCATION$", String.format(Locale.getDefault(), "(%.5f ; %.5f)", location.lat, location.lng));
 
-            // Wird später mit Daten aus ReverseGeoCode ersetzt
-            new EntryReverseGeocoder(getContext(), froodyEntry).start();
+                // Wird später mit Daten aus ReverseGeoCode ersetzt
+                new EntryReverseGeocoder(getContext(), froodyEntry).start();
+                break;
+            }
+            case GPS_Types.PREVIOUS: {
+
+                break;
+            }
         }
         textLocationHeader.setText(getResources().getStringArray(R.array.gps_types_header)[_type]);
         textLocation.setText(locationText);
@@ -295,7 +305,7 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
 
                 case AppCast.LOCATION_FOUND.ACTION: {
                     location = AppCast.LOCATION_FOUND.getResponseFromIntent(intent);
-                    applyLocationToUi(GPS_Types.OK);
+                    applyLocationToUi(GPS_Types.CURRENT);
                     recheckInput();
                     break;
                 }
@@ -314,6 +324,23 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
         activity.setTitle(R.string.publish_entry);
         activity.navigationView.setCheckedItem(R.id.nav_publish_entry);
         requestLocationFromMainActivity();
+
+        // Simulate a location
+        String[] lastFoundLocation = new AppSettings(context).getLastFoundLocation();
+        if (!lastFoundLocation[0].isEmpty()) {
+            Double[] latlng = Helpers.geohashToLatLng(lastFoundLocation[0]);
+            if (latlng != null) {
+                LocationTool.LocationToolResponse location = new LocationTool.LocationToolResponse();
+                location.provider = "net";
+                location.lat = latlng[0];
+                location.lng = latlng[1];
+                this.location = location;
+                froodyEntry.loadGeohashFromLocation(latlng[0], latlng[1], 9);
+                applyLocationToUi(GPS_Types.PREVIOUS);
+                textLocation.setText(lastFoundLocation[1]);
+                recheckInput();
+            }
+        }
         super.onResume();
     }
 

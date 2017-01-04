@@ -38,7 +38,7 @@ public class MapListenerNotifier extends Thread {
         } catch (InterruptedException ignored) {
         }
         long now = System.currentTimeMillis();
-        if ((now - LAST_HAPPENING_TIME) >= HAPPENING_INTERVAL && map != null && map.getZoomLevel() >= MapOSMFragment.ZOOMLEVEL_BLOCK5_TRESHOLD-1) {
+        if ((now - LAST_HAPPENING_TIME) >= HAPPENING_INTERVAL && map != null && map.getZoomLevel() >= MapOSMFragment.ZOOMLEVEL_BLOCK5_TRESHOLD - 1) {
             setLastHappeningTime(now);
             IGeoPoint center = map.getMapCenter();
             AppCast.MAP_POSITION_CHANGED.send(map.getContext(), center.getLatitude(), center.getLongitude(), map.getZoomLevel());
