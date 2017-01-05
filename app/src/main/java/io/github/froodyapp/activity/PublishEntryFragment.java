@@ -135,6 +135,24 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
 
         loadSpinnerDataSources();
         loadFromAppData();
+
+        // Simulate a location
+        String[] lastFoundLocation = new AppSettings(view.getContext()).getLastFoundLocation();
+        if (!lastFoundLocation[0].isEmpty()) {
+            Double[] latlng = Helpers.geohashToLatLng(lastFoundLocation[0]);
+            if (latlng != null) {
+                LocationTool.LocationToolResponse location = new LocationTool.LocationToolResponse();
+                location.provider = "net";
+                location.lat = latlng[0];
+                location.lng = latlng[1];
+                this.location = location;
+                froodyEntry.loadGeohashFromLocation(latlng[0], latlng[1], 9);
+                froodyEntry.setAddress(lastFoundLocation[1]);
+                applyLocationToUi(GPS_Types.PREVIOUS);
+                textLocation.setText(lastFoundLocation[1]);
+                recheckInput();
+            }
+        }
     }
 
     @Override
@@ -323,23 +341,6 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
         activity.setTitle(R.string.publish_entry);
         activity.navigationView.setCheckedItem(R.id.nav_publish_entry);
         requestLocationFromMainActivity();
-
-        // Simulate a location
-        String[] lastFoundLocation = new AppSettings(context).getLastFoundLocation();
-        if (!lastFoundLocation[0].isEmpty()) {
-            Double[] latlng = Helpers.geohashToLatLng(lastFoundLocation[0]);
-            if (latlng != null) {
-                LocationTool.LocationToolResponse location = new LocationTool.LocationToolResponse();
-                location.provider = "net";
-                location.lat = latlng[0];
-                location.lng = latlng[1];
-                this.location = location;
-                froodyEntry.loadGeohashFromLocation(latlng[0], latlng[1], 9);
-                applyLocationToUi(GPS_Types.PREVIOUS);
-                textLocation.setText(lastFoundLocation[1]);
-                recheckInput();
-            }
-        }
         super.onResume();
     }
 
