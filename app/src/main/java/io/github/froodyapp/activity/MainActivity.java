@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
 
         // Show map fragment
         try {
-            BlockCache.getInstance().loadFromAppSettings(this);
+            BlockCache.getInstance().loadFromAppCache(this);
         } catch (Exception ignored) {
             App.log(getClass(), "Error: Cannot load CacheMap from settings");
         }
@@ -286,7 +286,7 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
 
     @Override
     protected void onPause() {
-        BlockCache.getInstance().saveToAppSettings(this);
+        BlockCache.getInstance().saveToAppCache(this);
         LocalBroadcastManager.getInstance(this).unregisterReceiver(localBroadcastReceiver);
         locationTool.disableLocationTool();
         super.onPause();

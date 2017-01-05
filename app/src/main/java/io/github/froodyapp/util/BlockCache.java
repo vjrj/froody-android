@@ -49,7 +49,7 @@ public class BlockCache {
     }
 
     @SuppressWarnings("unchecked")
-    public synchronized void loadFromAppSettings(Context context) {
+    public synchronized void loadFromAppCache(Context context) {
         try {
             File file = new File(context.getCacheDir(), "map.dat");
             ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(file));
@@ -58,13 +58,30 @@ public class BlockCache {
                 cacheMap = mapDat;
             }
             inputStream.close();
+            cleanOldEntries();
         } catch (Exception e) {
             App.log(getClass(), "Error: Cannot load CacheMap from cache---" + e.getMessage());
         }
     }
 
-    public synchronized void saveToAppSettings(Context context) {
+    public void cleanOldEntries() {
+        for (BlockCacheItem blockCache : cacheMap.values()) {
+            List<Long> itemsToRemove = new ArrayList<>();
+            for (FroodyEntryPlus entry : blockCache.entries.values()) {
+                if (entry.getWasDeleted() || entry.canEntryBeRemovedFromCache()) {
+                    itemsToRemove.add(entry.getEntryId());
+                }
+            }
+
+            for (Long rmId : itemsToRemove) {
+                blockCache.entries.remove(rmId);
+            }
+        }
+    }
+
+    public synchronized void saveToAppCache(Context context) {
         try {
+            cleanOldEntries();
             File file = new File(context.getCacheDir(), "map.dat");
             ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(file));
             outputStream.writeObject(cacheMap);
@@ -130,9 +147,7 @@ public class BlockCache {
                 cacheItem.entries.remove(entry.getEntryId());
             }
 
-
-            //TODO: Maybe compare to -3 weeks -> Import from file cache algorithm
-            if (!entry.getWasDeleted()) {
+            if (!entry.getWasDeleted() && !entry.canEntryBeRemovedFromCache()) {
                 // New or modified entry
                 cacheItem.entries.put(entry.getEntryId(), entry);
             }
@@ -190,12 +205,6 @@ public class BlockCache {
         for (Map.Entry<String, BlockCacheItem> stringBlockCacheItemEntry : cacheMap.entrySet()) {
             BlockCacheItem blockCacheItem = stringBlockCacheItemEntry.getValue();
             entries.addAll(new ArrayList<>(blockCacheItem.entries.values()));
-
-            // Iterate all entries in BlockCacheItem
-            //for (int i = 0, size = blockCacheItem.entries.size(); i < size; i++) {
-            //    FroodyEntryPlus entry = blockCacheItem.entries.valueAt(i);
-            //    entries.add(entry);
-            //}
         }
         return entries;
     }
@@ -221,7 +230,7 @@ public class BlockCache {
 
     public void clearCache(Context context) {
         cacheMap = new ConcurrentHashMap<>();
-        saveToAppSettings(context);
+        saveToAppCache(context);
     }
 
 
