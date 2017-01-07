@@ -40,9 +40,10 @@ public class MyEntriesHelper {
 
     public void removeFromMyEntries(FroodyEntryPlus entry) {
         List<FroodyEntryPlus> entries = getMyEntries();
-        for (FroodyEntryPlus my : entries) {
-            if (my.getEntryId().equals(entry.getEntryId())) {
-                entries.remove(my);
+        for (int i=0; i < entries.size(); i++) {
+            if (entries.get(i).getEntryId().equals(entry.getEntryId())) {
+                entries.remove(i);
+                break;
             }
         }
         setMyEntries(entries);
