@@ -3,5 +3,13 @@
 <resources>
   <!-- Keys (not translate able -->
   <!-- Network -->
+  <string name="pref_cat__network">ネットワーク</string>
+  <string name="pref_title__froody_server">サーバーの変更</string>
+  <string name="pref_title__clear_cache">キャッシュをクリア</string>
+  <string name="pref_desc__clear_cache">エントリのキャッシュ, 最後の場所をクリアします</string>
+  <string name="pref_desc__froody_server">エントリを取得するサーバーを変更します</string>
   <!-- App -->
+  <string name="pref_cat__app">アプリ</string>
+  <string name="pref_desc__reset_app">新しくインストールした状態にアプリをリセットします</string>
+  <string name="pref_title__reset_app">アプリをリセット</string>
 </resources>

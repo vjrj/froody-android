@@ -3,9 +3,50 @@
 <resources>
   <!-- General & Important things -->
   <!-- General words -->
+  <string name="image">画像</string>
+  <string name="reset">リセット</string>
+  <string name="settings">設定</string>
+  <string name="more">さらに</string>
+  <string name="description">説明</string>
+  <string name="location">場所</string>
+  <string name="error">エラー</string>
+  <string name="all">すべて</string>
+  <string name="informations">情報</string>
+  <string name="contributors">貢献者</string>
   <!-- More general words -->
+  <string name="search_dotdotdot">検索&#8230;</string>
+  <string name="distribution_type">配布</string>
+  <string name="certification">認定</string>
+  <string name="contact">お問い合わせ</string>
+  <string name="maintainers">メンテナンス</string>
+  <string name="map">地図</string>
+  <string name="blog">ブログ</string>
+  <string name="license">ライセンス</string>
   <!-- Main -->
+  <string name="navigation_drawer_open">ドロワーを開く</string>
+  <string name="navigation_drawer_close">ドロワーを閉じる</string>
+  <string name="no_entries_were_published_by_me">エントリはありません</string>
+  <string name="help_and_share"><![CDATA[ヘルプと共有]]></string>
+  <string name="really_delete_entry">このエントリを削除してもよろしいですか?</string>
+  <string name="share_entry_ask">エントリを共有しますか?</string>
   <!-- Publish -->
+  <string name="suggested">おすすめ</string>
+  <string name="select_froody">Froody を選択してください&#8230;</string>
+  <string name="hint_please_insert_description">ここに、このエントリの説明を入力してください&#8230;</string>
+  <string name="hint_please_insert_contact">ここに、このエントリの問い合わせ先の詳細を入力してください&#8230;</string>
+  <string name="publish_entry">公開</string>
+  <string name="limited_time_active_notice">ご注意ください! エントリは、今から 3 週間利用できます。</string>
+  <string name="share_my_entry_at_froody">Froody アプリで、私のエントリ</string>
+  <string name="share_chooser_share_entry">エントリを共有</string>
+  <string name="nav__my_entries">私のエントリ</string>
   <!-- Info -->
+  <string name="show_licenses">ライセンスを表示</string>
   <!-- Location -->
+  <string name="request_location">場所をリクエスト</string>
+  <string name="gps_locating_user">探しています&#8230;</string>
+  <string name="address_most_near">付近</string>
+  <string name="error_bad_permissions">正常に機能させるため、Froody に場所のアクセスと、データの書き込みアクセス許可を与えてください。これらがなければアプリは使用できません。</string>
+  <string name="show_map_on_current_location">現在の場所を地図に表示しますか?</string>
+  <string name="zoom_out">縮小</string>
+  <string name="cannot_locate_user">ユーザーの場所が見つかりません。システム設定で位置情報サービスを有効にしてください!</string>
 </resources>
