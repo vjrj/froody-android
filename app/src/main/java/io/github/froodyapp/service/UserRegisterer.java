@@ -13,11 +13,16 @@ import io.github.froodyapp.api.model_.FroodyUser;
 import io.github.froodyapp.util.AppCast;
 import io.github.froodyapp.util.AppSettings;
 
+/**
+ * Api calls for registering user
+ */
 public class UserRegisterer {
     //########################
     //## Statics
     //########################
-    public static void userRegister(final Context c) {
+
+    // Register user (get unique userId) with server
+    public static void registerUserIfNotRegistered(final Context c) {
         if (c == null) {
             return;
         }
@@ -33,7 +38,7 @@ public class UserRegisterer {
 
                     @Override
                     public void onSuccess(FroodyUser result, int statusCode, Map<String, List<String>> responseHeaders) {
-                        if (result != null) {
+                        if (result != null && result.getUserId() != null) {
                             settings.setFroodyUserId(result.getUserId());
                             AppCast.FROODY_USER_REGISTERED.send(c, result);
                         }

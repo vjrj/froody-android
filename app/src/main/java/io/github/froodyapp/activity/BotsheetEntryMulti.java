@@ -24,7 +24,6 @@ import io.github.froodyapp.listener.FroodyEntrySelectedListener;
 import io.github.froodyapp.model.FroodyEntryPlus;
 import io.github.froodyapp.ui.RecyclerEntryAdapter;
 import io.github.froodyapp.util.AppCast;
-import io.github.froodyapp.util.FroodyEntryFormatter;
 import io.github.froodyapp.util.MyEntriesHelper;
 
 /**
@@ -36,25 +35,14 @@ public class BotsheetEntryMulti extends BottomSheetDialogFragment implements Fro
     //########################
     public static final String FRAGMENT_TAG = "BotsheetEntryMulti";
 
-    /**
-     * New instance with list of entries
-     *
-     * @param froodyEntries Froody Entry/Entries
-     * @return
-     */
+    // Create new instance with list of entries
     public static BotsheetEntryMulti newInstance(List<FroodyEntryPlus> froodyEntries) {
         BotsheetEntryMulti f = new BotsheetEntryMulti();
         f.setFroodyEntries(froodyEntries);
         return f;
     }
 
-    /**
-     * New instance with entries and header string id
-     *
-     * @param froodyEntries Froody Entry/Entries
-     * @param stringId      string ressource id to represent header
-     * @return
-     */
+    //Create new instance with entries and string resource id to set the header text
     public static BotsheetEntryMulti newInstance(List<FroodyEntryPlus> froodyEntries, int stringId) {
         BotsheetEntryMulti f = newInstance(froodyEntries);
         f.headerStringId = stringId;
@@ -88,22 +76,20 @@ public class BotsheetEntryMulti extends BottomSheetDialogFragment implements Fro
     @Override
     public void setupDialog(Dialog sheet, int style) {
         super.setupDialog(sheet, style);
-        View contentView = View.inflate(getContext(), R.layout.botsheet__entry_multi, null);
-        sheet.setContentView(contentView);
-        ButterKnife.bind(this, contentView);
+        View root = View.inflate(getContext(), R.layout.botsheet__entry_multi, null);
+        sheet.setContentView(root);
+        ButterKnife.bind(this, root);
 
         // Set Coordinator Behaviour
-        CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) ((View) contentView.getParent()).getLayoutParams();
+        CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) ((View) root.getParent()).getLayoutParams();
         CoordinatorLayout.Behavior behavior = params.getBehavior();
         if (behavior != null && behavior instanceof BottomSheetBehavior) {
             BottomSheetBehavior bottomSheetBehavior = (BottomSheetBehavior) behavior;
             bottomSheetBehavior.setBottomSheetCallback(bottomSheetBehaviorCallback);
         }
 
-        // Load froody util
+        // Load entries
         if (froodyEntries != null) {
-            loadFroodyEntryPlus();
-
             textHeader.setText(headerStringId);
             recyclerAdapter = new RecyclerEntryAdapter(froodyEntries, this, getContext().getApplicationContext());
             recyclerList.setAdapter(recyclerAdapter);
@@ -111,30 +97,10 @@ public class BotsheetEntryMulti extends BottomSheetDialogFragment implements Fro
         }
     }
 
-    /**
-     * Start loading the froody entry
-     */
-    private void loadFroodyEntryPlus() {
-        FroodyEntryFormatter froodyUtil = new FroodyEntryFormatter(getContext(), froodyEntries.get(0));
-    }
-
-    /**
-     * Share button was pressed
-     *
-     * @param view button
-     */
+    //Share button was pressed
     @OnClick(R.id.botsheet__entry_multi__btn_share)
     public void onShareButtonClicked(View view) {
-        MyEntriesHelper.shareEntry(getContext(), froodyEntries.get(0));
-    }
-
-    /**
-     * Sets the entry list
-     *
-     * @param froodyEntries Froody Entry/Entries
-     */
-    public void setFroodyEntries(List<FroodyEntryPlus> froodyEntries) {
-        this.froodyEntries = froodyEntries;
+        MyEntriesHelper.shareEntry(view.getContext(), froodyEntries.get(0));
     }
 
     @Override
@@ -150,8 +116,7 @@ public class BotsheetEntryMulti extends BottomSheetDialogFragment implements Fro
         if (context instanceof FroodyEntrySelectedListener) {
             froodyEntrySelectedListener = (FroodyEntrySelectedListener) context;
         } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement FroodyEntrySelectedListener");
+            throw new RuntimeException(context.toString() + " must implement FroodyEntrySelectedListener");
         }
         LocalBroadcastManager.getInstance(context).registerReceiver(localBroadcastReceiver, AppCast.getLocalBroadcastFilter());
     }
@@ -198,4 +163,11 @@ public class BotsheetEntryMulti extends BottomSheetDialogFragment implements Fro
             }
         }
     };
+
+    //########################
+    //## Getter & Setter
+    //########################
+    public void setFroodyEntries(List<FroodyEntryPlus> froodyEntries) {
+        this.froodyEntries = froodyEntries;
+    }
 }

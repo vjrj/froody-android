@@ -18,18 +18,20 @@ import io.github.froodyapp.R;
 import io.github.froodyapp.api.model_.FroodyEntry;
 import io.github.froodyapp.model.FroodyEntryPlus;
 
+/**
+ * Methods for managing My FroodyEntries
+ */
 public class MyEntriesHelper {
     //#####################
     //## Members
     //#####################
-
     private Context context;
 
     //#####################
     //## Methods
     //#####################
     public MyEntriesHelper(Context context) {
-        this.context = context;
+        this.context = context.getApplicationContext();
     }
 
     public void addToMyEntries(FroodyEntryPlus entry) {
@@ -40,9 +42,10 @@ public class MyEntriesHelper {
 
     public void removeFromMyEntries(FroodyEntryPlus entry) {
         List<FroodyEntryPlus> entries = getMyEntries();
-        for (FroodyEntryPlus my : entries) {
-            if (my.getEntryId().equals(entry.getEntryId())) {
-                entries.remove(my);
+        for (int i = 0; i < entries.size(); i++) {
+            if (entries.get(i).getEntryId().equals(entry.getEntryId())) {
+                entries.remove(i);
+                break;
             }
         }
         setMyEntries(entries);
@@ -106,6 +109,7 @@ public class MyEntriesHelper {
         }
     }
 
+    // Writes my entries to BlockCache
     public void processMyEntriesToBlockCache() {
         BlockCache cache = BlockCache.getInstance();
         for (FroodyEntryPlus entry : getMyEntries()) {
@@ -145,7 +149,6 @@ public class MyEntriesHelper {
         i.putExtra(Intent.EXTRA_SUBJECT, subject);
         i.putExtra(Intent.EXTRA_TEXT, url);
         context.startActivity(Intent.createChooser(i, context.getString(R.string.share_chooser_share_entry)));
-
         return true;
     }
 }

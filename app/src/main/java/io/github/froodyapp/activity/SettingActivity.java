@@ -17,6 +17,9 @@ import io.github.froodyapp.util.AppSettings;
 import io.github.froodyapp.util.BlockCache;
 import io.github.froodyapp.util.MyEntriesHelper;
 
+/**
+ * Activity for settings
+ */
 public class SettingActivity extends PreferenceActivity {
     //########################
     //## Members
@@ -50,7 +53,6 @@ public class SettingActivity extends PreferenceActivity {
             Context context = getActivity() != null ? getActivity().getApplicationContext() : null;
             if (context == null) {
                 return;
-
             }
 
             if (key.equals(context.getString(R.string.pref_key__froody_server))) {
@@ -58,10 +60,11 @@ public class SettingActivity extends PreferenceActivity {
                 ApiClient apiClient = Configuration.getDefaultApiClient();
                 apiClient.setBasePath(appSettings.getFroodyServer());
                 appSettings.setFroodyUserId(-1);
-                UserRegisterer.userRegister(context);
+                UserRegisterer.registerUserIfNotRegistered(context);
             }
         }
 
+        // Set preference details that are not set by PreferenceFragment itself
         private void updatePreference(Preference pref) {
             if (pref == null) {
                 return;
@@ -74,6 +77,7 @@ public class SettingActivity extends PreferenceActivity {
 
         @Override
         public boolean onPreferenceTreeClick(PreferenceScreen screen, Preference preference) {
+            // Some preference was clicked
             Context context = getActivity().getApplicationContext();
             switch (preference.getTitleRes()) {
                 case R.string.pref_title__clear_cache: {

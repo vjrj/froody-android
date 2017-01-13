@@ -2,20 +2,20 @@ package io.github.froodyapp.ui;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.res.TypedArray;
 import android.support.v7.app.AlertDialog;
 import android.webkit.WebView;
+import android.widget.Toast;
 
 import io.github.froodyapp.R;
 import io.github.froodyapp.model.FroodyEntryPlus;
 import io.github.froodyapp.util.FroodyEntryFormatter;
 
 /**
- * Some dialogs shown in the app
+ * Some dialogs to be shown in the app
  */
 public class CustomDialogs {
     /**
-     * Show a dialog which asks to delete the entry
+     * Show a dialog which asks to delete a FroodyEntry
      *
      * @param context             context
      * @param entry               entry
@@ -32,30 +32,24 @@ public class CustomDialogs {
     }
 
     /**
-     * Show a sharing dialog
+     * Show a sharing dialog for FroodyEntry
      *
      * @param context             context
      * @param entry               the entry
      * @param onConfirmedListener reuslt listener
      */
     public static void showShareDialog(Context context, FroodyEntryPlus entry, DialogInterface.OnClickListener onConfirmedListener) {
-        TypedArray imgs = context.getResources().obtainTypedArray(R.array.entry_type__images);
-        FroodyEntryFormatter util = new FroodyEntryFormatter(context, entry);
+        FroodyEntryFormatter formatter = new FroodyEntryFormatter(context, entry);
         AlertDialog.Builder dialog = new AlertDialog.Builder(context)
                 .setTitle(R.string.share_entry_ask)
-                .setIcon(imgs.getResourceId(entry.getEntryType(), -1))
-                .setMessage(context.getString(R.string.limited_time_active_notice) + "\n\n" + util.summarize())
+                .setIcon(formatter.getEntryTypeImage())
+                .setMessage(formatter.summarize() + "\n\n" + context.getString(R.string.limited_time_active_notice))
                 .setNegativeButton(R.string.no, onConfirmedListener)
                 .setPositiveButton(R.string.yes, onConfirmedListener);
         dialog.show();
-        imgs.recycle();
     }
 
-    /**
-     * Show license infos
-     *
-     * @param context context
-     */
+    // Show license infos
     public static void showLicensesDialog(Context context) {
         WebView wv = new WebView(context);
         wv.loadUrl("file:///android_res/raw/licenses.html");
@@ -66,17 +60,9 @@ public class CustomDialogs {
         dialog.show();
     }
 
-    /**
-     * Show Dialog when location permission cant be acquired
-     *
-     * @param context context
-     */
+    // Show Toast when location permission cant be acquired
     public static void showErrorLocationPermDeniedDialog(Context context) {
-        AlertDialog.Builder dialog = new AlertDialog.Builder(context)
-                .setPositiveButton(R.string.ok, null)
-                .setTitle(R.string.error)
-                .setMessage(R.string.error_bad_permissions);
-        dialog.show();
+        Toast.makeText(context, R.string.error_bad_permissions, Toast.LENGTH_LONG).show();
     }
 
 }

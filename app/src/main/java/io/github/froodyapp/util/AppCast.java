@@ -14,6 +14,9 @@ import io.github.froodyapp.api.model_.FroodyUser;
 import io.github.froodyapp.location.LocationTool;
 import io.github.froodyapp.model.FroodyEntryPlus;
 
+/**
+ * Broadcasts Helper for broadcasts sent & received in app
+ */
 public class AppCast {
     //########################
     //## Send broadcast

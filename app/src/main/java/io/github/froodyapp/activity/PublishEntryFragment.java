@@ -124,42 +124,44 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        // Init objects
         app = (App) getActivity().getApplication();
-        requestLocationFromMainActivity();
         appSettings = app.getAppSettings();
+
+        // Request the current location
+        requestLocationFromMainActivity();
+
+        // Init froody entry
         froodyEntry = new FroodyEntryPlus(new FroodyEntry());
         froodyEntry.setEntryId(-1L);
         froodyEntry.setEntryType(FroodyEntryFormatter.ENTRY_TYPE_UNKNOWN);
 
         loadSpinnerDataSources();
-        loadFromAppData();
-    }
 
-    @Override
-    public String getFragmentTag() {
-        return FRAGMENT_TAG;
-    }
 
-    @Override
-    public boolean onBackPressed() {
-        return false;
-    }
-
-    /**
-     * Load some fields from app data
-     */
-    private void loadFromAppData() {
+        // Load some previously selected options from AppSettings
         spinnerCertification.setSelection(appSettings.getLastCertification());
         spinnerDistribution.setSelection(appSettings.getLastDistribution());
         editContact.setText(appSettings.getLastContactInfo());
+
+        // Simulate a location
+        String[] lastFoundLocation = appSettings.getLastFoundLocation();
+        if (!lastFoundLocation[0].isEmpty()) {
+            Double[] latlng = Helpers.geohashToLatLng(lastFoundLocation[0]);
+            if (latlng != null) {
+                LocationTool.LocationToolResponse location = new LocationTool.LocationToolResponse();
+                location.provider = "net";
+                location.lat = latlng[0];
+                location.lng = latlng[1];
+                this.location = location;
+                froodyEntry.loadGeohashFromLocation(latlng[0], latlng[1], 9);
+                applyLocationToUi(GPS_Types.PREVIOUS);
+                textLocation.setText(lastFoundLocation[1]);
+                recheckUserInput();
+            }
+        }
     }
 
-
-    /**
-     * Load Data source for spinner
-     */
+    // Load Data source for spinner
     private void loadSpinnerDataSources() {
         Context context = getContext();
 
@@ -174,11 +176,8 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
         spinnerDistribution.setAdapter(adapter);
     }
 
-    /**
-     * Checks if form is valid
-     *
-     * @return
-     */
+
+    // Checks if form is valid ; True if entry can be submitted
     private boolean hasValidInput() {
         return editContact.getText().toString().length() > 0
                 && editDescription.getText().toString().length() > 0
@@ -188,32 +187,29 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
     }
 
     /**
-     * Triggers recheck of input form
+     * Triggers recheck of user input
      */
-    private void recheckInput() {
+    private void recheckUserInput() {
         boolean valid = hasValidInput();
         btnSubmitFroodyEntry.setEnabled(valid);
     }
 
-    /**
-     * Submit button tapped
-     *
-     * @param v button
-     */
+
+    // User clicked the submit button
     @OnClick(R.id.publish_entry__fragment__button_submit_entry)
-    public void onBtnSubmitFroodyEntryClicked(View v) {
+    public void onSubmitFroodyEntryButtonClicked(View view) {
         if (!hasValidInput() || !appSettings.hasFroodyUserId()) {
             return;
         }
 
-        Context context = getContext();
+        Context context = view.getContext();
         FroodyEntryFormatter entryFormatter = new FroodyEntryFormatter(context, froodyEntry);
 
-        // Apply details to froody entry
+        // Apply details to entry
         //froodyEntry.setEntryType(); // Done by callback
         entryFormatter.loadGeohashFromLocation(location.lat, location.lng, 9);
-        //froodyEntry.setAddress(textLocation.getText().toString());    // done by reverse geocodetask
-        froodyEntry.setUserId(app.getFroodyUser().getUserId());
+        //froodyEntry.setAddress(textLocation.getText().toString());    // done by EntryReverseGeocoder
+        froodyEntry.setUserId(appSettings.getFroodyUser().getUserId());
         froodyEntry.setCertificationType(spinnerCertification.getSelectedItemPosition());
         froodyEntry.setDistributionType(spinnerDistribution.getSelectedItemPosition());
         froodyEntry.setContact(editContact.getText().toString());
@@ -224,30 +220,25 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
         appSettings.setLastContactInfo(editContact.getText().toString());
         appSettings.setLastDistribution(spinnerDistribution.getSelectedItemPosition());
 
-
+        // Start publishing entry
         new EntryPublisher(getActivity(), froodyEntry, this).start();
     }
 
-    /**
-     * A text was changed
-     *
-     * @param str str
-     */
+
+    // TextChangedListener for EditText's
     @OnTextChanged(callback = OnTextChanged.Callback.TEXT_CHANGED, value = {R.id.publish_entry__fragment__edit_contact, R.id.publish_entry__fragment__edit_description})
-    public void onEditTextChanged(CharSequence str) {
-        recheckInput();
+    public void onEditTextChanged(CharSequence newText) {
+        recheckUserInput();
     }
 
-    /**
-     * Set the location
-     *
-     * @param _type Type (New, old)
-     */
-    public void applyLocationToUi(int _type) {
-        int color = getResources().getIntArray(R.array.gps_colors)[_type];
-        String locationText = getResources().getStringArray(R.array.gps_types_text)[_type];
 
-        switch (_type) {
+    //Sets all UI texts related to location
+    public void applyLocationToUi(int newGPS_Type) {
+        int color = getResources().getIntArray(R.array.gps_colors)[newGPS_Type];
+        String locationText = getResources().getStringArray(R.array.gps_types_text)[newGPS_Type];
+
+        // Additional stuff related to GPS-Type
+        switch (newGPS_Type) {
             case GPS_Types.NONE: {
                 location = null;
                 break;
@@ -263,28 +254,36 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
                 break;
             }
             case GPS_Types.PREVIOUS: {
+                new EntryReverseGeocoder(getContext(), froodyEntry).start();
                 break;
             }
         }
-        textLocationHeader.setText(getResources().getStringArray(R.array.gps_types_header)[_type]);
+        textLocationHeader.setText(getResources().getStringArray(R.array.gps_types_header)[newGPS_Type]);
         textLocation.setText(locationText);
         btnGps.setSupportBackgroundTintList(new ColorStateList(new int[][]{new int[0]}, new int[]{color}));
     }
 
-    /**
-     * The GPS Button was pressed
-     *
-     * @param view
-     */
-    @OnClick(R.id.publish_entry__fragment__button_gps)
+
+    // The GPS Button was pressed
+    @OnClick({R.id.publish_entry__fragment__button_gps, R.id.publish_entry__fragment__entry_type_selector})
     public void onGPSButtonClicked(View view) {
-        requestLocationFromMainActivity();
+        switch (view.getId()) {
+            case R.id.publish_entry__fragment__entry_type_selector: {
+                DialogEntryTypeSelection yourDialogFragment = DialogEntryTypeSelection.newInstance(this, false);
+                yourDialogFragment.show(getFragmentManager(), DialogEntryTypeSelection.FRAGMENT_TAG);
+                break;
+            }
+
+            case R.id.publish_entry__fragment__button_gps: {
+                requestLocationFromMainActivity();
+                break;
+            }
+        }
     }
 
     public void requestLocationFromMainActivity() {
         Activity a = getActivity();
         if (a != null && a instanceof MainActivity) {
-            MainActivity mainActivity = (MainActivity) a;
             ((MainActivity) a).requestLocation(FRAGMENT_TAG);
         }
     }
@@ -298,14 +297,14 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
                 case AppCast.FROODY_ENTRY_GEOCODED.ACTION: {
                     froodyEntry.setAddress(AppCast.getEntryFromIntent(intent).getAddress());
                     textLocation.setText(froodyEntry.getAddress());
-                    recheckInput();
+                    recheckUserInput();
                     break;
                 }
 
                 case AppCast.LOCATION_FOUND.ACTION: {
                     location = AppCast.LOCATION_FOUND.getResponseFromIntent(intent);
                     applyLocationToUi(GPS_Types.CURRENT);
-                    recheckInput();
+                    recheckUserInput();
                     break;
                 }
 
@@ -323,23 +322,6 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
         activity.setTitle(R.string.publish_entry);
         activity.navigationView.setCheckedItem(R.id.nav_publish_entry);
         requestLocationFromMainActivity();
-
-        // Simulate a location
-        String[] lastFoundLocation = new AppSettings(context).getLastFoundLocation();
-        if (!lastFoundLocation[0].isEmpty()) {
-            Double[] latlng = Helpers.geohashToLatLng(lastFoundLocation[0]);
-            if (latlng != null) {
-                LocationTool.LocationToolResponse location = new LocationTool.LocationToolResponse();
-                location.provider = "net";
-                location.lat = latlng[0];
-                location.lng = latlng[1];
-                this.location = location;
-                froodyEntry.loadGeohashFromLocation(latlng[0], latlng[1], 9);
-                applyLocationToUi(GPS_Types.PREVIOUS);
-                textLocation.setText(lastFoundLocation[1]);
-                recheckInput();
-            }
-        }
         super.onResume();
     }
 
@@ -384,12 +366,6 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
         }
     }
 
-    @OnClick(R.id.publish_entry__fragment__entry_type_selector)
-    public void onEntryTypeSelectorClicked(View view) {
-        DialogEntryTypeSelection yourDialogFragment = DialogEntryTypeSelection.newInstance(this, false);
-        yourDialogFragment.show(getFragmentManager(), DialogEntryTypeSelection.FRAGMENT_TAG);
-    }
-
     @Override
     public void onEntryTypeSelected(int entryType) {
         if ((entryType < FroodyEntryFormatter.ENTRY_TYPE_MIN
@@ -431,6 +407,16 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
             }
             settings.setLastEntryTypes(history);
         }
-        recheckInput();
+        recheckUserInput();
+    }
+
+    @Override
+    public String getFragmentTag() {
+        return FRAGMENT_TAG;
+    }
+
+    @Override
+    public boolean onBackPressed() {
+        return false;
     }
 }

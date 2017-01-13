@@ -3,6 +3,9 @@ package io.github.froodyapp.ui;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
+/**
+ * Base class for custom fragments to be shown in root of MainActivity
+ */
 public abstract class BaseFragment extends Fragment {
 
     @Override
@@ -11,7 +14,17 @@ public abstract class BaseFragment extends Fragment {
         setHasOptionsMenu(true);
     }
 
+    /**
+     * Get the fragment's tag
+     *
+     * @return the tag
+     */
     public abstract String getFragmentTag();
 
+    /**
+     * Back button was pressed, return true if was handled by fragment
+     *
+     * @return True if back handled by fragment
+     */
     public abstract boolean onBackPressed();
 }

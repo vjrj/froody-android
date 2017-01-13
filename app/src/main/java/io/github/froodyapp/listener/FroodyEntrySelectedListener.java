@@ -3,13 +3,13 @@ package io.github.froodyapp.listener;
 import io.github.froodyapp.model.FroodyEntryPlus;
 
 /**
- * Item selected listener
+ * FroodyEntry selected listener
  */
 public interface FroodyEntrySelectedListener {
     /**
-     * A froody item was selected
+     * A froody entry was selected
      *
-     * @param entry
+     * @param entry The entry
      */
     void onFroodyEntrySelected(FroodyEntryPlus entry);
 }

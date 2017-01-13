@@ -9,10 +9,10 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import io.github.froodyapp.R;
+import io.github.froodyapp.ui.CustomDialogs;
 import io.github.froodyapp.util.Helpers;
 
 /**
@@ -77,7 +77,8 @@ public class SplashActivity extends AppCompatActivity {
                 }
                 break;
         }
-        Toast.makeText(this, R.string.error_bad_permissions, Toast.LENGTH_LONG).show();
+
+        CustomDialogs.showErrorLocationPermDeniedDialog(this);
     }
 
     /**

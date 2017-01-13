@@ -18,7 +18,7 @@ import java.util.TimerTask;
 import io.github.froodyapp.util.AppCast;
 
 /**
- * Toolset for locating android device
+ * Toolset for locating position of android device
  *
  * @link http://stackoverflow.com/a/3145655
  */
@@ -26,7 +26,7 @@ public class LocationTool {
     //########################
     //## Static
     //########################
-    public static final int REQUEST_LOCATION_PERM = 42;
+    private static final int REQUEST_LOCATION_PERM = 42;
     private static final boolean DEBUG_FAKE_LOCATION_ENABLED = false; // PRs with true will get ignored
     private static final double[] DEBUG_FAKE_LOCATION = {48.378765, 14.512982};
     private static final int WAITING_TIME_LOCATION_MS = 15000;
@@ -44,7 +44,7 @@ public class LocationTool {
     private Timer lastLocationTimer;
     private LocationManager locationManager;
     private boolean isEnabledGPS = false;
-    private boolean isEneabledNET = false;
+    private boolean isEnabledNET = false;
     private Context context;
     private String requestedBy = "";
     private final boolean settingAllowGpsListening;
@@ -86,6 +86,7 @@ public class LocationTool {
         public void onStatusChanged(String provider, int status, Bundle extras) {
         }
     };
+
     /**
      * Gps location listener
      */
@@ -121,7 +122,7 @@ public class LocationTool {
      * Ask for location permission (if >= 6.0)
      *
      * @param activity Activity to show request on
-     * @return
+     * @return true if granted
      */
     public boolean askForLocationPermission(Activity activity) {
         if (ContextCompat.checkSelfPermission(activity,
@@ -165,7 +166,7 @@ public class LocationTool {
         }
 
         if (locationManager == null) {
-            locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+            locationManager = (LocationManager) this.context.getSystemService(Context.LOCATION_SERVICE);
         }
         //exceptions will be thrown if provider is not permitted.
         try {
@@ -173,20 +174,29 @@ public class LocationTool {
         } catch (Exception ignore) {
         }
         try {
-            isEneabledNET = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+            isEnabledNET = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
         } catch (Exception ignore) {
         }
         //don't start listeners if no provider is enabled
-        if (!isEnabledGPS && !isEneabledNET) {
+        if (!isEnabledGPS && !isEnabledNET) {
             return false;
         }
-        if (isEnabledGPS && settingAllowNetListening && ContextCompat.checkSelfPermission(context.getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
+
+        // Start GPS listening if everything is okay
+        if (isEnabledGPS && settingAllowNetListening
+                && ContextCompat.checkSelfPermission(this.context, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListenerGps);
-        if (isEneabledNET && settingAllowGpsListening && ContextCompat.checkSelfPermission(context.getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED)
+        }
+
+        // Start NET listening if everything is okay
+        if (isEnabledNET && settingAllowGpsListening
+                && ContextCompat.checkSelfPermission(this.context, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListenerNetwork);
+        }
+
         lastLocationTimer = new Timer();
         lastLocationTimer.schedule(new GetLastLocation(), WAITING_TIME_LOCATION_MS);
-        return isEnabledGPS || isEneabledNET;
+        return isEnabledGPS || isEnabledNET;
     }
 
 
@@ -195,9 +205,11 @@ public class LocationTool {
      * Call in onPause or if no data are wanted anymore
      */
     public void disableLocationTool() {
-        if (lastLocationTimer != null)
+        if (lastLocationTimer != null) {
             lastLocationTimer.cancel();
-        if (locationManager != null && ContextCompat.checkSelfPermission(context.getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+        }
+        if (locationManager != null
+                && ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             locationManager.removeUpdates(locationListenerGps);
             locationManager.removeUpdates(locationListenerNetwork);
         }
@@ -208,7 +220,7 @@ public class LocationTool {
      *
      * @param location the location
      */
-    public void postLocation(final Location location) {
+    private void postLocation(final Location location) {
         if (location != null) {
             LocationToolResponse response = new LocationToolResponse();
             response.lat = location.getLatitude();
@@ -224,37 +236,44 @@ public class LocationTool {
     /**
      * Task for reporting the Last Known Location
      */
-    class GetLastLocation extends TimerTask {
+    private class GetLastLocation extends TimerTask {
         @Override
         public void run() {
             try {
+                // Remove listening for location updates
                 locationManager.removeUpdates(locationListenerGps);
                 locationManager.removeUpdates(locationListenerNetwork);
             } catch (SecurityException ignored) {
                 // Already handled in UI
             }
 
-            Location net_loc = null, gps_loc = null;
-            if (isEnabledGPS && settingAllowNetListening && ContextCompat.checkSelfPermission(context.getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
-                gps_loc = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-            if (isEneabledNET && settingAllowGpsListening)
-                net_loc = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-            //if there are both values use the latest one
-            if (gps_loc != null && net_loc != null) {
-                if (gps_loc.getTime() > net_loc.getTime())
-                    postLocation(gps_loc);
-                else
-                    postLocation(net_loc);
+            Location foundLocNET = null, foundLocGPS = null;
+            if (isEnabledGPS && settingAllowNetListening
+                    && ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
+                foundLocGPS = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            if (isEnabledNET && settingAllowGpsListening
+                    && ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED)
+                foundLocNET = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+
+            // if there are both values available post the latest one
+            if (foundLocGPS != null && foundLocNET != null) {
+                postLocation(foundLocGPS.getTime() > foundLocNET.getTime() ? foundLocGPS : foundLocNET);
                 return;
             }
-            if (gps_loc != null) {
-                postLocation(gps_loc);
+
+            // Only GPS available
+            if (foundLocGPS != null) {
+                postLocation(foundLocGPS);
                 return;
             }
-            if (net_loc != null) {
-                postLocation(net_loc);
+
+            // Only NET available
+            if (foundLocNET != null) {
+                postLocation(foundLocNET);
                 return;
             }
+
+            // Nothing available
             postLocation(null);
         }
     }

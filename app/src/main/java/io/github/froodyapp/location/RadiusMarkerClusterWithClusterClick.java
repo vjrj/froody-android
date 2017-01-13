@@ -15,6 +15,10 @@ import java.util.ArrayList;
 import io.github.froodyapp.api.model_.FroodyEntry;
 import io.github.froodyapp.util.AppCast;
 
+/**
+ * RadiusMarker for osmdroid which sends marker click events
+ * Fork of https://github.com/MKergall/osmbonuspack/blob/v5.8/OSMBonusPack/src/main/java/org/osmdroid/bonuspack/clustering/RadiusMarkerClusterer.java
+ */
 public class RadiusMarkerClusterWithClusterClick extends RadiusMarkerClusterer {
     //########################
     //## Methods

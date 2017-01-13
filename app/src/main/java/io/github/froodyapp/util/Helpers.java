@@ -4,11 +4,13 @@ package io.github.froodyapp.util;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.Build;
+import android.net.Uri;
+import android.support.annotation.ColorRes;
+import android.support.annotation.DrawableRes;
+import android.support.annotation.RawRes;
 import android.support.v4.content.ContextCompat;
 
 import org.joda.time.DateTime;
@@ -22,7 +24,7 @@ import ch.hsr.geohash.GeoHash;
 import io.github.froodyapp.R;
 
 /**
- * Some quite helpful helpers
+ * Some quite useful helpers
  */
 public class Helpers {
     /**
@@ -49,6 +51,7 @@ public class Helpers {
         return activeNetInfo != null && activeNetInfo.isConnectedOrConnecting();
     }
 
+
     public static String latLngToGeohash(double lat, double lng, int precision) {
         return GeoHash.withCharacterPrecision(lat, lng, precision).toBase32();
     }
@@ -68,21 +71,15 @@ public class Helpers {
         return DateTime.now(DateTimeZone.UTC);
     }
 
-    public static Drawable getDrawable(Context c, int resId) {
+    public static Drawable getDrawableFromRes(Context c, @DrawableRes int resId) {
         return ContextCompat.getDrawable(c, resId);
     }
 
-    @SuppressWarnings("deprecation")
-    public static int getColorFromRes(Context context, int ressourceId) {
-        Resources res = context.getResources();
-        if (Build.VERSION.SDK_INT >= 23) {
-            return res.getColor(ressourceId, context.getTheme());
-        } else {
-            return res.getColor(ressourceId);
-        }
+    public static int getColorFromRes(Context context, @ColorRes int resId) {
+        return ContextCompat.getColor(context, resId);
     }
 
-    public static String readTextfileFromRawRes(Context context, int rawRessourceId, String linePrefix, String linePostfix) {
+    public static String readTextfileFromRawRes(Context context, @RawRes int rawRessourceId, String linePrefix, String linePostfix) {
         StringBuilder sb = new StringBuilder();
         String line;
         BufferedReader br = null;
@@ -107,5 +104,11 @@ public class Helpers {
             }
         }
         return sb.toString();
+    }
+
+    public static void openWebpageWithExternalBrowser(Context context, String url) {
+        Uri uri = Uri.parse(url);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        context.startActivity(intent);
     }
 }

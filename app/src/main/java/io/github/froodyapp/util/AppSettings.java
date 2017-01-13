@@ -4,12 +4,8 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.google.gson.Gson;
-
 import java.util.ArrayList;
-import java.util.concurrent.ConcurrentHashMap;
 
-import io.github.froodyapp.App;
 import io.github.froodyapp.R;
 import io.github.froodyapp.activity.MapOSMFragment;
 import io.github.froodyapp.api.model_.FroodyUser;
@@ -149,10 +145,6 @@ public class AppSettings {
         return getString(R.string.pref_key__froody_server, context.getString(R.string.server_default));
     }
 
-    public void setFroodyServer(String value) {
-        setString(R.string.pref_key__froody_server, value);
-    }
-
     public boolean hasLastMapLocation() {
         return getLastMapLocationZoom() >= MapOSMFragment.ZOOMLEVEL_BLOCK5_TRESHOLD;
     }
@@ -208,14 +200,6 @@ public class AppSettings {
         setInt(R.string.pref_key__entry__last_distribution, value);
     }
 
-    public String getMyEntries() {
-        return getString(R.string.pref_key__my_entries, "[]");
-    }
-
-    public void setMyEntries(String value) {
-        setString(R.string.pref_key__my_entries, value);
-    }
-
     public boolean getAllowLocationListeningGps() {
         return getBool(R.string.pref_key__allow_location_listening_gps, true);
     }
@@ -226,26 +210,6 @@ public class AppSettings {
 
     public boolean getAllowLocationListeningAny() {
         return getAllowLocationListeningGps() || getAllowLocationListeningNetwork();
-    }
-
-    public ConcurrentHashMap<String, BlockCache.BlockCacheItem> getLastBlockCache() {
-        String text = getString(R.string.pref_key__entry__blockcache, null);
-        try {
-            BlockCache.BlockCacheHolder blockCacheHolder = new Gson().fromJson(text, BlockCache.BlockCacheHolder.class);
-            if (blockCacheHolder != null && blockCacheHolder.map != null) {
-                return blockCacheHolder.map;
-            }
-        } catch (Exception e) {
-            App.log(getClass(), "Error: Empty BlockCache");
-        }
-        return new ConcurrentHashMap<>();
-    }
-
-    public void setLastBlockCache(ConcurrentHashMap<String, BlockCache.BlockCacheItem> blockCache) {
-        BlockCache.BlockCacheHolder blockCacheHolder = new BlockCache.BlockCacheHolder();
-        blockCacheHolder.map = blockCache;
-        String json = new Gson().toJson(blockCacheHolder, BlockCache.BlockCacheHolder.class);
-        setString(R.string.pref_key__entry__blockcache, json);
     }
 
     public void setLastFoundLocation(String geohash, String address) {

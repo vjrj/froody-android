@@ -11,6 +11,9 @@ import io.github.froodyapp.model.FroodyEntryPlus;
 import io.github.froodyapp.util.AppCast;
 import io.github.froodyapp.util.FroodyEntryFormatter;
 
+/**
+ * Marker container for osmdroid MapView
+ */
 public class EntryMarker extends Marker implements Marker.OnMarkerClickListener {
     //########################
     //## Static
@@ -33,9 +36,9 @@ public class EntryMarker extends Marker implements Marker.OnMarkerClickListener 
         this.froodyEntry = froodyEntry;
         super.setOnMarkerClickListener(this);
 
-        Context c = mapView.getContext();
-        if (c != null) {
-            FroodyEntryFormatter froodyEntryFormatter = new FroodyEntryFormatter(c, froodyEntry);
+        Context context = mapView.getContext();
+        if (context != null) {
+            FroodyEntryFormatter froodyEntryFormatter = new FroodyEntryFormatter(context, froodyEntry);
             setTitle(froodyEntryFormatter.getEntryTypeName());
             setIcon(froodyEntryFormatter.getEntryTypeImage());
         }
@@ -43,13 +46,10 @@ public class EntryMarker extends Marker implements Marker.OnMarkerClickListener 
         setPosition(new GeoPoint(froodyEntry.getLatitude(), froodyEntry.getLongitude()));
     }
 
-    public FroodyEntry getFroodyEntry() {
-        return froodyEntry;
-    }
-
     @Override
-    public void setOnMarkerClickListener(OnMarkerClickListener listener) {
-        anotherMarkerClickListener = listener;
+    public boolean onMarkerClick(Marker marker, MapView mapView) {
+        AppCast.FROODY_ENTRY_TAPPED.send(mapView.getContext(), froodyEntry);
+        return anotherMarkerClickListener == null || anotherMarkerClickListener.onMarkerClick(marker, mapView);
     }
 
     @Override
@@ -61,9 +61,15 @@ public class EntryMarker extends Marker implements Marker.OnMarkerClickListener 
         return super.equals(obj);
     }
 
+    //########################
+    //## Getter & Setter
+    //########################
+    public FroodyEntry getFroodyEntry() {
+        return froodyEntry;
+    }
+
     @Override
-    public boolean onMarkerClick(Marker marker, MapView mapView) {
-        AppCast.FROODY_ENTRY_TAPPED.send(mapView.getContext(), froodyEntry);
-        return anotherMarkerClickListener == null || anotherMarkerClickListener.onMarkerClick(marker, mapView);
+    public void setOnMarkerClickListener(OnMarkerClickListener listener) {
+        anotherMarkerClickListener = listener;
     }
 }

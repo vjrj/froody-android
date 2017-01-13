@@ -31,15 +31,13 @@ import io.github.froodyapp.util.AppSettings;
 import io.github.froodyapp.util.FroodyEntryFormatter;
 import io.github.froodyapp.util.MyEntriesHelper;
 
-public class BotsheetEntrySingle extends BottomSheetDialogFragment implements EntryDetailsLoader.ExtendedInfoLoaderListener {
+public class BotsheetEntrySingle extends BottomSheetDialogFragment implements EntryDetailsLoader.EntryDetailsLoaderListener {
     //########################
     //## Static
     //########################
 
-    /**
-     * @param froodyEntry Froody Entry/Entries
-     * @return
-     */
+
+    // Create new instance with one entry
     public static BotsheetEntrySingle newInstance(FroodyEntryPlus froodyEntry) {
         BotsheetEntrySingle f = new BotsheetEntrySingle();
         f.setFroodyEntry(froodyEntry);
@@ -88,76 +86,73 @@ public class BotsheetEntrySingle extends BottomSheetDialogFragment implements En
     @Override
     public void setupDialog(Dialog sheet, int style) {
         super.setupDialog(sheet, style);
-        View contentView = View.inflate(getContext(), R.layout.botsheet__entry_single, null);
-        sheet.setContentView(contentView);
-        ButterKnife.bind(this, contentView);
+        View root = View.inflate(getContext(), R.layout.botsheet__entry_single, null);
+        sheet.setContentView(root);
+        ButterKnife.bind(this, root);
         app = (App) getActivity().getApplication();
         appSettings = app.getAppSettings();
         myEntriesHelper = new MyEntriesHelper(getContext());
 
         // Set Coordinator Behaviour
-        CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) ((View) contentView.getParent()).getLayoutParams();
-        CoordinatorLayout.Behavior behavior = params.getBehavior();
+        CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) ((View) root.getParent()).getLayoutParams();
+        CoordinatorLayout.Behavior behavior = layoutParams.getBehavior();
         if (behavior != null && behavior instanceof BottomSheetBehavior) {
             ((BottomSheetBehavior) behavior).setBottomSheetCallback(mBottomSheetBehaviorCallback);
         }
 
-        // Load froody util
+        // Load froody entry
         if (froodyEntry != null) {
             loadFroodyEntry();
         }
     }
 
-    /**
-     * Load Froody Entry/Entries to UI
-     */
+    // Load Froody Entry/Entries to UI
     private void loadFroodyEntry() {
-        FroodyEntryFormatter froodyUtil = new FroodyEntryFormatter(getContext(), froodyEntry);
+        FroodyEntryFormatter entryFormatter = new FroodyEntryFormatter(getContext(), froodyEntry);
 
-        if (!froodyUtil.hasExtendedInfoLoaded() && extendedInfoLoadTryCount < 3) {
+        if (!entryFormatter.hasExtendedInfoLoaded() && extendedInfoLoadTryCount < 3) {
             extendedInfoLoadTryCount++;
             new EntryDetailsLoader(getActivity(), froodyEntry, this, "BotSheetSingle").start();
         }
 
-        // Set UI
+        // Apply to UI
         buttonDelete.setVisibility(myEntriesHelper.isMyEntry(froodyEntry.getEntryId()) ? View.VISIBLE : View.GONE);
-        textAddress.setText(froodyUtil.getLocationInfo());
-        textCertification.setText(froodyUtil.getCertification());
-        textDistribution.setText(froodyUtil.getDistribution());
-        textFroodyType.setText(froodyUtil.getEntryTypeName());
+        textAddress.setText(entryFormatter.getLocationInfo());
+        textCertification.setText(entryFormatter.getCertification());
+        textDistribution.setText(entryFormatter.getDistribution());
+        textFroodyType.setText(entryFormatter.getEntryTypeName());
         textDescription.setText(froodyEntry.getDescription());
         textContact.setText(froodyEntry.getContact());
     }
 
-    /**
-     * Share button was pressed
-     *
-     * @param view View
-     */
-    @OnClick(R.id.botsheet__entry_single__button_share)
-    public void onShareButtonClicked(View view) {
-        MyEntriesHelper.shareEntry(getContext(), froodyEntry);
-    }
+    // Delete or Share button was pressed
+    @OnClick({R.id.botsheet__entry_single__button_delete, R.id.botsheet__entry_single__button_share})
+    public void onEntryButtonClicked(View view) {
+        switch (view.getId()) {
+            // Share entry
+            case R.id.botsheet__entry_single__button_share: {
+                MyEntriesHelper.shareEntry(view.getContext(), froodyEntry);
+                break;
+            }
 
-    /**
-     * Delete Button was pressed
-     *
-     * @param view button
-     */
-    @OnClick(R.id.botsheet__entry_single__button_delete)
-    public void onDeleteButtonClicked(View view) {
-        if (myEntriesHelper.isMyEntry(froodyEntry.getEntryId())) {
-            dismiss();
-            CustomDialogs.showDeleteDialog(getContext(), froodyEntry, new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) {
+            // Delete entry
+            case R.id.botsheet__entry_single__button_delete: {
+                if (myEntriesHelper.isMyEntry(froodyEntry.getEntryId())) {
                     dismiss();
-                    myEntriesHelper.retrieveMyEntryDetails(froodyEntry);
-                    deleteEntryViaApi();
+                    CustomDialogs.showDeleteDialog(getContext(), froodyEntry, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dismiss();
+                            myEntriesHelper.retrieveMyEntryDetails(froodyEntry);
+                            deleteEntryViaApi();
+                        }
+                    });
                 }
-            });
+                break;
+            }
         }
     }
 
+    // Make an call to API to delete an Entry
     private void deleteEntryViaApi() {
         final EntryApi entryApi = new EntryApi();
         try {
@@ -170,11 +165,11 @@ public class BotsheetEntrySingle extends BottomSheetDialogFragment implements En
                 @Override
                 public void onSuccess(ResponseOk result, int statusCode, Map<String, List<String>> responseHeaders) {
                     if (result != null) {
-                        AppCast.FROODY_ENTRY_DELETED.send(app.getApplicationContext(), froodyEntry, result.getSuccess());
                         if (result.getSuccess()) {
                             myEntriesHelper.removeFromMyEntries(froodyEntry);
                             dismiss();
                         }
+                        AppCast.FROODY_ENTRY_DELETED.send(app.getApplicationContext(), froodyEntry, result.getSuccess());
                     }
                 }
 
@@ -189,19 +184,18 @@ public class BotsheetEntrySingle extends BottomSheetDialogFragment implements En
         }
     }
 
-    /**
-     * Set the Froody Entry/Entries
-     *
-     * @param froodyEntry Froody Entry/Entries
-     */
-    public void setFroodyEntry(FroodyEntryPlus froodyEntry) {
-        this.froodyEntry = froodyEntry;
-    }
-
     @Override
-    public void onFroodyEntryExtendedInfoLoaded(FroodyEntryPlus entry) {
+    public void onFroodyEntryDetailsLoaded(FroodyEntryPlus entry) {
         if (getContext() != null && getActivity() != null) {
             loadFroodyEntry();
         }
     }
+
+    //########################
+    //## Getter & Setter
+    //########################
+    public void setFroodyEntry(FroodyEntryPlus froodyEntry) {
+        this.froodyEntry = froodyEntry;
+    }
+
 }

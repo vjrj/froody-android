@@ -37,39 +37,27 @@ public class FroodyEntryFormatter extends FroodyEntryPlus {
     //## Methods
     //########################
 
-    /**
-     * Constructor
-     *
-     * @param context     context
-     * @param froodyEntry Froody Entry
-     */
+
+    // Default constructor
     public FroodyEntryFormatter(Context context, FroodyEntryPlus froodyEntry) {
         super(froodyEntry);
         this.context = context.getApplicationContext();
     }
 
-    /**
-     * Constructor (empty dataset, use with caution!)
-     *
-     * @param context context
-     */
+    // Constructor (empty data, use with caution!)
     public FroodyEntryFormatter(Context context) {
         super(new FroodyEntryPlus(new FroodyEntry()));
         this.context = context.getApplicationContext();
     }
 
+    // Meant to be chained  ( changeEntryTo(entry).getEntryTypeName() )
     public FroodyEntryFormatter changeEntryTo(FroodyEntry froodyEntry) {
-        // Meant to be chained  ( changeEntyTo(enty).getEntryTypeName() )
         this.entry = froodyEntry;
         //loadLocationFromGeohash();
         return this;
     }
 
-    /**
-     * Summarize an Froody Entry
-     *
-     * @return
-     */
+    // Summarize an Froody Entry (more infos than toString()
     public String summarize() {
         String msg = getEntryTypeName() + "\n" +
                 getDescription() + "\n" +
@@ -78,11 +66,7 @@ public class FroodyEntryFormatter extends FroodyEntryPlus {
         return msg.trim();
     }
 
-    /**
-     * Get certification of Froody Entry
-     *
-     * @return
-     */
+    // Get certification of Froody Entry
     public String getCertification() {
         String[] d = context.getResources().getStringArray(R.array.certification_types);
         int i = 0;
@@ -92,17 +76,14 @@ public class FroodyEntryFormatter extends FroodyEntryPlus {
         return d[i];
     }
 
-    /**
-     * Get froody type of Froody Entry
-     *
-     * @return
-     */
+    // Get froody type of Froody Entry
     public String getEntryTypeName() {
         String[] entryTypeNames = context.getResources().getStringArray(R.array.entry_type__names);
         return entryTypeNames[getEntryTypeResArrayIndex()];
     }
 
-    public int getEntryTypeResArrayIndex() {
+
+    private int getEntryTypeResArrayIndex() {
         if (COUNT_ENTRY_TYPE_LOCAL < 0) {
             String[] resources = context.getResources().getStringArray(R.array.entry_type__names);
             COUNT_ENTRY_TYPE_LOCAL = resources.length;
@@ -112,11 +93,7 @@ public class FroodyEntryFormatter extends FroodyEntryPlus {
                 ? ENTRY_TYPE_UNKNOWN : entryType;
     }
 
-    /**
-     * Get distribution type of entry
-     *
-     * @return
-     */
+    //Get distribution type of entry
     public String getDistribution() {
         String[] d = context.getResources().getStringArray(R.array.distribution_types);
         int i = 0;
@@ -144,6 +121,7 @@ public class FroodyEntryFormatter extends FroodyEntryPlus {
         return !typesAllowedNotToCertify.contains(getEntryType());
     }
 
+    // Combined string of certification and distribution
     public String getCertificationAndDistributionInfo() {
         StringBuilder sb = new StringBuilder(getDistribution());
         Integer certType = entry.getCertificationType();
@@ -156,7 +134,6 @@ public class FroodyEntryFormatter extends FroodyEntryPlus {
 
     public Drawable getEntryTypeImage() {
         TypedArray imgs = context.getResources().obtainTypedArray(R.array.entry_type__images);
-        int a = getEntryTypeResArrayIndex();
         Drawable drawable = imgs.getDrawable(getEntryTypeResArrayIndex());
         imgs.recycle();
         return drawable;

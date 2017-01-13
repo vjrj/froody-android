@@ -1,7 +1,7 @@
 package io.github.froodyapp.listener;
 
 /**
- * Item selected listener
+ * Entry type selected listener
  */
 public interface EntryTypeSelectedListener {
     /**

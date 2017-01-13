@@ -22,6 +22,9 @@ import io.github.froodyapp.api.model_.FroodyEntry;
 import io.github.froodyapp.model.BlockInfoPlus;
 import io.github.froodyapp.model.FroodyEntryPlus;
 
+/**
+ * Cache of blocks (containing lists of FroodyEntries)
+ */
 public class BlockCache {
     //#####################
     //##      Statics
@@ -48,6 +51,8 @@ public class BlockCache {
         cacheMap = new ConcurrentHashMap<>();
     }
 
+
+    // Load BlockCache from app's cache directory
     @SuppressWarnings("unchecked")
     public synchronized void loadFromAppCache(Context context) {
         try {
@@ -64,6 +69,23 @@ public class BlockCache {
         }
     }
 
+    // Save BlockCache to app's cache directory
+    public synchronized void saveToAppCache(Context context) {
+        try {
+            cleanOldEntries();
+            File file = new File(context.getCacheDir(), "map.dat");
+            ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(file));
+            outputStream.writeObject(cacheMap);
+            outputStream.flush();
+            outputStream.close();
+        } catch (Exception e) {
+            App.log(getClass(), "Error: Cannot save CacheMap to cache---" + e.getMessage());
+        }
+    }
+
+    /**
+     * Remove those entries from cache, that are not needed anymore
+     */
     public void cleanOldEntries() {
         for (BlockCacheItem blockCache : cacheMap.values()) {
             List<Long> itemsToRemove = new ArrayList<>();
@@ -76,19 +98,6 @@ public class BlockCache {
             for (Long rmId : itemsToRemove) {
                 blockCache.entries.remove(rmId);
             }
-        }
-    }
-
-    public synchronized void saveToAppCache(Context context) {
-        try {
-            cleanOldEntries();
-            File file = new File(context.getCacheDir(), "map.dat");
-            ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(file));
-            outputStream.writeObject(cacheMap);
-            outputStream.flush();
-            outputStream.close();
-        } catch (Exception e) {
-            App.log(getClass(), "Error: Cannot save CacheMap to cache---" + e.getMessage());
         }
     }
 
@@ -158,6 +167,7 @@ public class BlockCache {
         return retEntries;
     }
 
+    // Process a single entry containing details
     public void processEntryWithDetails(FroodyEntryPlus entry) {
         String block6 = entry.getGeohashWithPrecision(6);
         BlockCacheItem cacheItem = getBlockCacheItemAt(block6);
@@ -182,6 +192,7 @@ public class BlockCache {
         }
     }
 
+    // Try to get a single entry from the cache. Queries by ID
     public FroodyEntryPlus tryGetEntryByIdFromCache(FroodyEntryPlus entry) {
         String block6 = entry.getGeohashWithPrecision(6);
         BlockCacheItem cacheItem = getBlockCacheItemAt(block6);

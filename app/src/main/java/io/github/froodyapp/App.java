@@ -6,14 +6,13 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import io.github.froodyapp.api.invoker.Configuration;
-import io.github.froodyapp.api.model_.FroodyUser;
 import io.github.froodyapp.service.UserRegisterer;
 import io.github.froodyapp.util.AppSettings;
 import io.github.froodyapp.util.MyEntriesHelper;
 
 
 /**
- * The App's main App Object. Available from every activity.
+ * The App's Application Object. Available from every activity.
  */
 public class App extends Application {
     //#####################
@@ -24,7 +23,7 @@ public class App extends Application {
     /**
      * Log to console
      *
-     * @param classWhereHappening classWhereHappening
+     * @param classWhereHappening Class where error occurred
      * @param text                text to log
      */
     public static void log(Class classWhereHappening, String text) {
@@ -47,22 +46,17 @@ public class App extends Application {
 
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
 
-        appSettings = new AppSettings(getApplicationContext());
+        appSettings = new AppSettings(this);
         String server = appSettings.getFroodyServer();
         Configuration.getDefaultApiClient().setBasePath(server);
-        UserRegisterer.userRegister(this);
+        UserRegisterer.registerUserIfNotRegistered(this);
 
-        new MyEntriesHelper(getApplicationContext()).processMyEntriesToBlockCache();
+        new MyEntriesHelper(this).processMyEntriesToBlockCache();
     }
 
     //#####################
     //## Getter & Setter
     //#####################
-
-    public FroodyUser getFroodyUser() {
-        return appSettings.getFroodyUser();
-    }
-
     public AppSettings getAppSettings() {
         return appSettings;
     }

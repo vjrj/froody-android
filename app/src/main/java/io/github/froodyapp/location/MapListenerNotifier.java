@@ -6,6 +6,10 @@ import org.osmdroid.views.MapView;
 import io.github.froodyapp.activity.MapOSMFragment;
 import io.github.froodyapp.util.AppCast;
 
+/**
+ * Notifier, which sends out the current visible location on the osmdroid map
+ * Reduces amount of location changed events
+ */
 public class MapListenerNotifier extends Thread {
     //########################
     //## Static

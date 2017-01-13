@@ -50,9 +50,6 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
         return new MapOSMFragment();
     }
 
-    public MapOSMFragment() {
-    }
-
     //#####################
     //##      Members
     //#####################
@@ -61,6 +58,7 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
     private RotationGestureOverlay rotationGesture;
     private RadiusMarkerClusterWithClusterClick mapCluster;
     private ArrayList<EntryMarker> entryMarkersInCluster;
+    private AppSettings appSettings;
 
 
     @Nullable
@@ -85,7 +83,7 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
         }
 
         // Init
-        AppSettings settings = new AppSettings(c);
+        appSettings = new AppSettings(c);
         mapController = map.getController();
         entryMarkersInCluster = new ArrayList<>();
         mapCluster = new RadiusMarkerClusterWithClusterClick(c);
@@ -105,7 +103,7 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
         map.getOverlays().add(rotationGesture);
 
         // Cluster
-        Drawable clusterIconD = Helpers.getDrawable(c, R.drawable.green_circle);
+        Drawable clusterIconD = Helpers.getDrawableFromRes(c, R.drawable.green_circle);
         mapCluster.setIcon(((BitmapDrawable) clusterIconD).getBitmap());
 
         // Load entries with existing management code
@@ -117,12 +115,16 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
         loadEntriesFromBlockCache();
         recluster();
 
-        // Load position from last creation of map
-        if (settings.hasLastMapLocation()) {
+        tryZoomToLastMapLocation();
+    }
+
+    // Load position from last movement on map
+    public void tryZoomToLastMapLocation() {
+        if (appSettings.hasLastMapLocation()) {
             zoomToPosition(
-                    settings.getLastMapLocationLatitude(),
-                    settings.getLastMapLocationLongitude(),
-                    settings.getLastMapLocationZoom()
+                    appSettings.getLastMapLocationLatitude(),
+                    appSettings.getLastMapLocationLongitude(),
+                    appSettings.getLastMapLocationZoom()
             );
         }
     }

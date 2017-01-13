@@ -1,10 +1,8 @@
 package io.github.froodyapp.activity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.SpannableString;
@@ -26,7 +24,7 @@ import io.github.froodyapp.ui.CustomDialogs;
 import io.github.froodyapp.util.Helpers;
 
 /**
- * Activity for informations about the app
+ * Activity for information about the app
  */
 public class InfoFragment extends BaseFragment {
     //########################
@@ -107,17 +105,13 @@ public class InfoFragment extends BaseFragment {
         return false;
     }
 
-    /**
-     * App version was clicked
-     *
-     * @param v version
-     */
+    // App version or license was clicked
     @OnClick({R.id.info__fragment__text_app_version, R.id.info__fragment__button_licenses})
     public void onButtonClicked(View v) {
         Context context = v.getContext();
         switch (v.getId()) {
             case R.id.info__fragment__text_app_version: {
-                openWebpage(getString(R.string.project_github_page));
+                Helpers.openWebpageWithExternalBrowser(context, getString(R.string.project_github_page));
                 break;
             }
             case R.id.info__fragment__button_licenses: {
@@ -125,17 +119,6 @@ public class InfoFragment extends BaseFragment {
                 break;
             }
         }
-    }
-
-    /**
-     * Open the web page
-     *
-     * @param url the url
-     */
-    private void openWebpage(String url) {
-        Uri uri = Uri.parse(url);
-        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-        startActivity(intent);
     }
 
     public String getMaintainersHtml(Context context) {
@@ -149,7 +132,6 @@ public class InfoFragment extends BaseFragment {
     public String getFragmentTag() {
         return FRAGMENT_TAG;
     }
-
 
     @Override
     public void onResume() {

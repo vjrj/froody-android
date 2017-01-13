@@ -46,7 +46,7 @@ import io.github.froodyapp.util.MyEntriesHelper;
 
 
 /**
- * Main Activity
+ * Main Activity of the app
  */
 public class MainActivity extends AppCompatActivity implements FroodyEntrySelectedListener,
         NavigationView.OnNavigationItemSelectedListener,
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
 
         setupBars();
 
-        // Show map fragment
+        // Load block cache & show map fragment
         try {
             BlockCache.getInstance().loadFromAppCache(this);
         } catch (Exception ignored) {
@@ -451,8 +451,10 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
                     int zoom = intent.getIntExtra(AppCast.MAP_POSITION_CHANGED.EXTRA_ZOOM, 15);
 
                     new EntryByBlockLoader(context, lat, lng, zoom).start();
-                    appSettings.setLastMapLocation(lat, lng, zoom);
 
+                    if (zoom >= MapOSMFragment.ZOOMLEVEL_BLOCK5_TRESHOLD) {
+                        appSettings.setLastMapLocation(lat, lng, zoom);
+                    }
                     break;
                 }
 

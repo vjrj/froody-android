@@ -8,6 +8,9 @@ import java.io.Serializable;
 import io.github.froodyapp.api.model_.BlockInfo;
 import io.github.froodyapp.util.Helpers;
 
+/**
+ * BlockInfo with more details
+ */
 public class BlockInfoPlus extends BlockInfo implements Serializable {
     //########################
     //## Member

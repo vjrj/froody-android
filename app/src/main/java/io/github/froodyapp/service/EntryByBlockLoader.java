@@ -4,7 +4,6 @@ import android.content.Context;
 
 import com.google.gson.JsonParseException;
 
-import org.apache.commons.lang3.ObjectUtils;
 import org.joda.time.DateTime;
 
 import java.util.List;
@@ -23,7 +22,7 @@ import io.github.froodyapp.util.BlockCache;
 import io.github.froodyapp.util.Helpers;
 
 /**
- * Task for loading map markers
+ * Task for loading blocks via API
  */
 public class EntryByBlockLoader extends Thread {
     //########################

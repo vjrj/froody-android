@@ -12,16 +12,16 @@ import io.github.froodyapp.model.FroodyEntryPlus;
 import io.github.froodyapp.util.AppCast;
 
 /**
- * Helper for loading extended informations about an FroodyEntry
+ * Helper for loading extended information about an FroodyEntry
  */
 public class EntryDetailsLoader extends Thread {
     //########################
     //## Member
     //########################
-    final Activity activity;
-    final FroodyEntryPlus entry;
-    final ExtendedInfoLoaderListener listener;
-    final String requestedBy;
+    private final Activity activity;
+    private final FroodyEntryPlus entry;
+    private final EntryDetailsLoaderListener listener;
+    private final String requestedBy;
 
     //########################
     //## Methods
@@ -34,7 +34,7 @@ public class EntryDetailsLoader extends Thread {
      * @param entry    the froodyEntry
      * @param listener callback listener (activity)
      */
-    public EntryDetailsLoader(final Activity activity, final FroodyEntryPlus entry, final ExtendedInfoLoaderListener listener, String requestedBy) {
+    public EntryDetailsLoader(final Activity activity, final FroodyEntryPlus entry, final EntryDetailsLoaderListener listener, String requestedBy) {
         this.activity = activity;
         this.entry = entry;
         this.listener = listener;
@@ -66,29 +66,20 @@ public class EntryDetailsLoader extends Thread {
         }
     }
 
-    /**
-     * Post the result to activity
-     */
+    // Post the result to activity
     private void postResult() {
         AppCast.FROODY_ENTRY_DETAILS_LOADED.send(activity.getApplicationContext(), entry, requestedBy);
         if (activity != null && listener != null) {
             activity.runOnUiThread(new Runnable() {
                 public void run() {
-                    listener.onFroodyEntryExtendedInfoLoaded(entry);
+                    listener.onFroodyEntryDetailsLoaded(entry);
                 }
             });
         }
     }
 
-    /**
-     * Callback listener
-     */
-    public interface ExtendedInfoLoaderListener {
-        /**
-         * Extended FroodyEntry infos were loaded
-         *
-         * @param entry ref to froodyEntry
-         */
-        void onFroodyEntryExtendedInfoLoaded(FroodyEntryPlus entry);
+    // Callback listener - notify when detail infos where loaded
+    public interface EntryDetailsLoaderListener {
+        void onFroodyEntryDetailsLoaded(FroodyEntryPlus entry);
     }
 }

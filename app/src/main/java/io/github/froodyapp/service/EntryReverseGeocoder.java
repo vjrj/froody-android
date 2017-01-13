@@ -3,7 +3,6 @@ package io.github.froodyapp.service;
 import android.content.Context;
 import android.location.Address;
 import android.text.TextUtils;
-import android.util.Log;
 
 import org.osmdroid.bonuspack.location.GeocoderNominatim;
 
@@ -12,12 +11,13 @@ import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.ConcurrentHashMap;
 
+import io.github.froodyapp.App;
 import io.github.froodyapp.model.FroodyEntryPlus;
 import io.github.froodyapp.util.AppCast;
 import io.github.froodyapp.util.AppSettings;
 
 /**
- * Task for reverse geo coding lat/lng
+ * Reverse geo coder via osmdroid API
  */
 public class EntryReverseGeocoder extends Thread {
     //########################
@@ -65,50 +65,40 @@ public class EntryReverseGeocoder extends Thread {
     }
 
     /**
-     * Geo-Addresse aufloesen
+     * Resolve address of one entry
      *
-     * @param entry Eintrag
-     * @return String mit addresse, oder leerer string bei fehler
+     * @param entry Entry
+     * @return String with address, or empty string in case of error
      */
     private String resolveGeoAddress(FroodyEntryPlus entry) {
         List<Address> addresses = null;
         try {
             addresses = geocoder.getFromLocation(entry.getLatitude(), entry.getLongitude(), 3);
         } catch (IOException e) {
-            Log.e(getClass().getName(), "Error: Cannot reverse geocode " + entry.getEntryId());
+            App.log(getClass(), "Error: Cannot reverse geocode " + entry.getEntryId());
         }
         if (addresses != null && addresses.size() > 0) {
             Address address = addresses.get(0);
-            StringBuffer sb = new StringBuffer();
-            extractFromAddress(address, sb);
-            return sb.toString().trim();
+            return extractAddressDetails(address);
         }
         return "";
     }
 
-    /**
-     * Extract the address (small)
-     *
-     * @param address address object
-     * @param sb      stringbuffer
-     */
-    public void extractFromAddress(Address address, StringBuffer sb) {
+    // Extract the address details from address object of osmdroid api
+    private String extractAddressDetails(Address address) {
+        StringBuffer sb = new StringBuffer();
         //sb.append(trim(address.getCountryName()));    // Country - Austria
         //sb.append(trim(address.getCountryCode()));    // Country short - AT
         //sb.append(trim(address.getFeatureName()));    // StreetNumber - 23
-        sb.append(trim(address.getThoroughfare()));     // StreetName
+        sb.append(trim(address.getThoroughfare()));     // StreetName - Softwarepark
         sb.append(", ");
         sb.append(trim(address.getPostalCode()));       // ZipCode   4323
         sb.append(" ");
         sb.append(trim(address.getLocality()));         // Village  Hagenberg
+        return sb.toString().trim();
     }
 
-    /**
-     * Trim string
-     *
-     * @param str Whitespaced string
-     * @return Non-whitespaced string
-     */
+    // Trim string if possible
     private String trim(String str) {
         return TextUtils.isEmpty(str) ? "" : str.trim();
     }
