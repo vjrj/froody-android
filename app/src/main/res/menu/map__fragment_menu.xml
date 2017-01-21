@@ -3,12 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_get_location"
-        android:icon="@drawable/ic_location_on_white_48px"
-        android:title="@string/request_location"
-        app:showAsAction="ifRoom" />
-
-    <item
         android:id="@+id/action_add"
         android:icon="@drawable/ic_add_white_48px"
         android:title="@string/publish_entry"

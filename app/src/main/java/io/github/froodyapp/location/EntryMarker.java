@@ -1,9 +1,12 @@
 package io.github.froodyapp.location;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
 
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
+import org.osmdroid.views.Projection;
 import org.osmdroid.views.overlay.Marker;
 
 import io.github.froodyapp.api.model_.FroodyEntry;
@@ -18,6 +21,8 @@ public class EntryMarker extends Marker implements Marker.OnMarkerClickListener 
     //########################
     //## Static
     //########################
+    private static final int MARKER_SIZE_IN_DP = 40;
+
     public static EntryMarker from(MapView mapView, FroodyEntryPlus froodyEntry) {
         return new EntryMarker(mapView, froodyEntry);
     }
@@ -60,6 +65,36 @@ public class EntryMarker extends Marker implements Marker.OnMarkerClickListener 
         }
         return super.equals(obj);
     }
+
+    @Override
+    @SuppressWarnings("SuspiciousNameCombination")
+    // Override default osmdroid drawing behaviour to scale by dp units
+    public void draw(Canvas canvas, MapView mapView, boolean shadow) {
+        if (shadow || mIcon == null) {
+            return;
+        }
+
+        // Scale by DP
+        int height = (int) (mapView.getContext().getResources().getDisplayMetrics().scaledDensity * MARKER_SIZE_IN_DP);
+        int width = height;
+        if (mIcon.getIntrinsicWidth() > mIcon.getIntrinsicHeight()) {
+            height = width * mIcon.getIntrinsicHeight() / mIcon.getIntrinsicWidth();
+        } else {
+            width = height * mIcon.getIntrinsicWidth() / mIcon.getIntrinsicHeight();
+        }
+
+        // Draw like in original method
+        final Projection pj = mapView.getProjection();
+        pj.toPixels(mPosition, mPositionPixels);
+        Rect rect = new Rect(0, 0, width, height);
+        rect.offset(-(int) (mAnchorU * width), -(int) (mAnchorV * height));
+        mIcon.setBounds(rect);
+        mIcon.setAlpha((int) (mAlpha * 255));
+
+        float rotationOnScreen = (mFlat ? -mBearing : mapView.getMapOrientation() - mBearing);
+        drawAt(canvas, mIcon, mPositionPixels.x, mPositionPixels.y, false, rotationOnScreen);
+    }
+
 
     //########################
     //## Getter & Setter

@@ -46,7 +46,7 @@
             android:layout_width="48dp"
             android:layout_height="match_parent"
             android:layout_gravity="top|end"
-            android:src="@drawable/ic_share_white_48px"
+            app:srcCompat="@drawable/ic_share_white_48px"
             android:visibility="gone"
             app:backgroundTint="@color/white"
             app:elevation="1dp" />

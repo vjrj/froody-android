@@ -8,7 +8,6 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -64,7 +63,9 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        map = new MapView(inflater.getContext());
+        Context context = inflater.getContext();
+        map = new MapView(context);
+        map.setBackgroundColor(Helpers.getColorFromRes(context, R.color.white));
         return map;
     }
 
@@ -291,12 +292,6 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.map__fragment_menu, menu);
         super.onCreateOptionsMenu(menu, inflater);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // R.id.action_add --> Handled in parent (MainActivity)
-        return super.onOptionsItemSelected(item);
     }
 
     @Override

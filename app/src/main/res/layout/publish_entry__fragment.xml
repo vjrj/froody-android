@@ -30,6 +30,7 @@
 
 
             <TextView
+                android:id="@+id/publish_entry__fragment__text_entry_type_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="0dp"
@@ -53,7 +54,7 @@
                     android:layout_marginEnd="5dp"
                     android:layout_marginStart="5dp"
                     android:contentDescription="@string/image"
-                    android:src="@drawable/finger_leading" />
+                    app:srcCompat="@drawable/finger_leading" />
 
                 <TextView
                     android:id="@+id/publish_entry__fragment__entry_type_name"
@@ -67,6 +68,7 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/publish_entry__fragment__text_distribution_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/input_field_margin"
@@ -83,6 +85,7 @@
                 android:prompt="@string/distribution_type__free" />
 
             <TextView
+                android:id="@+id/publish_entry__fragment__text_certification_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/input_field_margin"
@@ -99,6 +102,7 @@
                 android:prompt="@string/certification_type__none" />
 
             <TextView
+                android:id="@+id/publish_entry__fragment__text_description_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/input_field_margin"
@@ -115,6 +119,7 @@
                     Sonst gibts keine TextVorschlage von Android ;) -->
 
             <TextView
+                android:id="@+id/publish_entry__fragment__text_contact_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/input_field_margin"
@@ -129,47 +134,22 @@
                 android:maxLength="@integer/edit_small_maxchars_140" />
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/publish_entry__fragment__text_location_header"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginTop="@dimen/input_field_margin"
+                android:text="@string/location"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/publish_entry__fragment__text_location_header"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/input_field_margin"
-                        android:text="@string/location"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
-
-                    <TextView
-                        android:id="@+id/publish_entry__fragment__text_location"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="@string/gps_locating_user"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        android:textColor="#000000" />
-                </LinearLayout>
-
-                <android.support.v7.widget.AppCompatButton
-                    android:id="@+id/publish_entry__fragment__button_gps"
-                    android:layout_width="@dimen/publish_entry__fragment__gps_button"
-                    android:layout_height="@dimen/publish_entry__fragment__gps_button"
-                    android:layout_gravity="bottom"
-                    android:background="@drawable/ic_gps_fixed_white_48px"
-                    android:clickable="true"
-                    android:src="@drawable/ic_gps_fixed_white_48px"
-                    android:text=""
-                    app:backgroundTint="@color/very_red" />
-            </LinearLayout>
-
+            <TextView
+                android:id="@+id/publish_entry__fragment__text_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/gps_locating_user"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#000000" />
 
             <!-- ScrollView bottom scrollOver (empty space) -->
             <View
@@ -184,7 +164,7 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin">
 
-        <Button
+        <android.support.v7.widget.AppCompatButton
             android:id="@+id/publish_entry__fragment__button_submit_entry"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

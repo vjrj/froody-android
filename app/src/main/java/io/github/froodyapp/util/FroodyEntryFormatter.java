@@ -3,6 +3,9 @@ package io.github.froodyapp.util;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.DrawableRes;
+import android.support.graphics.drawable.VectorDrawableCompat;
+import android.support.v7.widget.AppCompatDrawableManager;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -60,9 +63,9 @@ public class FroodyEntryFormatter extends FroodyEntryPlus {
     // Summarize an Froody Entry (more infos than toString()
     public String summarize() {
         String msg = getEntryTypeName() + "\n" +
+                getLocationInfo() + "\n" +
                 getDescription() + "\n" +
-                getContact() + "\n" +
-                getLocationInfo() + "\n";
+                getContact() + "\n";
         return msg.trim();
     }
 
@@ -134,8 +137,17 @@ public class FroodyEntryFormatter extends FroodyEntryPlus {
 
     public Drawable getEntryTypeImage() {
         TypedArray imgs = context.getResources().obtainTypedArray(R.array.entry_type__images);
-        Drawable drawable = imgs.getDrawable(getEntryTypeResArrayIndex());
+        int resId = imgs.getResourceId(getEntryTypeResArrayIndex(), R.drawable.entry_type__special__unknown);
         imgs.recycle();
+
+        return getBitmapFromDrawable(context, resId);
+    }
+
+    public static Drawable getBitmapFromDrawable(Context context, @DrawableRes int drawableId) {
+        Drawable drawable = AppCompatDrawableManager.get().getDrawable(context, drawableId);
+        if (drawable instanceof VectorDrawableCompat) {
+        }
         return drawable;
     }
+
 }

@@ -5,7 +5,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.AppCompatButton;
@@ -14,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -72,11 +70,24 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
     //####################
     //##  UI-Binding
     //####################
-    @BindView(R.id.publish_entry__fragment__button_submit_entry)
-    Button btnSubmitFroodyEntry;
 
     @BindView(R.id.publish_entry__fragment__text_location_header)
     TextView textLocationHeader;
+
+    @BindView(R.id.publish_entry__fragment__text_entry_type_header)
+    TextView textEntryTypeHeader;
+
+    @BindView(R.id.publish_entry__fragment__text_certification_header)
+    TextView textCertificationHeader;
+
+    @BindView(R.id.publish_entry__fragment__text_distribution_header)
+    TextView textDistributionHeader;
+
+    @BindView(R.id.publish_entry__fragment__text_contact_header)
+    TextView textContactHeader;
+
+    @BindView(R.id.publish_entry__fragment__text_description_header)
+    TextView textDescriptionHeader;
 
     @BindView(R.id.publish_entry__fragment__text_location)
     TextView textLocation;
@@ -99,8 +110,8 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
     @BindView(R.id.publish_entry__fragment__edit_contact)
     EditText editContact;
 
-    @BindView(R.id.publish_entry__fragment__button_gps)
-    AppCompatButton btnGps;
+    @BindView(R.id.publish_entry__fragment__button_submit_entry)
+    AppCompatButton buttonSubmitFroodyEntry;
 
     //####################
     //##  Members
@@ -191,7 +202,13 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
      */
     private void recheckUserInput() {
         boolean valid = hasValidInput();
-        btnSubmitFroodyEntry.setEnabled(valid);
+        buttonSubmitFroodyEntry.setEnabled(valid);
+        int red = Helpers.getColorFromRes(getContext(), R.color.very_red);
+        int green = Helpers.getColorFromRes(getContext(), R.color.much_green);
+
+        textDescriptionHeader.setTextColor(editDescription.getText().toString().isEmpty() ? red : green);
+        textContactHeader.setTextColor(editContact.getText().toString().isEmpty() ? red : green);
+        textEntryTypeHeader.setTextColor(froodyEntry.getEntryType() != FroodyEntryFormatter.ENTRY_TYPE_UNKNOWN ? green : red);
     }
 
 
@@ -259,26 +276,16 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
             }
         }
         textLocationHeader.setText(getResources().getStringArray(R.array.gps_types_header)[newGPS_Type]);
+        textLocationHeader.setTextColor(color);
         textLocation.setText(locationText);
-        btnGps.setSupportBackgroundTintList(new ColorStateList(new int[][]{new int[0]}, new int[]{color}));
     }
 
 
     // The GPS Button was pressed
-    @OnClick({R.id.publish_entry__fragment__button_gps, R.id.publish_entry__fragment__entry_type_selector})
-    public void onGPSButtonClicked(View view) {
-        switch (view.getId()) {
-            case R.id.publish_entry__fragment__entry_type_selector: {
-                DialogEntryTypeSelection yourDialogFragment = DialogEntryTypeSelection.newInstance(this, false);
-                yourDialogFragment.show(getFragmentManager(), DialogEntryTypeSelection.FRAGMENT_TAG);
-                break;
-            }
-
-            case R.id.publish_entry__fragment__button_gps: {
-                requestLocationFromMainActivity();
-                break;
-            }
-        }
+    @OnClick(R.id.publish_entry__fragment__entry_type_selector)
+    public void onSelectFroodyEntryTypeSelctorClicked(View view) {
+        DialogEntryTypeSelection yourDialogFragment = DialogEntryTypeSelection.newInstance(this, false);
+        yourDialogFragment.show(getFragmentManager(), DialogEntryTypeSelection.FRAGMENT_TAG);
     }
 
     public void requestLocationFromMainActivity() {
@@ -407,6 +414,7 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
             }
             settings.setLastEntryTypes(history);
         }
+        textEntryTypeHeader.setTextColor(Helpers.getColorFromRes(getContext(), R.color.much_green));
         recheckUserInput();
     }
 
