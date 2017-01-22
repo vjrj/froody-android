@@ -3,15 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_settings"
-        android:title="@string/settings"
-        android:visible="false"
-        app:showAsAction="never" />
-
-    <item
         android:id="@+id/action_get_location"
+        android:icon="@drawable/ic_location_on_white_48px"
+        android:orderInCategory="1"
         android:title="@string/request_location"
         android:visible="true"
-        android:icon="@drawable/ic_location_on_white_48px"
         app:showAsAction="ifRoom" />
 </menu>
