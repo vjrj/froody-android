@@ -9,10 +9,9 @@ android {
         applicationId "io.github.froodyapp"
         minSdkVersion 17
         targetSdkVersion 25
-        versionCode 4
-        versionName "0.2"
-        // vectorDrawables.useSupportLibrary = true // Crashes on KK and below
-        vectorDrawables.useSupportLibrary = true
+        versionCode 5
+        versionName "0.2.0-next"
+        //vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {

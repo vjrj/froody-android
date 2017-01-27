@@ -11,3 +11,4 @@
 Armando Luescher (https://noplanman.ch): Reviews of froody-server
 Naofumi Fukue (https://github.com/naofum): Japanese translation
 Robert Diesenreither (www DOT zero-ermissions DOT at): Idea and domain
+secitem (https://pod.geraspora.de/u/secitem): Czech translation

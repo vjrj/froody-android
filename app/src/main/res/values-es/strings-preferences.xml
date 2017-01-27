@@ -3,5 +3,13 @@
 <resources>
   <!-- Keys (not translate able -->
   <!-- Network -->
+  <string name="pref_cat__network">Red</string>
+  <string name="pref_title__froody_server">Cambiar servidor</string>
+  <string name="pref_title__clear_cache">Limpiar caché</string>
+  <string name="pref_desc__clear_cache">Borrar posición final en la caché de entrada</string>
+  <string name="pref_desc__froody_server">Cambiar el servidor para recuperar entradas</string>
   <!-- App -->
+  <string name="pref_cat__app">Aplicación</string>
+  <string name="pref_desc__reset_app">Restablece la aplicación a su estado inicial</string>
+  <string name="pref_title__reset_app">Restablecer app</string>
 </resources>

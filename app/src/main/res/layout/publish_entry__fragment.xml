@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_margin_small_4"
-    android:paddingLeft="@dimen/activity_margin_small_4"
-    android:paddingRight="@dimen/activity_margin_small_4"
-    android:paddingTop="@dimen/activity_margin_small_4"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:paddingBottom="@dimen/activity_margin_small_4"
+              android:paddingLeft="@dimen/activity_margin_small_4"
+              android:paddingRight="@dimen/activity_margin_small_4"
+              android:paddingTop="@dimen/activity_margin_small_4"
+              app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <android.support.v4.widget.NestedScrollView
         android:id="@+id/publish_entry__fragment__scrollview"
@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="0dp"
                 android:text="@string/app_name"
-                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
 
 
             <LinearLayout
@@ -54,7 +54,7 @@
                     android:layout_marginEnd="5dp"
                     android:layout_marginStart="5dp"
                     android:contentDescription="@string/image"
-                    app:srcCompat="@drawable/finger_leading" />
+                    app:srcCompat="@drawable/finger_leading"/>
 
                 <TextView
                     android:id="@+id/publish_entry__fragment__entry_type_name"
@@ -64,7 +64,7 @@
                     android:lines="1"
                     android:text="@string/select_froody"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"/>
             </LinearLayout>
 
             <TextView
@@ -73,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/input_field_margin"
                 android:text="@string/distribution_type"
-                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
 
             <android.support.v7.widget.AppCompatSpinner
                 android:id="@+id/publish_entry__fragment__spinner_distribution_selector"
@@ -82,7 +82,7 @@
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:nextFocusDown="@+id/publish_entry__fragment__spinner_certificate_selector"
-                android:prompt="@string/distribution_type__free" />
+                android:prompt="@string/distribution_type__free"/>
 
             <TextView
                 android:id="@+id/publish_entry__fragment__text_certification_header"
@@ -90,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/input_field_margin"
                 android:text="@string/certification"
-                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
 
             <android.support.v7.widget.AppCompatSpinner
                 android:id="@+id/publish_entry__fragment__spinner_certificate_selector"
@@ -99,7 +99,7 @@
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:nextFocusDown="@+id/publish_entry__fragment__edit_description"
-                android:prompt="@string/certification_type__none" />
+                android:prompt="@string/certification_type__none"/>
 
             <TextView
                 android:id="@+id/publish_entry__fragment__text_description_header"
@@ -107,16 +107,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/input_field_margin"
                 android:text="@string/description"
-                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
 
             <EditText
                 android:id="@+id/publish_entry__fragment__edit_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_please_insert_description"
-                android:maxLength="@integer/edit_small_maxchars_140" />
-            <!-- android:inputType="phone"  -> Nur bei TextViews!
-                    Sonst gibts keine TextVorschlage von Android ;) -->
+                android:hint="@string/hint__description__enter_here"
+                android:maxLength="@integer/edit_small_maxchars_140"/>
 
             <TextView
                 android:id="@+id/publish_entry__fragment__text_contact_header"
@@ -124,14 +122,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/input_field_margin"
                 android:text="@string/contact"
-                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
 
             <EditText
                 android:id="@+id/publish_entry__fragment__edit_contact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_please_insert_contact"
-                android:maxLength="@integer/edit_small_maxchars_140" />
+                android:hint="@string/hint__contact__enter_here"
+                android:maxLength="@integer/edit_small_maxchars_140"/>
 
 
             <TextView
@@ -140,7 +138,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/input_field_margin"
                 android:text="@string/location"
-                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
 
             <TextView
                 android:id="@+id/publish_entry__fragment__text_location"
@@ -149,12 +147,12 @@
                 android:layout_marginTop="5dp"
                 android:text="@string/gps_locating_user"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="#000000" />
+                android:textColor="#000000"/>
 
             <!-- ScrollView bottom scrollOver (empty space) -->
             <View
                 android:layout_width="match_parent"
-                android:layout_height="30dp" />
+                android:layout_height="30dp"/>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
@@ -169,6 +167,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:enabled="false"
-            android:text="@string/publish_entry" />
+            android:text="@string/publish_entry"/>
     </LinearLayout>
 </LinearLayout>

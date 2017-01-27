@@ -11,7 +11,6 @@
   <string name="location">場所</string>
   <string name="error">エラー</string>
   <string name="all">すべて</string>
-  <string name="informations">情報</string>
   <string name="contributors">貢献者</string>
   <!-- More general words -->
   <string name="search_dotdotdot">検索&#8230;</string>
@@ -32,8 +31,6 @@
   <!-- Publish -->
   <string name="suggested">おすすめ</string>
   <string name="select_froody">Froody を選択してください&#8230;</string>
-  <string name="hint_please_insert_description">ここに、このエントリの説明を入力してください&#8230;</string>
-  <string name="hint_please_insert_contact">ここに、このエントリの問い合わせ先の詳細を入力してください&#8230;</string>
   <string name="publish_entry">公開</string>
   <string name="limited_time_active_notice">ご注意ください! エントリは、今から 3 週間利用できます。</string>
   <string name="share_my_entry_at_froody">Froody アプリで、私のエントリ</string>

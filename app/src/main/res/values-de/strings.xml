@@ -11,8 +11,8 @@
   <string name="location">Ort</string>
   <string name="error">Fehler</string>
   <string name="all">Alle</string>
-  <string name="informations">Informationen</string>
   <string name="contributors">Beitragende</string>
+  <string name="about_">Über</string>
   <!-- More general words -->
   <string name="search_dotdotdot">Suche&#8230;</string>
   <string name="distribution_type">Verteilung</string>
@@ -32,11 +32,11 @@
   <!-- Publish -->
   <string name="suggested">Vorgeschlagen</string>
   <string name="select_froody">Froody auswählen&#8230;</string>
-  <string name="hint_please_insert_description">Beschreibung hier eingeben&#8230;</string>
-  <string name="hint_please_insert_contact">Kontaktdaten hier eingeben&#8230;</string>
+  <string name="hint__description__enter_here">Beschreibung hier eingeben (z.B. Qualität, Nur für Marmelade, Unterart,&#8230;)</string>
+  <string name="hint__contact__enter_here">Kontaktdaten hier eingeben (sollte zumindest Tel. Nr. oder E-Mail Adr. beinhalten)</string>
   <string name="publish_entry">Eintragen</string>
   <string name="limited_time_active_notice">Achtung! Dieser Eintrag ist ab jetzt 3 Wochen gültig.</string>
-  <string name="share_my_entry_at_froody">Meine Eintrag bei der Froody App</string>
+  <string name="share_my_entry_at_froody">Mein Eintrag bei der Froody App</string>
   <string name="share_chooser_share_entry">Eintrag teilen</string>
   <string name="nav__my_entries">Meine Einträge</string>
   <!-- Info -->

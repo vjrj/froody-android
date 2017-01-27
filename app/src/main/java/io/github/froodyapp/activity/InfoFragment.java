@@ -137,7 +137,7 @@ public class InfoFragment extends BaseFragment {
     public void onResume() {
         super.onResume();
         MainActivity activity = (MainActivity) getActivity();
-        activity.setTitle(R.string.informations);
+        activity.setTitle(R.string.about_);
         activity.navigationView.setCheckedItem(R.id.nav_informations);
     }
 
