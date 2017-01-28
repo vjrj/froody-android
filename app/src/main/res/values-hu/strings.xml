@@ -3,7 +3,18 @@
 <resources>
   <!-- General & Important things -->
   <!-- General words -->
+  <string name="image">Kép</string>
+  <string name="reset">Visszaállitás alaphelyzetre</string>
+  <string name="settings">Beállítások</string>
+  <string name="more">Egyebek</string>
+  <string name="description">Leírás</string>
+  <string name="location">Hely</string>
+  <string name="error">Hiba</string>
+  <string name="all">Mind</string>
+  <string name="contributors">Hozzájárulók</string>
+  <string name="about_">Névjegy</string>
   <!-- More general words -->
+  <string name="search_dotdotdot">Keresés&#8230;</string>
   <!-- Main -->
   <!-- Publish -->
   <!-- Info -->

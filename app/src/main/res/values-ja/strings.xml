@@ -12,6 +12,7 @@
   <string name="error">エラー</string>
   <string name="all">すべて</string>
   <string name="contributors">貢献者</string>
+  <string name="about_">このアプリについて</string>
   <!-- More general words -->
   <string name="search_dotdotdot">検索&#8230;</string>
   <string name="distribution_type">配布</string>
@@ -31,6 +32,8 @@
   <!-- Publish -->
   <string name="suggested">おすすめ</string>
   <string name="select_froody">Froody を選択してください&#8230;</string>
+  <string name="hint__description__enter_here">このエントリーの説明を入力してください (例: 品質、マーマレードを作るために、サブタイプ&#8230;)</string>
+  <string name="hint__contact__enter_here">このエントリーの連絡先の詳細を入力してください (電話番号またはメールアドレスを含める必要があります)</string>
   <string name="publish_entry">公開</string>
   <string name="limited_time_active_notice">ご注意ください! エントリは、今から 3 週間利用できます。</string>
   <string name="share_my_entry_at_froody">Froody アプリで、私のエントリ</string>

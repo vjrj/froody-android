@@ -16,16 +16,13 @@
   <!-- Entry Types (Special) -->
   <string name="entry_type__special__unknown">Unbekannt</string>
   <string name="entry_type__special__miscellaneous">Diverses</string>
-  <string name="entry_type__special__bread">Brot</string>
-  <string name="entry_type__special__cloth">Kleidung</string>
-  <string name="entry_type__special__sleep_place">Schlafplatz</string>
   <string name="entry_type__special__water">Wasser</string>
   <!-- Entry Types -->
   <string name="entry_type__apple">Apfel</string>
   <string name="entry_type__pear">Birne</string>
   <string name="entry_type__cherry">Kirsche</string>
   <string name="entry_type__plum">Zwetschge</string>
-  <string name="entry_type__current">Ribisel</string>
+  <string name="entry_type__currant">Ribisel</string>
   <string name="entry_type__grape">Weintraube</string>
   <string name="entry_type__hazelnut">Haselnuss</string>
   <string name="entry_type__milk">Milch</string>

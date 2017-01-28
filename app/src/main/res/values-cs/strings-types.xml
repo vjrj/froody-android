@@ -16,16 +16,12 @@
   <!-- Entry Types (Special) -->
   <string name="entry_type__special__unknown">Neznámý</string>
   <string name="entry_type__special__miscellaneous">Různé</string>
-  <string name="entry_type__special__bread">Chléb</string>
-  <string name="entry_type__special__cloth">Oblečení</string>
-  <string name="entry_type__special__sleep_place">Místo k přespání</string>
   <string name="entry_type__special__water">Voda</string>
   <!-- Entry Types -->
   <string name="entry_type__apple">Jablko</string>
   <string name="entry_type__pear">Hruška</string>
   <string name="entry_type__cherry">Třešně</string>
   <string name="entry_type__plum">Švestka</string>
-  <string name="entry_type__current">Aktuální</string>
   <string name="entry_type__grape">Hroznové víno</string>
   <string name="entry_type__hazelnut">Lískové ořechy</string>
   <string name="entry_type__milk">Mléko</string>

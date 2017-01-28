@@ -3,9 +3,50 @@
 <resources>
   <!-- General & Important things -->
   <!-- General words -->
+  <string name="image">Image</string>
+  <string name="reset">Réinitialiser</string>
+  <string name="settings">Paramètres</string>
+  <string name="more">Plus</string>
+  <string name="description">Description</string>
+  <string name="location">Emplacement</string>
+  <string name="error">Erreur</string>
+  <string name="all">Tous</string>
+  <string name="contributors">Contributeurs</string>
+  <string name="about_">A propos</string>
   <!-- More general words -->
+  <string name="search_dotdotdot">Rechercher&#8230;</string>
+  <string name="distribution_type">Distribution</string>
+  <string name="certification">Certification</string>
+  <string name="contact">Contact</string>
+  <string name="maintainers">Mainteneurs</string>
+  <string name="map">Carte</string>
+  <string name="blog">Blog</string>
+  <string name="license">Licence</string>
   <!-- Main -->
+  <string name="navigation_drawer_open">Ouvrir le menu</string>
+  <string name="navigation_drawer_close">Fermer le menu</string>
+  <string name="no_entries_were_published_by_me">Aucun résultat</string>
+  <string name="help_and_share"><![CDATA[Aider et partager]]></string>
+  <string name="really_delete_entry">Souhaitez-vous vraiment supprimer cette entrée ?</string>
+  <string name="share_entry_ask">Partager l\'entrée ?</string>
   <!-- Publish -->
+  <string name="suggested">Suggérés</string>
+  <string name="select_froody">Choisir Froody&#8230;</string>
+  <string name="hint__description__enter_here">Mettez la description pour cette entrée ici (ex. : qualité, pour la confiture, sous-type...)</string>
+  <string name="hint__contact__enter_here">Mettez les données de contact pour cette entrée ici (n° de téléphone et/ou adresse e-mail)</string>
+  <string name="publish_entry">Publier</string>
+  <string name="limited_time_active_notice">Attention ! L\'entrée est disponible pour une durée de 3 semaines.</string>
+  <string name="share_my_entry_at_froody">Mon entrée sur l\'app Froody</string>
+  <string name="share_chooser_share_entry">Partager l\'entrée</string>
+  <string name="nav__my_entries">Mes entrées</string>
   <!-- Info -->
+  <string name="show_licenses">Afficher les licences</string>
   <!-- Location -->
+  <string name="request_location">Demander la localisation</string>
+  <string name="gps_locating_user">Localisation en cours&#8230;</string>
+  <string name="address_most_near">À proximité</string>
+  <string name="error_bad_permissions">Veuillez accorder à Froody la permission d\'accéder aux emplacements et écrire des données. Sans cela, l\'application ne fonctionnera pas.</string>
+  <string name="show_map_on_current_location">Centrer la carte à l\'emplacement actuel ?</string>
+  <string name="zoom_out">Dézoomer</string>
+  <string name="cannot_locate_user">Localisation impossible. Veuillez activer les services de localisation dans les paramètres système !</string>
 </resources>

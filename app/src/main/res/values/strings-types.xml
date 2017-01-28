@@ -18,9 +18,6 @@
     <!-- Entry Types (Special) -->
     <string name="entry_type__special__unknown">Unknown</string>
     <string name="entry_type__special__miscellaneous">Miscellaneous</string>
-    <string name="entry_type__special__bread">Bread</string>
-    <string name="entry_type__special__cloth">Cloth</string>
-    <string name="entry_type__special__sleep_place">Sleep place</string>
     <string name="entry_type__special__water">Water</string>
 
     <!-- Entry Types -->
@@ -28,7 +25,7 @@
     <string name="entry_type__pear">Pear</string>
     <string name="entry_type__cherry">Cherry</string>
     <string name="entry_type__plum">Plum</string>
-    <string name="entry_type__current">Current</string>
+    <string name="entry_type__currant">Currant</string>
     <string name="entry_type__grape">Grape</string>
     <string name="entry_type__hazelnut">Hazelnut</string>
     <string name="entry_type__milk">Milk</string>

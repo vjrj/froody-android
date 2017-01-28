@@ -38,7 +38,7 @@
         <item>@string/entry_type__cherry</item>
         <!-- 005 -->
         <item>@string/entry_type__plum</item>
-        <item>@string/entry_type__current</item>
+        <item>@string/entry_type__currant</item>
         <item>@string/entry_type__grape</item>
         <item>@string/entry_type__hazelnut</item>
         <item>@string/entry_type__milk</item>
@@ -62,14 +62,11 @@
         <item>@string/entry_type__peach</item>
         <!-- 025+ -->
         <item>@string/entry_type__potato</item>
-        <item>@string/entry_type__special__bread</item>
-        <item>@string/entry_type__special__cloth</item>
-        <item>@string/entry_type__special__sleep_place</item>
         <item>@string/entry_type__special__water</item>
-        <!-- 030+ -->
         <item>@string/entry_type__strawberry</item>
         <item>@string/entry_type__tomato</item>
         <item>@string/entry_type__sapling</item>
+        <!-- 030+ -->
         <item>@string/entry_type__wood</item>
         <item>@string/entry_type__zucchini</item>
         <item>@string/entry_type__aubergine</item>
@@ -84,7 +81,7 @@
         <item>@drawable/entry_type__cherry</item>
         <!-- 005+ -->
         <item>@drawable/entry_type__plum</item>
-        <item>@drawable/entry_type__current</item>
+        <item>@drawable/entry_type__currant</item>
         <item>@drawable/entry_type__grape</item>
         <item>@drawable/entry_type__hazelnut</item>
         <item>@drawable/entry_type__milk</item>
@@ -108,14 +105,11 @@
         <item>@drawable/entry_type__peach</item>
         <!-- 025+ -->
         <item>@drawable/entry_type__potato</item>
-        <item>@drawable/entry_type__special__bread</item>
-        <item>@drawable/entry_type__special__cloth</item>
-        <item>@drawable/entry_type__special__sleep_place</item>
         <item>@drawable/entry_type__special__water</item>
-        <!-- 030+ -->
         <item>@drawable/entry_type__strawberry</item>
         <item>@drawable/entry_type__tomato</item>
         <item>@drawable/entry_type__sapling</item>
+        <!-- 030+ -->
         <item>@drawable/entry_type__wood</item>
         <item>@drawable/entry_type__cucumber</item>
         <item>@drawable/entry_type__aubergine</item>
@@ -124,19 +118,13 @@
     <!-- Index of entry types which are not allowed to be sold-->
     <integer-array name="entry_type__distribution_types__not_allowed_sell">
         <item>26</item>
-        <item>27</item>
-        <item>28</item>
-        <item>29</item>
     </integer-array>
 
     <!-- Index of entry types which are not allowed to be certified-->
     <integer-array name="entry_type__certification_types__not_allowed_certify">
         <item>0</item>
         <item>26</item>
-        <item>27</item>
-        <item>28</item>
         <item>29</item>
-        <item>32</item>
-        <item>33</item>
+        <item>30</item>
     </integer-array>
 </resources>

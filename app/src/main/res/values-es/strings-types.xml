@@ -16,16 +16,12 @@
   <!-- Entry Types (Special) -->
   <string name="entry_type__special__unknown">Desconocido</string>
   <string name="entry_type__special__miscellaneous">Diversos</string>
-  <string name="entry_type__special__bread">Pan</string>
-  <string name="entry_type__special__cloth">Ropa</string>
-  <string name="entry_type__special__sleep_place">Lugar para dormir</string>
   <string name="entry_type__special__water">Agua</string>
   <!-- Entry Types -->
   <string name="entry_type__apple">Manzana</string>
   <string name="entry_type__pear">Pera</string>
   <string name="entry_type__cherry">Cereza</string>
   <string name="entry_type__plum">Ciruela</string>
-  <string name="entry_type__current">Actual</string>
   <string name="entry_type__grape">Uva</string>
   <string name="entry_type__hazelnut">Avellanas</string>
   <string name="entry_type__milk">Leche</string>
