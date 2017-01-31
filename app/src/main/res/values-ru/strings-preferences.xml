@@ -3,5 +3,7 @@
 <resources>
   <!-- Keys (not translate able -->
   <!-- Network -->
+  <string name="pref_title__froody_server">Сменить сервер</string>
+  <string name="pref_title__clear_cache">Очистить кэш</string>
   <!-- App -->
 </resources>

@@ -12,6 +12,7 @@
   <string name="error">Chyba</string>
   <string name="all">Vše</string>
   <string name="contributors">Spoluautoři</string>
+  <string name="about_">O aplikaci</string>
   <!-- More general words -->
   <string name="search_dotdotdot">Hledat&#8230;</string>
   <string name="distribution_type">Distribuce</string>
@@ -31,6 +32,8 @@
   <!-- Publish -->
   <string name="suggested">Doporučené</string>
   <string name="select_froody">Vybrat Froody&#8230;</string>
+  <string name="hint__description__enter_here">Zde zadejte popis (např. kvalita, jen u marmelády, poddruh&#8230;)</string>
+  <string name="hint__contact__enter_here">Zde zadejte kontakní informace (mělo by obsahovat alespoň telefonní číslo nebo e-mailovou adresu)</string>
   <string name="publish_entry">Zveřejnit</string>
   <string name="limited_time_active_notice">Pozor! Tento příspěvek je nyní dostupný po dobu 3 týdnů.</string>
   <string name="share_my_entry_at_froody">Můj příspěvek v aplikaci Froody</string>

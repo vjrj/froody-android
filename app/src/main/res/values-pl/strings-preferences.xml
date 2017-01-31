@@ -3,5 +3,13 @@
 <resources>
   <!-- Keys (not translate able -->
   <!-- Network -->
+  <string name="pref_cat__network">Sieć</string>
+  <string name="pref_title__froody_server">Zmień serwer</string>
+  <string name="pref_title__clear_cache">Wyczyść pamięć podręczną</string>
+  <string name="pref_desc__clear_cache">Usuń wpis pamięci podręcznej, ostatnia pozycja</string>
+  <string name="pref_desc__froody_server">Zmień serwer do pobierania wpisów</string>
   <!-- App -->
+  <string name="pref_cat__app">Apliakcja</string>
+  <string name="pref_desc__reset_app">Wyzeruj aplikację do stanu początkowego</string>
+  <string name="pref_title__reset_app">Resetowanie aplikacji</string>
 </resources>
