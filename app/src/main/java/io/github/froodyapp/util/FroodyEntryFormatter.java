@@ -72,11 +72,11 @@ public class FroodyEntryFormatter extends FroodyEntryPlus {
     // Get certification of Froody Entry
     public String getCertification() {
         String[] d = context.getResources().getStringArray(R.array.certification_types);
-        int i = 0;
-        if (entry.getCertificationType() != null && entry.getCertificationType() < d.length) {
-            i = entry.getCertificationType();
+        Integer cert = entry.getCertificationType();
+        if (cert != null && cert < d.length && cert >= 0) {
+            return d[cert];
         }
-        return d[i];
+        return context.getString(R.string.unknown);
     }
 
     // Get froody type of Froody Entry
@@ -99,11 +99,11 @@ public class FroodyEntryFormatter extends FroodyEntryPlus {
     //Get distribution type of entry
     public String getDistribution() {
         String[] d = context.getResources().getStringArray(R.array.distribution_types);
-        int i = 0;
-        if (entry.getDistributionType() != null && entry.getDistributionType() < d.length) {
-            i = entry.getDistributionType();
+        Integer dist = entry.getDistributionType();
+        if (dist != null && dist < d.length && dist >= 0) {
+            return d[dist];
         }
-        return d[i];
+        return context.getString(R.string.unknown);
     }
 
     public boolean isAllowedToSell() {

@@ -14,6 +14,7 @@ files:
         nl: nl 		# Dutch
         hu: hu 		# Hungarian
         cs: cs 		# Czech
+        sr: sr          # Serbian (Cyrillic)
 #       hi: hi 		# Hindi
 #       el: el 		# Greel
 #       "no": 'no' 	# Norwegian

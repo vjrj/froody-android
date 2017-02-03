@@ -15,8 +15,38 @@
   <string name="about_">Névjegy</string>
   <!-- More general words -->
   <string name="search_dotdotdot">Keresés&#8230;</string>
+  <string name="distribution_type">Átvétel</string>
+  <string name="certification">Tanúsítvány</string>
+  <string name="contact">Elérhetőség</string>
+  <string name="maintainers">Karbantartók</string>
+  <string name="map">Térkép</string>
+  <string name="blog">Blog</string>
+  <string name="license">Licenc</string>
   <!-- Main -->
+  <string name="navigation_drawer_open">Eszköztár megnyitása</string>
+  <string name="navigation_drawer_close">Eszköztár bezárása</string>
+  <string name="no_entries_were_published_by_me">Nincs elérhető bejegyzés</string>
+  <string name="help_and_share"><![CDATA[Segítség és megosztás]]></string>
+  <string name="really_delete_entry">Biztosan törölni akarod ezt a bejegyzést?</string>
+  <string name="share_entry_ask">Megosztod a bejegyzést?</string>
   <!-- Publish -->
+  <string name="suggested">Ajánlott</string>
+  <string name="select_froody">Froody kiválasztása&#8230;</string>
+  <string name="hint__description__enter_here">Írj egy leírást ehhez a bejegyzéshez (pl. minőség, limonádénak, altípus)</string>
+  <string name="hint__contact__enter_here">Írj elérhetőségeket ehhez a bejegyzéshez (tartalmazhatná a telefonszámodat vagy emailcímedet)</string>
+  <string name="publish_entry">Közzétesz</string>
+  <string name="limited_time_active_notice">Vigyázat! Ez a bejegyzés mostantól 3 hétig érhető el.</string>
+  <string name="share_my_entry_at_froody">Bejegyzésem a Froody alkalmazáson</string>
+  <string name="share_chooser_share_entry">Bejegyzés megosztása</string>
+  <string name="nav__my_entries">Bejegyzéseim</string>
   <!-- Info -->
+  <string name="show_licenses">Licencek mutatása</string>
   <!-- Location -->
+  <string name="request_location">Helyzet lekérése</string>
+  <string name="gps_locating_user">Helyzet meghatározása&#8230;</string>
+  <string name="address_most_near">A közelben</string>
+  <string name="error_bad_permissions">Kérlek, engedélyezd a Froodynak, hogy hozzá tudjon férni a helyekhez és adatokat tudjon írni a helyes működéshez! Ezek nélkül nem lehet használni az alkalmazást.</string>
+  <string name="show_map_on_current_location">Legyen mutatva a térkép a jelenlegi helynél?</string>
+  <string name="zoom_out">Kicsinyít</string>
+  <string name="cannot_locate_user">Nem lehet meghatározni a felhasználó helyét. Kérlek, engedélyezd a helylekérdező-szolgáltatásokat a rendszerbeállításoknál!</string>
 </resources>

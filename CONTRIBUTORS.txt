@@ -8,7 +8,9 @@
 07l>>   Username (Link): Text  
 08l>>   Username (E-Mail): Text  
 ## 99l CONTRIBUTORS
+Robert Diesenreither (www.zero-ermissions.at): Idea and domain
 Armando Luescher (https://noplanman.ch): Reviews of froody-server
 Naofumi Fukue (https://github.com/naofum): Japanese translation
-Robert Diesenreither (www DOT zero-ermissions DOT at): Idea and domain
 secitem (https://pod.geraspora.de/u/secitem): Czech translation
+Слободан Симић (https://crowdin.com/profile/slsimic): Serbian translation
+Zsolt Szakács (https://github.com/maxigaz): Hungarian translation
