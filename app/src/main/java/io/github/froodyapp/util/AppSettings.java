@@ -146,7 +146,7 @@ public class AppSettings {
     }
 
     public boolean hasLastMapLocation() {
-        return getLastMapLocationZoom() >= MapOSMFragment.ZOOMLEVEL_BLOCK5_TRESHOLD;
+        return getLastMapLocationZoom() >= MapOSMFragment.ZOOMLEVEL_BLOCK4_TRESHOLD;
     }
 
     public double getLastMapLocationLatitude() {

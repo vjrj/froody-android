@@ -14,8 +14,8 @@
 package io.github.froodyapp.api.api;
 
 import io.github.froodyapp.api.invoker.ApiException;
-import io.github.froodyapp.api.model_.FroodyUser;
 import io.github.froodyapp.api.model_.ResponseOk;
+import io.github.froodyapp.api.model_.ServerOverallStats;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -25,41 +25,25 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for UserApi
+ * API tests for StatsApi
  */
 @Ignore
-public class UserApiTest {
+public class StatsApiTest {
 
-    private final UserApi api = new UserApi();
+    private final StatsApi api = new StatsApi();
 
     
     /**
      * 
      *
-     * Check if user is enabled (by User.userId)
+     * Overall statistics
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
-    public void userIsEnabledGetTest() throws ApiException {
-        Long userId = null;
-        ResponseOk response = api.userIsEnabledGet(userId);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * User Id
-     *
-     * The User Id endpoint returns the Id of the User, which was currently created.
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void userRegisterGetTest() throws ApiException {
-        FroodyUser response = api.userRegisterGet();
+    public void statsOverallGetTest() throws ApiException {
+        ServerOverallStats response = api.statsOverallGet();
 
         // TODO: test validations
     }

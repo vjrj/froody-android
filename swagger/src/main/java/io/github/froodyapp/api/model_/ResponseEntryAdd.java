@@ -24,7 +24,7 @@ import java.io.Serializable;
  * Represents the Result of the /entry/add endpoint
  */
 @ApiModel(description = "Represents the Result of the /entry/add endpoint")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-03T16:49:39.823+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T17:38:04.070+01:00")
 public class ResponseEntryAdd implements Serializable {
   private static final long serialVersionUID = 1L;
 

@@ -24,7 +24,7 @@ import java.io.Serializable;
  * Represents an entry in the froody database, with its id, location and other details
  */
 @ApiModel(description = "Represents an entry in the froody database, with its id, location and other details")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-03T16:49:39.823+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T17:38:04.070+01:00")
 public class FroodyEntry implements Serializable {
   private static final long serialVersionUID = 1L;
 

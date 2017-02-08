@@ -132,15 +132,15 @@ public class BlockCache {
         List<FroodyEntryPlus> retEntries = new ArrayList<>();
         for (FroodyEntry fe : entriesFromServer) {
             FroodyEntryPlus entry = new FroodyEntryPlus(fe);
-            String block6 = entry.getGeohashWithPrecision(6);
-            if (block6 == null) {
+            String block5 = entry.getGeohashWithPrecision(5);
+            if (block5 == null) {
                 continue;   // Won't happen, if server is doing well
             }
 
-            BlockCacheItem cacheItem = getBlockCacheItemAt(block6);
+            BlockCacheItem cacheItem = getBlockCacheItemAt(block5);
             if (cacheItem == null) {
                 cacheItem = new BlockCacheItem();
-                cacheItem.blockInfo = new BlockInfoPlus(block6, requestedAt);
+                cacheItem.blockInfo = new BlockInfoPlus(block5, requestedAt);
             } else {
                 cacheItem.blockInfo.setModificationDate(requestedAt);
             }
@@ -169,13 +169,13 @@ public class BlockCache {
 
     // Process a single entry containing details
     public void processEntryWithDetails(FroodyEntryPlus entry) {
-        String block6 = entry.getGeohashWithPrecision(6);
-        BlockCacheItem cacheItem = getBlockCacheItemAt(block6);
-        if (block6 != null) {
+        String block5 = entry.getGeohashWithPrecision(5);
+        BlockCacheItem cacheItem = getBlockCacheItemAt(block5);
+        if (block5 != null) {
             if (cacheItem == null) {
                 // Won't happen, because extended entries will retrieved by existing ones
                 cacheItem = new BlockCacheItem();
-                cacheItem.blockInfo = new BlockInfoPlus(block6, Helpers.getNow());
+                cacheItem.blockInfo = new BlockInfoPlus(block5, Helpers.getNow());
             }
 
             // Delete from cache
@@ -194,10 +194,10 @@ public class BlockCache {
 
     // Try to get a single entry from the cache. Queries by ID
     public FroodyEntryPlus tryGetEntryByIdFromCache(FroodyEntryPlus entry) {
-        String block6 = entry.getGeohashWithPrecision(6);
-        BlockCacheItem cacheItem = getBlockCacheItemAt(block6);
+        String block5 = entry.getGeohashWithPrecision(5);
+        BlockCacheItem cacheItem = getBlockCacheItemAt(block5);
 
-        if (block6 != null && cacheItem != null) {
+        if (block5 != null && cacheItem != null) {
             // Iterate all entries in BlockCacheItem
             for (int i = 0, size = cacheItem.entries.size(); i < size; i++) {
                 for (FroodyEntryPlus entryFromCache : cacheItem.entries.values()) {

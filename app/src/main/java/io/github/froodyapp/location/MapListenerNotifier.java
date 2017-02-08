@@ -15,6 +15,7 @@ public class MapListenerNotifier extends Thread {
     //## Static
     //########################
     private final static long HAPPENING_INTERVAL = 2500;
+    private final static long HAPPENING_INTERVAL_WORLD = 10000;
     private static long LAST_HAPPENING_TIME = 0;
 
     //########################
@@ -42,7 +43,13 @@ public class MapListenerNotifier extends Thread {
         } catch (InterruptedException ignored) {
         }
         long now = System.currentTimeMillis();
-        if ((now - LAST_HAPPENING_TIME) >= HAPPENING_INTERVAL && map != null && map.getZoomLevel() >= MapOSMFragment.ZOOMLEVEL_REQUEST_TRESHOLD_TO_5) {
+        if ((now - LAST_HAPPENING_TIME) >= HAPPENING_INTERVAL && map != null && map.getZoomLevel() > MapOSMFragment.ZOOMLEVEL_REQUEST_TRESHOLD_TO_4) {
+            setLastHappeningTime(now);
+            IGeoPoint center = map.getMapCenter();
+            AppCast.MAP_POSITION_CHANGED.send(map.getContext(), center.getLatitude(), center.getLongitude(), map.getZoomLevel());
+        }
+
+        if ((now - LAST_HAPPENING_TIME) >= HAPPENING_INTERVAL_WORLD && map != null && map.getZoomLevel() <= MapOSMFragment.ZOOMLEVEL_REQUEST_TRESHOLD_TO_4) {
             setLastHappeningTime(now);
             IGeoPoint center = map.getMapCenter();
             AppCast.MAP_POSITION_CHANGED.send(map.getContext(), center.getLatitude(), center.getLongitude(), map.getZoomLevel());

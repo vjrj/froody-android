@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
                                 && baseFragment.getFragmentTag().equals(MapOSMFragment.FRAGMENT_TAG)
                                 && lastFoundLocation != null) {
                             MapOSMFragment osmFragment = (MapOSMFragment) baseFragment;
-                            int zoomLevel = MapOSMFragment.ZOOMLEVEL_BLOCK5_TRESHOLD;
+                            int zoomLevel = MapOSMFragment.ZOOMLEVEL_BLOCK4_TRESHOLD;
                             if (lastFoundLocation.provider.equals(LocationManager.GPS_PROVIDER)) {
                                 zoomLevel = 17;
                             }
@@ -383,7 +383,7 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
             if (frag.getFragmentTag().equals(MapOSMFragment.FRAGMENT_TAG)) {
                 MapOSMFragment mapFragment = (MapOSMFragment) frag;
                 new EntryByBlockLoader(this, location.lat, location.lng,
-                        MapOSMFragment.ZOOMLEVEL_BLOCK5_TRESHOLD).start();
+                        MapOSMFragment.ZOOMLEVEL_BLOCK4_TRESHOLD).start();
 
 
                 // Show snackbar if far away
@@ -452,7 +452,7 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
 
                     new EntryByBlockLoader(context, lat, lng, zoom).start();
 
-                    if (zoom >= MapOSMFragment.ZOOMLEVEL_BLOCK5_TRESHOLD) {
+                    if (zoom > MapOSMFragment.ZOOMLEVEL_BLOCK4_TRESHOLD+1) {
                         appSettings.setLastMapLocation(lat, lng, zoom);
                     }
                     break;

@@ -1,58 +1,84 @@
 package io.github.froodyapp.service;
 
 import android.content.Context;
-
-import java.util.List;
-import java.util.Map;
+import android.os.Handler;
+import android.os.Looper;
+import android.widget.Toast;
 
 import io.github.froodyapp.App;
+import io.github.froodyapp.R;
 import io.github.froodyapp.api.api.UserApi;
-import io.github.froodyapp.api.invoker.ApiCallback;
 import io.github.froodyapp.api.invoker.ApiException;
 import io.github.froodyapp.api.model_.FroodyUser;
+import io.github.froodyapp.api.model_.ResponseOk;
 import io.github.froodyapp.util.AppCast;
 import io.github.froodyapp.util.AppSettings;
 
 /**
  * Api calls for registering user
  */
-public class UserRegisterer {
+public class UserRegisterer extends Thread {
     //########################
-    //## Statics
+    //## Member
     //########################
+    private final Context context;
+
+    //########################
+    //## Methods
+    //########################
+
+    /**
+     * Constructor
+     *
+     * @param context context to post result to
+     */
+    public UserRegisterer(final Context context) {
+        this.context = context;
+    }
 
     // Register user (get unique userId) with server
-    public static void registerUserIfNotRegistered(final Context c) {
-        if (c == null) {
+    public void run() {
+        if (context == null) {
             return;
         }
-        final AppSettings settings = new AppSettings(c);
-        if (!settings.hasFroodyUserId()) {
-            UserApi userApi = new UserApi();
+
+        boolean ok = registerOrCheckUserId();
+
+        // Show a message if couldn't connect
+        if (!ok) {
+            new Handler(Looper.getMainLooper()).post(new Runnable() {
+                public void run() {
+                    Toast.makeText(context, R.string.error_couldnt_connect_or_register, Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+    }
+
+    private boolean registerOrCheckUserId() {
+        final AppSettings settings = new AppSettings(context);
+
+        UserApi userApi = new UserApi();
+        if (settings.hasFroodyUserId()) {
+            long userId = settings.getFroodyUserId();
             try {
-                userApi.userRegisterGetAsync(new ApiCallback<FroodyUser>() {
-                    @Override
-                    public void onFailure(ApiException e, int statusCode, Map<String, List<String>> responseHeaders) {
-                        App.log(getClass(), "ERROR: Can't register user " + e.getMessage());
-                    }
-
-                    @Override
-                    public void onSuccess(FroodyUser result, int statusCode, Map<String, List<String>> responseHeaders) {
-                        if (result != null && result.getUserId() != null) {
-                            settings.setFroodyUserId(result.getUserId());
-                            AppCast.FROODY_USER_REGISTERED.send(c, result);
-                        }
-                    }
-
-                    public void onUploadProgress(long bytesWritten, long contentLength, boolean done) {
-                    }
-
-                    public void onDownloadProgress(long bytesRead, long contentLength, boolean done) {
-                    }
-                });
+                ResponseOk ok = userApi.userIsEnabledGet(userId);
+                return ok.getSuccess();
             } catch (ApiException e) {
-                e.printStackTrace();
+                App.log(getClass(), "Error: Could not check UserID");
             }
         }
+
+        // Register new ID if no ID yet
+        try {
+            FroodyUser result = userApi.userRegisterGet();
+            if (result != null && result.getUserId() != null) {
+                settings.setFroodyUserId(result.getUserId());
+                AppCast.FROODY_USER_REGISTERED.send(context, result);
+                return true;
+            }
+        } catch (ApiException e) {
+            App.log(getClass(), "Error: Could not register UserID");
+        }
+        return false;
     }
 }

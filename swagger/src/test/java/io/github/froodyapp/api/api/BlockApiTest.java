@@ -69,4 +69,19 @@ public class BlockApiTest {
         // TODO: test validations
     }
     
+    /**
+     * 
+     *
+     * Get informations about random geohashes
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void blockInfoRandomGetTest() throws ApiException {
+        List<BlockInfo> response = api.blockInfoRandomGet();
+
+        // TODO: test validations
+    }
+    
 }

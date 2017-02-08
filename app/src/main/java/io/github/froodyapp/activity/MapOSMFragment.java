@@ -40,9 +40,9 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
     //#####################
     //##      Statics
     //#####################
-    public static final int ZOOMLEVEL_REQUEST_TRESHOLD_TO_5 = 9;
-    public static final int ZOOMLEVEL_BLOCK5_TRESHOLD = 13;
-    public static final int ZOOMLEVEL_BLOCK6_TRESHOLD = 16;
+    public static final int ZOOMLEVEL_REQUEST_TRESHOLD_TO_4 = 8;
+    public static final int ZOOMLEVEL_BLOCK4_TRESHOLD = 9;
+    public static final int ZOOMLEVEL_BLOCK5_TRESHOLD = 13; // < this = Block4
     public static final String FRAGMENT_TAG = "MapOSMFragment";
 
     public static MapOSMFragment newInstance() {
@@ -96,7 +96,7 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
         map.setMapListener(this);
         map.setBuiltInZoomControls(false);
         map.setMultiTouchControls(true);
-        //map.setMinZoomLevel(ZOOMLEVEL_BLOCK5_TRESHOLD);
+        //map.setMinZoomLevel(ZOOMLEVEL_BLOCK4_TRESHOLD);
 
         // Enable rotation gesture
         rotationGesture = new RotationGestureOverlay(map);
@@ -285,6 +285,7 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
     @Override
     public boolean onZoom(ZoomEvent zoomEvent) {
         new MapListenerNotifier(map).start();
+        App.log(getClass(), zoomEvent.getZoomLevel()+"");
         return false;
     }
 

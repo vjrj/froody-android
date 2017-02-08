@@ -49,7 +49,7 @@ public class App extends Application {
         appSettings = new AppSettings(this);
         String server = appSettings.getFroodyServer();
         Configuration.getDefaultApiClient().setBasePath(server);
-        UserRegisterer.registerUserIfNotRegistered(this);
+        new UserRegisterer(this).start();
 
         new MyEntriesHelper(this).processMyEntriesToBlockCache();
     }

@@ -45,7 +45,7 @@ public class EntryPublisher extends Thread {
             ResponseEntryAdd responseEntryAdd = entryApi.entryAddPost(froodyEntry.getUserId(), froodyEntry.getGeohash(), froodyEntry.getEntryType(), froodyEntry.getDistributionType(), froodyEntry.getCertificationType(), froodyEntry.getDescription(), froodyEntry.getContact(), froodyEntry.getAddress());
             postResult(responseEntryAdd, true);
         } catch (ApiException | JsonParseException e) {
-            App.log(getClass(), "ERROR: Adding Enttry " + e.getMessage());
+            App.log(getClass(), "ERROR: Adding Entry " + e.getMessage());
             postResult(null, false);
         }
     }

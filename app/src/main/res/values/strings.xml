@@ -68,4 +68,5 @@
     <string name="show_map_on_current_location">Show map on current location?</string>
     <string name="zoom_out">Zoom out</string>
     <string name="cannot_locate_user">Cannot locate user. Please enable location services in system settings!</string>
+    <string name="error_couldnt_connect_or_register">Error: Could not connect to Server or couldn\'t check user.</string>
 </resources>

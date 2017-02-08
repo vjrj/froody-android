@@ -51,7 +51,7 @@ public class EntryByBlockLoader extends Thread {
 
     @Override
     public void run() {
-        int precisionToLoad = zoom < MapOSMFragment.ZOOMLEVEL_BLOCK6_TRESHOLD ? 5 : 6;
+        int precisionToLoad = zoom < MapOSMFragment.ZOOMLEVEL_BLOCK5_TRESHOLD ? 4 : 5;
         String geohash = GeoHash.withCharacterPrecision(lat, lng, precisionToLoad).toBase32();
         BlockCache blockCache = BlockCache.getInstance();
 
@@ -66,7 +66,9 @@ public class EntryByBlockLoader extends Thread {
         BlockApi blockApi = new BlockApi();
         try {
             // Request info for Block
-            List<BlockInfo> blockInfos = blockApi.blockInfoGet(geohash, blockInfo.getModificationDate());
+            List<BlockInfo> blockInfos = zoom > MapOSMFragment.ZOOMLEVEL_REQUEST_TRESHOLD_TO_4
+                    ? blockApi.blockInfoGet(geohash, blockInfo.getModificationDate())
+                    : blockApi.blockInfoRandomGet();
             for (BlockInfoPlus bpu : blockCache.processBlockInfosAndGetModified(blockInfos)) {
                 // For every block
                 try {

@@ -60,7 +60,7 @@ public class SettingActivity extends PreferenceActivity {
                 ApiClient apiClient = Configuration.getDefaultApiClient();
                 apiClient.setBasePath(appSettings.getFroodyServer());
                 appSettings.setFroodyUserId(-1);
-                UserRegisterer.registerUserIfNotRegistered(context);
+                new UserRegisterer(context).start();
             }
         }
 

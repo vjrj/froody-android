@@ -93,10 +93,12 @@ Class | Method | HTTP request | Description
 *AdminApi* | [**adminCleanupGet**](docs/AdminApi.md#adminCleanupGet) | **GET** /admin/cleanup | 
 *BlockApi* | [**blockGetGet**](docs/BlockApi.md#blockGetGet) | **GET** /block/get | 
 *BlockApi* | [**blockInfoGet**](docs/BlockApi.md#blockInfoGet) | **GET** /block/info | 
+*BlockApi* | [**blockInfoRandomGet**](docs/BlockApi.md#blockInfoRandomGet) | **GET** /block/info/random | 
 *EntryApi* | [**entryAddPost**](docs/EntryApi.md#entryAddPost) | **POST** /entry/add | Add a FroodyEntry with details
 *EntryApi* | [**entryByIdGet**](docs/EntryApi.md#entryByIdGet) | **GET** /entry/byId | 
 *EntryApi* | [**entryDeleteGet**](docs/EntryApi.md#entryDeleteGet) | **GET** /entry/delete | Delete an Entry
 *EntryApi* | [**entryPopularEntryTypesGet**](docs/EntryApi.md#entryPopularEntryTypesGet) | **GET** /entry/popularEntryTypes | 
+*StatsApi* | [**statsOverallGet**](docs/StatsApi.md#statsOverallGet) | **GET** /stats/overall | 
 *UserApi* | [**userIsEnabledGet**](docs/UserApi.md#userIsEnabledGet) | **GET** /user/isEnabled | 
 *UserApi* | [**userRegisterGet**](docs/UserApi.md#userRegisterGet) | **GET** /user/register | User Id
 
@@ -108,6 +110,7 @@ Class | Method | HTTP request | Description
  - [FroodyUser](docs/FroodyUser.md)
  - [ResponseEntryAdd](docs/ResponseEntryAdd.md)
  - [ResponseOk](docs/ResponseOk.md)
+ - [ServerOverallStats](docs/ServerOverallStats.md)
 
 
 ## Documentation for Authorization

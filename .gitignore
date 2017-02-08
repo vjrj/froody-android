@@ -12,6 +12,7 @@ tmp/
 *.tmp
 *.bak
 *.log
+swagger/.travis.yml
 
 ################
 ### Intellij ###

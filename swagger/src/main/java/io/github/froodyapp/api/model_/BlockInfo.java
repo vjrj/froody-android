@@ -24,7 +24,7 @@ import java.io.Serializable;
  * Informations about a Geohash-Block
  */
 @ApiModel(description = "Informations about a Geohash-Block")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-03T16:49:39.823+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T17:38:04.070+01:00")
 public class BlockInfo implements Serializable {
   private static final long serialVersionUID = 1L;
 
