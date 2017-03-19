@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.text.Html;
 import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
@@ -42,7 +43,7 @@ public class InfoFragment extends BaseFragment {
     @BindView(R.id.info__fragment__text_app_version)
     TextView textAppVersion;
 
-    @BindView(R.id.info__text_maintainers)
+    @BindView(R.id.info__fragment__text_maintainers)
     TextView textMaintainers;
 
     @BindView(R.id.info__fragment__text_contributors)
@@ -60,6 +61,7 @@ public class InfoFragment extends BaseFragment {
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
@@ -70,7 +72,7 @@ public class InfoFragment extends BaseFragment {
 
         textContributors.setText(new SpannableString(Html.fromHtml(
                 Helpers.readTextfileFromRawRes(context, R.raw.contributors,
-                        "<font color='" + Helpers.getColorFromRes(context, R.color.accent) + "'><b>*</b></font> ", "<br>")))
+                        "<font color='" + ContextCompat.getColor(context, R.color.accent) + "'><b>*</b></font> ", "<br>")))
         );
         textContributors.setMovementMethod(LinkMovementMethod.getInstance());
 
@@ -105,8 +107,7 @@ public class InfoFragment extends BaseFragment {
         return false;
     }
 
-    // App version or license was clicked
-    @OnClick({R.id.info__fragment__text_app_version, R.id.info__fragment__button_licenses})
+    @OnClick({R.id.info__fragment__text_app_version, R.id.info__fragment__button_third_party_licenses, R.id.info__fragment__button_gplv3_license})
     public void onButtonClicked(View v) {
         Context context = v.getContext();
         switch (v.getId()) {
@@ -114,8 +115,12 @@ public class InfoFragment extends BaseFragment {
                 Helpers.openWebpageWithExternalBrowser(context, getString(R.string.project_github_page));
                 break;
             }
-            case R.id.info__fragment__button_licenses: {
-                CustomDialogs.showLicensesDialog(context);
+            case R.id.info__fragment__button_gplv3_license: {
+                CustomDialogs.showDialogWithRawFileInWebView(context, "license.md", R.string.license);
+                break;
+            }
+            case R.id.info__fragment__button_third_party_licenses: {
+                CustomDialogs.showDialogWithRawFileInWebView(context, "licenses.html", R.string.license);
                 break;
             }
         }
@@ -124,7 +129,7 @@ public class InfoFragment extends BaseFragment {
     public String getMaintainersHtml(Context context) {
         String text = Helpers.readTextfileFromRawRes(context, R.raw.maintainers, "", "<br>");
         text = text.replace("SUBTABBY", "&nbsp;&nbsp;")
-                .replace("NEWENTRY", "<font color='" + Helpers.getColorFromRes(context, R.color.accent) + "'><b>*</b></font> ");
+                .replace("NEWENTRY", "<font color='" + ContextCompat.getColor(context, R.color.accent) + "'><b>*</b></font> ");
         return text;
     }
 

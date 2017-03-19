@@ -9,8 +9,10 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ImageView;
 
 import butterknife.ButterKnife;
+import io.github.froodyapp.BuildConfig;
 import io.github.froodyapp.R;
 import io.github.froodyapp.ui.CustomDialogs;
 import io.github.froodyapp.util.Helpers;
@@ -33,6 +35,10 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.splash__activity);
         if (getSupportActionBar() != null)
             getSupportActionBar().hide();
+
+        if (BuildConfig.IS_TEST_BUILD) {
+            ((ImageView) findViewById(R.id.splash__activity__icon)).setImageResource(R.drawable.ic_launcher_test);
+        }
 
         requestStoragePermission();
     }

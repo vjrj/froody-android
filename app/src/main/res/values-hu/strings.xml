@@ -49,4 +49,5 @@
   <string name="show_map_on_current_location">Legyen mutatva a térkép a jelenlegi helynél?</string>
   <string name="zoom_out">Kicsinyít</string>
   <string name="cannot_locate_user">Nem lehet meghatározni a felhasználó helyét. Kérlek, engedélyezd a helylekérdező-szolgáltatásokat a rendszerbeállításoknál!</string>
+  <string name="error_couldnt_connect_or_register">Hiba: Nem lehetett csatlakozni a szerverhez vagy nem lehetett ellenőrizni a felhasználót.</string>
 </resources>

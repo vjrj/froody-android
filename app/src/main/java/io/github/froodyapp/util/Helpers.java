@@ -2,6 +2,7 @@ package io.github.froodyapp.util;
 
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -21,6 +22,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 import ch.hsr.geohash.GeoHash;
+import io.github.froodyapp.BuildConfig;
 import io.github.froodyapp.R;
 
 /**
@@ -104,6 +106,20 @@ public class Helpers {
             }
         }
         return sb.toString();
+    }
+
+    public static void donateBitcoinRequest(Context context) {
+        if (!BuildConfig.IS_GPLAY_BUILD) {
+            String btcUri = String.format("bitcoin:%s?amount=%s&label=%s&message=%s",
+                    "1B9ZyYdQoY9BxMe9dRUEKaZbJWsbQqfXU5", "0.01", "Have some coke, and a nice day", "Have some coke, and a nice day");
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(btcUri));
+            try {
+                context.startActivity(intent);
+            } catch (ActivityNotFoundException e) {
+                openWebpageWithExternalBrowser(context, "https://gsantner.github.io/donate/#donate");
+            }
+        }
     }
 
     public static void openWebpageWithExternalBrowser(Context context, String url) {

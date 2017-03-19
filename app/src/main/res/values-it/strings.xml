@@ -3,9 +3,51 @@
 <resources>
   <!-- General & Important things -->
   <!-- General words -->
+  <string name="image">Immagine</string>
+  <string name="reset">Reset</string>
+  <string name="settings">Impostazioni</string>
+  <string name="more">Altro</string>
+  <string name="description">Descrizione</string>
+  <string name="location">Ubicazione</string>
+  <string name="error">Errore</string>
+  <string name="all">Tutto</string>
+  <string name="contributors">Collaboratori</string>
+  <string name="about_">Info</string>
   <!-- More general words -->
+  <string name="search_dotdotdot">Cerca&#8230;</string>
+  <string name="distribution_type">Distribuzione</string>
+  <string name="certification">Certificazione</string>
+  <string name="contact">Contatti</string>
+  <string name="maintainers">Manutentori</string>
+  <string name="map">Mappa</string>
+  <string name="blog">Blog</string>
+  <string name="license">Licenza</string>
   <!-- Main -->
+  <string name="navigation_drawer_open">Apri nav-drawer</string>
+  <string name="navigation_drawer_close">Chiudi nav-drawer</string>
+  <string name="no_entries_were_published_by_me">Nessuna merce disponibile</string>
+  <string name="help_and_share"><![CDATA[Aiuta & Condividi]]></string>
+  <string name="really_delete_entry">Vuoi davvero eliminare questa merce?</string>
+  <string name="share_entry_ask">Condividi la merce?</string>
   <!-- Publish -->
+  <string name="suggested">Suggerita</string>
+  <string name="select_froody">Selezionare Froody&#8230;</string>
+  <string name="hint__description__enter_here">Immettere qui la descrizione per questa merce (ad es. qualità, per fare la marmellata, sottotipo...)</string>
+  <string name="hint__contact__enter_here">Inserite qui i dati di contatto per questa merce (può contenere il tuo nr. di tel. o e-mail)</string>
+  <string name="publish_entry">Pubblicare</string>
+  <string name="limited_time_active_notice">Attenzione! La merce rimane disponibile da ora per 3 settimane.</string>
+  <string name="share_my_entry_at_froody">La mia merce nell\'app Froody</string>
+  <string name="share_chooser_share_entry">Condividi la merce</string>
+  <string name="nav__my_entries">Mia merce</string>
   <!-- Info -->
+  <string name="show_licenses">Visualizza licenze</string>
   <!-- Location -->
+  <string name="request_location">Richiesta Posizione</string>
+  <string name="gps_locating_user">Localizzazione&#8230;</string>
+  <string name="address_most_near">Nelle vicinanze</string>
+  <string name="error_bad_permissions">Per poter funzionare correttamente si prega di dare a Froody le autorizzazioni per accedere alla localizzazione e scrivere i dati. L\'app non può essere utilizzata senza questi permessi.</string>
+  <string name="show_map_on_current_location">Mostra la posizione corrente sulla mappa?</string>
+  <string name="zoom_out">Riduci ingrandimento</string>
+  <string name="cannot_locate_user">Non è possibile individuare l\'utente. Si prega di abilitare il servizio di localizzazione nelle impostazioni di sistema!</string>
+  <string name="error_couldnt_connect_or_register">Errore: Impossibile connettersi al Server o controllo utente fallito.</string>
 </resources>

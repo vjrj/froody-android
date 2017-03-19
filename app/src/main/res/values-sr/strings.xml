@@ -49,4 +49,5 @@
   <string name="show_map_on_current_location">Приказати мапу око тренутне локације?</string>
   <string name="zoom_out">Одаљи</string>
   <string name="cannot_locate_user">Не могу да лоцирам корисника. Укључите услугу локације у поставкама система!</string>
+  <string name="error_couldnt_connect_or_register">Грешка: не могу да се повежем на сервер или да проверим корисника.</string>
 </resources>

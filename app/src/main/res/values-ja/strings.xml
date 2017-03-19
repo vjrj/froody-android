@@ -49,4 +49,5 @@
   <string name="show_map_on_current_location">現在の場所を地図に表示しますか?</string>
   <string name="zoom_out">縮小</string>
   <string name="cannot_locate_user">ユーザーの場所が見つかりません。システム設定で位置情報サービスを有効にしてください!</string>
+  <string name="error_couldnt_connect_or_register">エラー: サーバーに接続できないか、ユーザーを確認できませんでした。</string>
 </resources>

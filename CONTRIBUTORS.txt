@@ -11,6 +11,8 @@
 Robert Diesenreither (www.zero-ermissions.at): Idea and domain
 Armando Luescher (https://noplanman.ch): Reviews of froody-server
 Naofumi Fukue (https://github.com/naofum): Japanese translation
-secitem (https://pod.geraspora.de/u/secitem): Czech translation
+secitem (https://github.com/bezcitu): Czech translation
 Слободан Симић (https://crowdin.com/profile/slsimic): Serbian translation
 Zsolt Szakács (https://github.com/maxigaz): Hungarian translation
+Jorge López (https://github.com/ToasterRaider): Spanish translation
+Luís F.S. Rosa (https://github.com/luisfsr): Brazilian Portuguese translation

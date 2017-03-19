@@ -21,6 +21,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -30,6 +31,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import ch.hsr.geohash.GeoHash;
 import io.github.froodyapp.App;
+import io.github.froodyapp.BuildConfig;
 import io.github.froodyapp.R;
 import io.github.froodyapp.api.model_.FroodyEntry;
 import io.github.froodyapp.listener.FroodyEntrySelectedListener;
@@ -133,6 +135,11 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        if (BuildConfig.IS_TEST_BUILD) {
+            ((ImageView) navigationView.getHeaderView(0).findViewById(R.id.main__activity__nav_header__image)).setImageResource(R.drawable.ic_launcher_test);
+        }
+        navigationView.getMenu().findItem(R.id.action_donate_bitcoin).setVisible(!BuildConfig.IS_GPLAY_BUILD);
 
         // Snackbar Location
         snackbarJumpToFoundLocation = Snackbar
@@ -276,7 +283,7 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
             if (!visibleFrag.onBackPressed()) {
                 if (fragmentManager.getBackStackEntryCount() > 0) {
                     fragmentManager.popBackStack();
-                    invalidateOptionsMenu();
+                    supportInvalidateOptionsMenu();
                     return;
                 }
             }
@@ -360,6 +367,11 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
                 intent.setData(Uri.parse(getString(R.string.project_github_page)));
                 startActivity(intent);
                 break;
+            }
+
+            case R.id.action_donate_bitcoin: {
+                Helpers.donateBitcoinRequest(this);
+                return true;
             }
         }
 

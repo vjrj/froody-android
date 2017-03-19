@@ -14,6 +14,7 @@
   <string name="distribution_type__free">Gratuita</string>
   <string name="distribution_type__donate">Donación</string>
   <string name="distribution_type__sale">Venta</string>
+  <string name="distribution_type__swap">Cambiar</string>
   <!-- Entry Types (Special) -->
   <string name="entry_type__special__miscellaneous">Diversos</string>
   <string name="entry_type__special__water">Agua</string>
@@ -22,6 +23,7 @@
   <string name="entry_type__pear">Pera</string>
   <string name="entry_type__cherry">Cereza</string>
   <string name="entry_type__plum">Ciruela</string>
+  <string name="entry_type__currant">Grosella</string>
   <string name="entry_type__grape">Uva</string>
   <string name="entry_type__hazelnut">Avellanas</string>
   <string name="entry_type__milk">Leche</string>

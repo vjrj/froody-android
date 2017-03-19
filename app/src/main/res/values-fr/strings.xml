@@ -49,4 +49,5 @@
   <string name="show_map_on_current_location">Centrer la carte à l\'emplacement actuel ?</string>
   <string name="zoom_out">Dézoomer</string>
   <string name="cannot_locate_user">Localisation impossible. Veuillez activer les services de localisation dans les paramètres système !</string>
+  <string name="error_couldnt_connect_or_register">Erreur : Impossible de se connecter au serveur pour vérifier l\'utilisateur.</string>
 </resources>

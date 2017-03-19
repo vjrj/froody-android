@@ -2,6 +2,7 @@ package io.github.froodyapp.ui;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.support.annotation.StringRes;
 import android.support.v7.app.AlertDialog;
 import android.webkit.WebView;
 import android.widget.Toast;
@@ -50,12 +51,12 @@ public class CustomDialogs {
     }
 
     // Show license infos
-    public static void showLicensesDialog(Context context) {
+    public static void showDialogWithRawFileInWebView(Context context, String fileInRaw, @StringRes int resTitleId) {
         WebView wv = new WebView(context);
-        wv.loadUrl("file:///android_res/raw/licenses.html");
+        wv.loadUrl("file:///android_res/raw/" + fileInRaw);
         AlertDialog.Builder dialog = new AlertDialog.Builder(context)
                 .setPositiveButton(R.string.ok, null)
-                .setTitle(R.string.license)
+                .setTitle(resTitleId)
                 .setView(wv);
         dialog.show();
     }

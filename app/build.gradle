@@ -5,14 +5,47 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
 
+    def VERSION_CODE = 8
+    def VERSION_NAME = "0.2.3"
+    def APP_NAME = 'Froody'
+    def APP_ICON ="@drawable/ic_launcher"
+    def APP_PACKAGE = "io.github.froodyapp"
+
     defaultConfig {
-        applicationId "io.github.froodyapp"
         minSdkVersion 17
         targetSdkVersion 25
-        versionCode 8
-        versionName "0.2.3"
+
+        buildConfigField "boolean", "IS_TEST_BUILD", "false"
+        buildConfigField "boolean", "IS_GPLAY_BUILD", "false"
         //vectorDrawables.useSupportLibrary = true
     }
+
+    productFlavors {
+        flavorDefault {
+            applicationId APP_PACKAGE
+            resValue 'string', 'app_name', APP_NAME
+            manifestPlaceholders = [appIcon: APP_ICON]
+            versionCode VERSION_CODE ; versionName VERSION_NAME
+        }
+
+        flavorTest {
+            applicationId APP_PACKAGE + ".test"
+            resValue 'string', 'app_name', '"Frooty"'
+            manifestPlaceholders = [appIcon: APP_ICON + "_test"]
+            versionCode = Integer.parseInt(new Date().format('yyMMdd'))
+            versionName = new Date().format('yyMMdd')
+            buildConfigField "boolean", "IS_TEST_BUILD", "true"
+        }
+
+        flavorGplay {
+            applicationId APP_PACKAGE
+            resValue 'string', 'app_name', APP_NAME
+            manifestPlaceholders = [appIcon: APP_ICON]
+            versionCode VERSION_CODE ; versionName VERSION_NAME
+            buildConfigField "boolean", "IS_GPLAY_BUILD", "true"
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -55,9 +88,9 @@ dependencies {
     testCompile 'junit:junit:4.12'
 
     // Android standard libs
-    compile 'com.android.support:appcompat-v7:25.1.0'
-    compile 'com.android.support:design:25.1.0'
-    compile 'com.android.support:support-v4:25.1.0'
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.android.support:design:25.2.0'
+    compile 'com.android.support:support-v4:25.2.0'
 
     // Open Street Map & Geo
     compile 'org.osmdroid:osmdroid-android:5.6.3'

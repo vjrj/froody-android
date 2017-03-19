@@ -1,8 +1,7 @@
 # ![Froody](https://avatars1.githubusercontent.com/u/24797651?v=3&s=48) Froody-Android
 
-[![Build Status](https://travis-ci.org/froodyapp/froody-android.svg?branch=master)](https://travis-ci.org/froodyapp/froody-android)
+[![CircleCI](https://circleci.com/gh/froodyapp/froody-android.svg?style=shield)](https://circleci.com/gh/froodyapp/froody-android)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/froodyapp/localized.svg)](https://crowdin.com/project/froodyapp)
-<span class="badge-githubstar"><iframe src="https://ghbtns.com/github-btn.html?user=froodyapp&amp;repo=froody-android&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe></span>
 <span class="badge-bitcoin"><a href="https://gsantner.github.io/donate/#donate" title="Donate once-off to this project using Bitcoin"><img src="https://img.shields.io/badge/bitcoin-donate-yellow.svg" alt="Bitcoin donate button" /></a></span>
 
 Android part of the [Froody](https://froodyapp.github.io) application.  
@@ -17,7 +16,7 @@ License: **GPLv3**
 * Intended to use in the local area - zoom in to your location and look for entries
 * Everyone can add entries (and delete them), no login needed
 * Entries will be available 3 weeks
-* Available in English, German, Czech, Spanish and Japanese
+* Available in many languages
 
 **How to support the project?**
 
@@ -36,7 +35,7 @@ Others users can find entries when they swipe to this location. You can delete y
 ## Notices
 Influenced by ideas and snippets from other apps by gsantner ([kimai-android](https://github.com/gsantner/kimai-android), [dandelion\*](https://github.com/Diaspora-for-Android/dandelion), ..) which this app is allowed to use.
 Main servers domain `fruity-app.at` is sponsored by [Robert Diesenreither](http://www.zero-emission.at/index.php), the `froody-server` is hosted by @gsantner.
-Project icon comes from the EmojiOne project, licensed CC-BY 4.0.
+Project icon comes from the EmojiOne project, licensed CC BY 4.0.
 
 ## Screenshots
 
