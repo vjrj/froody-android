@@ -29,6 +29,7 @@
   <string name="help_and_share"><![CDATA[помози и подели]]></string>
   <string name="really_delete_entry">Заиста желите да избришете унос?</string>
   <string name="share_entry_ask">Поделити унос?</string>
+  <string name="donate_bitcoin">Донирајте Биткоине</string>
   <!-- Publish -->
   <string name="suggested">Предложено</string>
   <string name="select_froody">Изаберите шта нудите&#8230;</string>
@@ -41,6 +42,9 @@
   <string name="nav__my_entries">Моји уноси</string>
   <!-- Info -->
   <string name="show_licenses">Прикажи лиценце</string>
+  <string name="show_gplv3_license">Прикажи ГНУ ОЈЛв3 лиценцу</string>
+  <string name="show_third_party_licenses">Прикажи лиценце треће стране</string>
+  <string name="more_information">Више информација</string>
   <!-- Location -->
   <string name="request_location">Тражи локацију</string>
   <string name="gps_locating_user">Лоцирам&#8230;</string>

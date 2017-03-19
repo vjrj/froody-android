@@ -43,7 +43,6 @@
   <!-- Info -->
   <string name="show_licenses">Lizenzen anzeigen</string>
   <string name="show_gplv3_license">GNU GPLv3 Lizenz anzeigen</string>
-  <string name="show_third_party_licenses">Drittanbieter Lizenzen anzeigen</string>
   <!-- Location -->
   <string name="request_location">Ortsinformationen laden</string>
   <string name="gps_locating_user">Ortung&#8230;</string>
