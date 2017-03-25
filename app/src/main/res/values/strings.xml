@@ -34,6 +34,7 @@
     <string name="map">Map</string>
     <string name="blog">Blog</string>
     <string name="license">License</string>
+    <string name="changelog">Changelog</string>
 
     <!-- Main -->
     <string name="navigation_drawer_open">Open nav-drawer</string>

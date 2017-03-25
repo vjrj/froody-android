@@ -20,6 +20,10 @@
     <string name="pref_key__clear_cache" translatable="false">pref_key__clear_cache</string>
     <string name="pref_catkey__app" translatable="false">pref_catkey__app</string>
     <string name="pref_key__reset_app" translatable="false">pref_key__reset_app</string>
+    <string name="pref_key__app_first_start_current_version" translatable="false">pref_key__app_first_start_current_version</string>
+    <string name="pref_key__app_first_start" translatable="false">pref_key__app_first_start</string>
+
+
 
     <!-- Network -->
     <string name="pref_cat__network">Network</string>

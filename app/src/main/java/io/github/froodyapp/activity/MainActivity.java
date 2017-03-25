@@ -24,6 +24,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,6 +46,7 @@ import io.github.froodyapp.util.AppSettings;
 import io.github.froodyapp.util.BlockCache;
 import io.github.froodyapp.util.Helpers;
 import io.github.froodyapp.util.MyEntriesHelper;
+import io.github.froodyapp.util.SimpleMarkdownParser;
 
 
 /**
@@ -117,6 +119,23 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
             showFragment(mapOSMFragment);
         }
         handleIntent(getIntent());
+
+        // Show first start dialog / changelog
+        try {
+            if (appSettings.isAppFirstStart()) {
+                Helpers.showDialogWithHtmlTextView(this, new SimpleMarkdownParser().parse(
+                        getResources().openRawResource(R.raw.licenses_3rd_party),
+                        SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml(),
+                        R.string.license);
+            } else if (appSettings.isAppCurrentVersionFirstStart()) {
+                SimpleMarkdownParser smp = new SimpleMarkdownParser().parse(
+                        getResources().openRawResource(R.raw.changelog),
+                        SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "");
+                Helpers.showDialogWithHtmlTextView(this, smp.getHtml(), R.string.changelog);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**

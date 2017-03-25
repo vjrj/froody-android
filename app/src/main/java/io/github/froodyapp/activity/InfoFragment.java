@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.text.Html;
 import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
@@ -16,13 +15,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.io.IOException;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.github.froodyapp.R;
 import io.github.froodyapp.ui.BaseFragment;
-import io.github.froodyapp.ui.CustomDialogs;
 import io.github.froodyapp.util.Helpers;
+import io.github.froodyapp.util.SimpleMarkdownParser;
 
 /**
  * Activity for information about the app
@@ -67,15 +68,14 @@ public class InfoFragment extends BaseFragment {
 
 
         Context context = getContext();
-        textMaintainers.setText(new SpannableString(Html.fromHtml(getMaintainersHtml(context))));
+        textMaintainers.setText(new SpannableString(Html.fromHtml(
+                Helpers.loadMarkdownFromRawForTextView(context, R.raw.maintainers, ""))));
         textMaintainers.setMovementMethod(LinkMovementMethod.getInstance());
 
         textContributors.setText(new SpannableString(Html.fromHtml(
-                Helpers.readTextfileFromRawRes(context, R.raw.contributors,
-                        "<font color='" + ContextCompat.getColor(context, R.color.accent) + "'><b>*</b></font> ", "<br>")))
-        );
+                Helpers.loadMarkdownFromRawForTextView(context, R.raw.contributors, "* ")
+        )));
         textContributors.setMovementMethod(LinkMovementMethod.getInstance());
-
 
         // App version
         try {
@@ -116,21 +116,21 @@ public class InfoFragment extends BaseFragment {
                 break;
             }
             case R.id.info__fragment__button_gplv3_license: {
-                CustomDialogs.showDialogWithRawFileInWebView(context, "license.md", R.string.license);
+                Helpers.showDialogWithHtmlTextView(context, Helpers.loadMarkdownFromRawForTextView(context, R.raw.license, ""), R.string.license);
                 break;
             }
             case R.id.info__fragment__button_third_party_licenses: {
-                CustomDialogs.showDialogWithRawFileInWebView(context, "licenses.html", R.string.license);
+                try {
+                    Helpers.showDialogWithHtmlTextView(context, new SimpleMarkdownParser().parse(
+                            getResources().openRawResource(R.raw.licenses_3rd_party),
+                            SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml(),
+                            R.string.license);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 break;
             }
         }
-    }
-
-    public String getMaintainersHtml(Context context) {
-        String text = Helpers.readTextfileFromRawRes(context, R.raw.maintainers, "", "<br>");
-        text = text.replace("SUBTABBY", "&nbsp;&nbsp;")
-                .replace("NEWENTRY", "<font color='" + ContextCompat.getColor(context, R.color.accent) + "'><b>*</b></font> ");
-        return text;
     }
 
     @Override

@@ -1,11 +1,12 @@
 # ![Froody](https://avatars1.githubusercontent.com/u/24797651?v=3&s=48) Froody-Android
 
-[![CircleCI](https://circleci.com/gh/froodyapp/froody-android.svg?style=shield)](https://circleci.com/gh/froodyapp/froody-android)
+[![Build Status](https://travis-ci.org/froodyapp/froody-android.svg?branch=master)](https://travis-ci.org/froodyapp/froody-android)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/froodyapp/localized.svg)](https://crowdin.com/project/froodyapp)
+<span class="badge-githubstar"><iframe src="https://ghbtns.com/github-btn.html?user=froodyapp&amp;repo=froody-android&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe></span>
 <span class="badge-bitcoin"><a href="https://gsantner.github.io/donate/#donate" title="Donate once-off to this project using Bitcoin"><img src="https://img.shields.io/badge/bitcoin-donate-yellow.svg" alt="Bitcoin donate button" /></a></span>
 
-Android part of the [Froody](https://froodyapp.github.io) application.  
-Developed and maintained by [Gregor Santner](<https://gsantner.github.io>), 2016-  
+Android part of the [Froody](https://froodyapp.github.io) application.
+Developed and maintained by [Gregor Santner](<https://gsantner.github.io>), 2016-
 License: **GPLv3**
 
 [![F-Droid](https://f-droid.org/wiki/images/0/06/F-Droid-button_get-it-on.png)](https://f-droid.org/repository/browse/?fdid=io.github.froodyapp) [![Google Play](https://raw.githubusercontent.com/froodyapp/froody-extras/master/img/screens/v0.2.0/en_badge_web_generic_small.png)](https://play.google.com/store/apps/details?id=io.github.froodyapp&referrer=utm_source%3Dgithub)
@@ -27,7 +28,7 @@ License: **GPLv3**
 
 
 ## Permissions & Privacy
-* The app requests your location so you can create entries, and to automatically zoom to your location. 
+* The app requests your location so you can create entries, and to automatically zoom to your location.
 If you add a new entry your location gets sent to the setted server (default server uses https).
 Others users can find entries when they swipe to this location. You can delete your entries by tapping the trash icon. Entries will get automatically deleted after 3 weeks.
 * The app requests the storage permission for caching the Map-Tiles
@@ -35,7 +36,7 @@ Others users can find entries when they swipe to this location. You can delete y
 ## Notices
 Influenced by ideas and snippets from other apps by gsantner ([kimai-android](https://github.com/gsantner/kimai-android), [dandelion\*](https://github.com/Diaspora-for-Android/dandelion), ..) which this app is allowed to use.
 Main servers domain `fruity-app.at` is sponsored by [Robert Diesenreither](http://www.zero-emission.at/index.php), the `froody-server` is hosted by @gsantner.
-Project icon comes from the EmojiOne project, licensed CC BY 4.0.
+Project icon comes from the EmojiOne project, licensed CC-BY 4.0.
 
 ## Screenshots
 
