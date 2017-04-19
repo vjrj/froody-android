@@ -5,8 +5,8 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
 
-    def VERSION_CODE = 9
-    def VERSION_NAME = "0.2.4"
+    def VERSION_CODE = 10
+    def VERSION_NAME = "0.2.5"
     def APP_NAME = 'Froody'
     def APP_ICON ="@drawable/ic_launcher"
     def APP_PACKAGE = "io.github.froodyapp"

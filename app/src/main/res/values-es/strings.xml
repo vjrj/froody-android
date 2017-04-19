@@ -22,6 +22,7 @@
   <string name="map">Mapa</string>
   <string name="blog">Blog</string>
   <string name="license">Licencia</string>
+  <string name="changelog">Mostrar cambios de esta versión</string>
   <!-- Main -->
   <string name="navigation_drawer_open">Abrir panel lateral de navegación</string>
   <string name="navigation_drawer_close">Cerrar panel lateral de navegación</string>
@@ -29,6 +30,7 @@
   <string name="help_and_share"><![CDATA[Ayuda y comparte]]></string>
   <string name="really_delete_entry">¿Realmente deseas borrar esta entrada?</string>
   <string name="share_entry_ask">¿Compartir entrada?</string>
+  <string name="donate_bitcoin">Donar Bitcoins</string>
   <!-- Publish -->
   <string name="suggested">Sugeridos</string>
   <string name="select_froody">Elige un Froody&#8230;</string>
@@ -41,6 +43,9 @@
   <string name="nav__my_entries">Mis entradas</string>
   <!-- Info -->
   <string name="show_licenses">Mostrar licencias</string>
+  <string name="show_gplv3_license">Mostrar licencia GNU GPLv3</string>
+  <string name="show_third_party_licenses">Mostrar licencias de terceros</string>
+  <string name="more_information">Más información</string>
   <!-- Location -->
   <string name="request_location">Solicitar ubicación</string>
   <string name="gps_locating_user">Localizando&#8230;</string>

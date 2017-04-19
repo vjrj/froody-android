@@ -54,4 +54,5 @@
     <string name="entry_type__wood">Wood</string>
     <string name="entry_type__zucchini">Zucchini</string>
     <string name="entry_type__aubergine">Aubergine</string>
+    <string name="entry_type__mango">Mango</string>
 </resources>

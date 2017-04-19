@@ -24,6 +24,8 @@ import org.osmdroid.views.overlay.gestures.RotationGestureOverlay;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import ch.hsr.geohash.GeoHash;
 import io.github.froodyapp.App;
 import io.github.froodyapp.R;
@@ -49,10 +51,12 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
         return new MapOSMFragment();
     }
 
+    @BindView(R.id.maposm__fragment__map)
+    public MapView map;
+
     //#####################
     //##      Members
     //#####################
-    private MapView map;
     private IMapController mapController;
     private RotationGestureOverlay rotationGesture;
     private RadiusMarkerClusterWithClusterClick mapCluster;
@@ -63,12 +67,10 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Context context = inflater.getContext();
-        map = new MapView(context);
-        map.setBackgroundColor(Helpers.getColorFromRes(context, R.color.white));
-        return map;
+        View view = inflater.inflate(R.layout.maposm__fragment, container, false);
+        ButterKnife.bind(this, view);
+        return view;
     }
-
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -96,6 +98,7 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
         map.setMapListener(this);
         map.setBuiltInZoomControls(false);
         map.setMultiTouchControls(true);
+        map.setMinZoomLevel(2);
         //map.setMinZoomLevel(ZOOMLEVEL_BLOCK4_TRESHOLD);
 
         // Enable rotation gesture
@@ -127,6 +130,8 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
                     appSettings.getLastMapLocationLongitude(),
                     appSettings.getLastMapLocationZoom()
             );
+        } else {
+            zoomToPosition(48.271165, 13.094350, 3);
         }
     }
 
@@ -285,7 +290,7 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
     @Override
     public boolean onZoom(ZoomEvent zoomEvent) {
         new MapListenerNotifier(map).start();
-        App.log(getClass(), zoomEvent.getZoomLevel()+"");
+        App.log(getClass(), zoomEvent.getZoomLevel() + "");
         return false;
     }
 

@@ -5,6 +5,8 @@ See <https://creativecommons.org/licenses> for full license texts.
 ~°  Copyright 2016 Ranks.com Inc.  
 ~°  Icons (including project/launcher) provided free by [EmojiOne](http://emojione.com/)  
 
+### CC BY 3.0
+* Mango icon by [Nikita Golubev](http://www.flaticon.com/free-icon/mango_361939)
 
 ## Apache License
 Version 2.0, January 2004  

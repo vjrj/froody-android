@@ -14,8 +14,8 @@ public class MapListenerNotifier extends Thread {
     //########################
     //## Static
     //########################
-    private final static long HAPPENING_INTERVAL = 2500;
-    private final static long HAPPENING_INTERVAL_WORLD = 10000;
+    private final static long HAPPENING_INTERVAL = 1000;
+    private final static long HAPPENING_INTERVAL_WORLD = 5000;
     private static long LAST_HAPPENING_TIME = 0;
 
     //########################

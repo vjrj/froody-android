@@ -39,6 +39,7 @@
                 android:title="@string/donate_bitcoin"
                 android:visible="false" />
             <item
+                android:visible="false"
                 android:id="@+id/nav_github"
                 android:icon="@drawable/ic_github_icon"
                 android:title="@string/github" />
