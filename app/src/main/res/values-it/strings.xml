@@ -22,6 +22,7 @@
   <string name="map">Mappa</string>
   <string name="blog">Blog</string>
   <string name="license">Licenza</string>
+  <string name="changelog">Log delle modifiche</string>
   <!-- Main -->
   <string name="navigation_drawer_open">Apri nav-drawer</string>
   <string name="navigation_drawer_close">Chiudi nav-drawer</string>

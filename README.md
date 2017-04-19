@@ -1,8 +1,7 @@
 # ![Froody](https://avatars1.githubusercontent.com/u/24797651?v=3&s=48) Froody-Android
 
-[![Build Status](https://travis-ci.org/froodyapp/froody-android.svg?branch=master)](https://travis-ci.org/froodyapp/froody-android)
+<a name="badgers"></a>[![CircleCI](https://circleci.com/gh/froodyapp/froody-android.svg?style=shield)](https://circleci.com/gh/froodyapp/froody-android)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/froodyapp/localized.svg)](https://crowdin.com/project/froodyapp)
-<span class="badge-githubstar"><iframe src="https://ghbtns.com/github-btn.html?user=froodyapp&amp;repo=froody-android&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe></span>
 <span class="badge-bitcoin"><a href="https://gsantner.github.io/donate/#donate" title="Donate once-off to this project using Bitcoin"><img src="https://img.shields.io/badge/bitcoin-donate-yellow.svg" alt="Bitcoin donate button" /></a></span>
 
 Android part of the [Froody](https://froodyapp.github.io) application.

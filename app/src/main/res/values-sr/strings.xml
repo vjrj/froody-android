@@ -22,6 +22,7 @@
   <string name="map">Мапа</string>
   <string name="blog">Блог</string>
   <string name="license">Лиценца</string>
+  <string name="changelog">Дневник измена</string>
   <!-- Main -->
   <string name="navigation_drawer_open">Отвори навигацију</string>
   <string name="navigation_drawer_close">Затвори навигацију</string>

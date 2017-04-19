@@ -22,6 +22,7 @@
   <string name="map">地図</string>
   <string name="blog">ブログ</string>
   <string name="license">ライセンス</string>
+  <string name="changelog">変更履歴</string>
   <!-- Main -->
   <string name="navigation_drawer_open">ドロワーを開く</string>
   <string name="navigation_drawer_close">ドロワーを閉じる</string>
@@ -29,6 +30,7 @@
   <string name="help_and_share"><![CDATA[ヘルプと共有]]></string>
   <string name="really_delete_entry">このエントリを削除してもよろしいですか?</string>
   <string name="share_entry_ask">エントリを共有しますか?</string>
+  <string name="donate_bitcoin">Bitcoin を寄付</string>
   <!-- Publish -->
   <string name="suggested">おすすめ</string>
   <string name="select_froody">Froody を選択してください&#8230;</string>
@@ -41,6 +43,9 @@
   <string name="nav__my_entries">私のエントリ</string>
   <!-- Info -->
   <string name="show_licenses">ライセンスを表示</string>
+  <string name="show_gplv3_license">GNU GPLv3 ライセンスを表示</string>
+  <string name="show_third_party_licenses">サードパーティ ライセンスを表示</string>
+  <string name="more_information">詳細情報</string>
   <!-- Location -->
   <string name="request_location">場所をリクエスト</string>
   <string name="gps_locating_user">探しています&#8230;</string>

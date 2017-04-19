@@ -22,6 +22,7 @@
   <string name="map">Karte</string>
   <string name="blog">Blog</string>
   <string name="license">Lizenz</string>
+  <string name="changelog">Änderungen</string>
   <!-- Main -->
   <string name="navigation_drawer_open">Nav-Drawer öffnen</string>
   <string name="navigation_drawer_close">Nav-Drawer schließen</string>
@@ -43,6 +44,8 @@
   <!-- Info -->
   <string name="show_licenses">Lizenzen anzeigen</string>
   <string name="show_gplv3_license">GNU GPLv3 Lizenz anzeigen</string>
+  <string name="show_third_party_licenses">Drittanbieter Lizenzen anzeigen</string>
+  <string name="more_information">Mehr Informationen</string>
   <!-- Location -->
   <string name="request_location">Ortsinformationen laden</string>
   <string name="gps_locating_user">Ortung&#8230;</string>
