@@ -37,7 +37,6 @@
   <string name="hint__description__enter_here">このエントリーの説明を入力してください (例: 品質、マーマレードを作るために、サブタイプ&#8230;)</string>
   <string name="hint__contact__enter_here">このエントリーの連絡先の詳細を入力してください (電話番号またはメールアドレスを含める必要があります)</string>
   <string name="publish_entry">公開</string>
-  <string name="limited_time_active_notice">ご注意ください! エントリは、今から 3 週間利用できます。</string>
   <string name="share_my_entry_at_froody">Froody アプリで、私のエントリ</string>
   <string name="share_chooser_share_entry">エントリを共有</string>
   <string name="nav__my_entries">私のエントリ</string>

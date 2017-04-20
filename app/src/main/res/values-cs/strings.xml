@@ -37,7 +37,6 @@
   <string name="hint__description__enter_here">Zde zadejte popis (např. kvalita, jen u marmelády, poddruh&#8230;)</string>
   <string name="hint__contact__enter_here">Zde zadejte kontakní informace (mělo by obsahovat alespoň telefonní číslo nebo e-mailovou adresu)</string>
   <string name="publish_entry">Zveřejnit</string>
-  <string name="limited_time_active_notice">Pozor! Tento příspěvek je nyní dostupný po dobu 3 týdnů.</string>
   <string name="share_my_entry_at_froody">Můj příspěvek v aplikaci Froody</string>
   <string name="share_chooser_share_entry">Sdílet příspěvek</string>
   <string name="nav__my_entries">Mé příspěvky</string>

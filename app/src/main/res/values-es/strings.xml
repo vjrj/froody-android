@@ -37,7 +37,6 @@
   <string name="hint__description__enter_here">Escribe una descripción para esta entrada (Ej. calidad, para preparar mermelada, subtipo...)</string>
   <string name="hint__contact__enter_here">Escribe los datos de contacto para esta entrada (debe contener No. telefónico o dirección de E-mail.)</string>
   <string name="publish_entry">Publicar</string>
-  <string name="limited_time_active_notice">¡Atención! La entrada estará disponible 3 semanas a partir de ahora.</string>
   <string name="share_my_entry_at_froody">Mi entrada en la App Froody</string>
   <string name="share_chooser_share_entry">Compartir entrada</string>
   <string name="nav__my_entries">Mis entradas</string>

@@ -1,5 +1,6 @@
 package io.github.froodyapp.model;
 
+import android.os.Build;
 import android.text.TextUtils;
 
 import org.joda.time.DateTime;
@@ -9,6 +10,7 @@ import java.util.Locale;
 
 import ch.hsr.geohash.GeoHash;
 import ch.hsr.geohash.WGS84Point;
+import io.github.froodyapp.BuildConfig;
 import io.github.froodyapp.api.model_.FroodyEntry;
 
 @SuppressWarnings("WeakerAccess")
@@ -84,7 +86,7 @@ public class FroodyEntryPlus extends FroodyEntry implements Serializable {
         if (getWasDeleted() != null && getWasDeleted()) {
             return true;
         }
-        return getCreationDate() != null && getCreationDate().plusWeeks(3).isBeforeNow();
+        return getCreationDate() != null && getCreationDate().plusDays(BuildConfig.ENTRY_LIFETIME_DAYS).isBeforeNow();
     }
 
     /**
@@ -124,6 +126,14 @@ public class FroodyEntryPlus extends FroodyEntry implements Serializable {
     @Override
     public String getAddress() {
         return TextUtils.isEmpty(entry.getAddress()) ? "" : entry.getAddress();
+    }
+
+    public int getDaysLeft(){
+        DateTime dt = getCreationDate();
+        if (dt != null && dt.plusDays(BuildConfig.ENTRY_LIFETIME_DAYS).isAfterNow()){
+            return (int)((dt.plusDays(BuildConfig.ENTRY_LIFETIME_DAYS).getMillis()-System.currentTimeMillis())/86400000);
+        }
+        return 0;
     }
 
     public FroodyEntry getContainedEntry() {

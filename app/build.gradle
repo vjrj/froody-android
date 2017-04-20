@@ -15,6 +15,7 @@ android {
         minSdkVersion 17
         targetSdkVersion 25
 
+        buildConfigField "int", "ENTRY_LIFETIME_DAYS", "60"
         buildConfigField "boolean", "IS_TEST_BUILD", "false"
         buildConfigField "boolean", "IS_GPLAY_BUILD", "false"
         //vectorDrawables.useSupportLibrary = true
@@ -88,9 +89,9 @@ dependencies {
     testCompile 'junit:junit:4.12'
 
     // Android standard libs
-    compile 'com.android.support:appcompat-v7:25.2.0'
-    compile 'com.android.support:design:25.2.0'
-    compile 'com.android.support:support-v4:25.2.0'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:support-v4:25.3.1'
 
     // Open Street Map & Geo
     compile 'org.osmdroid:osmdroid-android:5.6.3'

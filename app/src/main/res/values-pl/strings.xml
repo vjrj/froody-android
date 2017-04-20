@@ -37,7 +37,6 @@
   <string name="hint__description__enter_here">Wprowadź opis produktów (np. jakość owoców nadająca się tylko do przetworów itp.)</string>
   <string name="hint__contact__enter_here">Dane kontaktowe (dla ułatwienia odbioru powinny zawierać nr. tel. albo e-mail)</string>
   <string name="publish_entry">Publikuj</string>
-  <string name="limited_time_active_notice">Uwaga; Wpis będzie dostępny przez 3 tygodnie.</string>
   <string name="share_my_entry_at_froody">Moje wpisy we Froody</string>
   <string name="share_chooser_share_entry">Udostępnij wpis</string>
   <string name="nav__my_entries">Moje wpisy</string>

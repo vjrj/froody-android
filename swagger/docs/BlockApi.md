@@ -73,7 +73,7 @@ Get informations about of or around block/geohash
 
 BlockApi apiInstance = new BlockApi();
 String geohash = "geohash_example"; // String | BlockInfo.geohash ** Geohash (=position) 
-DateTime minModificationDate = new DateTime(); // DateTime | BlockInfo.modificationDate ** Timestamp of last known block modification. Make 3 weeks ago to get everything.
+DateTime minModificationDate = new DateTime(); // DateTime | BlockInfo.modificationDate ** Timestamp of last known block modification. Make ENTRY_LIFETIME_DAYS days ago to get everything.
 try {
     List<BlockInfo> result = apiInstance.blockInfoGet(geohash, minModificationDate);
     System.out.println(result);
@@ -88,7 +88,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **geohash** | **String**| BlockInfo.geohash ** Geohash (&#x3D;position)  |
- **minModificationDate** | **DateTime**| BlockInfo.modificationDate ** Timestamp of last known block modification. Make 3 weeks ago to get everything. |
+ **minModificationDate** | **DateTime**| BlockInfo.modificationDate ** Timestamp of last known block modification. Make ENTRY_LIFETIME_DAYS days ago to get everything. |
 
 ### Return type
 

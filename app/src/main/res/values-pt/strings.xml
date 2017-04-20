@@ -39,7 +39,6 @@
     <string name="hint__description__enter_here">Insira uma descrição (e.g. qualidade, subtipo, para fazer ximia...)</string>
     <string name="hint__contact__enter_here">Insira seus dados de contato aqui (telefone e/ou e-mail)</string>
     <string name="publish_entry">Publicar</string>
-    <string name="limited_time_active_notice">Atenção! A oferta valerá por 3 semanas.</string>
     <string name="share_my_entry_at_froody">Minha oferta no aplicativo Froody</string>
     <string name="share_chooser_share_entry">Partilhar oferta</string>
     <string name="nav__my_entries">Minhas ofertas</string>

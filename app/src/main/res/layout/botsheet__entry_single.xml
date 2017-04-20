@@ -23,7 +23,7 @@
         android:layout_marginEnd="5dp"
         android:layout_marginStart="5dp"
         android:contentDescription="@string/image"
-        android:visibility="gone"
+        android:visibility="visible"
         tools:src="@drawable/entry_type__grape" />
 
     <TextView
@@ -59,17 +59,17 @@
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical|end"
             android:layout_marginEnd="5dp"
-            app:srcCompat="@drawable/ic_delete_white_48px"
             android:visibility="gone"
-            app:elevation="1dp" />
+            app:elevation="1dp"
+            app:srcCompat="@drawable/ic_delete_white_48px" />
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/botsheet__entry_single__button_share"
             android:layout_width="48dp"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical|end"
-            app:srcCompat="@drawable/ic_share_white_48px"
-            app:elevation="1dp" />
+            app:elevation="1dp"
+            app:srcCompat="@drawable/ic_share_white_48px" />
 
     </LinearLayout>
 
@@ -81,7 +81,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/botsheet__entry_single__text_froodytype"
-        android:minHeight="100dp">
+        android:minHeight="90dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -94,6 +94,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/description"
+                android:visibility="gone"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
             <TextView
@@ -121,39 +122,55 @@
                 android:textColor="@color/black"
                 tools:text="Gregor Santner, 0677 55512345" />
 
-            <!-- Verteilung -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/input_field_margin"
-                android:text="@string/distribution_type"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-
-            <TextView
-                android:id="@+id/botsheet__entry_single__text_distribution"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/distribution_type__free"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="@color/black" />
-
-            <!-- Zertifizierung -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/input_field_margin"
-                android:text="@string/certification"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/botsheet__entry_single__text_certification"
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/distribution_type"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/certification"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/certification_type__none"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="@color/black" />
+                android:orientation="horizontal">
 
-            <!-- Addresse -->
+                <TextView
+                    android:id="@+id/botsheet__entry_single__text_distribution"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/distribution_type__free"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/botsheet__entry_single__text_certification"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/certification_type__none"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+            <!-- Address -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -169,7 +186,18 @@
                 android:textColor="@color/black"
                 tools:text="4321, Musterstadt" />
 
+            <!-- Days left -->
+            <TextView
+                android:id="@+id/botsheet__entry_single__text_days_left"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="end"
+                tools:text="25 days left"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/black" />
         </LinearLayout>
+
 
     </android.support.v4.widget.NestedScrollView>
 </RelativeLayout>

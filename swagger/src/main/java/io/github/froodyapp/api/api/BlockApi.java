@@ -259,7 +259,7 @@ public class BlockApi {
      * 
      * Get informations about of or around block/geohash
      * @param geohash BlockInfo.geohash ** Geohash (&#x3D;position)  (required)
-     * @param minModificationDate BlockInfo.modificationDate ** Timestamp of last known block modification. Make 3 weeks ago to get everything. (required)
+     * @param minModificationDate BlockInfo.modificationDate ** Timestamp of last known block modification. Make ENTRY_LIFETIME_DAYS days ago to get everything. (required)
      * @return List&lt;BlockInfo&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -272,7 +272,7 @@ public class BlockApi {
      * 
      * Get informations about of or around block/geohash
      * @param geohash BlockInfo.geohash ** Geohash (&#x3D;position)  (required)
-     * @param minModificationDate BlockInfo.modificationDate ** Timestamp of last known block modification. Make 3 weeks ago to get everything. (required)
+     * @param minModificationDate BlockInfo.modificationDate ** Timestamp of last known block modification. Make ENTRY_LIFETIME_DAYS days ago to get everything. (required)
      * @return ApiResponse&lt;List&lt;BlockInfo&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -286,7 +286,7 @@ public class BlockApi {
      *  (asynchronously)
      * Get informations about of or around block/geohash
      * @param geohash BlockInfo.geohash ** Geohash (&#x3D;position)  (required)
-     * @param minModificationDate BlockInfo.modificationDate ** Timestamp of last known block modification. Make 3 weeks ago to get everything. (required)
+     * @param minModificationDate BlockInfo.modificationDate ** Timestamp of last known block modification. Make ENTRY_LIFETIME_DAYS days ago to get everything. (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

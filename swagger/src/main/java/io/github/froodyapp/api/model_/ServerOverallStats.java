@@ -39,10 +39,10 @@ public class ServerOverallStats implements Serializable {
   }
 
    /**
-   * User.checkDate ** Count of users checking in the last 3 weeks
+   * User.checkDate ** Count of users checking in the last ENTRY_LIFETIME_DAYS days
    * @return userCount
   **/
-  @ApiModelProperty(example = "null", value = "User.checkDate ** Count of users checking in the last 3 weeks")
+  @ApiModelProperty(example = "null", value = "User.checkDate ** Count of users checking in the last ENTRY_LIFETIME_DAYS days")
   public Long getUserCount() {
     return userCount;
   }

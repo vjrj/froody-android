@@ -35,7 +35,6 @@
   <string name="hint__description__enter_here">Mettez la description pour cette entrée ici (ex. : qualité, pour la confiture, sous-type...)</string>
   <string name="hint__contact__enter_here">Mettez les données de contact pour cette entrée ici (n° de téléphone et/ou adresse e-mail)</string>
   <string name="publish_entry">Publier</string>
-  <string name="limited_time_active_notice">Attention ! L\'entrée est disponible pour une durée de 3 semaines.</string>
   <string name="share_my_entry_at_froody">Mon entrée sur l\'app Froody</string>
   <string name="share_chooser_share_entry">Partager l\'entrée</string>
   <string name="nav__my_entries">Mes entrées</string>

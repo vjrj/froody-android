@@ -7,6 +7,7 @@ import android.support.v7.app.AlertDialog;
 import android.webkit.WebView;
 import android.widget.Toast;
 
+import io.github.froodyapp.BuildConfig;
 import io.github.froodyapp.R;
 import io.github.froodyapp.model.FroodyEntryPlus;
 import io.github.froodyapp.util.FroodyEntryFormatter;
@@ -44,7 +45,8 @@ public class CustomDialogs {
         AlertDialog.Builder dialog = new AlertDialog.Builder(context)
                 .setTitle(R.string.share_entry_ask)
                 .setIcon(formatter.getEntryTypeImage())
-                .setMessage(formatter.summarize() + "\n\n" + context.getString(R.string.limited_time_active_notice))
+                .setMessage(formatter.summarize() + "\n\n" + context.getString(
+                        R.string.limited_time_active_notice, BuildConfig.ENTRY_LIFETIME_DAYS))
                 .setNegativeButton(R.string.no, onConfirmedListener)
                 .setPositiveButton(R.string.yes, onConfirmedListener);
         dialog.show();

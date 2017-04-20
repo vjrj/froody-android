@@ -483,7 +483,7 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
 
                     new EntryByBlockLoader(context, lat, lng, zoom).start();
 
-                    if (zoom > MapOSMFragment.ZOOMLEVEL_BLOCK4_TRESHOLD+1) {
+                    if (zoom >= 4) {
                         appSettings.setLastMapLocation(lat, lng, zoom);
                     }
                     break;

@@ -37,7 +37,6 @@
   <string name="hint__description__enter_here">Immettere qui la descrizione per questa merce (ad es. qualità, per fare la marmellata, sottotipo...)</string>
   <string name="hint__contact__enter_here">Inserite qui i dati di contatto per questa merce (può contenere il tuo nr. di tel. o e-mail)</string>
   <string name="publish_entry">Pubblicare</string>
-  <string name="limited_time_active_notice">Attenzione! La merce rimane disponibile da ora per 3 settimane.</string>
   <string name="share_my_entry_at_froody">La mia merce nell\'app Froody</string>
   <string name="share_chooser_share_entry">Condividi la merce</string>
   <string name="nav__my_entries">Mia merce</string>

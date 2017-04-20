@@ -10,6 +10,7 @@ import java.util.List;
 
 import ch.hsr.geohash.GeoHash;
 import io.github.froodyapp.App;
+import io.github.froodyapp.BuildConfig;
 import io.github.froodyapp.activity.MapOSMFragment;
 import io.github.froodyapp.api.api.BlockApi;
 import io.github.froodyapp.api.invoker.ApiException;
@@ -58,7 +59,7 @@ public class EntryByBlockLoader extends Thread {
         BlockInfo blockInfo;
         BlockCache.BlockCacheItem blockCacheItem = blockCache.getBlockCacheItemAt(geohash);
         if (blockCacheItem == null) {
-            blockInfo = new BlockInfoPlus(geohash, Helpers.getNow().minusWeeks(3));
+            blockInfo = new BlockInfoPlus(geohash, Helpers.getNow().minusDays(BuildConfig.ENTRY_LIFETIME_DAYS));
         } else {
             blockInfo = blockCacheItem.blockInfo;
         }

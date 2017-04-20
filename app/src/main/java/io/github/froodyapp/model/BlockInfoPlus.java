@@ -5,6 +5,7 @@ import org.joda.time.DateTimeZone;
 
 import java.io.Serializable;
 
+import io.github.froodyapp.BuildConfig;
 import io.github.froodyapp.api.model_.BlockInfo;
 import io.github.froodyapp.util.Helpers;
 
@@ -25,7 +26,7 @@ public class BlockInfoPlus extends BlockInfo implements Serializable {
         blockInfo = new BlockInfo();
         setGeohash(geohash);
         setHasBlockBeenModified(true);
-        setModificationDateToThreeWeeksAgo();
+        setModificationDateToEntryLifetimeDaysAgo();
     }
 
     public BlockInfoPlus(String geohash, DateTime modificationDate) {
@@ -40,8 +41,8 @@ public class BlockInfoPlus extends BlockInfo implements Serializable {
     }
 
 
-    private void setModificationDateToThreeWeeksAgo() {
-        setModificationDate(Helpers.getNow().minusWeeks(3));
+    private void setModificationDateToEntryLifetimeDaysAgo() {
+        setModificationDate(Helpers.getNow().minusDays(BuildConfig.ENTRY_LIFETIME_DAYS));
     }
 
     public void setModificationDateToNow() {
@@ -57,7 +58,7 @@ public class BlockInfoPlus extends BlockInfo implements Serializable {
         if (previousBlockInfo != null) {
             return previousBlockInfo.getModificationDate();
         }
-        return new DateTime(DateTimeZone.UTC).minusWeeks(3);
+        return new DateTime(DateTimeZone.UTC).minusDays(BuildConfig.ENTRY_LIFETIME_DAYS);
     }
 
     //#################

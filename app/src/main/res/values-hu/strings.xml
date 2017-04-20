@@ -36,7 +36,6 @@
   <string name="hint__description__enter_here">Írj egy leírást ehhez a bejegyzéshez (pl. minőség, limonádénak, altípus)</string>
   <string name="hint__contact__enter_here">Írj elérhetőségeket ehhez a bejegyzéshez (tartalmazhatná a telefonszámodat vagy emailcímedet)</string>
   <string name="publish_entry">Közzétesz</string>
-  <string name="limited_time_active_notice">Vigyázat! Ez a bejegyzés mostantól 3 hétig érhető el.</string>
   <string name="share_my_entry_at_froody">Bejegyzésem a Froody alkalmazáson</string>
   <string name="share_chooser_share_entry">Bejegyzés megosztása</string>
   <string name="nav__my_entries">Bejegyzéseim</string>

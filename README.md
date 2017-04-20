@@ -15,7 +15,7 @@ License: **GPLv3**
 * The main idea is to share to and help other people by e.g. sharing pears, which would rot anyway if unused
 * Intended to use in the local area - zoom in to your location and look for entries
 * Everyone can add entries (and delete them), no login needed
-* Entries will be available 3 weeks
+* Entries will be available 60 days
 * Available in many languages
 
 **How to support the project?**
@@ -29,7 +29,7 @@ License: **GPLv3**
 ## Permissions & Privacy
 * The app requests your location so you can create entries, and to automatically zoom to your location.
 If you add a new entry your location gets sent to the setted server (default server uses https).
-Others users can find entries when they swipe to this location. You can delete your entries by tapping the trash icon. Entries will get automatically deleted after 3 weeks.
+Others users can find entries when they swipe to this location. You can delete your entries by tapping the trash icon. Entries will get automatically deleted after 60 days.
 * The app requests the storage permission for caching the Map-Tiles
 
 ## Notices

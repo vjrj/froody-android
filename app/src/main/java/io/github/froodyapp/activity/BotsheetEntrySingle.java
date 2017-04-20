@@ -59,6 +59,8 @@ public class BotsheetEntrySingle extends BottomSheetDialogFragment implements En
     TextView textDistribution;
     @BindView(R.id.botsheet__entry_single__text_froodytype)
     TextView textFroodyType;
+    @BindView(R.id.botsheet__entry_single__text_days_left)
+    TextView textDaysLeft;
     @BindView(R.id.botsheet__entry_single__button_delete)
     FloatingActionButton buttonDelete;
     @BindView(R.id.froody_botsheet_single__layout_root)
@@ -123,6 +125,7 @@ public class BotsheetEntrySingle extends BottomSheetDialogFragment implements En
         textFroodyType.setText(entryFormatter.getEntryTypeName());
         textDescription.setText(froodyEntry.getDescription());
         textContact.setText(froodyEntry.getContact());
+        textDaysLeft.setText(getString(R.string.duration_days_left, froodyEntry.getDaysLeft()));
     }
 
     // Delete or Share button was pressed
