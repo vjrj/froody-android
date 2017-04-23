@@ -11,8 +11,6 @@
   <string name="certification_type__bio">Biológico</string>
   <string name="certification_type__demeter">Deméter</string>
   <!-- Distribution Types -->
-  <string name="distribution_type__free">Grátis</string>
-  <string name="distribution_type__donate">Doação</string>
   <string name="distribution_type__sale">À venda</string>
   <string name="distribution_type__swap">Trocar</string>
   <!-- Entry Types (Special) -->

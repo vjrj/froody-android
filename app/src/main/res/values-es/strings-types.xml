@@ -11,8 +11,6 @@
   <string name="certification_type__bio">Biografía</string>
   <string name="certification_type__demeter">Demeter</string>
   <!-- Distribution Types -->
-  <string name="distribution_type__free">Gratuita</string>
-  <string name="distribution_type__donate">Donación</string>
   <string name="distribution_type__sale">Venta</string>
   <string name="distribution_type__swap">Cambiar</string>
   <!-- Entry Types (Special) -->

@@ -11,8 +11,6 @@
   <string name="certification_type__bio">органски</string>
   <string name="certification_type__demeter">узгајивач</string>
   <!-- Distribution Types -->
-  <string name="distribution_type__free">бесплатно</string>
-  <string name="distribution_type__donate">донација</string>
   <string name="distribution_type__sale">продаја</string>
   <string name="distribution_type__swap">Размена</string>
   <!-- Entry Types (Special) -->

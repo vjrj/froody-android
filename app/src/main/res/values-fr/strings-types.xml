@@ -11,8 +11,6 @@
   <string name="certification_type__bio">Bio</string>
   <string name="certification_type__demeter">Demeter</string>
   <!-- Distribution Types -->
-  <string name="distribution_type__free">Gratuit</string>
-  <string name="distribution_type__donate">Don</string>
   <string name="distribution_type__sale">Vente</string>
   <string name="distribution_type__swap">Troc</string>
   <!-- Entry Types (Special) -->

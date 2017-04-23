@@ -8,13 +8,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.AppCompatButton;
-import android.support.v7.widget.AppCompatSpinner;
+import android.support.v7.widget.AppCompatImageView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +20,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 import butterknife.BindView;
+import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnTextChanged;
@@ -74,15 +73,6 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
     @BindView(R.id.publish_entry__fragment__text_location_header)
     TextView textLocationHeader;
 
-    @BindView(R.id.publish_entry__fragment__text_entry_type_header)
-    TextView textEntryTypeHeader;
-
-    @BindView(R.id.publish_entry__fragment__text_certification_header)
-    TextView textCertificationHeader;
-
-    @BindView(R.id.publish_entry__fragment__text_distribution_header)
-    TextView textDistributionHeader;
-
     @BindView(R.id.publish_entry__fragment__text_contact_header)
     TextView textContactHeader;
 
@@ -93,16 +83,16 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
     TextView textLocation;
 
     @BindView(R.id.publish_entry__fragment__entry_type_image)
-    ImageView imageEntryTypeImage;
+    AppCompatImageView imageEntryTypeImage;
 
     @BindView(R.id.publish_entry__fragment__entry_type_name)
-    TextView textEntryTypeName;
+    AppCompatButton textEntryTypeName;
 
-    @BindView(R.id.publish_entry__fragment__spinner_certificate_selector)
-    AppCompatSpinner spinnerCertification;
+    @BindViews({R.id.publish_entry__fragment__button_distribution__voluntary_donation, R.id.publish_entry__fragment__button_distribution__sale, R.id.publish_entry__fragment__button_distribution__swap})
+    AppCompatButton[] buttonDistribution;
 
-    @BindView(R.id.publish_entry__fragment__spinner_distribution_selector)
-    AppCompatSpinner spinnerDistribution;
+    @BindViews({R.id.publish_entry__fragment__button_certification_none, R.id.publish_entry__fragment__button_certification_bio, R.id.publish_entry__fragment__button_certification_demeter})
+    AppCompatButton[] buttonCertification;
 
     @BindView(R.id.publish_entry__fragment__edit_description)
     EditText editDescription;
@@ -146,12 +136,9 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
         froodyEntry.setEntryId(-1L);
         froodyEntry.setEntryType(FroodyEntryFormatter.ENTRY_TYPE_UNKNOWN);
 
-        loadSpinnerDataSources();
-
-
         // Load some previously selected options from AppSettings
-        spinnerCertification.setSelection(appSettings.getLastCertification());
-        spinnerDistribution.setSelection(appSettings.getLastDistribution());
+        setCertificationSelection(appSettings.getLastCertification());
+        setDistributionSelection(appSettings.getLastDistribution());
         editContact.setText(appSettings.getLastContactInfo());
 
         // Simulate a location
@@ -172,21 +159,59 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
         }
     }
 
-    // Load Data source for spinner
-    private void loadSpinnerDataSources() {
-        Context context = getContext();
-
-        // Certification Spinner
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(context, R.array.certification_types, android.R.layout.simple_spinner_dropdown_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerCertification.setAdapter(adapter);
-
-        // Distribution Spinner
-        adapter = ArrayAdapter.createFromResource(context, R.array.distribution_types, android.R.layout.simple_spinner_dropdown_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerDistribution.setAdapter(adapter);
+    @OnClick({R.id.publish_entry__fragment__button_distribution__voluntary_donation, R.id.publish_entry__fragment__button_distribution__swap, R.id.publish_entry__fragment__button_distribution__sale})
+    public void onDistributionButtonClicked(View v) {
+        switch (v.getId()) {
+            case R.id.publish_entry__fragment__button_distribution__voluntary_donation:
+                setDistributionSelection(0);
+                break;
+            case R.id.publish_entry__fragment__button_distribution__sale:
+                setDistributionSelection(2);
+                break;
+            case R.id.publish_entry__fragment__button_distribution__swap:
+                setDistributionSelection(3);
+                break;
+        }
     }
 
+    private void setDistributionSelection(int index) {
+        // Apply to entry
+        froodyEntry.setDistributionType(index);
+        appSettings.setLastDistribution(index != 1 ? index : 0);
+
+        // Apply to UI
+        for (AppCompatButton b : buttonDistribution) {
+            Helpers.setTintColor(b, R.color.default_button_bgcolor);
+        }
+        Helpers.setTintColor(buttonDistribution[index > 1 ? index - 1 : 0], R.color.accent);
+    }
+
+    @OnClick({R.id.publish_entry__fragment__button_certification_bio, R.id.publish_entry__fragment__button_certification_none, R.id.publish_entry__fragment__button_certification_demeter})
+    public void onCertificationButtonClicked(View v) {
+        switch (v.getId()) {
+            case R.id.publish_entry__fragment__button_certification_none:
+                setCertificationSelection(0);
+                break;
+            case R.id.publish_entry__fragment__button_certification_bio:
+                setCertificationSelection(1);
+                break;
+            case R.id.publish_entry__fragment__button_certification_demeter:
+                setCertificationSelection(2);
+                break;
+        }
+    }
+
+    private void setCertificationSelection(int index) {
+        // Apply to entry
+        froodyEntry.setCertificationType(index);
+        appSettings.setLastCertification(index);
+
+        // Apply to UI
+        for (AppCompatButton b : buttonCertification) {
+            Helpers.setTintColor(b, R.color.default_button_bgcolor);
+        }
+        Helpers.setTintColor(buttonCertification[index], R.color.accent);
+    }
 
     // Checks if form is valid ; True if entry can be submitted
     private boolean hasValidInput() {
@@ -203,12 +228,11 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
     private void recheckUserInput() {
         boolean valid = hasValidInput();
         buttonSubmitFroodyEntry.setEnabled(valid);
+        int black = Helpers.getColorFromRes(getContext(), R.color.primary_text);
         int red = Helpers.getColorFromRes(getContext(), R.color.very_red);
-        int green = Helpers.getColorFromRes(getContext(), R.color.much_green);
 
-        textDescriptionHeader.setTextColor(editDescription.getText().toString().isEmpty() ? red : green);
-        textContactHeader.setTextColor(editContact.getText().toString().isEmpty() ? red : green);
-        textEntryTypeHeader.setTextColor(froodyEntry.getEntryType() != FroodyEntryFormatter.ENTRY_TYPE_UNKNOWN ? green : red);
+        textDescriptionHeader.setTextColor(editDescription.getText().toString().isEmpty() ? red : black);
+        textContactHeader.setTextColor(editContact.getText().toString().isEmpty() ? red : black);
     }
 
 
@@ -223,19 +247,15 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
         FroodyEntryFormatter entryFormatter = new FroodyEntryFormatter(context, froodyEntry);
 
         // Apply details to entry
+        //froodyEntry.setAddress(textLocation.getText().toString());    // done by EntryReverseGeocoder
         //froodyEntry.setEntryType(); // Done by callback
         entryFormatter.loadGeohashFromLocation(location.lat, location.lng, 9);
-        //froodyEntry.setAddress(textLocation.getText().toString());    // done by EntryReverseGeocoder
         froodyEntry.setUserId(appSettings.getFroodyUser().getUserId());
-        froodyEntry.setCertificationType(spinnerCertification.getSelectedItemPosition());
-        froodyEntry.setDistributionType(spinnerDistribution.getSelectedItemPosition());
         froodyEntry.setContact(editContact.getText().toString());
         froodyEntry.setDescription(editDescription.getText().toString());
 
-        // Save latest settings
-        appSettings.setLastCertification(spinnerCertification.getSelectedItemPosition());
+        // Save last contact info
         appSettings.setLastContactInfo(editContact.getText().toString());
-        appSettings.setLastDistribution(spinnerDistribution.getSelectedItemPosition());
 
         // Start publishing entry
         new EntryPublisher(getActivity(), froodyEntry, this).start();
@@ -280,10 +300,9 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
         textLocation.setText(locationText);
     }
 
-
     // The GPS Button was pressed
-    @OnClick(R.id.publish_entry__fragment__entry_type_selector)
-    public void onSelectFroodyEntryTypeSelctorClicked(View view) {
+    @OnClick(R.id.publish_entry__fragment__entry_type_name)
+    public void onSelectFroodyEntryTypeSelectorClicked(View view) {
         DialogEntryTypeSelection yourDialogFragment = DialogEntryTypeSelection.newInstance(this, false);
         yourDialogFragment.show(getFragmentManager(), DialogEntryTypeSelection.FRAGMENT_TAG);
     }
@@ -349,7 +368,7 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
         }
 
         if (wasAdded) {
-            // successfuly published
+            // successfully published
             froodyEntry.setEntryId(response.getEntryId());
             froodyEntry.setManagementCode(response.getManagementCode());
             froodyEntry.setCreationDate(response.getCreationDate());
@@ -369,7 +388,7 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
             });
         } else {
             // Couln't publish
-            Toast.makeText(context, "Fehler: Konnte Eintrag nicht veröffentlichen", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, R.string.error_cannot_publish_entry, Toast.LENGTH_LONG).show();
         }
     }
 
@@ -385,19 +404,24 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
         // Format entry type line
         FroodyEntryFormatter formatter = new FroodyEntryFormatter(getContext(), froodyEntry);
         froodyEntry.setEntryType(entryType);
-        imageEntryTypeImage.setImageDrawable(formatter.getEntryTypeImage());
+        imageEntryTypeImage.setImageResource(formatter.getEntryTypeImageId(R.drawable.finger_leading));
         textEntryTypeName.setText(formatter.getEntryTypeName());
 
-        // Disable if not allowed
-        spinnerCertification.setEnabled(formatter.isAllowedToCertify());
-        spinnerDistribution.setEnabled(formatter.isAllowedToSell());
-
+        // Disable not allowed elements
+        for (AppCompatButton b : buttonCertification) {
+            b.setEnabled(formatter.isAllowedToCertify());
+        }
+        for (AppCompatButton b : buttonDistribution) {
+            b.setEnabled(formatter.isAllowedToSell());
+        }
         if (!formatter.isAllowedToCertify()) {
-            spinnerCertification.setSelection(0);
+            buttonCertification[0].setEnabled(true);
+            setDistributionSelection(0);
         }
 
         if (!formatter.isAllowedToSell()) {
-            spinnerDistribution.setSelection(0);
+            buttonDistribution[0].setEnabled(true);
+            setCertificationSelection(0);
         }
 
 
@@ -414,7 +438,6 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
             }
             settings.setLastEntryTypes(history);
         }
-        textEntryTypeHeader.setTextColor(Helpers.getColorFromRes(getContext(), R.color.much_green));
         recheckUserInput();
     }
 

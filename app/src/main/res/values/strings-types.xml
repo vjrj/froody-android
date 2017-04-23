@@ -13,10 +13,10 @@
     <string name="certification_type__demeter">Demeter</string>
 
     <!-- Distribution Types -->
-    <string name="distribution_type__free">Free</string>
-    <string name="distribution_type__donate">Donation</string>
     <string name="distribution_type__sale">Sale</string>
     <string name="distribution_type__swap">Swap</string>
+    <string name="distribution_type__free">Free</string>
+    <string name="distribution_type__voluntary_donation">Voluntary donation</string>
 
     <!-- Entry Types (Special) -->
     <string name="entry_type__special__unknown" translatable="false">@string/unknown</string>

@@ -11,8 +11,6 @@
   <string name="certification_type__bio">Bio</string>
   <string name="certification_type__demeter">Demeter</string>
   <!-- Distribution Types -->
-  <string name="distribution_type__free">Ingyen</string>
-  <string name="distribution_type__donate">Adományon alapuló</string>
   <string name="distribution_type__sale">Eladás</string>
   <string name="distribution_type__swap">Csere</string>
   <!-- Entry Types (Special) -->

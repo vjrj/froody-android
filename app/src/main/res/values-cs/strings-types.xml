@@ -11,8 +11,6 @@
   <string name="certification_type__bio">Bio</string>
   <string name="certification_type__demeter">Démétér</string>
   <!-- Distribution Types -->
-  <string name="distribution_type__free">Zdarma</string>
-  <string name="distribution_type__donate">Darovat</string>
   <string name="distribution_type__sale">Prodej</string>
   <string name="distribution_type__swap">Směna</string>
   <!-- Entry Types (Special) -->

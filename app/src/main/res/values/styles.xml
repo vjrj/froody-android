@@ -24,4 +24,10 @@
         <item name="android:layout_marginRight">8dp</item>
         <item name="android:layout_marginBottom">0dp</item>
     </style>
+
+    <style name="TextTheme.Title" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
 </resources>

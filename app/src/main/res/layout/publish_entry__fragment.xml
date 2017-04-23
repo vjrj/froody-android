@@ -29,117 +29,166 @@
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingTop="@dimen/activity_margin_small_4">
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/publish_entry__fragment__entry_type_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingEnd="16dp"
+                        android:paddingStart="90dp"
+                        android:text="@string/select_froody"
+                        android:textAlignment="textStart"
+                        android:textAppearance="@style/TextTheme.Title" />
+
+                </FrameLayout>
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/publish_entry__fragment__entry_type_image"
+                        android:layout_width="56dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/input_field_margin"
+                        android:src="@drawable/finger_leading" />
+                </FrameLayout>
+
+            </RelativeLayout>
+
 
             <TextView
-                android:id="@+id/publish_entry__fragment__text_entry_type_header"
+                android:layout_marginTop="16dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="0dp"
-                android:text="@string/app_name"
-                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
-
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/distribution_type"
+                android:textAppearance="@style/TextTheme.Title" />
 
             <LinearLayout
-                android:id="@+id/publish_entry__fragment__entry_type_selector"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/input_field_margin"
-                android:clickable="true"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/publish_entry__fragment__entry_type_image"
-                    android:layout_width="42dp"
-                    android:layout_height="42dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginStart="5dp"
-                    android:contentDescription="@string/image"
-                    app:srcCompat="@drawable/finger_leading" />
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/publish_entry__fragment__button_distribution__voluntary_donation"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/distribution_type__voluntary_donation"
+                    android:text="@string/distribution_type__voluntary_donation"
+                    app:backgroundTint="@color/accent" />
 
-                <TextView
-                    android:id="@+id/publish_entry__fragment__entry_type_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:lines="1"
-                    android:text="@string/select_froody"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textSize="18sp" />
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/publish_entry__fragment__button_distribution__sale"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/distribution_type__sale"
+                    android:text="@string/distribution_type__sale" />
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/publish_entry__fragment__button_distribution__swap"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/distribution_type__swap"
+                    android:text="@string/distribution_type__swap" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/certification"
+                android:textAppearance="@style/TextTheme.Title" />
+
+            <LinearLayout
+                android:minHeight="120dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/publish_entry__fragment__button_certification_none"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/certification_type__none"
+                    android:text="@string/certification_type__none"
+                    app:backgroundTint="@color/accent" />
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/publish_entry__fragment__button_certification_bio"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/certification_type__bio"
+                    android:text="@string/certification_type__bio" />
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/publish_entry__fragment__button_certification_demeter"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/certification_type__demeter"
+                    android:text="@string/certification_type__demeter" />
             </LinearLayout>
 
             <TextView
-                android:id="@+id/publish_entry__fragment__text_distribution_header"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/input_field_margin"
-                android:text="@string/distribution_type"
-                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
-
-            <android.support.v7.widget.AppCompatSpinner
-                android:id="@+id/publish_entry__fragment__spinner_distribution_selector"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                android:nextFocusDown="@+id/publish_entry__fragment__spinner_certificate_selector"
-                android:prompt="@string/distribution_type__free" />
-
-            <TextView
-                android:id="@+id/publish_entry__fragment__text_certification_header"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/input_field_margin"
-                android:text="@string/certification"
-                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
-
-            <android.support.v7.widget.AppCompatSpinner
-                android:id="@+id/publish_entry__fragment__spinner_certificate_selector"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                android:nextFocusDown="@+id/publish_entry__fragment__edit_description"
-                android:prompt="@string/certification_type__none" />
-
-            <TextView
+                android:layout_marginTop="16dp"
                 android:id="@+id/publish_entry__fragment__text_description_header"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/input_field_margin"
+                android:layout_height="match_parent"
+                android:gravity="center"
                 android:text="@string/description"
-                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+                android:textAppearance="@style/TextTheme.Title" />
 
             <EditText
                 android:id="@+id/publish_entry__fragment__edit_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="start|top"
                 android:hint="@string/hint__description__enter_here"
                 android:maxLength="@integer/edit_small_maxchars_140" />
 
             <TextView
+                android:layout_marginTop="16dp"
                 android:id="@+id/publish_entry__fragment__text_contact_header"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/input_field_margin"
+                android:layout_height="match_parent"
+                android:gravity="center"
                 android:text="@string/contact"
-                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+                android:textAppearance="@style/TextTheme.Title" />
 
             <EditText
                 android:id="@+id/publish_entry__fragment__edit_contact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="start|top"
                 android:hint="@string/hint__contact__enter_here"
                 android:maxLength="@integer/edit_small_maxchars_140" />
 
 
             <TextView
+                android:layout_marginTop="16dp"
                 android:id="@+id/publish_entry__fragment__text_location_header"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/input_field_margin"
+                android:layout_height="match_parent"
+                android:gravity="center"
                 android:text="@string/location"
-                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+                android:textAppearance="@style/TextTheme.Title" />
 
             <TextView
                 android:id="@+id/publish_entry__fragment__text_location"
@@ -147,7 +196,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="@string/gps_locating_user"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="#000000" />
 
             <!-- ScrollView bottom scrollOver (empty space) -->

@@ -11,8 +11,6 @@
   <string name="certification_type__bio">Biologico</string>
   <string name="certification_type__demeter">Biodinamico</string>
   <!-- Distribution Types -->
-  <string name="distribution_type__free">Gratuito</string>
-  <string name="distribution_type__donate">Donazione</string>
   <string name="distribution_type__sale">Vendita</string>
   <string name="distribution_type__swap">Baratto</string>
   <!-- Entry Types (Special) -->

@@ -143,6 +143,13 @@ public class FroodyEntryFormatter extends FroodyEntryPlus {
         return getBitmapFromDrawable(context, resId);
     }
 
+    public @DrawableRes int getEntryTypeImageId(@DrawableRes int unknownId){
+        TypedArray imgs = context.getResources().obtainTypedArray(R.array.entry_type__images);
+        int resId = imgs.getResourceId(getEntryTypeResArrayIndex(), unknownId);
+        imgs.recycle();
+        return resId;
+    }
+
     public static Drawable getBitmapFromDrawable(Context context, @DrawableRes int drawableId) {
         Drawable drawable = AppCompatDrawableManager.get().getDrawable(context, drawableId);
         if (drawable instanceof VectorDrawableCompat) {

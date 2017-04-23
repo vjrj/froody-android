@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -15,6 +16,7 @@ import android.support.annotation.RawRes;
 import android.support.annotation.StringRes;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.AppCompatButton;
 import android.text.Html;
 import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
@@ -53,6 +55,12 @@ public class Helpers {
         if (finishFromActivity) {
             from.finish();
         }
+    }
+
+    public static void setTintColor(AppCompatButton button, @ColorRes int color) {
+        button.setSupportBackgroundTintList(ColorStateList.valueOf(
+                ContextCompat.getColor(button.getContext(), color)
+        ));
     }
 
     public static boolean isConnectedToInternet(Context context) {
