@@ -21,8 +21,8 @@
         <ImageView
             android:id="@+id/splash__activity__icon"
             android:layout_width="match_parent"
-            android:layout_height="72dp"
-            android:src="@drawable/ic_launcher" />
+            android:layout_height="80dp"
+            android:src="@drawable/froody_padded" />
 
         <TextView
             android:layout_width="match_parent"

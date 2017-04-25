@@ -17,7 +17,7 @@
         android:layout_height="64dp"
         android:contentDescription="@string/image"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:src="@drawable/ic_launcher" />
+        android:src="@drawable/froody_padded" />
 
     <LinearLayout
         android:layout_width="match_parent"

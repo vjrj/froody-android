@@ -9,7 +9,6 @@
   <!-- Certification Types -->
   <string name="certification_type__none">Keine</string>
   <string name="certification_type__bio">Bio</string>
-  <string name="certification_type__demeter">Demeter</string>
   <!-- Distribution Types -->
   <string name="distribution_type__sale">Verkauf</string>
   <string name="distribution_type__swap">Tausch</string>

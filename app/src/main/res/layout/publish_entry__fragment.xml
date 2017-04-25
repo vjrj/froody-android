@@ -67,9 +67,9 @@
 
 
             <TextView
-                android:layout_marginTop="16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
                 android:gravity="center"
                 android:text="@string/distribution_type"
                 android:textAppearance="@style/TextTheme.Title" />
@@ -78,6 +78,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/publish_entry__fragment__button_distribution__free"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/distribution_type__voluntary_donation"
+                    android:text="@string/distribution_type__free"
+                    android:visibility="gone" />
 
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/publish_entry__fragment__button_distribution__voluntary_donation"
@@ -107,17 +116,17 @@
 
 
             <TextView
-                android:layout_marginTop="16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
                 android:gravity="center"
                 android:text="@string/certification"
                 android:textAppearance="@style/TextTheme.Title" />
 
             <LinearLayout
-                android:minHeight="120dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:minHeight="120dp"
                 android:orientation="horizontal">
 
                 <android.support.v7.widget.AppCompatButton
@@ -147,10 +156,10 @@
             </LinearLayout>
 
             <TextView
-                android:layout_marginTop="16dp"
                 android:id="@+id/publish_entry__fragment__text_description_header"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
                 android:gravity="center"
                 android:text="@string/description"
                 android:textAppearance="@style/TextTheme.Title" />
@@ -164,10 +173,10 @@
                 android:maxLength="@integer/edit_small_maxchars_140" />
 
             <TextView
-                android:layout_marginTop="16dp"
                 android:id="@+id/publish_entry__fragment__text_contact_header"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
                 android:gravity="center"
                 android:text="@string/contact"
                 android:textAppearance="@style/TextTheme.Title" />
@@ -182,10 +191,10 @@
 
 
             <TextView
-                android:layout_marginTop="16dp"
                 android:id="@+id/publish_entry__fragment__text_location_header"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
                 android:gravity="center"
                 android:text="@string/location"
                 android:textAppearance="@style/TextTheme.Title" />
