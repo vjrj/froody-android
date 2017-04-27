@@ -31,15 +31,18 @@
   <string name="really_delete_entry">Czy naprawdę chcesz usunąć ten wpis?</string>
   <string name="share_entry_ask">Udostępnić wpis?</string>
   <string name="donate_bitcoin">Wspomóż Bitcoinami</string>
+  <string name="duration_days_left">Pozostało %1$d dni</string>
   <!-- Publish -->
   <string name="suggested">Sugestie</string>
   <string name="select_froody">Wybierz Froody&#8230;</string>
   <string name="hint__description__enter_here">Wprowadź opis produktów (np. jakość owoców nadająca się tylko do przetworów itp.)</string>
   <string name="hint__contact__enter_here">Dane kontaktowe (dla ułatwienia odbioru powinny zawierać nr. tel. albo e-mail)</string>
   <string name="publish_entry">Publikuj</string>
+  <string name="limited_time_active_notice">Uwaga! Wpis będzie ważny jeszcze %1$d dni.</string>
   <string name="share_my_entry_at_froody">Moje wpisy we Froody</string>
   <string name="share_chooser_share_entry">Udostępnij wpis</string>
   <string name="nav__my_entries">Moje wpisy</string>
+  <string name="error_cannot_publish_entry">Błąd: Nie można opublikować wpisu</string>
   <!-- Info -->
   <string name="show_licenses">Pokaż licencje</string>
   <string name="show_gplv3_license">Pokaż licencję GNU GPLv3</string>

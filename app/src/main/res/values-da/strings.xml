@@ -22,6 +22,7 @@
   <string name="map">Kort</string>
   <string name="blog">Blog</string>
   <string name="license">Licens</string>
+  <string name="changelog">Ændringslog</string>
   <!-- Main -->
   <string name="navigation_drawer_open">Åbn navigations-skuffe</string>
   <string name="navigation_drawer_close">Luk navigations-skuffe</string>
@@ -30,15 +31,18 @@
   <string name="really_delete_entry">Vil du virkelig slette dette emne?</string>
   <string name="share_entry_ask">Del emne?</string>
   <string name="donate_bitcoin">Donér med Bitcoin</string>
+  <string name="duration_days_left">%1$d dage tilbage</string>
   <!-- Publish -->
   <string name="suggested">Foreslået</string>
   <string name="select_froody">Vælg Froody&#8230;</string>
   <string name="hint__description__enter_here">Beskriv emnet her (f.eks. kvalitet, bedst egnet til syltetøj, sort&#8230;)</string>
   <string name="hint__contact__enter_here">Indtast kontakt-detaljer for emnet her (bør indeholde tlf.-nummer eller email-adresse)</string>
   <string name="publish_entry">Udgiv</string>
+  <string name="limited_time_active_notice">Bemærk! Emnet er tilgængeligt fra nu og %1$d dage frem.</string>
   <string name="share_my_entry_at_froody">Mine emner i Froody-applikationen</string>
   <string name="share_chooser_share_entry">Del emne</string>
   <string name="nav__my_entries">Mine Emner</string>
+  <string name="error_cannot_publish_entry">Fejl: Kan ikke publicere emne</string>
   <!-- Info -->
   <string name="show_licenses">Vis licenser</string>
   <string name="show_gplv3_license">Vis GNU GPLv3 licens</string>

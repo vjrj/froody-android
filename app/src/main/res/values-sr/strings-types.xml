@@ -11,27 +11,29 @@
   <string name="certification_type__bio">органски</string>
   <!-- Distribution Types -->
   <string name="distribution_type__sale">продаја</string>
-  <string name="distribution_type__swap">Размена</string>
+  <string name="distribution_type__swap">размена</string>
+  <string name="distribution_type__free">бесплатно</string>
+  <string name="distribution_type__voluntary_donation">добровољни прилог</string>
   <!-- Entry Types (Special) -->
   <string name="entry_type__special__miscellaneous">разно</string>
   <string name="entry_type__special__water">вода</string>
   <!-- Entry Types -->
-  <string name="entry_type__apple">јабука</string>
-  <string name="entry_type__pear">крушка</string>
-  <string name="entry_type__cherry">вишња</string>
-  <string name="entry_type__plum">шљива</string>
-  <string name="entry_type__currant">рибизла</string>
+  <string name="entry_type__apple">јабуке</string>
+  <string name="entry_type__pear">крушке</string>
+  <string name="entry_type__cherry">вишње</string>
+  <string name="entry_type__plum">шљиве</string>
+  <string name="entry_type__currant">рибизле</string>
   <string name="entry_type__grape">грожђе</string>
-  <string name="entry_type__hazelnut">лешник</string>
+  <string name="entry_type__hazelnut">лешници</string>
   <string name="entry_type__milk">млеко</string>
-  <string name="entry_type__raspberry">малина</string>
-  <string name="entry_type__walnut">орах</string>
+  <string name="entry_type__raspberry">малине</string>
+  <string name="entry_type__walnut">ораси</string>
   <string name="entry_type__carrot">шаргарепа</string>
   <string name="entry_type__cereal">житарице</string>
   <string name="entry_type__chili">папричице</string>
   <string name="entry_type__corn">кукуруз</string>
-  <string name="entry_type__cucumber">краставац</string>
-  <string name="entry_type__egg">јаје</string>
+  <string name="entry_type__cucumber">краставци</string>
+  <string name="entry_type__egg">јаја</string>
   <string name="entry_type__fish">риба</string>
   <string name="entry_type__flower">цвеће</string>
   <string name="entry_type__honey">мед</string>
@@ -46,4 +48,5 @@
   <string name="entry_type__wood">дрво</string>
   <string name="entry_type__zucchini">тиквице</string>
   <string name="entry_type__aubergine">патлиџан</string>
+  <string name="entry_type__mango">манго</string>
 </resources>

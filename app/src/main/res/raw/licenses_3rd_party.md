@@ -60,3 +60,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.</small>  
 `---------------`  
 
+
+##  Flaticon Basic License
+* [Gastronomy Set](http://www.flaticon.com/packs/gastronomy-set) made by Madebyoliver 
+
+`---------------`  
+<small>See http://file000.flaticon.com/downloads/license/license.pdf.</small>  
+`---------------`  
+

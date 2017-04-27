@@ -8,10 +8,10 @@
   <string name="gps_type__current">Momentální pozice</string>
   <!-- Certification Types -->
   <string name="certification_type__none">Žádné</string>
-  <string name="certification_type__bio">Bio</string>
   <!-- Distribution Types -->
   <string name="distribution_type__sale">Prodej</string>
   <string name="distribution_type__swap">Směna</string>
+  <string name="distribution_type__free">Zdarma</string>
   <!-- Entry Types (Special) -->
   <string name="entry_type__special__miscellaneous">Různé</string>
   <string name="entry_type__special__water">Voda</string>

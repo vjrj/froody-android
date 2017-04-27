@@ -12,7 +12,8 @@
   <!-- Distribution Types -->
   <string name="distribution_type__sale">Verkauf</string>
   <string name="distribution_type__swap">Tausch</string>
-  <string name="distribution_type__voluntary_donation">Freie Spende</string>
+  <string name="distribution_type__free">Gratis</string>
+  <string name="distribution_type__voluntary_donation">Spende</string>
   <!-- Entry Types (Special) -->
   <string name="entry_type__special__miscellaneous">Diverses</string>
   <string name="entry_type__special__water">Wasser</string>
@@ -47,4 +48,17 @@
   <string name="entry_type__wood">Holz</string>
   <string name="entry_type__zucchini">Zucchini</string>
   <string name="entry_type__aubergine">Aubergine</string>
+  <string name="entry_type__mango">Mango</string>
+  <string name="entry_type__asparagus">Spargel</string>
+  <string name="entry_type__avocado">Avocado</string>
+  <string name="entry_type__bean">Bohne</string>
+  <string name="entry_type__blueberry">Heidelbeere</string>
+  <string name="entry_type__garlic">Knoblauch</string>
+  <string name="entry_type__onion">Zwiebel</string>
+  <string name="entry_type__pea">Erbse</string>
+  <string name="entry_type__pepper">Paprika</string>
+  <string name="entry_type__pumpkin">Kürbis</string>
+  <string name="entry_type__radish">Radieschen</string>
+  <string name="entry_type__salad">Salat</string>
+  <string name="entry_type__seed">Samen</string>
 </resources>

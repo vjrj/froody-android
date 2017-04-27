@@ -3,9 +3,58 @@
 <resources>
   <!-- General & Important things -->
   <!-- General words -->
+  <string name="image">Изображение</string>
+  <string name="reset">Сброс</string>
+  <string name="settings">Настройки</string>
+  <string name="more">Ещё</string>
+  <string name="description">Описание</string>
+  <string name="location">Местонахождение</string>
+  <string name="error">Ошибка</string>
+  <string name="all">Все</string>
+  <string name="contributors">Разработчики</string>
+  <string name="about_">О приложении</string>
   <!-- More general words -->
+  <string name="search_dotdotdot">Поиск&#8230;</string>
+  <string name="distribution_type">Распространяется</string>
+  <string name="certification">Сертификация</string>
+  <string name="contact">Контакт</string>
+  <string name="maintainers">Поддержка</string>
+  <string name="map">Карта</string>
+  <string name="blog">Блог</string>
+  <string name="license">Лицензия</string>
+  <string name="changelog">История изменений</string>
   <!-- Main -->
+  <string name="navigation_drawer_open">Открыть  боковое меню</string>
+  <string name="navigation_drawer_close">Закрыть боковое меню</string>
+  <string name="no_entries_were_published_by_me">Нет записей</string>
+  <string name="help_and_share"><![CDATA[Помочь и поделиться]]></string>
+  <string name="really_delete_entry">Вы действительно хотите удалить эту запись?</string>
+  <string name="share_entry_ask">Поделиться записью?</string>
+  <string name="donate_bitcoin">Пожертвовать Bitcoin</string>
+  <string name="duration_days_left">%1$d дней прошло</string>
   <!-- Publish -->
+  <string name="suggested">Предложено</string>
+  <string name="select_froody">Выбрать Froody&#8230;</string>
+  <string name="hint__description__enter_here">Описание: введите информацию о продукте (количество, размер, качество, прочие характеристики...)</string>
+  <string name="hint__contact__enter_here">Введите ваши контактные данные (например: № тел, электронную почту и т. д.)</string>
+  <string name="publish_entry">Опубликовать</string>
+  <string name="limited_time_active_notice">Внимание! Запись будет доступна %1$d дней.</string>
+  <string name="share_my_entry_at_froody">Мои записи во Froody</string>
+  <string name="share_chooser_share_entry">Поделиться записью</string>
+  <string name="nav__my_entries">Мои записи</string>
+  <string name="error_cannot_publish_entry">Ошибка: невозможно опубликовать запись</string>
   <!-- Info -->
+  <string name="show_licenses">Показать лицензии</string>
+  <string name="show_gplv3_license">Показать лицензию GNU GPLv3</string>
+  <string name="show_third_party_licenses">Показать лицензии 3 сторон</string>
+  <string name="more_information">Больше информации</string>
   <!-- Location -->
+  <string name="request_location">Запросить местоположение</string>
+  <string name="gps_locating_user">Местоположение&#8230;</string>
+  <string name="address_most_near">Поблизости</string>
+  <string name="error_bad_permissions">Пожалуйста, дайте Froody разрешение на доступ к местоположению и записи данных, для надлежащего функционирования. Без данного доступа приложение не сможет функционировать.</string>
+  <string name="show_map_on_current_location">Показать на карте текущее местоположение?</string>
+  <string name="zoom_out">Уменьшить</string>
+  <string name="cannot_locate_user">Невозможно определить местоположение пользователя. Пожалуйста включите определение местоположения по GPS в настройках!</string>
+  <string name="error_couldnt_connect_or_register">Ошибка: Невозможно подсоединиться к серверу или проверить пользователя.</string>
 </resources>

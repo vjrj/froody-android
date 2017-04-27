@@ -31,15 +31,18 @@
   <string name="really_delete_entry">Möchtest du wirklich diesen Eintrag löschen?</string>
   <string name="share_entry_ask">Eintrag teilen?</string>
   <string name="donate_bitcoin">Bitcoin spenden</string>
+  <string name="duration_days_left">%1$d Tage verbleibend</string>
   <!-- Publish -->
   <string name="suggested">Vorgeschlagen</string>
   <string name="select_froody">Froody auswählen&#8230;</string>
   <string name="hint__description__enter_here">Beschreibung hier eingeben (z.B. Qualität, Nur für Marmelade, Unterart,&#8230;)</string>
   <string name="hint__contact__enter_here">Kontaktdaten hier eingeben (sollte zumindest Tel. Nr. oder E-Mail Adr. beinhalten)</string>
   <string name="publish_entry">Eintragen</string>
+  <string name="limited_time_active_notice">Achtung! Die Eintragung ist ab jetzt für %1$d Tage verfügbar.</string>
   <string name="share_my_entry_at_froody">Mein Eintrag bei der Froody App</string>
   <string name="share_chooser_share_entry">Eintrag teilen</string>
   <string name="nav__my_entries">Meine Einträge</string>
+  <string name="error_cannot_publish_entry">Fehler: Konnte Eintrag nicht veröffentlichen</string>
   <!-- Info -->
   <string name="show_licenses">Lizenzen anzeigen</string>
   <string name="show_gplv3_license">GNU GPLv3 Lizenz anzeigen</string>

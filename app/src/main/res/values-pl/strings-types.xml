@@ -8,10 +8,12 @@
   <string name="gps_type__current">Obecne położenie</string>
   <!-- Certification Types -->
   <string name="certification_type__none">Brak</string>
-  <string name="certification_type__bio">Bio</string>
+  <string name="certification_type__bio">Organiczne</string>
   <!-- Distribution Types -->
   <string name="distribution_type__sale">Sprzedaż</string>
   <string name="distribution_type__swap">Zamiana</string>
+  <string name="distribution_type__free">Darmowe</string>
+  <string name="distribution_type__voluntary_donation">Dobrowolna darowizna</string>
   <!-- Entry Types (Special) -->
   <string name="entry_type__special__miscellaneous">Róźne</string>
   <string name="entry_type__special__water">Woda</string>
@@ -46,4 +48,5 @@
   <string name="entry_type__wood">Drewno</string>
   <string name="entry_type__zucchini">Cukinia</string>
   <string name="entry_type__aubergine">Bakłażan</string>
+  <string name="entry_type__mango">Mango</string>
 </resources>

@@ -3,7 +3,13 @@
 <resources>
   <!-- Keys (not translate able -->
   <!-- Network -->
+  <string name="pref_cat__network">Сеть</string>
   <string name="pref_title__froody_server">Сменить сервер</string>
   <string name="pref_title__clear_cache">Очистить кэш</string>
+  <string name="pref_desc__clear_cache">Очистить кэш, последнего местоположения</string>
+  <string name="pref_desc__froody_server">Измените сервер для выборки записей</string>
   <!-- App -->
+  <string name="pref_cat__app">Прил</string>
+  <string name="pref_desc__reset_app">Сбросить приложение до состояния свежеустановленного</string>
+  <string name="pref_title__reset_app">Сбросить настройки</string>
 </resources>

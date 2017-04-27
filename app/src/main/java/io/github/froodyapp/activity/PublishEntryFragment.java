@@ -88,7 +88,7 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
     @BindView(R.id.publish_entry__fragment__entry_type_name)
     AppCompatButton textEntryTypeName;
 
-    @BindViews({R.id.publish_entry__fragment__button_distribution__voluntary_donation, R.id.publish_entry__fragment__button_distribution__sale, R.id.publish_entry__fragment__button_distribution__swap})
+    @BindViews({R.id.publish_entry__fragment__button_distribution__free, R.id.publish_entry__fragment__button_distribution__voluntary_donation, R.id.publish_entry__fragment__button_distribution__sale, R.id.publish_entry__fragment__button_distribution__swap})
     AppCompatButton[] buttonDistribution;
 
     @BindViews({R.id.publish_entry__fragment__button_certification_none, R.id.publish_entry__fragment__button_certification_bio, R.id.publish_entry__fragment__button_certification_demeter})
@@ -159,11 +159,14 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
         }
     }
 
-    @OnClick({R.id.publish_entry__fragment__button_distribution__voluntary_donation, R.id.publish_entry__fragment__button_distribution__swap, R.id.publish_entry__fragment__button_distribution__sale})
+    @OnClick({R.id.publish_entry__fragment__button_distribution__free, R.id.publish_entry__fragment__button_distribution__voluntary_donation, R.id.publish_entry__fragment__button_distribution__swap, R.id.publish_entry__fragment__button_distribution__sale})
     public void onDistributionButtonClicked(View v) {
         switch (v.getId()) {
-            case R.id.publish_entry__fragment__button_distribution__voluntary_donation:
+            case R.id.publish_entry__fragment__button_distribution__free:
                 setDistributionSelection(0);
+                break;
+            case R.id.publish_entry__fragment__button_distribution__voluntary_donation:
+                setDistributionSelection(1);
                 break;
             case R.id.publish_entry__fragment__button_distribution__sale:
                 setDistributionSelection(2);
@@ -177,13 +180,13 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
     private void setDistributionSelection(int index) {
         // Apply to entry
         froodyEntry.setDistributionType(index);
-        appSettings.setLastDistribution(index != 1 ? index : 0);
+        appSettings.setLastDistribution(index);
 
         // Apply to UI
         for (AppCompatButton b : buttonDistribution) {
             Helpers.setTintColor(b, R.color.default_button_bgcolor);
         }
-        Helpers.setTintColor(buttonDistribution[index > 1 ? index - 1 : 0], R.color.accent);
+        Helpers.setTintColor(buttonDistribution[index], R.color.accent);
     }
 
     @OnClick({R.id.publish_entry__fragment__button_certification_bio, R.id.publish_entry__fragment__button_certification_none, R.id.publish_entry__fragment__button_certification_demeter})
@@ -404,7 +407,7 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
         // Format entry type line
         FroodyEntryFormatter formatter = new FroodyEntryFormatter(getContext(), froodyEntry);
         froodyEntry.setEntryType(entryType);
-        imageEntryTypeImage.setImageResource(formatter.getEntryTypeImageId(R.drawable.finger_leading));
+        imageEntryTypeImage.setImageResource(formatter.getEntryTypeImageId(R.drawable.general__finger_leading));
         textEntryTypeName.setText(formatter.getEntryTypeName());
 
         // Disable not allowed elements

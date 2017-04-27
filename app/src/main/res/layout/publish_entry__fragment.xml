@@ -60,7 +60,7 @@
                         android:layout_width="56dp"
                         android:layout_height="match_parent"
                         android:layout_margin="@dimen/input_field_margin"
-                        android:src="@drawable/finger_leading" />
+                        android:src="@drawable/general__finger_leading" />
                 </FrameLayout>
 
             </RelativeLayout>
@@ -74,45 +74,46 @@
                 android:text="@string/distribution_type"
                 android:textAppearance="@style/TextTheme.Title" />
 
-            <LinearLayout
+            <HorizontalScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content">
 
-                <android.support.v7.widget.AppCompatButton
-                    android:id="@+id/publish_entry__fragment__button_distribution__free"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:drawableTop="@drawable/distribution_type__voluntary_donation"
-                    android:text="@string/distribution_type__free"
-                    android:visibility="gone" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="120dp"
+                    android:orientation="horizontal">
 
-                <android.support.v7.widget.AppCompatButton
-                    android:id="@+id/publish_entry__fragment__button_distribution__voluntary_donation"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:drawableTop="@drawable/distribution_type__voluntary_donation"
-                    android:text="@string/distribution_type__voluntary_donation"
-                    app:backgroundTint="@color/accent" />
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/publish_entry__fragment__button_distribution__free"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawableTop="@drawable/general__finger_ok"
+                        android:text="@string/distribution_type__free" />
 
-                <android.support.v7.widget.AppCompatButton
-                    android:id="@+id/publish_entry__fragment__button_distribution__sale"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:drawableTop="@drawable/distribution_type__sale"
-                    android:text="@string/distribution_type__sale" />
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/publish_entry__fragment__button_distribution__voluntary_donation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawableTop="@drawable/distribution_type__voluntary_donation"
+                        android:text="@string/distribution_type__voluntary_donation"
+                        app:backgroundTint="@color/accent" />
 
-                <android.support.v7.widget.AppCompatButton
-                    android:id="@+id/publish_entry__fragment__button_distribution__swap"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:drawableTop="@drawable/distribution_type__swap"
-                    android:text="@string/distribution_type__swap" />
-            </LinearLayout>
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/publish_entry__fragment__button_distribution__sale"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawableTop="@drawable/distribution_type__sale"
+                        android:text="@string/distribution_type__sale" />
+
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/publish_entry__fragment__button_distribution__swap"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawableTop="@drawable/distribution_type__swap"
+                        android:text="@string/distribution_type__swap" />
+                </LinearLayout>
+            </HorizontalScrollView>
 
 
             <TextView
@@ -123,37 +124,39 @@
                 android:text="@string/certification"
                 android:textAppearance="@style/TextTheme.Title" />
 
-            <LinearLayout
+            <HorizontalScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="120dp"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content">
 
-                <android.support.v7.widget.AppCompatButton
-                    android:id="@+id/publish_entry__fragment__button_certification_none"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:drawableTop="@drawable/certification_type__none"
-                    android:text="@string/certification_type__none"
-                    app:backgroundTint="@color/accent" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="120dp"
+                    android:orientation="horizontal">
 
-                <android.support.v7.widget.AppCompatButton
-                    android:id="@+id/publish_entry__fragment__button_certification_bio"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:drawableTop="@drawable/certification_type__bio"
-                    android:text="@string/certification_type__bio" />
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/publish_entry__fragment__button_certification_none"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawableTop="@drawable/general__finger_ok"
+                        android:text="@string/certification_type__none"
+                        app:backgroundTint="@color/accent" />
 
-                <android.support.v7.widget.AppCompatButton
-                    android:id="@+id/publish_entry__fragment__button_certification_demeter"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:drawableTop="@drawable/certification_type__demeter"
-                    android:text="@string/certification_type__demeter" />
-            </LinearLayout>
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/publish_entry__fragment__button_certification_bio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawableTop="@drawable/certification_type__bio"
+                        android:text="@string/certification_type__bio" />
+
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/publish_entry__fragment__button_certification_demeter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawableTop="@drawable/certification_type__demeter"
+                        android:text="@string/certification_type__demeter" />
+                </LinearLayout>
+            </HorizontalScrollView>
 
             <TextView
                 android:id="@+id/publish_entry__fragment__text_description_header"

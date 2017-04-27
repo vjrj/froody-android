@@ -8,10 +8,10 @@
   <string name="gps_type__current">Emplacement actuel</string>
   <!-- Certification Types -->
   <string name="certification_type__none">Aucun</string>
-  <string name="certification_type__bio">Bio</string>
   <!-- Distribution Types -->
   <string name="distribution_type__sale">Vente</string>
   <string name="distribution_type__swap">Troc</string>
+  <string name="distribution_type__free">Gratuit</string>
   <!-- Entry Types (Special) -->
   <string name="entry_type__special__miscellaneous">Divers</string>
   <string name="entry_type__special__water">Eau</string>

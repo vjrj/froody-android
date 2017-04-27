@@ -8,10 +8,11 @@
   <string name="gps_type__current">Nuværende placering</string>
   <!-- Certification Types -->
   <string name="certification_type__none">Ingen</string>
-  <string name="certification_type__bio">Biodynamisk</string>
   <!-- Distribution Types -->
   <string name="distribution_type__sale">Salg</string>
   <string name="distribution_type__swap">Bytte</string>
+  <string name="distribution_type__free">Gratis</string>
+  <string name="distribution_type__voluntary_donation">Frivillig donation</string>
   <!-- Entry Types (Special) -->
   <string name="entry_type__special__miscellaneous">Diverse</string>
   <string name="entry_type__special__water">Vand</string>
@@ -46,4 +47,5 @@
   <string name="entry_type__wood">Tømmer</string>
   <string name="entry_type__zucchini">Zucchini</string>
   <string name="entry_type__aubergine">Aubergine</string>
+  <string name="entry_type__mango">Mango</string>
 </resources>
