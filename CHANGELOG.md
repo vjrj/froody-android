@@ -1,3 +1,11 @@
+### v0.2.6 (2017-04-30)
+* New project icon
+* More types & related artwork
+* Updated publish entry screen
+* Updated translations
+* Use 60 days entry limit
+
+
 ### v0.2.5 (2017-04-19)
 - Introduce minimalistic Markdown Parser
 - Show CHANGELOG after update / LICENSE first start

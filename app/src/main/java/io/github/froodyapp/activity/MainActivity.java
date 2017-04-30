@@ -170,9 +170,9 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
                                 && baseFragment.getFragmentTag().equals(MapOSMFragment.FRAGMENT_TAG)
                                 && lastFoundLocation != null) {
                             MapOSMFragment osmFragment = (MapOSMFragment) baseFragment;
-                            int zoomLevel = MapOSMFragment.ZOOMLEVEL_BLOCK4_TRESHOLD;
+                            int zoomLevel = 12;
                             if (lastFoundLocation.provider.equals(LocationManager.GPS_PROVIDER)) {
-                                zoomLevel = 17;
+                                zoomLevel = MapOSMFragment.ZOOMLEVEL_BLOCK5_TRESHOLD;
                             }
                             osmFragment.zoomToPosition(lastFoundLocation.lat, lastFoundLocation.lng, zoomLevel);
                         }

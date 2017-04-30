@@ -49,4 +49,17 @@
   <string name="entry_type__zucchini">Кабачки</string>
   <string name="entry_type__aubergine">Баклажаны</string>
   <string name="entry_type__mango">Экзот. фрукты (овощи)</string>
+  <string name="entry_type__asparagus">Спаржа</string>
+  <string name="entry_type__avocado">Авокадо</string>
+  <string name="entry_type__bean">Фасоль</string>
+  <string name="entry_type__blueberry">Голубика</string>
+  <string name="entry_type__garlic">Чеснок</string>
+  <string name="entry_type__onion">Лук</string>
+  <string name="entry_type__pea">Горох</string>
+  <string name="entry_type__pepper">Перец</string>
+  <string name="entry_type__pumpkin">Тыква</string>
+  <string name="entry_type__radish">Редька</string>
+  <string name="entry_type__salad">Салат</string>
+  <string name="entry_type__seed">Семена</string>
+  <string name="entry_type__soy_bean">соя </string>
 </resources>

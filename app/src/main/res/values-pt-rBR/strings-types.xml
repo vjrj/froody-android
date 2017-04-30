@@ -8,10 +8,12 @@
   <string name="gps_type__current">Localização atual</string>
   <!-- Certification Types -->
   <string name="certification_type__none">Nenhuma</string>
+  <string name="certification_type__bio">Orgânico</string>
   <!-- Distribution Types -->
   <string name="distribution_type__sale">À venda</string>
   <string name="distribution_type__swap">Trocar</string>
   <string name="distribution_type__free">Grátis</string>
+  <string name="distribution_type__voluntary_donation">Doação</string>
   <!-- Entry Types (Special) -->
   <string name="entry_type__special__miscellaneous">Diversos</string>
   <string name="entry_type__special__water">Água</string>
@@ -46,4 +48,18 @@
   <string name="entry_type__wood">Madeira</string>
   <string name="entry_type__zucchini">Abobrinha</string>
   <string name="entry_type__aubergine">Beringela</string>
+  <string name="entry_type__mango">Manga</string>
+  <string name="entry_type__asparagus">Aspargo</string>
+  <string name="entry_type__avocado">Abacate</string>
+  <string name="entry_type__bean">Feijão</string>
+  <string name="entry_type__blueberry">Mirtilo</string>
+  <string name="entry_type__garlic">Alho</string>
+  <string name="entry_type__onion">Cebola</string>
+  <string name="entry_type__pea">Ervilha</string>
+  <string name="entry_type__pepper">Pimenta</string>
+  <string name="entry_type__pumpkin">Abóbora</string>
+  <string name="entry_type__radish">Rabanete</string>
+  <string name="entry_type__salad">Salada</string>
+  <string name="entry_type__seed">Semente</string>
+  <string name="entry_type__soy_bean">Soja</string>
 </resources>
