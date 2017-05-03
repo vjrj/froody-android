@@ -12,7 +12,7 @@
     </string-array>
 
     <string-array name="distribution_types">
-        <item>@string/distribution_type__voluntary_donation</item>
+        <item>@string/distribution_type__free</item>
         <item>@string/distribution_type__voluntary_donation</item>
         <item>@string/distribution_type__sale</item>
         <item>@string/distribution_type__swap</item>

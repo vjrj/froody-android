@@ -42,6 +42,7 @@
   <string name="share_my_entry_at_froody">Bejegyzésem a Froody alkalmazáson</string>
   <string name="share_chooser_share_entry">Bejegyzés megosztása</string>
   <string name="nav__my_entries">Bejegyzéseim</string>
+  <string name="error_cannot_publish_entry">Hiba: nem lehet közzétenni a bejegyzést</string>
   <!-- Info -->
   <string name="show_licenses">Licencek mutatása</string>
   <string name="show_gplv3_license">GNU GPLv3 licenc mutatása</string>

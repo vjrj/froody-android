@@ -3,17 +3,18 @@ apply plugin: 'android-apt'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
-
-    def VERSION_CODE = 11
-    def VERSION_NAME = "0.2.6"
-    def APP_NAME = 'Froody'
-    def APP_ICON ="@drawable/ic_launcher"
-    def APP_PACKAGE = "io.github.froodyapp"
+    buildToolsVersion "25.0.3"
 
     defaultConfig {
         minSdkVersion 17
         targetSdkVersion 25
+
+        versionCode 12
+        versionName "0.2.7"
+
+        applicationId "io.github.froodyapp"
+        resValue 'string', 'app_name', "Froody"
+        manifestPlaceholders = [appIcon: "@drawable/ic_launcher"]
 
         buildConfigField "int", "ENTRY_LIFETIME_DAYS", "60"
         buildConfigField "boolean", "IS_TEST_BUILD", "false"
@@ -23,27 +24,19 @@ android {
 
     productFlavors {
         flavorDefault {
-            applicationId APP_PACKAGE
-            resValue 'string', 'app_name', APP_NAME
-            manifestPlaceholders = [appIcon: APP_ICON]
-            versionCode VERSION_CODE ; versionName VERSION_NAME
-        }
-
-        flavorTest {
-            applicationId APP_PACKAGE + ".test"
-            resValue 'string', 'app_name', '"Frooty"'
-            manifestPlaceholders = [appIcon: APP_ICON + "_test"]
-            versionCode = Integer.parseInt(new Date().format('yyMMdd'))
-            versionName = new Date().format('yyMMdd')
-            buildConfigField "boolean", "IS_TEST_BUILD", "true"
         }
 
         flavorGplay {
-            applicationId APP_PACKAGE
-            resValue 'string', 'app_name', APP_NAME
-            manifestPlaceholders = [appIcon: APP_ICON]
-            versionCode VERSION_CODE ; versionName VERSION_NAME
             buildConfigField "boolean", "IS_GPLAY_BUILD", "true"
+        }
+
+        flavorTest {
+            applicationId "io.github.froodyapp.test"
+            resValue 'string', 'app_name', "Frooty"
+            manifestPlaceholders = [appIcon: "@drawable/ic_launcher_test"]
+            versionCode = Integer.parseInt(new Date().format('yyMMdd'))
+            versionName = new Date().format('yyMMdd')
+            buildConfigField "boolean", "IS_TEST_BUILD", "true"
         }
     }
 

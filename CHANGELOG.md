@@ -1,3 +1,6 @@
+### v0.2.7 (2017-05-03)
+* Updated translations
+
 ### v0.2.6 (2017-04-30)
 * New project icon
 * More types & related artwork
