@@ -60,7 +60,7 @@
                         android:layout_width="56dp"
                         android:layout_height="match_parent"
                         android:layout_margin="@dimen/input_field_margin"
-                        android:src="@drawable/general__finger_leading" />
+                        android:src="@drawable/ic_search_black_64dp" />
                 </FrameLayout>
 
             </RelativeLayout>
@@ -88,7 +88,7 @@
                         android:id="@+id/publish_entry__fragment__button_distribution__free"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:drawableTop="@drawable/general__finger_ok"
+                        android:drawableTop="@drawable/ic_cutout_circle_64dp"
                         android:text="@string/distribution_type__free" />
 
                     <android.support.v7.widget.AppCompatButton
@@ -138,7 +138,7 @@
                         android:id="@+id/publish_entry__fragment__button_certification_none"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:drawableTop="@drawable/general__finger_ok"
+                        android:drawableTop="@drawable/ic_cutout_circle_64dp"
                         android:text="@string/certification_type__none"
                         app:backgroundTint="@color/accent" />
 

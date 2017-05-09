@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatImageView;
@@ -185,8 +186,10 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
         // Apply to UI
         for (AppCompatButton b : buttonDistribution) {
             Helpers.setTintColor(b, R.color.default_button_bgcolor);
+            //b.setTextColor(ContextCompat.getColor(getContext(), R.color.primary_text));
         }
         Helpers.setTintColor(buttonDistribution[index], R.color.accent);
+        //buttonDistribution[index].setTextColor(ContextCompat.getColor(getContext(), R.color.white));
     }
 
     @OnClick({R.id.publish_entry__fragment__button_certification_bio, R.id.publish_entry__fragment__button_certification_none, R.id.publish_entry__fragment__button_certification_demeter})
@@ -212,8 +215,10 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
         // Apply to UI
         for (AppCompatButton b : buttonCertification) {
             Helpers.setTintColor(b, R.color.default_button_bgcolor);
+            //b.setTextColor(ContextCompat.getColor(getContext(), R.color.primary_text));
         }
         Helpers.setTintColor(buttonCertification[index], R.color.accent);
+        //buttonCertification[index].setTextColor(ContextCompat.getColor(getContext(), R.color.white));
     }
 
     // Checks if form is valid ; True if entry can be submitted

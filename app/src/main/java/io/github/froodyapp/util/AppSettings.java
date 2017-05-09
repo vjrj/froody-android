@@ -64,6 +64,14 @@ public class AppSettings {
     public boolean isKeyEqual(String key, int stringKeyRessourceId) {
         return key.equals(getKey(stringKeyRessourceId));
     }
+    
+    public void registerPreferenceChangedListener(SharedPreferences.OnSharedPreferenceChangeListener value) {
+        prefApp.registerOnSharedPreferenceChangeListener(value);
+    }
+
+    public void unregisterPreferenceChangedListener(SharedPreferences.OnSharedPreferenceChangeListener value) {
+        prefApp.unregisterOnSharedPreferenceChangeListener(value);
+    }
 
     private void setString(SharedPreferences pref, int keyRessourceId, String value) {
         pref.edit().putString(context.getString(keyRessourceId), value).apply();

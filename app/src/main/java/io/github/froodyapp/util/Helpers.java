@@ -2,6 +2,8 @@ package io.github.froodyapp.util;
 
 
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
@@ -35,6 +37,7 @@ import java.io.InputStreamReader;
 import ch.hsr.geohash.GeoHash;
 import io.github.froodyapp.BuildConfig;
 import io.github.froodyapp.R;
+import io.github.froodyapp.activity.SplashActivity;
 
 /**
  * Some quite useful helpers
@@ -84,6 +87,15 @@ public class Helpers {
             };
         }
         return null;
+    }
+
+    public static void restartApp(Context context) {
+        Intent restartIntent = new Intent(context, SplashActivity.class);
+        PendingIntent restartIntentP = PendingIntent.getActivity(context, 555,
+                restartIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+        AlarmManager mgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, restartIntentP);
+        System.exit(0);
     }
 
     public static DateTime getNow() {
