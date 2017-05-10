@@ -5,7 +5,7 @@
     <string name="share_link_url_with_entryid_param" translatable="false">https://froodyapp.github.io/share.html?entryId=%1$d</string>
     <string name="share_link_url_with_entryid__and_server_param" translatable="false"><![CDATA[https://froodyapp.github.io/share.html?entryId=%1$d&server=%2$s]]></string>
     <string name="project_github_page" translatable="false">https://froodyapp.github.io</string>
-    <string name="server_default" translatable="false">https://api.fruity-app.at</string>
+    <string name="server_default" translatable="false">https://api.froody-app.at</string>
     <string name="app_version_v" translatable="false">App Version  v%1$s</string>
 
     <!-- General words -->

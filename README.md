@@ -34,7 +34,7 @@ Others users can find entries when they swipe to this location. You can delete y
 
 ## Notices
 Influenced by ideas and snippets from other apps by gsantner ([kimai-android](https://github.com/gsantner/kimai-android), [dandelion\*](https://github.com/Diaspora-for-Android/dandelion), ..) which this app is allowed to use.
-Main servers domain `fruity-app.at` is sponsored by [Robert Diesenreither](http://www.zero-emission.at/index.php), the `froody-server` is hosted by @gsantner.
+Main servers domain `froody-app.at` is sponsored by [Robert Diesenreither](http://www.zero-emission.at/index.php), the `froody-server` is hosted by @gsantner.
 Project icon comes from the EmojiOne project, licensed CC-BY 4.0.
 
 ## Screenshots
