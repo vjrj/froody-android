@@ -84,7 +84,7 @@ public class SplashActivity extends AppCompatActivity {
                 break;
         }
 
-        CustomDialogs.showErrorLocationPermDeniedDialog(this);
+        CustomDialogs.showLocationPermissionNeeededDialog(this, null);
     }
 
     /**

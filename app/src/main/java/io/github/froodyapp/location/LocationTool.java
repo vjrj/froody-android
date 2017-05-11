@@ -3,6 +3,7 @@ package io.github.froodyapp.location;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -15,7 +16,9 @@ import java.io.Serializable;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import io.github.froodyapp.ui.CustomDialogs;
 import io.github.froodyapp.util.AppCast;
+import io.github.froodyapp.util.AppSettings;
 
 /**
  * Toolset for locating position of android device
@@ -26,7 +29,7 @@ public class LocationTool {
     //########################
     //## Static
     //########################
-    private static final int REQUEST_LOCATION_PERM = 42;
+    public static final int REQUEST_LOCATION_PERM = 42;
     private static final boolean DEBUG_FAKE_LOCATION_ENABLED = false; // PRs with true will get ignored
     private static final double[] DEBUG_FAKE_LOCATION = {48.378765, 14.512982};
     private static final int WAITING_TIME_LOCATION_MS = 15000;
@@ -118,22 +121,34 @@ public class LocationTool {
     //## More methods
     //########################
 
+    public boolean isLocationPermissionGranted(Activity activity) {
+        return ContextCompat.checkSelfPermission(activity,
+                Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED;
+    }
+
     /**
      * Ask for location permission (if >= 6.0)
      *
      * @param activity Activity to show request on
      * @return true if granted
      */
-    public boolean askForLocationPermission(Activity activity) {
-        if (ContextCompat.checkSelfPermission(activity,
-                Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED) {
-
-
-            // No explanation needed, we can request the permission.
-            ActivityCompat.requestPermissions(activity,
-                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION_PERM);
-            return false;
+    public boolean askForLocationPermission(final Activity activity, boolean forceRequest) {
+        AppSettings settings = new AppSettings(activity);
+        if (!isLocationPermissionGranted(activity)) {
+            if (!forceRequest
+                    && (ActivityCompat.shouldShowRequestPermissionRationale(activity, Manifest.permission.ACCESS_FINE_LOCATION)
+                    || settings.isAppFirstStart())) {
+                // Show dialog
+                CustomDialogs.showLocationPermissionNeeededDialog(activity, new DialogInterface.OnDismissListener() {
+                    public void onDismiss(DialogInterface dialog) {
+                        askForLocationPermission(activity, true);
+                    }
+                });
+            } else {
+                ActivityCompat.requestPermissions(activity,
+                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION_PERM);
+                return false;
+            }
         }
         return true;
     }

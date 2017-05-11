@@ -2,7 +2,9 @@ package io.github.froodyapp.activity;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -94,13 +96,6 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
         setContentView(R.layout.main__activity);
         ButterKnife.bind(this);
 
-        /**
-         *
-         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-         return;
-         }
-         */
-
         app = (App) getApplication();
         appSettings = app.getAppSettings();
         locationTool = new LocationTool(appSettings.getAllowLocationListeningNetwork(), appSettings.getAllowLocationListeningGps());
@@ -120,21 +115,34 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
         }
         handleIntent(getIntent());
 
+
         // Show first start dialog / changelog
+        String dialogHtml = null;
+        int dialogTitleResId = 0;
         try {
             if (appSettings.isAppFirstStart()) {
-                Helpers.showDialogWithHtmlTextView(this, new SimpleMarkdownParser().parse(
+                dialogHtml = new SimpleMarkdownParser().parse(
                         getResources().openRawResource(R.raw.licenses_3rd_party),
-                        SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml(),
-                        R.string.license);
+                        SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml();
+                dialogTitleResId = R.string.license;
             } else if (appSettings.isAppCurrentVersionFirstStart()) {
-                SimpleMarkdownParser smp = new SimpleMarkdownParser().parse(
+                dialogHtml = new SimpleMarkdownParser().parse(
                         getResources().openRawResource(R.raw.changelog),
-                        SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "");
-                Helpers.showDialogWithHtmlTextView(this, smp.getHtml(), R.string.changelog);
+                        SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml();
+                dialogTitleResId = R.string.changelog;
             }
         } catch (IOException e) {
             e.printStackTrace();
+        }
+        // Show dialog
+        if (dialogHtml != null) {
+            Helpers.showDialogWithHtmlTextView(this, new DialogInterface.OnDismissListener() {
+                public void onDismiss(DialogInterface dialog) {
+                    requestLocation(getClass().getName());
+                }
+            }, dialogTitleResId, dialogHtml);
+        } else {
+            requestLocation(getClass().getName());
         }
     }
 
@@ -235,12 +243,11 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
     @Override
     protected void onResume() {
         LocalBroadcastManager.getInstance(this).registerReceiver(localBroadcastReceiver, AppCast.getLocalBroadcastFilter());
-        requestLocation(getClass().getName());
         super.onResume();
     }
 
     public void requestLocation(String requestedBy) {
-        if (locationTool.askForLocationPermission(this)) {
+        if (locationTool.askForLocationPermission(this, false)) {
             if (appSettings.getAllowLocationListeningAny()) {
                 boolean enabled = locationTool.requestLocation(this, requestedBy);
                 if (!enabled && getClass().getName().equals(requestedBy)) {
@@ -312,6 +319,7 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
 
     @Override
     protected void onPause() {
+        appSettings.setAppFirstStart(false);
         BlockCache.getInstance().saveToAppCache(this);
         LocalBroadcastManager.getInstance(this).unregisterReceiver(localBroadcastReceiver);
         locationTool.disableLocationTool();
@@ -333,7 +341,7 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
             }
 
             case R.id.action_get_location: {
-                locationTool.requestLocation(this, "MainActivity");
+                requestLocation(getClass().getName());
                 return true;
             }
         }
@@ -545,6 +553,19 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
         if (baseFragment != null && baseFragment.isAdded() && baseFragment.getFragmentTag().equals(MapOSMFragment.FRAGMENT_TAG)) {
             MapOSMFragment mapFragment = (MapOSMFragment) baseFragment;
             mapFragment.addOrUpdateFroodyEntryToCluster(entry, true);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int req, @NonNull String[] perm, @NonNull int[] grantResults) {
+        boolean somethingGranted = grantResults.length > 0;
+        switch (req) {
+            case LocationTool.REQUEST_LOCATION_PERM:
+                if (somethingGranted && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    requestLocation(getClass().getName());
+                    return;
+                }
+                break;
         }
     }
 }

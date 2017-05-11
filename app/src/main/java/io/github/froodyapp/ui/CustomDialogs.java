@@ -5,7 +5,6 @@ import android.content.DialogInterface;
 import android.support.annotation.StringRes;
 import android.support.v7.app.AlertDialog;
 import android.webkit.WebView;
-import android.widget.Toast;
 
 import io.github.froodyapp.BuildConfig;
 import io.github.froodyapp.R;
@@ -64,8 +63,14 @@ public class CustomDialogs {
     }
 
     // Show Toast when location permission cant be acquired
-    public static void showErrorLocationPermDeniedDialog(Context context) {
-        Toast.makeText(context, R.string.error_bad_permissions, Toast.LENGTH_LONG).show();
+    public static void showLocationPermissionNeeededDialog(Context context, DialogInterface.OnDismissListener dismissedListener) {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(context)
+                .setOnDismissListener(dismissedListener)
+                .setTitle(R.string.location)
+                .setPositiveButton(R.string.ok, null)
+                .setIcon(R.drawable.ic_my_location_black_24dp)
+                .setMessage(R.string.error_bad_permissions);
+        dialog.show();
     }
 
 }

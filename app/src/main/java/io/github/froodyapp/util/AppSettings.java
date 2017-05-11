@@ -64,7 +64,7 @@ public class AppSettings {
     public boolean isKeyEqual(String key, int stringKeyRessourceId) {
         return key.equals(getKey(stringKeyRessourceId));
     }
-    
+
     public void registerPreferenceChangedListener(SharedPreferences.OnSharedPreferenceChangeListener value) {
         prefApp.registerOnSharedPreferenceChangeListener(value);
     }
@@ -278,9 +278,11 @@ public class AppSettings {
     }
 
     public boolean isAppFirstStart() {
-        boolean value = getBool(prefApp, R.string.pref_key__app_first_start, true);
-        setBool(prefApp, R.string.pref_key__app_first_start, false);
-        return value;
+        return getBool(prefApp, R.string.pref_key__app_first_start, true);
+    }
+
+    public void setAppFirstStart(boolean value) {
+        setBool(prefApp, R.string.pref_key__app_first_start, value);
     }
 
     public boolean isAppCurrentVersionFirstStart() {

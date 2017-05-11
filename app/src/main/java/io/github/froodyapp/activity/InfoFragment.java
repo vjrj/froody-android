@@ -116,15 +116,14 @@ public class InfoFragment extends BaseFragment {
                 break;
             }
             case R.id.info__fragment__button_gplv3_license: {
-                Helpers.showDialogWithHtmlTextView(context, Helpers.loadMarkdownFromRawForTextView(context, R.raw.license, ""), R.string.license);
+                Helpers.showDialogWithHtmlTextView(context, null, R.string.license, Helpers.loadMarkdownFromRawForTextView(context, R.raw.license, ""));
                 break;
             }
             case R.id.info__fragment__button_third_party_licenses: {
                 try {
-                    Helpers.showDialogWithHtmlTextView(context, new SimpleMarkdownParser().parse(
+                    Helpers.showDialogWithHtmlTextView(context, null, R.string.license, new SimpleMarkdownParser().parse(
                             getResources().openRawResource(R.raw.licenses_3rd_party),
-                            SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml(),
-                            R.string.license);
+                            SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml());
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

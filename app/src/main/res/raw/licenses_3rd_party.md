@@ -8,6 +8,10 @@ See <https://creativecommons.org/licenses> for full license texts.
 ### CC BY 3.0
 * Mango icon by [Nikita Golubev](http://www.flaticon.com/free-icon/mango_361939)
 
+### CC BY-SA
+* **OpenStreetMap cartography**
+~° See <http://www.openstreetmap.org/copyright>
+
 ## Apache License
 Version 2.0, January 2004  
 
@@ -19,6 +23,8 @@ Version 2.0, January 2004
 ~° Copyright 2013 JodaOrg  
 * **Butterknife**
 ~° Copyright 2013 Jake Wharton  
+* **osmdroid**
+~° Copyright 2017 osmdroid contributors  
 
 `---------------`  
 <small>Licensed under the Apache License, Version 2.0 (the "License");
@@ -59,6 +65,23 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.</small>  
 `---------------`  
+
+## Open Data Commons Open Database License
+* **OpenStreetMap data**
+~° Copyright (c) OpenStreetMap contributors  
+
+`---------------`  
+<small>See https://www.openstreetmap.org/copyright/en.</small>  
+`---------------`  
+
+## GNU Lesser General Public License v3.0
+* **osmbonuspack**
+~° Copyright (c) osmbonuspack developers  
+
+`---------------`  
+<small>See https://www.gnu.org/licenses/lgpl-3.0.html.</small>  
+`---------------`  
+
 
 
 ##  Flaticon Basic License

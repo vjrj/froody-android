@@ -30,12 +30,11 @@ License: **GPLv3**
 * The app requests your location so you can create entries, and to automatically zoom to your location.
 If you add a new entry your location gets sent to the setted server (default server uses https).
 Others users can find entries when they swipe to this location. You can delete your entries by tapping the trash icon. Entries will get automatically deleted after 60 days.
-* The app requests the storage permission for caching the Map-Tiles
 
 ## Notices
 Influenced by ideas and snippets from other apps by gsantner ([kimai-android](https://github.com/gsantner/kimai-android), [dandelion\*](https://github.com/Diaspora-for-Android/dandelion), ..) which this app is allowed to use.
 Main servers domain `froody-app.at` is sponsored by [Robert Diesenreither](http://www.zero-emission.at/index.php), the `froody-server` is hosted by @gsantner.
-Project icon comes from the EmojiOne project, licensed CC-BY 4.0.
+The app uses OpenStreetMap for displaying maps.
 
 ## Screenshots
 

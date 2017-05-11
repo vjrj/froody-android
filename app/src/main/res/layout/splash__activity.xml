@@ -22,7 +22,7 @@
             android:id="@+id/splash__activity__icon"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:src="@drawable/froody_padded" />
+            android:src="@drawable/ic_launcher" />
 
         <TextView
             android:layout_width="match_parent"

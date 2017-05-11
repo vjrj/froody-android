@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import org.osmdroid.api.IMapController;
+import org.osmdroid.config.Configuration;
+import org.osmdroid.config.IConfigurationProvider;
 import org.osmdroid.events.MapListener;
 import org.osmdroid.events.ScrollEvent;
 import org.osmdroid.events.ZoomEvent;
@@ -19,8 +21,10 @@ import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.BoundingBox;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
+import org.osmdroid.views.overlay.CopyrightOverlay;
 import org.osmdroid.views.overlay.gestures.RotationGestureOverlay;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,6 +63,7 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
     //#####################
     private IMapController mapController;
     private RotationGestureOverlay rotationGesture;
+    private CopyrightOverlay overlayCopyrightOsm;
     private RadiusMarkerClusterWithClusterClick mapCluster;
     private ArrayList<EntryMarker> entryMarkersInCluster;
     private AppSettings appSettings;
@@ -67,9 +72,17 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        beforeMapInit(inflater.getContext());
         View view = inflater.inflate(R.layout.maposm__fragment, container, false);
         ButterKnife.bind(this, view);
         return view;
+    }
+
+    private void beforeMapInit(Context context) {
+        IConfigurationProvider osmConfig = Configuration.getInstance();
+        File cacheFolder = new File(context.getCacheDir().getAbsolutePath(), "osmdroid");
+        osmConfig.setOsmdroidBasePath(cacheFolder);
+        osmConfig.setOsmdroidTileCache((new File(cacheFolder, "tiles")));
     }
 
     @Override
@@ -105,6 +118,11 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
         rotationGesture = new RotationGestureOverlay(map);
         rotationGesture.setEnabled(false);
         map.getOverlays().add(rotationGesture);
+
+        // Enable Copyright overlay
+        overlayCopyrightOsm = new CopyrightOverlay(c);
+        overlayCopyrightOsm.setAlignRight(true);
+        map.getOverlays().add(overlayCopyrightOsm);
 
         // Cluster
         Drawable clusterIconD = Helpers.getDrawableFromRes(c, R.drawable.green_circle);

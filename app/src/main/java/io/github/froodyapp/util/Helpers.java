@@ -6,6 +6,7 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.drawable.Drawable;
@@ -171,7 +172,7 @@ public class Helpers {
     }
 
     // Show HTML a TextView in a scrollable Dialog
-    public static void showDialogWithHtmlTextView(Context context, String html, @StringRes int resTitleId) {
+    public static void showDialogWithHtmlTextView(Context context, DialogInterface.OnDismissListener dismissedListener, @StringRes int resTitleId, String html) {
         LinearLayout layout = new LinearLayout(context);
         TextView textView = new TextView(context);
         textView.setMovementMethod(LinkMovementMethod.getInstance());
@@ -190,6 +191,7 @@ public class Helpers {
         AlertDialog.Builder dialog = new AlertDialog.Builder(context)
                 .setPositiveButton(android.R.string.ok, null)
                 .setTitle(resTitleId)
+                .setOnDismissListener(dismissedListener)
                 .setView(root);
         dialog.show();
     }

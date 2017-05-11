@@ -52,7 +52,7 @@
   <string name="request_location">Ortsinformationen laden</string>
   <string name="gps_locating_user">Ortung&#8230;</string>
   <string name="address_most_near">In der Nähe</string>
-  <string name="error_bad_permissions">Bitte der Froody App die Berechtigungen für Speicher und Ortsinformationen erteilen, damit die App verwendet werden kann.</string>
+  <string name="error_bad_permissions">Bitte erlaube Froody den Zugriff auf die Ortsdaten deines Gerätes.\n\nOhne diese Berechtigung kannst du mit Froody keine Einträge veröffentlichen und deine Position auf der Karte nicht ermitteln lassen.\n\nDie Position kann neu bestimmt werden durch einen Klick auf den Ortungs-Button in der oberen Leiste.</string>
   <string name="show_map_on_current_location">Karte an aktueller Position anzeigen?</string>
   <string name="zoom_out">Herauszoomen</string>
   <string name="cannot_locate_user">Konnte Benutzer nicht orten. Bitte Ortsdienste in den Systemeinstellungen einschalten!</string>

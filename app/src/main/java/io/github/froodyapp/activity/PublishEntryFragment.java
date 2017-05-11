@@ -355,7 +355,6 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
         MainActivity activity = (MainActivity) getActivity();
         activity.setTitle(R.string.publish_entry);
         activity.navigationView.setCheckedItem(R.id.nav_publish_entry);
-        requestLocationFromMainActivity();
         super.onResume();
     }
 
