@@ -49,7 +49,6 @@
   <string name="request_location">Načíst informace o místu</string>
   <string name="gps_locating_user">Lokalizuji&#8230;</string>
   <string name="address_most_near">V blízkosti</string>
-  <string name="error_bad_permissions">Prosím, povol Froody přístup k lokalizaci a úložišti, aby mohla aplikace správně fungovat. Bez tohoto povolení nemůže tato aplikace správně fungovat.</string>
   <string name="show_map_on_current_location">Ukázat aktuální pozici na mapě?</string>
   <string name="zoom_out">Oddálit</string>
   <string name="cannot_locate_user">Uživatel nemohl být lokalizován. Prosím, zapni místní služby v systémovém nastavení!</string>

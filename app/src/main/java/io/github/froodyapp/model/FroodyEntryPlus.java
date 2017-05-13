@@ -1,6 +1,5 @@
 package io.github.froodyapp.model;
 
-import android.os.Build;
 import android.text.TextUtils;
 
 import org.joda.time.DateTime;
@@ -128,10 +127,10 @@ public class FroodyEntryPlus extends FroodyEntry implements Serializable {
         return TextUtils.isEmpty(entry.getAddress()) ? "" : entry.getAddress();
     }
 
-    public int getDaysLeft(){
+    public int getDaysLeft() {
         DateTime dt = getCreationDate();
-        if (dt != null && dt.plusDays(BuildConfig.ENTRY_LIFETIME_DAYS).isAfterNow()){
-            return (int)((dt.plusDays(BuildConfig.ENTRY_LIFETIME_DAYS).getMillis()-System.currentTimeMillis())/86400000);
+        if (dt != null && dt.plusDays(BuildConfig.ENTRY_LIFETIME_DAYS).isAfterNow()) {
+            return (int) ((dt.plusDays(BuildConfig.ENTRY_LIFETIME_DAYS).getMillis() - System.currentTimeMillis()) / 86400000);
         }
         return 0;
     }

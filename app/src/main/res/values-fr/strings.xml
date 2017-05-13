@@ -52,7 +52,6 @@
   <string name="request_location">Demander la localisation</string>
   <string name="gps_locating_user">Localisation en cours&#8230;</string>
   <string name="address_most_near">À proximité</string>
-  <string name="error_bad_permissions">Veuillez accorder à Froody la permission d\'accéder aux emplacements et écrire des données. Sans cela, l\'application ne fonctionnera pas.</string>
   <string name="show_map_on_current_location">Centrer la carte à l\'emplacement actuel ?</string>
   <string name="zoom_out">Dézoomer</string>
   <string name="cannot_locate_user">Localisation impossible. Veuillez activer les services de localisation dans les paramètres système !</string>

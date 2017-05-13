@@ -7,7 +7,7 @@
 
         <EditTextPreference
             android:defaultValue="@string/server_default"
-            android:icon="@drawable/ic_public_black_48px"
+            android:icon="@drawable/ic_public_black_52px"
             android:key="@string/pref_key__froody_server"
             android:summary="@string/pref_desc__froody_server"
             android:title="@string/pref_title__froody_server" />

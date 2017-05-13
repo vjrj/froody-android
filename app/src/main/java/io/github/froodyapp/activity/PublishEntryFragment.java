@@ -3,10 +3,8 @@ package io.github.froodyapp.activity;
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatImageView;
@@ -353,8 +351,8 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
             LocalBroadcastManager.getInstance(context).registerReceiver(localBroadcastReceiver, AppCast.getLocalBroadcastFilter());
         }
         MainActivity activity = (MainActivity) getActivity();
-        activity.setTitle(R.string.publish_entry);
-        activity.navigationView.setCheckedItem(R.id.nav_publish_entry);
+        activity.setTitle(R.string.app_name);
+        activity.selectTab(1);
         super.onResume();
     }
 
@@ -369,8 +367,8 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
 
     @Override
     public void onFroodyEntryPublished(ResponseEntryAdd response, boolean wasAdded) {
-        Context context = getContext();
-        if (context == null) {
+        MainActivity mainActivity = (MainActivity) getActivity();
+        if (mainActivity == null) {
             return;
         }
 
@@ -381,21 +379,16 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
             froodyEntry.setCreationDate(response.getCreationDate());
             froodyEntry.setModificationDate(response.getCreationDate());
             BlockCache.getInstance().processEntryWithDetails(froodyEntry);
-            new MyEntriesHelper(context).addToMyEntries(froodyEntry);
+            new MyEntriesHelper(mainActivity).addToMyEntries(froodyEntry);
+            CustomDialogs.showShareDialog(mainActivity, froodyEntry);
 
-            CustomDialogs.showShareDialog(context, froodyEntry, new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) {
-                    if (which != -2 && getContext() != null) {
-                        MyEntriesHelper.shareEntry(getContext(), froodyEntry);
-                    }
-                    if (publishedListener != null) {
-                        publishedListener.onFroodyEntryPublished(froodyEntry);
-                    }
-                }
-            });
+            mainActivity.getFragmentManager().popBackStack();
+            if (publishedListener != null) {
+                publishedListener.onFroodyEntryPublished(froodyEntry);
+            }
         } else {
-            // Couln't publish
-            Toast.makeText(context, R.string.error_cannot_publish_entry, Toast.LENGTH_LONG).show();
+            // Could not publish
+            Toast.makeText(mainActivity, R.string.error_cannot_publish_entry, Toast.LENGTH_LONG).show();
         }
     }
 

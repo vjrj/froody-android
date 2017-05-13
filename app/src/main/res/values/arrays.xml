@@ -11,13 +11,25 @@
         <item>@string/certification_type__demeter</item>
     </string-array>
 
+    <integer-array name="certification_types_images">
+        <item>@drawable/ic_cutout_circle_64dp</item>
+        <item>@drawable/certification_type__bio</item>
+        <item>@drawable/certification_type__demeter</item>
+    </integer-array>
+
     <string-array name="distribution_types">
         <item>@string/distribution_type__free</item>
         <item>@string/distribution_type__voluntary_donation</item>
         <item>@string/distribution_type__sale</item>
         <item>@string/distribution_type__swap</item>
-
     </string-array>
+
+    <integer-array name="distribution_types__images">
+        <item>@drawable/ic_cutout_circle_64dp</item>
+        <item>@drawable/distribution_type__voluntary_donation</item>
+        <item>@drawable/distribution_type__sale</item>
+        <item>@drawable/distribution_type__swap</item>
+    </integer-array>
 
     <string-array name="gps_types_header">
         <item>@string/gps_type__none</item>

@@ -10,31 +10,25 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.content.LocalBroadcastManager;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ch.hsr.geohash.GeoHash;
 import io.github.froodyapp.App;
-import io.github.froodyapp.BuildConfig;
 import io.github.froodyapp.R;
 import io.github.froodyapp.api.model_.FroodyEntry;
 import io.github.froodyapp.listener.FroodyEntrySelectedListener;
@@ -47,7 +41,6 @@ import io.github.froodyapp.util.AppCast;
 import io.github.froodyapp.util.AppSettings;
 import io.github.froodyapp.util.BlockCache;
 import io.github.froodyapp.util.Helpers;
-import io.github.froodyapp.util.MyEntriesHelper;
 import io.github.froodyapp.util.SimpleMarkdownParser;
 
 
@@ -55,8 +48,7 @@ import io.github.froodyapp.util.SimpleMarkdownParser;
  * Main Activity of the app
  */
 public class MainActivity extends AppCompatActivity implements FroodyEntrySelectedListener,
-        NavigationView.OnNavigationItemSelectedListener,
-        PublishEntryFragment.FroodyEntryPublishedListener {
+        PublishEntryFragment.FroodyEntryPublishedListener, TabLayout.OnTabSelectedListener {
     //########################
     //## Static
     //########################
@@ -65,11 +57,8 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
     //########################
     //## UI Binding
     //########################
-    @BindView(R.id.drawer_layout)
-    DrawerLayout drawer;
-
-    @BindView(R.id.main__activity__nav_view)
-    NavigationView navigationView;
+    @BindView(R.id.main__activity__tablayout)
+    TabLayout tabLayout;
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -86,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
     private LocationTool locationTool;
     private LocationTool.LocationToolResponse lastFoundLocation;
     private Snackbar snackbarJumpToFoundLocation;
+    private int lastSelectedTab = 0;
 
     //#####################
     //## Methods
@@ -144,6 +134,20 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
         } else {
             requestLocation(getClass().getName());
         }
+
+        TabLayout.Tab tab = tabLayout.newTab();
+        tab.setText("Karte");
+        tabLayout.addTab(tab);
+
+        tab = tabLayout.newTab();
+        tab.setText("Eintragen");
+        tabLayout.addTab(tab);
+        tab = tabLayout.newTab();
+
+        tab.setText("Mehr");
+        tabLayout.addTab(tab);
+        tabLayout.addOnTabSelectedListener(this);
+        selectTab(0);
     }
 
     /**
@@ -156,17 +160,6 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
         if (supportActionBar != null) {
             supportActionBar.setDisplayShowTitleEnabled(true);
         }
-
-        // Navigation Bar
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-        navigationView.setNavigationItemSelectedListener(this);
-
-        if (BuildConfig.IS_TEST_BUILD) {
-            ((ImageView) navigationView.getHeaderView(0).findViewById(R.id.main__activity__nav_header__image)).setImageResource(R.drawable.ic_launcher_test);
-        }
-        navigationView.getMenu().findItem(R.id.action_donate_bitcoin).setVisible(!BuildConfig.IS_GPLAY_BUILD);
 
         // Snackbar Location
         snackbarJumpToFoundLocation = Snackbar
@@ -191,13 +184,18 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
     public void showFragment(BaseFragment fragment) {
         // Close everything
         snackbarJumpToFoundLocation.dismiss();
-        drawer.closeDrawers();
 
         // Show fragment
         BaseFragment currentTop = (BaseFragment) fragmentManager.findFragmentById(R.id.main__activity__fragment_placeholder);
         if (currentTop == null || !currentTop.getFragmentTag().equals(fragment.getFragmentTag())) {
-            fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.main__activity__fragment_placeholder
-                    , fragment, fragment.getFragmentTag()).commit();
+            if (fragment.getFragmentTag().equals(PublishEntryFragment.FRAGMENT_TAG)) {
+                fragmentManager.beginTransaction().replace(R.id.main__activity__fragment_placeholder
+                        , fragment, fragment.getFragmentTag()).commit();
+
+            } else {
+                fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.main__activity__fragment_placeholder
+                        , fragment, fragment.getFragmentTag()).commit();
+            }
         }
         supportInvalidateOptionsMenu();
     }
@@ -213,20 +211,22 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
             case MapOSMFragment.FRAGMENT_TAG: {
                 MapOSMFragment frag = MapOSMFragment.newInstance();
                 fragmentManager.beginTransaction().add(frag, fragmentTag).commit();
-                navigationView.setCheckedItem(R.id.nav_map);
                 return frag;
             }
             case PublishEntryFragment.FRAGMENT_TAG: {
                 PublishEntryFragment frag = PublishEntryFragment.newInstance();
                 frag.setPublishedListener(this);
                 fragmentManager.beginTransaction().add(frag, fragmentTag).commit();
-                navigationView.setCheckedItem(R.id.nav_publish_entry);
                 return frag;
             }
             case InfoFragment.FRAGMENT_TAG: {
                 InfoFragment frag = InfoFragment.newInstance();
                 fragmentManager.beginTransaction().add(frag, fragmentTag).commit();
-                navigationView.setCheckedItem(R.id.nav_informations);
+                return frag;
+            }
+            case MoreFragment.FRAGMENT_TAG: {
+                MoreFragment frag = MoreFragment.newInstance();
+                fragmentManager.beginTransaction().add(frag, fragmentTag).commit();
                 return frag;
             }
             default: {
@@ -299,11 +299,6 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
 
     @Override
     public void onBackPressed() {
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-            return;
-        }
-
         BaseFragment visibleFrag = getCurrentVisibleFragment();
         if (visibleFrag != null) {
             if (!visibleFrag.onBackPressed()) {
@@ -349,69 +344,10 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
     }
 
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.nav_my_entries: {
-                List<FroodyEntryPlus> entries = new MyEntriesHelper(this).getMyEntries();
-                if (entries.size() > 0) {
-                    BotsheetEntryMulti botsheetFragment = BotsheetEntryMulti.newInstance(entries, R.string.nav__my_entries);
-                    botsheetFragment.show(getSupportFragmentManager(), botsheetFragment.getTag());
-                } else {
-                    Toast.makeText(this, R.string.no_entries_were_published_by_me, Toast.LENGTH_SHORT).show();
-                }
-                break;
-            }
-
-            case R.id.nav_map: {
-                showFragment(getFragment(MapOSMFragment.FRAGMENT_TAG));
-                break;
-            }
-
-            case R.id.nav_publish_entry: {
-                showFragment(getFragment(PublishEntryFragment.FRAGMENT_TAG));
-                break;
-            }
-
-            case R.id.nav_informations: {
-                showFragment(getFragment(InfoFragment.FRAGMENT_TAG));
-                break;
-            }
-
-            case R.id.nav_settings: {
-                startActivity(new Intent(this, SettingActivity.class));
-                break;
-            }
-
-            case R.id.nav_github: {
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(getString(R.string.project_github_code)));
-                startActivity(intent);
-                break;
-            }
-
-            case R.id.nav_homepage: {
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(getString(R.string.project_github_page)));
-                startActivity(intent);
-                break;
-            }
-
-            case R.id.action_donate_bitcoin: {
-                Helpers.donateBitcoinRequest(this);
-                return true;
-            }
-        }
-
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
-
-    @Override
     public void onFroodyEntrySelected(FroodyEntryPlus entry) {
         BotsheetEntrySingle bottomSheetDialogFragment = BotsheetEntrySingle.newInstance(entry);
         bottomSheetDialogFragment.show(getSupportFragmentManager(), bottomSheetDialogFragment.getTag());
     }
-
 
     public void onLocationFound(LocationTool.LocationToolResponse location) {
         this.lastFoundLocation = location;
@@ -546,13 +482,11 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
     }
 
     public void onFroodyEntryPublished(FroodyEntryPlus entry) {
-        fragmentManager.popBackStack();
-
         // Update Map
-        BaseFragment baseFragment = getCurrentVisibleFragment();
-        if (baseFragment != null && baseFragment.isAdded() && baseFragment.getFragmentTag().equals(MapOSMFragment.FRAGMENT_TAG)) {
-            MapOSMFragment mapFragment = (MapOSMFragment) baseFragment;
-            mapFragment.addOrUpdateFroodyEntryToCluster(entry, true);
+        MapOSMFragment frag = (MapOSMFragment) getFragment(MapOSMFragment.FRAGMENT_TAG);
+        showFragment(frag);
+        if (frag != null && frag.isAdded()) {
+            frag.addOrUpdateFroodyEntryToCluster(entry, true);
         }
     }
 
@@ -567,5 +501,43 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
                 }
                 break;
         }
+    }
+
+    @SuppressWarnings("ConstantConditions")
+    public void selectTab(int pos) {
+        pos = pos >= 0 ? pos : tabLayout.getTabCount() - 1;
+        pos = pos < tabLayout.getTabCount() ? pos : 0;
+        if (pos != lastSelectedTab) {
+            tabLayout.getTabAt(pos).select();
+        }
+    }
+
+    @Override
+    public void onTabSelected(TabLayout.Tab tab) {
+        switch (tab.getPosition()) {
+            case 0: {
+                showFragment(getFragment(MapOSMFragment.FRAGMENT_TAG));
+                break;
+            }
+            case 1: {
+                showFragment(getFragment(PublishEntryFragment.FRAGMENT_TAG));
+                break;
+            }
+            case 2: {
+                if (lastSelectedTab != 2) {
+                    showFragment(getFragment(MoreFragment.FRAGMENT_TAG));
+                }
+                break;
+            }
+        }
+        lastSelectedTab = tab.getPosition();
+    }
+
+    @Override
+    public void onTabUnselected(TabLayout.Tab tab) {
+    }
+
+    @Override
+    public void onTabReselected(TabLayout.Tab tab) {
     }
 }

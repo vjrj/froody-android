@@ -52,7 +52,7 @@
   <string name="request_location">Żądanie lokalizacji</string>
   <string name="gps_locating_user">Lokalizowanie&#8230;</string>
   <string name="address_most_near">W pobliżu</string>
-  <string name="error_bad_permissions">Prosimy o dostęp do lokalizacji i zapisywania danych, do poprawnego funkcjonowania aplikacji Froody. Bez Twojego pozwolenia, aplikacja nie będzie działać poprawnie.</string>
+  <string name="error_bad_permissions">Proszę o pozwolenie Froody na dostęp do lokalizacji urządzenia.\n\nW przeciwnym wypadku nie będziesz mógł dodawać wpisów do Froody i nie będzie można określić Twojej pozycji na mapie.\n\nMożesz ponownie ustalić położenie poprzez naciśnięcie przycisku położenia w górnym pasku narzędzi.</string>
   <string name="show_map_on_current_location">Pokazać mapę dla aktualnego położenia?</string>
   <string name="zoom_out">Pomniejsz</string>
   <string name="cannot_locate_user">Nie można określić Twojego położenia. Włącz usługę lokalizacji w ustawieniach systemu!</string>

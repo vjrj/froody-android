@@ -10,6 +10,7 @@ import io.github.froodyapp.BuildConfig;
 import io.github.froodyapp.R;
 import io.github.froodyapp.model.FroodyEntryPlus;
 import io.github.froodyapp.util.FroodyEntryFormatter;
+import io.github.froodyapp.util.MyEntriesHelper;
 
 /**
  * Some dialogs to be shown in the app
@@ -35,19 +36,22 @@ public class CustomDialogs {
     /**
      * Show a sharing dialog for FroodyEntry
      *
-     * @param context             context
-     * @param entry               the entry
-     * @param onConfirmedListener reuslt listener
+     * @param c           context
+     * @param froodyEntry the froodyEntry
      */
-    public static void showShareDialog(Context context, FroodyEntryPlus entry, DialogInterface.OnClickListener onConfirmedListener) {
-        FroodyEntryFormatter formatter = new FroodyEntryFormatter(context, entry);
-        AlertDialog.Builder dialog = new AlertDialog.Builder(context)
+    public static void showShareDialog(final Context c, final FroodyEntryPlus froodyEntry) {
+        FroodyEntryFormatter formatter = new FroodyEntryFormatter(c, froodyEntry);
+        AlertDialog.Builder dialog = new AlertDialog.Builder(c)
                 .setTitle(R.string.share_entry_ask)
                 .setIcon(formatter.getEntryTypeImage())
-                .setMessage(formatter.summarize() + "\n\n" + context.getString(
+                .setMessage(formatter.summarize() + "\n\n" + c.getString(
                         R.string.limited_time_active_notice, BuildConfig.ENTRY_LIFETIME_DAYS))
-                .setNegativeButton(R.string.no, onConfirmedListener)
-                .setPositiveButton(R.string.yes, onConfirmedListener);
+                .setNegativeButton(R.string.cancel, null)
+                .setPositiveButton(R.string.share, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        MyEntriesHelper.shareEntry(c, froodyEntry);
+                    }
+                });
         dialog.show();
     }
 

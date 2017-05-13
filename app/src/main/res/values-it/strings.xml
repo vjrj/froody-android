@@ -49,7 +49,6 @@
   <string name="request_location">Richiesta Posizione</string>
   <string name="gps_locating_user">Localizzazione&#8230;</string>
   <string name="address_most_near">Nelle vicinanze</string>
-  <string name="error_bad_permissions">Per poter funzionare correttamente si prega di dare a Froody le autorizzazioni per accedere alla localizzazione e scrivere i dati. L\'app non può essere utilizzata senza questi permessi.</string>
   <string name="show_map_on_current_location">Mostra la posizione corrente sulla mappa?</string>
   <string name="zoom_out">Riduci ingrandimento</string>
   <string name="cannot_locate_user">Non è possibile individuare l\'utente. Si prega di abilitare il servizio di localizzazione nelle impostazioni di sistema!</string>

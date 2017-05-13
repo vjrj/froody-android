@@ -109,6 +109,10 @@ public class MyEntriesHelper {
         }
     }
 
+    public int getMyEntriesCount() {
+        return getMyEntries().size();
+    }
+
     // Writes my entries to BlockCache
     public void processMyEntriesToBlockCache() {
         BlockCache cache = BlockCache.getInstance();

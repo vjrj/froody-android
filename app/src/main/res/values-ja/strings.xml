@@ -52,9 +52,14 @@
   <string name="request_location">場所をリクエスト</string>
   <string name="gps_locating_user">探しています&#8230;</string>
   <string name="address_most_near">付近</string>
-  <string name="error_bad_permissions">正常に機能させるため、Froody に場所のアクセスと、データの書き込みアクセス許可を与えてください。これらがなければアプリは使用できません。</string>
+  <string name="error_bad_permissions">お使いのデバイスの位置情報へのアクセスを許可してください。\n\nこのアクセス許可がないと、Froody でエントリを公開することはできませんし、地図上で現在位置を特定できません。\n\n上部のツールバーで、場所ボタンを押してもう一度場所を見つけることができます。</string>
   <string name="show_map_on_current_location">現在の場所を地図に表示しますか?</string>
   <string name="zoom_out">縮小</string>
   <string name="cannot_locate_user">ユーザーの場所が見つかりません。システム設定で位置情報サービスを有効にしてください!</string>
   <string name="error_couldnt_connect_or_register">エラー: サーバーに接続できないか、ユーザーを確認できませんでした。</string>
+  <string name="support_the_project">プロジェクトをサポートする</string>
+  <string name="translate">翻訳</string>
+  <string name="spread">普及</string>
+  <string name="report_bugs">バグを\n報告</string>
+  <string name="about_the_app">アプリ\nについて</string>
 </resources>

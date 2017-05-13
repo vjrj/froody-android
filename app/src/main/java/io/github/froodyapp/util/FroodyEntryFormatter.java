@@ -5,7 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.DrawableRes;
 import android.support.graphics.drawable.VectorDrawableCompat;
-import android.support.v7.widget.AppCompatDrawableManager;
+import android.support.v7.content.res.AppCompatResources;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -79,6 +79,14 @@ public class FroodyEntryFormatter extends FroodyEntryPlus {
         return context.getString(R.string.unknown);
     }
 
+    public @DrawableRes
+    int getCertifciationTypeImageId() {
+        TypedArray imgs = context.getResources().obtainTypedArray(R.array.certification_types_images);
+        int resId = imgs.getResourceId(getCertificationType(), R.drawable.ic_cutout_circle_64dp);
+        imgs.recycle();
+        return resId;
+    }
+
     // Get froody type of Froody Entry
     public String getEntryTypeName() {
         String[] entryTypeNames = context.getResources().getStringArray(R.array.entry_type__names);
@@ -104,6 +112,14 @@ public class FroodyEntryFormatter extends FroodyEntryPlus {
             return d[dist];
         }
         return context.getString(R.string.unknown);
+    }
+
+    public @DrawableRes
+    int getDistributionTypeImageId() {
+        TypedArray imgs = context.getResources().obtainTypedArray(R.array.distribution_types__images);
+        int resId = imgs.getResourceId(getDistributionType(), R.drawable.ic_cutout_circle_64dp);
+        imgs.recycle();
+        return resId;
     }
 
     public boolean isAllowedToSell() {
@@ -143,7 +159,8 @@ public class FroodyEntryFormatter extends FroodyEntryPlus {
         return getBitmapFromDrawable(context, resId);
     }
 
-    public @DrawableRes int getEntryTypeImageId(@DrawableRes int unknownId){
+    public @DrawableRes
+    int getEntryTypeImageId(@DrawableRes int unknownId) {
         TypedArray imgs = context.getResources().obtainTypedArray(R.array.entry_type__images);
         int resId = imgs.getResourceId(getEntryTypeResArrayIndex(), unknownId);
         imgs.recycle();
@@ -151,7 +168,7 @@ public class FroodyEntryFormatter extends FroodyEntryPlus {
     }
 
     public static Drawable getBitmapFromDrawable(Context context, @DrawableRes int drawableId) {
-        Drawable drawable = AppCompatDrawableManager.get().getDrawable(context, drawableId);
+        Drawable drawable = AppCompatResources.getDrawable(context, drawableId);
         if (drawable instanceof VectorDrawableCompat) {
         }
         return drawable;

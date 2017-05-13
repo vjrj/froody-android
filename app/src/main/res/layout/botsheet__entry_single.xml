@@ -23,8 +23,7 @@
         android:layout_marginEnd="5dp"
         android:layout_marginStart="5dp"
         android:contentDescription="@string/image"
-        android:visibility="visible"
-        tools:src="@drawable/entry_type__grape" />
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/botsheet__entry_single__text_froodytype"
@@ -34,7 +33,7 @@
         android:layout_alignTop="@+id/botsheet__entry_single_unused0"
         android:layout_toEndOf="@+id/ui__froody_item__type_image"
         android:gravity="center"
-        android:text="@string/select_froody"
+        android:text="@string/entry_type__blueberry"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         android:textSize="26sp"
         android:textStyle="bold" />
@@ -59,17 +58,17 @@
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical|end"
             android:layout_marginEnd="5dp"
+            android:src="@drawable/ic_delete_white_48px"
             android:visibility="gone"
-            app:elevation="1dp"
-            app:srcCompat="@drawable/ic_delete_white_48px" />
+            app:elevation="1dp" />
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/botsheet__entry_single__button_share"
             android:layout_width="48dp"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical|end"
-            app:elevation="1dp"
-            app:srcCompat="@drawable/ic_share_white_48px" />
+            android:src="@drawable/ic_share_white_48px"
+            app:elevation="1dp" />
 
     </LinearLayout>
 
@@ -88,14 +87,101 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <!-- Horizontal -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.33"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/botsheet__entry_single__distribution__image"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_gravity="center_horizontal|top"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/distribution_type__swap" />
+
+                    <TextView
+                        android:id="@+id/botsheet__entry_single__distribution__text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:text="@string/distribution_type__swap"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.33"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/botsheet__entry_single__certification__image"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_gravity="center_horizontal|top"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_cutout_circle_64dp" />
+
+                    <TextView
+                        android:id="@+id/botsheet__entry_single__certification__text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:text="@string/certification_type__none"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.33"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/botsheet__entry_single__days_left__number"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:gravity="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textSize="40sp"
+                        tools:text="42" />
+
+                    <TextView
+                        android:id="@+id/botsheet__entry_single__days_left__text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:text="@string/duration_days_left_text"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="@dimen/activity_margin_small_4"
+                android:layout_marginBottom="@dimen/input_field_margin"
+                android:background="@color/primary_light" />
 
             <!-- Description -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/description"
-                android:visibility="gone"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/botsheet__entry_single__text_description"
@@ -122,53 +208,6 @@
                 android:textColor="@color/black"
                 tools:text="Gregor Santner, 0677 55512345" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/input_field_margin"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/distribution_type"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/certification"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/botsheet__entry_single__text_distribution"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/distribution_type__voluntary_donation"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="@color/black" />
-
-                <TextView
-                    android:id="@+id/botsheet__entry_single__text_certification"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/certification_type__none"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="@color/black" />
-
-            </LinearLayout>
 
             <!-- Address -->
             <TextView
@@ -185,17 +224,6 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/black"
                 tools:text="4321, Musterstadt" />
-
-            <!-- Days left -->
-            <TextView
-                android:id="@+id/botsheet__entry_single__text_days_left"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="end"
-                tools:text="25 days left"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="@color/black" />
         </LinearLayout>
 
 

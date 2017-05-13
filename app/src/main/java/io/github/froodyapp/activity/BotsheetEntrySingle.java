@@ -7,6 +7,7 @@ import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialogFragment;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.widget.AppCompatImageView;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -49,17 +50,23 @@ public class BotsheetEntrySingle extends BottomSheetDialogFragment implements En
     //########################
     @BindView(R.id.botsheet__entry_single__text_address)
     TextView textAddress;
-    @BindView(R.id.botsheet__entry_single__text_certification)
+    @BindView(R.id.botsheet__entry_single__certification__text)
     TextView textCertification;
+    @BindView(R.id.botsheet__entry_single__certification__image)
+    AppCompatImageView imageCertification;
     @BindView(R.id.botsheet__entry_single__text_contact)
     TextView textContact;
     @BindView(R.id.botsheet__entry_single__text_description)
     TextView textDescription;
-    @BindView(R.id.botsheet__entry_single__text_distribution)
+    @BindView(R.id.botsheet__entry_single__distribution__text)
     TextView textDistribution;
+    @BindView(R.id.botsheet__entry_single__distribution__image)
+    AppCompatImageView imageDistribution;
     @BindView(R.id.botsheet__entry_single__text_froodytype)
     TextView textFroodyType;
-    @BindView(R.id.botsheet__entry_single__text_days_left)
+    @BindView(R.id.botsheet__entry_single__days_left__number)
+    TextView textDaysLeftNumber;
+    @BindView(R.id.botsheet__entry_single__days_left__text)
     TextView textDaysLeft;
     @BindView(R.id.botsheet__entry_single__button_delete)
     FloatingActionButton buttonDelete;
@@ -117,15 +124,26 @@ public class BotsheetEntrySingle extends BottomSheetDialogFragment implements En
             new EntryDetailsLoader(getActivity(), froodyEntry, this, "BotSheetSingle").start();
         }
 
+        //
         // Apply to UI
+        //
         buttonDelete.setVisibility(myEntriesHelper.isMyEntry(froodyEntry.getEntryId()) ? View.VISIBLE : View.GONE);
         textAddress.setText(entryFormatter.getLocationInfo());
-        textCertification.setText(entryFormatter.getCertification());
-        textDistribution.setText(entryFormatter.getDistribution());
         textFroodyType.setText(entryFormatter.getEntryTypeName());
         textDescription.setText(froodyEntry.getDescription());
         textContact.setText(froodyEntry.getContact());
-        textDaysLeft.setText(getString(R.string.duration_days_left, froodyEntry.getDaysLeft()));
+        textDaysLeftNumber.setText(String.valueOf(froodyEntry.getDaysLeft()));
+
+        // Distribution
+        imageDistribution.setImageResource(entryFormatter.getDistributionTypeImageId());
+        textDistribution.setText(entryFormatter.getDistribution());
+
+        // Certification
+        imageCertification.setImageResource(entryFormatter.getCertifciationTypeImageId());
+        textCertification.setText(entryFormatter.getCertification());
+        if (entryFormatter.getCertificationType() == 0) {
+            textCertification.append(" " + getString(R.string.certification));
+        }
     }
 
     // Delete or Share button was pressed

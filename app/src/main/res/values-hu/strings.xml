@@ -52,7 +52,6 @@
   <string name="request_location">Helyzet lekérése</string>
   <string name="gps_locating_user">Helyzet meghatározása&#8230;</string>
   <string name="address_most_near">A közelben</string>
-  <string name="error_bad_permissions">Kérlek, engedélyezd a Froodynak, hogy hozzá tudjon férni a helyekhez és adatokat tudjon írni a helyes működéshez! Ezek nélkül nem lehet használni az alkalmazást.</string>
   <string name="show_map_on_current_location">Legyen mutatva a térkép a jelenlegi helynél?</string>
   <string name="zoom_out">Kicsinyít</string>
   <string name="cannot_locate_user">Nem lehet meghatározni a felhasználó helyét. Kérlek, engedélyezd a helylekérdező-szolgáltatásokat a rendszerbeállításoknál!</string>

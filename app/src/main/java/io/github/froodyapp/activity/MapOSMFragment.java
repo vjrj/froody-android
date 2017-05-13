@@ -323,7 +323,7 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
         super.onResume();
         MainActivity activity = (MainActivity) getActivity();
         activity.setTitle(R.string.app_name);
-        activity.navigationView.setCheckedItem(R.id.nav_map);
+        activity.selectTab(0);
 
     }
 

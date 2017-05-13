@@ -52,7 +52,6 @@
   <string name="request_location">Solicitar localização</string>
   <string name="gps_locating_user">Localizando...</string>
   <string name="address_most_near">Arredores</string>
-  <string name="error_bad_permissions">Dê permissão ao Froody de acessar o GPS e de escrever dados. Sem essas permissões o aplicativo não funciona.</string>
   <string name="show_map_on_current_location">Exibir mapa com a localização atual?</string>
   <string name="zoom_out">Afastar</string>
   <string name="cannot_locate_user">Impossível achar o usuário. Habilite os serviços de localização do android.</string>

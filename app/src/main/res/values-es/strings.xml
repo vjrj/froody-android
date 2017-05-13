@@ -52,7 +52,6 @@
   <string name="request_location">Solicitar ubicación</string>
   <string name="gps_locating_user">Localizando&#8230;</string>
   <string name="address_most_near">Cercano a</string>
-  <string name="error_bad_permissions">Por favor da a Froody los permisos para acceder a ubicaciones y guardar datos para funcionar correctamente. La aplicación no puede ser utilizada sin estos.</string>
   <string name="show_map_on_current_location">¿Deseas ver el mapa en la ubicación actual?</string>
   <string name="zoom_out">Alejar</string>
   <string name="cannot_locate_user">No se puede localizar el usuario. ¡Por favor habilita los servicios de ubicación desde la configuración del sistema!</string>

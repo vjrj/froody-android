@@ -52,7 +52,6 @@
   <string name="request_location">Forespørg placering</string>
   <string name="gps_locating_user">Henter placering&#8230;</string>
   <string name="address_most_near">I nærheden</string>
-  <string name="error_bad_permissions">Vær venlig at give Froody tilladelse til at få placeringer og skrive data. Applikationen kan ikke fungere uden disse.</string>
   <string name="show_map_on_current_location">Vis kort på nuværende placering?</string>
   <string name="zoom_out">Zoom ud</string>
   <string name="cannot_locate_user">Kan ikke få placering. Vær venlig at aktivere placeringstjenester i system-indstillingerne!</string>

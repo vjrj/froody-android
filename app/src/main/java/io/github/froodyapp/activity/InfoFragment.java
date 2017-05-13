@@ -8,9 +8,6 @@ import android.text.Html;
 import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -87,26 +84,6 @@ public class InfoFragment extends BaseFragment {
         }
     }
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        if (!isDetached()) {
-            inflater.inflate(R.menu.info__fragment_menu, menu);
-        }
-        super.onCreateOptionsMenu(menu, inflater);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_map: {
-                MainActivity mainActivity = (MainActivity) (getActivity());
-                mainActivity.showFragment(mainActivity.getFragment(MapOSMFragment.FRAGMENT_TAG));
-                getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
-            }
-        }
-        return false;
-    }
-
     @OnClick({R.id.info__fragment__text_app_version, R.id.info__fragment__button_third_party_licenses, R.id.info__fragment__button_gplv3_license})
     public void onButtonClicked(View v) {
         Context context = v.getContext();
@@ -142,7 +119,7 @@ public class InfoFragment extends BaseFragment {
         super.onResume();
         MainActivity activity = (MainActivity) getActivity();
         activity.setTitle(R.string.about_);
-        activity.navigationView.setCheckedItem(R.id.nav_informations);
+        activity.selectTab(2);
     }
 
     @Override

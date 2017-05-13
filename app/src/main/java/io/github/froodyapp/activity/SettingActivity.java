@@ -4,7 +4,6 @@ import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.EditTextPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
@@ -13,14 +12,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import io.github.froodyapp.R;
 import io.github.froodyapp.api.invoker.ApiClient;
 import io.github.froodyapp.api.invoker.Configuration;
 import io.github.froodyapp.service.UserRegisterer;
 import io.github.froodyapp.util.AppSettings;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import io.github.froodyapp.util.BlockCache;
 import io.github.froodyapp.util.Helpers;
 import io.github.froodyapp.util.MyEntriesHelper;
