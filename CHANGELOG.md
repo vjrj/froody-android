@@ -1,3 +1,14 @@
+### v0.2.8 (2017-05-14)
+* Publish error notice
+* Replace navdrawer with TabBar + MoreFragment
+* Update Share dialog
+* Update publishing
+* Update single item botsheet
+* Disable SplashActivity
+* Update launcher icon, copyright, permission prompt
+* Update default server
+* Update SettingsActivity
+
 ### v0.2.7 (2017-05-03)
 * Updated translations
 

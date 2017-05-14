@@ -2,6 +2,7 @@
 <resources>
     <!-- Keys (not translate able -->
     <string name="pref_key__user_id" translatable="false">pref_key__user_id</string>
+    <string name="pref_key__dev_mode_debugging" translatable="false">pref_key__dev_mode_debugging</string>
     <string name="pref_key__last_map_location_latitude" translatable="false">pref_key__last_map_location_latitude</string>
     <string name="pref_key__last_map_location_longitude" translatable="false">pref_key__last_map_location_longitude</string>
     <string name="pref_key__last_map_location_zoom" translatable="false">pref_key__last_map_location_zoom</string>

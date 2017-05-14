@@ -5,13 +5,16 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatImageView;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -100,7 +103,10 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
     EditText editContact;
 
     @BindView(R.id.publish_entry__fragment__button_submit_entry)
-    AppCompatButton buttonSubmitFroodyEntry;
+    TextView buttonSubmitFroodyEntry;
+
+    @BindView(R.id.publish_entry__fragment__scrollview)
+    ScrollView scrollView;
 
     //####################
     //##  Members
@@ -223,7 +229,7 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
     private boolean hasValidInput() {
         return editContact.getText().toString().length() > 0
                 && editDescription.getText().toString().length() > 0
-                && location != null
+                && location != null && !TextUtils.isEmpty(froodyEntry.getGeohash())
                 && (froodyEntry.getEntryType() >= FroodyEntryFormatter.ENTRY_TYPE_MIN
                 || froodyEntry.getEntryType() == FroodyEntryFormatter.ENTRY_TYPE_CUSTOM);
     }
@@ -233,7 +239,6 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
      */
     private void recheckUserInput() {
         boolean valid = hasValidInput();
-        buttonSubmitFroodyEntry.setEnabled(valid);
         int black = Helpers.getColorFromRes(getContext(), R.color.primary_text);
         int red = Helpers.getColorFromRes(getContext(), R.color.very_red);
 
@@ -246,6 +251,7 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
     @OnClick(R.id.publish_entry__fragment__button_submit_entry)
     public void onSubmitFroodyEntryButtonClicked(View view) {
         if (!hasValidInput() || !appSettings.hasFroodyUserId()) {
+            showInputHelp();
             return;
         }
 
@@ -265,6 +271,38 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
 
         // Start publishing entry
         new EntryPublisher(getActivity(), froodyEntry, this).start();
+    }
+
+    private void showInputHelp() {
+        MainActivity activity = (MainActivity) getActivity();
+        Snackbar.make(activity.coordinatorLayout, R.string.error_incomplete_input, Snackbar.LENGTH_SHORT).show();
+
+        if (froodyEntry.getEntryType() < FroodyEntryFormatter.ENTRY_TYPE_MIN) {
+            focusView(textEntryTypeName);
+            return;
+        }
+        if (editContact.getText().toString().isEmpty()) {
+            focusView(editContact);
+            return;
+        }
+        if (editDescription.getText().toString().isEmpty()) {
+            focusView(editDescription);
+            return;
+        }
+        if (location == null || TextUtils.isEmpty(froodyEntry.getGeohash())) {
+            focusView(textLocation);
+            return;
+        }
+    }
+
+    private final void focusView(final View view) {
+      /*  scrollView.post(new Runnable() {
+            public void run() {
+                scrollView.smoothScrollTo(0, view.getBottom());
+                scrollView.requestChildFocus(view, view);
+            }
+        });*/
+        view.getParent().requestChildFocus(view, view);
     }
 
 

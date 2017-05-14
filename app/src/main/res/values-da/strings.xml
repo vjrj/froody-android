@@ -30,14 +30,17 @@
   <string name="help_and_share"><![CDATA[Hjælp & Del]]></string>
   <string name="really_delete_entry">Vil du virkelig slette dette emne?</string>
   <string name="share_entry_ask">Del emne?</string>
-  <string name="donate_bitcoin">Donér med Bitcoin</string>
+  <string name="share">Del&#8230;</string>
+  <string name="donate_bitcoin">Doner\nBitcoin</string>
   <string name="duration_days_left">%1$d dage tilbage</string>
+  <string name="duration_days_left_text">Resterende dage</string>
   <!-- Publish -->
   <string name="suggested">Foreslået</string>
   <string name="select_froody">Vælg Froody&#8230;</string>
   <string name="hint__description__enter_here">Beskriv emnet her (f.eks. kvalitet, bedst egnet til syltetøj, sort&#8230;)</string>
   <string name="hint__contact__enter_here">Indtast kontakt-detaljer for emnet her (bør indeholde tlf.-nummer eller email-adresse)</string>
-  <string name="publish_entry">Udgiv</string>
+  <string name="publish_entry_now">Offentliggør nu</string>
+  <string name="publish_entry">Offentliggør</string>
   <string name="limited_time_active_notice">Bemærk! Emnet er tilgængeligt fra nu og %1$d dage frem.</string>
   <string name="share_my_entry_at_froody">Mine emner i Froody-applikationen</string>
   <string name="share_chooser_share_entry">Del emne</string>
@@ -52,8 +55,15 @@
   <string name="request_location">Forespørg placering</string>
   <string name="gps_locating_user">Henter placering&#8230;</string>
   <string name="address_most_near">I nærheden</string>
+  <string name="error_bad_permissions">Tillad Froody adgang til din enheds placering.\n\nUden denne tilladelse kan du ikke offentliggøre emner i Froody og din nuværende position kan ikke indhentes.\n\nDu kan forsøge lokalisering igen, ved at trykke på lokaliserings-knappen i den øverste værktøjslinje.</string>
   <string name="show_map_on_current_location">Vis kort på nuværende placering?</string>
   <string name="zoom_out">Zoom ud</string>
   <string name="cannot_locate_user">Kan ikke få placering. Vær venlig at aktivere placeringstjenester i system-indstillingerne!</string>
   <string name="error_couldnt_connect_or_register">Fejl: Kunne ikke forbinde til server for at tjekke brugeren.</string>
+  <string name="support_the_project">Støt projektet</string>
+  <string name="translate">Oversæt</string>
+  <string name="spread">Spred ordet</string>
+  <string name="report_bugs">Rapporter\nfejl</string>
+  <string name="about_the_app">Om</string>
+  <string name="error_incomplete_input">Fejl: ukomplet input</string>
 </resources>

@@ -193,6 +193,10 @@ public class AppSettings {
         setLong(prefApp, R.string.pref_key__user_id, value);
     }
 
+    public boolean isDevDebugModeEnabled() {
+        // <boolean name="pref_key__dev_mode_debugging" value="true" />
+        return getBool(prefApp, R.string.pref_key__dev_mode_debugging, false);
+    }
 
     public String getFroodyServer() {
         return getString(prefApp, R.string.pref_key__froody_server, context.getString(R.string.server_default));

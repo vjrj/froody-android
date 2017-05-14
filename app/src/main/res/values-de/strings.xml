@@ -31,7 +31,7 @@
   <string name="really_delete_entry">Möchtest du wirklich diesen Eintrag löschen?</string>
   <string name="share_entry_ask">Eintrag teilen?</string>
   <string name="share">Teilen&#8230;</string>
-  <string name="donate_bitcoin">Bitcoin spenden</string>
+  <string name="donate_bitcoin">Bitcoin\nspenden</string>
   <string name="duration_days_left">%1$d Tage verbleibend</string>
   <string name="duration_days_left_text">Tage verbleibend</string>
   <!-- Publish -->
@@ -39,6 +39,7 @@
   <string name="select_froody">Froody auswählen&#8230;</string>
   <string name="hint__description__enter_here">Beschreibung hier eingeben (z.B. Qualität, Nur für Marmelade, Unterart,&#8230;)</string>
   <string name="hint__contact__enter_here">Kontaktdaten hier eingeben (sollte zumindest Tel. Nr. oder E-Mail Adr. beinhalten)</string>
+  <string name="publish_entry_now">Jetzt veröffentlichen</string>
   <string name="publish_entry">Eintragen</string>
   <string name="limited_time_active_notice">Achtung! Die Eintragung ist ab jetzt für %1$d Tage verfügbar.</string>
   <string name="share_my_entry_at_froody">Mein Eintrag bei der Froody App</string>
@@ -55,7 +56,7 @@
   <string name="gps_locating_user">Ortung&#8230;</string>
   <string name="address_most_near">In der Nähe</string>
   <string name="error_bad_permissions">Bitte erlaube Froody den Zugriff auf die Ortsdaten deines Gerätes.\n\nOhne diese Berechtigung kannst du mit Froody keine Einträge veröffentlichen und deine Position auf der Karte nicht ermitteln lassen.\n\nDie Position kann neu bestimmt werden durch einen Klick auf den Ortungs-Button in der oberen Leiste.</string>
-  <string name="show_map_on_current_location">Karte an aktueller Position anzeigen?</string>
+  <string name="show_map_on_current_location">Karte am aktuellen Standort anzeigen?</string>
   <string name="zoom_out">Herauszoomen</string>
   <string name="cannot_locate_user">Konnte Benutzer nicht orten. Bitte Ortsdienste in den Systemeinstellungen einschalten!</string>
   <string name="error_couldnt_connect_or_register">Fehler: Konnte nicht zum Server verbinden um den Benutzer überprüfen.</string>
@@ -64,4 +65,5 @@
   <string name="spread">Weitersagen</string>
   <string name="report_bugs">Fehler\nmelden</string>
   <string name="about_the_app">Über\ndie App</string>
+  <string name="error_incomplete_input">Unvollständige Eingabe</string>
 </resources>

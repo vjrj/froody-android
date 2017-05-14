@@ -135,16 +135,15 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
             requestLocation(getClass().getName());
         }
 
+        // Setup tabs
         TabLayout.Tab tab = tabLayout.newTab();
-        tab.setText("Karte");
-        tabLayout.addTab(tab);
-
-        tab = tabLayout.newTab();
-        tab.setText("Eintragen");
+        tab.setText(R.string.map);
         tabLayout.addTab(tab);
         tab = tabLayout.newTab();
-
-        tab.setText("Mehr");
+        tab.setText(R.string.publish_entry);
+        tabLayout.addTab(tab);
+        tab = tabLayout.newTab();
+        tab.setText(R.string.more);
         tabLayout.addTab(tab);
         tabLayout.addOnTabSelectedListener(this);
         selectTab(0);
@@ -226,6 +225,11 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
             }
             case MoreFragment.FRAGMENT_TAG: {
                 MoreFragment frag = MoreFragment.newInstance();
+                fragmentManager.beginTransaction().add(frag, fragmentTag).commit();
+                return frag;
+            }
+            case DevFragment.FRAGMENT_TAG: {
+                DevFragment frag = DevFragment.newInstance();
                 fragmentManager.beginTransaction().add(frag, fragmentTag).commit();
                 return frag;
             }

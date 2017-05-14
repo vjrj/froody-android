@@ -30,16 +30,21 @@
   <string name="help_and_share"><![CDATA[Pomoci a sdílet]]></string>
   <string name="really_delete_entry">Chceš tento záznam opravdu smazat?</string>
   <string name="share_entry_ask">Sdílet záznam?</string>
-  <string name="donate_bitcoin">Darovat Bitcoiny</string>
+  <string name="share">Sdílet&#8230;</string>
+  <string name="donate_bitcoin">Darovat\nBitcoiny</string>
+  <string name="duration_days_left">Zbývá %1$d dní</string>
+  <string name="duration_days_left_text">Zbývá dnů</string>
   <!-- Publish -->
   <string name="suggested">Doporučené</string>
   <string name="select_froody">Vybrat Froody&#8230;</string>
   <string name="hint__description__enter_here">Zde zadejte popis (např. kvalita, jen u marmelády, poddruh&#8230;)</string>
   <string name="hint__contact__enter_here">Zde zadejte kontakní informace (mělo by obsahovat alespoň telefonní číslo nebo e-mailovou adresu)</string>
+  <string name="publish_entry_now">Publikovat</string>
   <string name="publish_entry">Zveřejnit</string>
   <string name="share_my_entry_at_froody">Můj příspěvek v aplikaci Froody</string>
   <string name="share_chooser_share_entry">Sdílet příspěvek</string>
   <string name="nav__my_entries">Mé příspěvky</string>
+  <string name="error_cannot_publish_entry">Chyba: Nelze publikovat položku</string>
   <!-- Info -->
   <string name="show_licenses">Ukázat licence</string>
   <string name="show_gplv3_license">Ukázat GNU GPLv3 licenci</string>
@@ -53,4 +58,10 @@
   <string name="zoom_out">Oddálit</string>
   <string name="cannot_locate_user">Uživatel nemohl být lokalizován. Prosím, zapni místní služby v systémovém nastavení!</string>
   <string name="error_couldnt_connect_or_register">Chyba: Aplikace se nemůže připojit k serveru, aby mohl být zkontrolován uživatel.</string>
+  <string name="support_the_project">Podpora projektu</string>
+  <string name="translate">Přeložit</string>
+  <string name="spread">Šíření</string>
+  <string name="report_bugs">Nahlásit\nchybu</string>
+  <string name="about_the_app">O této\naplikaci</string>
+  <string name="error_incomplete_input">Chyba: Nekompletní vstup</string>
 </resources>

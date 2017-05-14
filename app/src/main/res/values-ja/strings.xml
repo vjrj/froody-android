@@ -30,13 +30,16 @@
   <string name="help_and_share"><![CDATA[ヘルプと共有]]></string>
   <string name="really_delete_entry">このエントリを削除してもよろしいですか?</string>
   <string name="share_entry_ask">エントリを共有しますか?</string>
-  <string name="donate_bitcoin">Bitcoin を寄付</string>
+  <string name="share">共有&#8230;</string>
+  <string name="donate_bitcoin">Bitcoin\nを寄付</string>
   <string name="duration_days_left">残り %1$d 日</string>
+  <string name="duration_days_left_text">残り日数</string>
   <!-- Publish -->
   <string name="suggested">おすすめ</string>
   <string name="select_froody">Froody を選択してください&#8230;</string>
   <string name="hint__description__enter_here">このエントリーの説明を入力してください (例: 品質、マーマレードを作るために、サブタイプ&#8230;)</string>
   <string name="hint__contact__enter_here">このエントリーの連絡先の詳細を入力してください (電話番号またはメールアドレスを含める必要があります)</string>
+  <string name="publish_entry_now">今すぐ公開</string>
   <string name="publish_entry">公開</string>
   <string name="limited_time_active_notice">ご注意ください! エントリは、今から %1$d 日間利用できます。</string>
   <string name="share_my_entry_at_froody">Froody アプリで、私のエントリ</string>
@@ -62,4 +65,5 @@
   <string name="spread">普及</string>
   <string name="report_bugs">バグを\n報告</string>
   <string name="about_the_app">アプリ\nについて</string>
+  <string name="error_incomplete_input">エラー: 入力が不完全です</string>
 </resources>

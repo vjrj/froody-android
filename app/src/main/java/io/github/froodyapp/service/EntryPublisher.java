@@ -59,7 +59,9 @@ public class EntryPublisher extends Thread {
         if (activity != null) {
             activity.runOnUiThread(new Runnable() {
                 public void run() {
-                    listener.onFroodyEntryPublished(responseEntryAdd, wasAdded);
+                    if (listener != null) {
+                        listener.onFroodyEntryPublished(responseEntryAdd, wasAdded);
+                    }
                 }
             });
         }

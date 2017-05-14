@@ -30,13 +30,16 @@
   <string name="help_and_share"><![CDATA[Ayuda y comparte]]></string>
   <string name="really_delete_entry">¿Realmente deseas borrar esta entrada?</string>
   <string name="share_entry_ask">¿Compartir entrada?</string>
-  <string name="donate_bitcoin">Donar Bitcoins</string>
+  <string name="share">Compartir&#8230;</string>
+  <string name="donate_bitcoin">Donar\nBitcoins</string>
   <string name="duration_days_left">quedan %1$d días</string>
+  <string name="duration_days_left_text">Duración restante</string>
   <!-- Publish -->
   <string name="suggested">Sugeridos</string>
   <string name="select_froody">Elige un Froody&#8230;</string>
   <string name="hint__description__enter_here">Escribe una descripción para esta entrada (Ej. calidad, para preparar mermelada, subtipo...)</string>
   <string name="hint__contact__enter_here">Escribe los datos de contacto para esta entrada (debe contener No. telefónico o dirección de E-mail.)</string>
+  <string name="publish_entry_now">Publicado ahora</string>
   <string name="publish_entry">Publicar</string>
   <string name="limited_time_active_notice">¡Atención! La entrada estará disponible por %1$d días a partir de ahora.</string>
   <string name="share_my_entry_at_froody">Mi entrada en la App Froody</string>
@@ -56,4 +59,10 @@
   <string name="zoom_out">Alejar</string>
   <string name="cannot_locate_user">No se puede localizar el usuario. ¡Por favor habilita los servicios de ubicación desde la configuración del sistema!</string>
   <string name="error_couldnt_connect_or_register">Error: No se pudo realizar la conexión al Servidor o no se pudo verificar el usuario.</string>
+  <string name="support_the_project">Soporta este Proyecto</string>
+  <string name="translate">Traducir</string>
+  <string name="spread">Extender</string>
+  <string name="report_bugs">Reporte\nde errores</string>
+  <string name="about_the_app">Acerca de\nla aplicación</string>
+  <string name="error_incomplete_input">Error: Entrada incompleta</string>
 </resources>

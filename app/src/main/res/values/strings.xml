@@ -55,6 +55,7 @@
     <string name="select_froody">Select Froody…</string>
     <string name="hint__description__enter_here">Enter description for this entry here (e.g. quality, for making marmalade, subtype…)</string>
     <string name="hint__contact__enter_here">Enter contact details for this entry here (should contain your Tel. No. or E-Mail Addr.)</string>
+    <string name="publish_entry_now">Publish now</string>
     <string name="publish_entry">Publish</string>
     <string name="limited_time_active_notice">Caution! The entry is available as of now for %1$d days.</string>
     <string name="share_my_entry_at_froody">My entry at the Froody App</string>
@@ -90,4 +91,5 @@
     <string name="spread">Spread</string>
     <string name="report_bugs">Report\nbugs</string>
     <string name="about_the_app">About\nthe app</string>
+    <string name="error_incomplete_input">Error: Incomplete input</string>
 </resources>

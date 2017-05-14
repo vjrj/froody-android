@@ -22,6 +22,7 @@ import io.github.froodyapp.R;
 import io.github.froodyapp.model.FroodyEntryPlus;
 import io.github.froodyapp.ui.BaseFragment;
 import io.github.froodyapp.util.AppCast;
+import io.github.froodyapp.util.AppSettings;
 import io.github.froodyapp.util.Helpers;
 import io.github.froodyapp.util.MyEntriesHelper;
 
@@ -107,9 +108,13 @@ public class MoreFragment extends BaseFragment {
                 break;
             }
             case R.id.more__fragment__button_support__bug_report: {
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(getString(R.string.project_bugtracker)));
-                startActivity(intent);
+                if (!new AppSettings(context).isDevDebugModeEnabled()) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse(getString(R.string.project_bugtracker)));
+                    startActivity(intent);
+                } else {
+                    activity.showFragment(activity.getFragment(DevFragment.FRAGMENT_TAG));
+                }
                 break;
             }
             case R.id.more__fragment__button_support__spread: {

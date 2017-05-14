@@ -8,7 +8,7 @@ Android part of the [Froody](https://froodyapp.github.io) application.
 Developed and maintained by [Gregor Santner](<https://gsantner.github.io>), 2016-
 License: **GPLv3**
 
-[![F-Droid](https://f-droid.org/wiki/images/0/06/F-Droid-button_get-it-on.png)](https://f-droid.org/repository/browse/?fdid=io.github.froodyapp) [![Google Play](https://raw.githubusercontent.com/froodyapp/froody-extras/master/img/screens/v0.2.0/en_badge_web_generic_small.png)](https://play.google.com/store/apps/details?id=io.github.froodyapp&referrer=utm_source%3Dgithub)
+[![F-Droid](https://f-droid.org/wiki/images/0/06/F-Droid-button_get-it-on.png)](https://f-droid.org/repository/browse/?fdid=io.github.froodyapp) [![Google Play](https://raw.githubusercontent.com/froodyapp/froody-extras/master/graphics/stores/en_badge_web_generic_small.png)](https://play.google.com/store/apps/details?id=io.github.froodyapp&referrer=utm_source%3Dgithub)
 
 ## Description
 * Lets you share (mainly naturally growing) food to others
@@ -40,10 +40,10 @@ The app uses OpenStreetMap for displaying maps.
 
 <table>
   <tr>
-    <td> <img src="https://raw.githubusercontent.com/froodyapp/froody-extras/master/img/screens/v0.2.0/map.png" alt="Map view"/> </td>
-    <td> <img src="https://raw.githubusercontent.com/froodyapp/froody-extras/master/img/screens/v0.2.0/en/Screenshot_20170127-012429.png" alt="Detail view"/> </td>
+    <td> <img src="https://raw.githubusercontent.com/froodyapp/froody-screens-latest/master/en/phoneScreenshots/01.png" alt="Map view"/> </td>
+    <td> <img src="https://raw.githubusercontent.com/froodyapp/froody-screens-latest/master/en/phoneScreenshots/07.png" alt="Detail view"/> </td>
   </tr><tr>
-    <td> <img src="https://raw.githubusercontent.com/froodyapp/froody-extras/master/img/screens/v0.2.0/en/Screenshot_20170127-012402.png" alt="Publish view"/> </td>
-    <td> <img src="https://raw.githubusercontent.com/froodyapp/froody-extras/master/img/screens/v0.2.0/en/Screenshot_20170127-012556.png" alt="Filter view" /> </td>
+    <td> <img src="https://raw.githubusercontent.com/froodyapp/froody-screens-latest/master/en/phoneScreenshots/02.png" alt="Publish view"/> </td>
+    <td> <img src="https://raw.githubusercontent.com/froodyapp/froody-screens-latest/master/en/phoneScreenshots/04.png" alt="More view" /> </td>
   </tr>
 </table>

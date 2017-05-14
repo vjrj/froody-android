@@ -29,6 +29,24 @@ public class FroodyEntryPlus extends FroodyEntry implements Serializable {
         loadLocationFromGeohash();
     }
 
+    public static FroodyEntryPlus getCopy(FroodyEntryPlus param) {
+        FroodyEntryPlus copy = new FroodyEntryPlus(new FroodyEntry());
+        copy.setEntryId(param.getEntryId());
+        copy.setUserId(param.getUserId());
+        copy.setGeohash(param.getGeohash());
+        copy.setCreationDate(param.getCreationDate());
+        copy.setModificationDate(param.getModificationDate());
+        copy.setEntryType(param.getEntryType());
+        copy.setCertificationType(param.getCertificationType());
+        copy.setDistributionType(param.getDistributionType());
+        copy.setDescription(param.getDescription());
+        copy.setContact(param.getContact());
+        copy.setAddress(param.getAddress());
+        copy.setWasDeleted(param.getWasDeleted());
+        copy.setManagementCode(param.getManagementCode());
+        return copy;
+    }
+
 
     public boolean hasResolvedAddress() {
         return !TextUtils.isEmpty(entry.getAddress());
