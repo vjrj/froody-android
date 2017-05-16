@@ -273,6 +273,8 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
         new EntryPublisher(getActivity(), froodyEntry, this).start();
     }
 
+    
+
     private void showInputHelp() {
         MainActivity activity = (MainActivity) getActivity();
         Snackbar.make(activity.coordinatorLayout, R.string.error_incomplete_input, Snackbar.LENGTH_SHORT).show();
@@ -390,7 +392,7 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
         }
         MainActivity activity = (MainActivity) getActivity();
         activity.setTitle(R.string.app_name);
-        activity.selectTab(1);
+        activity.selectTab(1, true);
         super.onResume();
     }
 
@@ -411,15 +413,20 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
         }
 
         if (wasAdded) {
-            // successfully published
+            // Cleanup UI
+            editDescription.setText("");
+            imageEntryTypeImage.setImageResource(R.drawable.ic_search_black_64dp);
+            textEntryTypeName.setText(R.string.select_froody);
+
+            // Save entry to cache
             froodyEntry.setEntryId(response.getEntryId());
             froodyEntry.setManagementCode(response.getManagementCode());
             froodyEntry.setCreationDate(response.getCreationDate());
             froodyEntry.setModificationDate(response.getCreationDate());
             BlockCache.getInstance().processEntryWithDetails(froodyEntry);
             new MyEntriesHelper(mainActivity).addToMyEntries(froodyEntry);
-            CustomDialogs.showShareDialog(mainActivity, froodyEntry);
 
+            CustomDialogs.showShareDialog(mainActivity, froodyEntry);
             mainActivity.getFragmentManager().popBackStack();
             if (publishedListener != null) {
                 publishedListener.onFroodyEntryPublished(froodyEntry);

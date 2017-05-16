@@ -119,7 +119,7 @@ public class InfoFragment extends BaseFragment {
         super.onResume();
         MainActivity activity = (MainActivity) getActivity();
         activity.setTitle(R.string.about_);
-        activity.selectTab(2);
+        activity.selectTab(2, true);
     }
 
     @Override

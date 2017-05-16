@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="0dp"
     android:clickable="true"
     android:focusable="true"
     android:orientation="vertical"
+    android:background="@color/default_activity_bgcolor"
     android:padding="0dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
@@ -101,7 +103,7 @@
                         android:layout_height="match_parent"
                         android:drawableTop="@drawable/distribution_type__voluntary_donation"
                         android:text="@string/distribution_type__voluntary_donation"
-                        app:backgroundTint="@color/accent" />
+                        tools:backgroundTint="@color/accent" />
 
                     <android.support.v7.widget.AppCompatButton
                         android:id="@+id/publish_entry__fragment__button_distribution__sale"
@@ -144,7 +146,7 @@
                         android:layout_height="match_parent"
                         android:drawableTop="@drawable/ic_cutout_circle_64dp"
                         android:text="@string/certification_type__none"
-                        app:backgroundTint="@color/accent" />
+                        tools:backgroundTint="@color/accent" />
 
                     <android.support.v7.widget.AppCompatButton
                         android:id="@+id/publish_entry__fragment__button_certification_bio"

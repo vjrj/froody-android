@@ -31,7 +31,7 @@ public class LocationTool {
     //########################
     public static final int REQUEST_LOCATION_PERM = 42;
     private static final boolean DEBUG_FAKE_LOCATION_ENABLED = false; // PRs with true will get ignored
-    private static final double[] DEBUG_FAKE_LOCATION = {48.19966,13.13654};
+    private static final double[] DEBUG_FAKE_LOCATION = {48.19966, 13.13654};
     private static final int WAITING_TIME_LOCATION_MS = 15000;
 
     public static class LocationToolResponse implements Serializable {

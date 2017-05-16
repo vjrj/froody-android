@@ -1,3 +1,6 @@
+### v0.2.9 (2017-05-16)
+* Translations updated
+
 ### v0.2.8 (2017-05-14)
 * Publish error notice
 * Replace navdrawer with TabBar + MoreFragment

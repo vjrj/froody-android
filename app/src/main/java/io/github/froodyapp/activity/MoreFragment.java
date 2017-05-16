@@ -77,7 +77,7 @@ public class MoreFragment extends BaseFragment {
         }
         MainActivity activity = (MainActivity) getActivity();
         activity.setTitle(R.string.app_name);
-        activity.selectTab(2);
+        activity.selectTab(2, true);
 
         textMyEntriesCount.setText(String.valueOf(new MyEntriesHelper(activity).getMyEntriesCount()));
     }

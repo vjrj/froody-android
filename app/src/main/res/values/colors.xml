@@ -21,6 +21,7 @@
     <color name="much_green">#008E09</color>
 
     <!-- Basic colors -->
+    <color name="default_activity_bgcolor">#eeeeee</color>
     <color name="default_button_bgcolor">#d6d7d7</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>

@@ -62,7 +62,7 @@
   <string name="error_couldnt_connect_or_register">Erreur : Impossible de se connecter au serveur pour vérifier l\'utilisateur.</string>
   <string name="support_the_project">Apportez votre soutien au projet</string>
   <string name="translate">Traduire</string>
-  <string name="spread">Écarter</string>
+  <string name="spread">Partager</string>
   <string name="report_bugs">Signaler\nbugs</string>
   <string name="about_the_app">A propos\nde l\'application</string>
   <string name="error_incomplete_input">Erreur: saisie incomplète</string>

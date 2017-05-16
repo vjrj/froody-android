@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
     private LocationTool.LocationToolResponse lastFoundLocation;
     private Snackbar snackbarJumpToFoundLocation;
     private int lastSelectedTab = 0;
+    private boolean onlyUpdateTabUi = false;
 
     //#####################
     //## Methods
@@ -146,7 +147,7 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
         tab.setText(R.string.more);
         tabLayout.addTab(tab);
         tabLayout.addOnTabSelectedListener(this);
-        selectTab(0);
+        selectTab(0, false);
     }
 
     /**
@@ -187,20 +188,14 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
         // Show fragment
         BaseFragment currentTop = (BaseFragment) fragmentManager.findFragmentById(R.id.main__activity__fragment_placeholder);
         if (currentTop == null || !currentTop.getFragmentTag().equals(fragment.getFragmentTag())) {
-            if (fragment.getFragmentTag().equals(PublishEntryFragment.FRAGMENT_TAG)) {
-                fragmentManager.beginTransaction().replace(R.id.main__activity__fragment_placeholder
-                        , fragment, fragment.getFragmentTag()).commit();
-
-            } else {
-                fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.main__activity__fragment_placeholder
-                        , fragment, fragment.getFragmentTag()).commit();
-            }
+            fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.main__activity__fragment_placeholder
+                    , fragment, fragment.getFragmentTag()).commit();
         }
         supportInvalidateOptionsMenu();
     }
 
 
-    public BaseFragment getFragment(String fragmentTag) {
+    public synchronized BaseFragment getFragment(String fragmentTag) {
         BaseFragment fragment = (BaseFragment) fragmentManager.findFragmentByTag(fragmentTag);
         if (fragment != null) {
             return fragment;
@@ -508,32 +503,37 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
     }
 
     @SuppressWarnings("ConstantConditions")
-    public void selectTab(int pos) {
+    public void selectTab(int pos, boolean onlyUpdateUi) {
         pos = pos >= 0 ? pos : tabLayout.getTabCount() - 1;
         pos = pos < tabLayout.getTabCount() ? pos : 0;
         if (pos != lastSelectedTab) {
-            tabLayout.getTabAt(pos).select();
+            onlyUpdateTabUi = onlyUpdateUi;
+            TabLayout.Tab tab = tabLayout.getTabAt(pos);
+            tab.select();
         }
     }
 
     @Override
     public void onTabSelected(TabLayout.Tab tab) {
-        switch (tab.getPosition()) {
-            case 0: {
-                showFragment(getFragment(MapOSMFragment.FRAGMENT_TAG));
-                break;
-            }
-            case 1: {
-                showFragment(getFragment(PublishEntryFragment.FRAGMENT_TAG));
-                break;
-            }
-            case 2: {
-                if (lastSelectedTab != 2) {
-                    showFragment(getFragment(MoreFragment.FRAGMENT_TAG));
+        if (!onlyUpdateTabUi) {
+            switch (tab.getPosition()) {
+                case 0: {
+                    showFragment(getFragment(MapOSMFragment.FRAGMENT_TAG));
+                    break;
                 }
-                break;
+                case 1: {
+                    showFragment(getFragment(PublishEntryFragment.FRAGMENT_TAG));
+                    break;
+                }
+                case 2: {
+                    if (lastSelectedTab != 2) {
+                        showFragment(getFragment(MoreFragment.FRAGMENT_TAG));
+                    }
+                    break;
+                }
             }
         }
+        onlyUpdateTabUi = false;
         lastSelectedTab = tab.getPosition();
     }
 
