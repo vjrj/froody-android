@@ -39,6 +39,7 @@ import ch.hsr.geohash.GeoHash;
 import io.github.froodyapp.BuildConfig;
 import io.github.froodyapp.R;
 import io.github.froodyapp.activity.SplashActivity;
+import io.github.gsantner.opoc.util.SimpleMarkdownParser;
 
 /**
  * Some quite useful helpers

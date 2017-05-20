@@ -50,7 +50,7 @@ public class SettingActivity extends AppCompatActivity implements SharedPreferen
         ButterKnife.bind(this);
         toolbar.setTitle(R.string.settings);
         setSupportActionBar(toolbar);
-        appSettings = new AppSettings(this);
+        appSettings = AppSettings.get();
         toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_arrow_back_white_48px));
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -121,7 +121,7 @@ public class SettingActivity extends AppCompatActivity implements SharedPreferen
         public boolean onPreferenceTreeClick(PreferenceScreen screen, Preference preference) {
             if (isAdded() && preference.hasKey()) {
                 Context context = getActivity().getApplicationContext();
-                AppSettings settings = new AppSettings(context);
+                AppSettings settings = AppSettings.get();
                 switch (preference.getTitleRes()) {
                     case R.string.pref_title__clear_cache: {
                         BlockCache.getInstance().clearCache(context);

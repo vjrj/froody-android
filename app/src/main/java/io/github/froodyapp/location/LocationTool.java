@@ -133,7 +133,7 @@ public class LocationTool {
      * @return true if granted
      */
     public boolean askForLocationPermission(final Activity activity, boolean forceRequest) {
-        AppSettings settings = new AppSettings(activity);
+        AppSettings settings = AppSettings.get();
         if (!isLocationPermissionGranted(activity)) {
             if (!forceRequest
                     && (ActivityCompat.shouldShowRequestPermissionRationale(activity, Manifest.permission.ACCESS_FINE_LOCATION)

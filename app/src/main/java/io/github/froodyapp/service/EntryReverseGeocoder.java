@@ -60,7 +60,7 @@ public class EntryReverseGeocoder extends Thread {
         entry.setAddress(address);
 
         AppCast.FROODY_ENTRY_GEOCODED.send(context, entry);
-        AppSettings appSettings = new AppSettings(context);
+        AppSettings appSettings = AppSettings.get();
         appSettings.setLastFoundLocation(geohash, address);
     }
 

@@ -9,7 +9,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.view.WindowManager;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -25,14 +26,15 @@ import io.github.froodyapp.listener.EntryTypeSelectedListener;
 import io.github.froodyapp.util.AppSettings;
 import io.github.froodyapp.util.FroodyEntryFormatter;
 
-public class DialogEntryTypeSelection extends DialogFragment implements EntryTypeSelectedListener, TabLayout.OnTabSelectedListener {
+public class EntryTypeSelectionDialog extends DialogFragment implements EntryTypeSelectedListener, TabLayout.OnTabSelectedListener {
     //########################
     //## Static
     //########################
-    public static final String FRAGMENT_TAG = "DialogEntryTypeSelection";
+    public static final String FRAGMENT_TAG = "EntryTypeSelectionDialog";
 
-    public static DialogEntryTypeSelection newInstance(EntryTypeSelectedListener entryTypeSelectedListener, boolean showResetButton) {
-        DialogEntryTypeSelection f = new DialogEntryTypeSelection();
+    public static EntryTypeSelectionDialog newInstance(EntryTypeSelectedListener entryTypeSelectedListener, boolean showResetButton) {
+        EntryTypeSelectionDialog f = new EntryTypeSelectionDialog();
+        f.setStyle(DialogFragment.STYLE_NO_TITLE, 0);
         f.setShowResetButton(showResetButton);
         f.setEntryTypeSelectedListener(entryTypeSelectedListener);
         return f;
@@ -55,7 +57,7 @@ public class DialogEntryTypeSelection extends DialogFragment implements EntryTyp
     TabLayout tabLayout;
 
     @BindView(R.id.dialog__entry_type_selection__button_reset)
-    Button buttonReset;
+    TextView buttonReset;
 
     //########################
     //## Methods
@@ -64,6 +66,10 @@ public class DialogEntryTypeSelection extends DialogFragment implements EntryTyp
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.dialog__entry_type_selection, container, false);
         ButterKnife.bind(this, root);
+
+        if (getDialog() != null && getDialog().getWindow() != null) {
+            getDialog().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+        }
         return root;
     }
 
@@ -71,13 +77,13 @@ public class DialogEntryTypeSelection extends DialogFragment implements EntryTyp
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         Context context = getContext();
-        AppSettings appSettings = new AppSettings(context);
+        AppSettings appSettings = AppSettings.get();
         Random random = new Random();
 
         // More UI
         tabLayout.addOnTabSelectedListener(this);
-        tabSuggested = tabLayout.getTabAt(0);
-        tabAll = tabLayout.getTabAt(1);
+        tabAll = tabLayout.getTabAt(0);
+        tabSuggested = tabLayout.getTabAt(1);
         buttonReset.setVisibility(showResetButton ? View.VISIBLE : View.GONE);
 
         //########
@@ -86,7 +92,7 @@ public class DialogEntryTypeSelection extends DialogFragment implements EntryTyp
         final String[] entryTypeResource = context.getResources().getStringArray(R.array.entry_type__names);
 
         // Setup suggested adapter
-        ArrayList<Integer> list = appSettings.getLastEntryTypes();
+        ArrayList<Integer> list = appSettings.getLastSelectedEntryTypes();
         list.add(0, FroodyEntryFormatter.ENTRY_TYPE_CUSTOM);
         for (int tries = 0; tries < 20 && list.size() < RecyclerEntryTypeAdapter.MAX_ENTRYTYPE_SUGGESTIONS_COUNT__FILL_UP_TO; tries++) {
             int rnd = random.nextInt(entryTypeResource.length);
@@ -109,7 +115,13 @@ public class DialogEntryTypeSelection extends DialogFragment implements EntryTyp
         list.add(0, FroodyEntryFormatter.ENTRY_TYPE_CUSTOM);
         recyclerEntryTypeAdapterAll = new RecyclerEntryTypeAdapter(list, this, context);
 
-        recyclerEntryType.setAdapter(recyclerEntryTypeAdapterSuggested);
+        //recyclerEntryType.setAdapter(recyclerEntryTypeAdapterAll);
+        TabLayout.Tab lastTab = tabLayout.getTabAt(appSettings.getEntryTypeSelectionDialogTabLastUsed());
+        if (lastTab != null) {
+            lastTab.select();
+        } else {
+            tabAll.select();
+        }
     }
 
     @Override
@@ -129,6 +141,7 @@ public class DialogEntryTypeSelection extends DialogFragment implements EntryTyp
 
     @Override
     public void onTabReselected(TabLayout.Tab tab) {
+        AppSettings.get().setEntryTypeSelectionDialogTabLastUsed(tab.getPosition());
         if (tab == tabSuggested) {
             recyclerEntryType.setAdapter(recyclerEntryTypeAdapterSuggested);
         } else {

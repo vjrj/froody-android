@@ -1,8 +1,8 @@
 <resources>
     <array name="gps_colors">
-        <item>@color/very_red</item>
-        <item>@color/some_orange</item>
-        <item>@color/much_green</item>
+        <item>@color/app_very_red</item>
+        <item>@color/app_some_yellow</item>
+        <item>@color/app_much_green</item>
     </array>
 
     <string-array name="certification_types">
@@ -88,7 +88,7 @@
         <item>@string/entry_type__asparagus</item>
         <!-- 035+ -->
         <item>@string/entry_type__avocado</item>
-        <item>@string/entry_type__bean</item>
+        <item>@string/entry_type__green_bean</item>
         <item>@string/entry_type__blueberry</item>
         <item>@string/entry_type__garlic</item>
         <item>@string/entry_type__onion</item>
@@ -148,7 +148,7 @@
         <item>@drawable/entry_type__asparagus</item>
         <!-- 035+ -->
         <item>@drawable/entry_type__avocado</item>
-        <item>@drawable/entry_type__bean</item>
+        <item>@drawable/entry_type__green_bean</item>
         <item>@drawable/entry_type__blueberry</item>
         <item>@drawable/entry_type__garlic</item>
         <item>@drawable/entry_type__onion</item>

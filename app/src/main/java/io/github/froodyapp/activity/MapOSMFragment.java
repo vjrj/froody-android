@@ -99,7 +99,7 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
         }
 
         // Init
-        appSettings = new AppSettings(c);
+        appSettings = AppSettings.get();
         mapController = map.getController();
         entryMarkersInCluster = new ArrayList<>();
         mapCluster = new RadiusMarkerClusterWithClusterClick(c);

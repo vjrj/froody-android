@@ -50,7 +50,7 @@ public class DevFragment extends BaseFragment implements View.OnClickListener {
         super.onViewCreated(view, savedInstanceState);
         button.setOnClickListener(this);
         Context context = getContext();
-        appSettings = new AppSettings(context);
+        appSettings = AppSettings.get();
         random = new Random();
 
         // Not on default server ;)

@@ -108,7 +108,7 @@ public class MoreFragment extends BaseFragment {
                 break;
             }
             case R.id.more__fragment__button_support__bug_report: {
-                if (!new AppSettings(context).isDevDebugModeEnabled()) {
+                if (!AppSettings.get().isDevDebugModeEnabled()) {
                     Intent intent = new Intent(Intent.ACTION_VIEW);
                     intent.setData(Uri.parse(getString(R.string.project_bugtracker)));
                     startActivity(intent);

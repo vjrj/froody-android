@@ -41,7 +41,7 @@ import io.github.froodyapp.util.AppCast;
 import io.github.froodyapp.util.AppSettings;
 import io.github.froodyapp.util.BlockCache;
 import io.github.froodyapp.util.Helpers;
-import io.github.froodyapp.util.SimpleMarkdownParser;
+import io.github.gsantner.opoc.util.SimpleMarkdownParser;
 
 
 /**
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
                         getResources().openRawResource(R.raw.licenses_3rd_party),
                         SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml();
                 dialogTitleResId = R.string.license;
-            } else if (appSettings.isAppCurrentVersionFirstStart()) {
+            } else if (appSettings.isAppFirstStartCurrentVersion()) {
                 dialogHtml = new SimpleMarkdownParser().parse(
                         getResources().openRawResource(R.raw.changelog),
                         SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml();

@@ -137,7 +137,7 @@ public class MyEntriesHelper {
         }
 
 
-        AppSettings appSettings = new AppSettings(context);
+        AppSettings appSettings = AppSettings.get();
         String subject = context.getString(R.string.share_my_entry_at_froody);
         String url = context.getString(R.string.share_link_url_with_entryid_param, entry.getEntryId());
         if (!context.getString(R.string.server_default).equals(appSettings.getFroodyServer())) {

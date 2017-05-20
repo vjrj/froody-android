@@ -20,7 +20,7 @@ import butterknife.OnClick;
 import io.github.froodyapp.R;
 import io.github.froodyapp.ui.BaseFragment;
 import io.github.froodyapp.util.Helpers;
-import io.github.froodyapp.util.SimpleMarkdownParser;
+import io.github.gsantner.opoc.util.SimpleMarkdownParser;
 
 /**
  * Activity for information about the app

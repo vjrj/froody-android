@@ -55,7 +55,7 @@ public class UserRegisterer extends Thread {
     }
 
     private boolean registerOrCheckUserId() {
-        final AppSettings settings = new AppSettings(context);
+        final AppSettings settings = AppSettings.get();
 
         UserApi userApi = new UserApi();
         if (settings.hasFroodyUserId()) {

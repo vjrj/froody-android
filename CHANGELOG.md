@@ -1,3 +1,7 @@
+### v0.2.10 (2017-05-19)
+* Update colors, entryTypeSelectionDialog
+* Use opoc/AppSettingsBase as base of AppSettings
+
 ### v0.2.9 (2017-05-16)
 * Translations updated
 

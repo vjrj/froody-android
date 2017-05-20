@@ -19,6 +19,7 @@ public class App extends Application {
     //## Const
     //#####################
     public static final boolean LOGGING_ENABLED = true;
+    private volatile static App app;
 
     /**
      * Log to console
@@ -32,6 +33,10 @@ public class App extends Application {
         }
     }
 
+    public static App get() {
+        return app;
+    }
+
     //#####################
     //##  Member
     //#####################
@@ -43,10 +48,11 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        app = this;
 
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
 
-        appSettings = new AppSettings(this);
+        appSettings = AppSettings.get();
         String server = appSettings.getFroodyServer();
         Configuration.getDefaultApiClient().setBasePath(server);
         new UserRegisterer(this).start();

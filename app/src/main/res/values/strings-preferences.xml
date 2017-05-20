@@ -11,7 +11,7 @@
     <string name="pref_key__entry__last_contact_info" translatable="false">pref_key__entry__last_contact_info</string>
     <string name="pref_key__entry__last_certification" translatable="false">pref_key__entry__last_certification</string>
     <string name="pref_key__entry__last_distribution" translatable="false">pref_key__entry__last_distribution</string>
-    <string name="pref_key__entry__last_entry_types" translatable="false">pref_key__entry__last_entry_types</string>
+    <string name="pref_key__entry__last_selected_entry_types" translatable="false">pref_key__entry__last_selected_entry_types</string>
     <string name="pref_key__entry__blockcache" translatable="false">pref_key__entry__blockcache</string>
     <string name="pref_key__allow_location_listening_gps" translatable="false">pref_key__allow_location_listening_gps</string>
     <string name="pref_key__allow_location_listening_net" translatable="false">pref_key__allow_location_listening_net</string>
@@ -23,7 +23,7 @@
     <string name="pref_key__reset_app" translatable="false">pref_key__reset_app</string>
     <string name="pref_key__app_first_start_current_version" translatable="false">pref_key__app_first_start_current_version</string>
     <string name="pref_key__app_first_start" translatable="false">pref_key__app_first_start</string>
-
+    <string name="pref_key__entry_type_selection_dialog__tab_last_used" translatable="false">pref_key__entry_type_selection_dialog__tab_last_used</string>
 
 
     <!-- Network -->

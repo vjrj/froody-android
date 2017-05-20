@@ -38,7 +38,7 @@ import io.github.froodyapp.service.EntryPublisher;
 import io.github.froodyapp.service.EntryReverseGeocoder;
 import io.github.froodyapp.ui.BaseFragment;
 import io.github.froodyapp.ui.CustomDialogs;
-import io.github.froodyapp.ui.DialogEntryTypeSelection;
+import io.github.froodyapp.ui.EntryTypeSelectionDialog;
 import io.github.froodyapp.ui.RecyclerEntryTypeAdapter;
 import io.github.froodyapp.util.AppCast;
 import io.github.froodyapp.util.AppSettings;
@@ -141,7 +141,7 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
         froodyEntry.setEntryId(-1L);
         froodyEntry.setEntryType(FroodyEntryFormatter.ENTRY_TYPE_UNKNOWN);
 
-        // Load some previously selected options from AppSettings
+        // Load some previously selected options from AppSettingsBase
         setCertificationSelection(appSettings.getLastCertification());
         setDistributionSelection(appSettings.getLastDistribution());
         editContact.setText(appSettings.getLastContactInfo());
@@ -192,7 +192,7 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
             Helpers.setTintColor(b, R.color.default_button_bgcolor);
             //b.setTextColor(ContextCompat.getColor(getContext(), R.color.primary_text));
         }
-        Helpers.setTintColor(buttonDistribution[index], R.color.accent);
+        Helpers.setTintColor(buttonDistribution[index], R.color.app_some_yellow);
         //buttonDistribution[index].setTextColor(ContextCompat.getColor(getContext(), R.color.white));
     }
 
@@ -221,7 +221,7 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
             Helpers.setTintColor(b, R.color.default_button_bgcolor);
             //b.setTextColor(ContextCompat.getColor(getContext(), R.color.primary_text));
         }
-        Helpers.setTintColor(buttonCertification[index], R.color.accent);
+        Helpers.setTintColor(buttonCertification[index], R.color.app_some_yellow);
         //buttonCertification[index].setTextColor(ContextCompat.getColor(getContext(), R.color.white));
     }
 
@@ -240,7 +240,7 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
     private void recheckUserInput() {
         boolean valid = hasValidInput();
         int black = Helpers.getColorFromRes(getContext(), R.color.primary_text);
-        int red = Helpers.getColorFromRes(getContext(), R.color.very_red);
+        int red = Helpers.getColorFromRes(getContext(), R.color.app_very_red);
 
         textDescriptionHeader.setTextColor(editDescription.getText().toString().isEmpty() ? red : black);
         textContactHeader.setTextColor(editContact.getText().toString().isEmpty() ? red : black);
@@ -349,8 +349,8 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
     // The GPS Button was pressed
     @OnClick(R.id.publish_entry__fragment__entry_type_name)
     public void onSelectFroodyEntryTypeSelectorClicked(View view) {
-        DialogEntryTypeSelection yourDialogFragment = DialogEntryTypeSelection.newInstance(this, false);
-        yourDialogFragment.show(getFragmentManager(), DialogEntryTypeSelection.FRAGMENT_TAG);
+        EntryTypeSelectionDialog yourDialogFragment = EntryTypeSelectionDialog.newInstance(this, false);
+        yourDialogFragment.show(getFragmentManager(), EntryTypeSelectionDialog.FRAGMENT_TAG);
     }
 
     public void requestLocationFromMainActivity() {
@@ -473,7 +473,7 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
         // Add to history list
         if (entryType != FroodyEntryFormatter.ENTRY_TYPE_CUSTOM) {
             AppSettings settings = app.getAppSettings();
-            ArrayList<Integer> history = settings.getLastEntryTypes();
+            ArrayList<Integer> history = settings.getLastSelectedEntryTypes();
             if (history.contains(entryType)) {
                 history.remove(history.indexOf(entryType));
             }
@@ -481,7 +481,7 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
             while (history.size() >= RecyclerEntryTypeAdapter.MAX_ENTRYTYPE_SUGGESTIONS_COUNT__BY_HISTORY) {
                 history.remove(history.get(history.size() - 1));
             }
-            settings.setLastEntryTypes(history);
+            settings.setLastSelectedEntryTypes(history);
         }
         recheckUserInput();
     }
