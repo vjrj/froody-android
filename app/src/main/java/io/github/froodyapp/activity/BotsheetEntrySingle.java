@@ -141,9 +141,6 @@ public class BotsheetEntrySingle extends BottomSheetDialogFragment implements En
         // Certification
         imageCertification.setImageResource(entryFormatter.getCertifciationTypeImageId());
         textCertification.setText(entryFormatter.getCertification());
-        if (entryFormatter.getCertificationType() == 0) {
-            textCertification.append(" " + getString(R.string.certification));
-        }
     }
 
     // Delete or Share button was pressed

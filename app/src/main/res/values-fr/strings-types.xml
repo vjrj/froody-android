@@ -22,7 +22,7 @@
   <string name="entry_type__pear">Poire</string>
   <string name="entry_type__cherry">Cerise</string>
   <string name="entry_type__plum">Prune</string>
-  <string name="entry_type__currant">Raisin sec</string>
+  <string name="entry_type__currant_red">Raisin sec</string>
   <string name="entry_type__grape">Raisin</string>
   <string name="entry_type__hazelnut">Noisette</string>
   <string name="entry_type__milk">Lait</string>

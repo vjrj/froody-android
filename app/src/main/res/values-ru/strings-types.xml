@@ -22,7 +22,7 @@
   <string name="entry_type__pear">Груши</string>
   <string name="entry_type__cherry">Вишня</string>
   <string name="entry_type__plum">Слива</string>
-  <string name="entry_type__currant">Смородина</string>
+  <string name="entry_type__currant_red">Смородина</string>
   <string name="entry_type__grape">Виноград</string>
   <string name="entry_type__hazelnut">Фундук</string>
   <string name="entry_type__milk">Молоко</string>

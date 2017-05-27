@@ -109,6 +109,15 @@
                         android:src="@drawable/distribution_type__swap" />
 
                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:text="@string/distribution_type"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
                         android:id="@+id/botsheet__entry_single__distribution__text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -131,6 +140,15 @@
                         android:layout_gravity="center_horizontal|top"
                         android:scaleType="fitXY"
                         android:src="@drawable/ic_cutout_circle_64dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:text="@string/certification"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/botsheet__entry_single__certification__text"
@@ -171,8 +189,8 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:layout_marginTop="@dimen/activity_margin_small_4"
                 android:layout_marginBottom="@dimen/input_field_margin"
+                android:layout_marginTop="@dimen/activity_margin_small_4"
                 android:background="@color/primary_light" />
 
             <!-- Description -->

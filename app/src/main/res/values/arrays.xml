@@ -52,7 +52,7 @@
         <item>@string/entry_type__cherry</item>
         <!-- 005 -->
         <item>@string/entry_type__plum</item>
-        <item>@string/entry_type__currant</item>
+        <item>@string/entry_type__currant_red</item>
         <item>@string/entry_type__grape</item>
         <item>@string/entry_type__hazelnut</item>
         <item>@string/entry_type__milk</item>
@@ -101,6 +101,7 @@
         <!-- 045+ -->
         <item>@string/entry_type__seed</item>
         <item>@string/entry_type__soy_bean</item>
+        <item>@string/entry_type__currant_black</item>
     </string-array>
 
     <integer-array name="entry_type__images">
@@ -112,7 +113,7 @@
         <item>@drawable/entry_type__cherry</item>
         <!-- 005+ -->
         <item>@drawable/entry_type__plum</item>
-        <item>@drawable/entry_type__currant</item>
+        <item>@drawable/entry_type__currant_red</item>
         <item>@drawable/entry_type__grape</item>
         <item>@drawable/entry_type__hazelnut</item>
         <item>@drawable/entry_type__milk</item>
@@ -161,7 +162,7 @@
         <!-- 045+ -->
         <item>@drawable/entry_type__seed</item>
         <item>@drawable/entry_type__soy_bean</item>
-
+        <item>@drawable/entry_type__currant_black</item>
     </integer-array>
 
     <!-- Index of entry types which are not allowed to be sold-->
