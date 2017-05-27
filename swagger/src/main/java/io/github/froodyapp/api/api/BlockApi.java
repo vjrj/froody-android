@@ -57,12 +57,20 @@ public class BlockApi {
         this.apiClient = apiClient;
     }
 
-    /* Build call for blockGetGet */
-    private com.squareup.okhttp.Call blockGetGetCall(String geohash, DateTime minModificationDate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    /**
+     * Build call for blockGetGet
+     * @param geohash Entry.geohash ** Geohash which should be matched (required)
+     * @param minModificationDate BlockInfo.modificationDate ** Timestamp of last known block modification (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call blockGetGetCall(String geohash, DateTime minModificationDate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/block/get".replaceAll("\\{format\\}","json");
+        String localVarPath = "/block/get";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (geohash != null)
@@ -187,12 +195,20 @@ public class BlockApi {
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
-    /* Build call for blockInfoGet */
-    private com.squareup.okhttp.Call blockInfoGetCall(String geohash, DateTime minModificationDate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    /**
+     * Build call for blockInfoGet
+     * @param geohash BlockInfo.geohash ** Geohash (&#x3D;position)  (required)
+     * @param minModificationDate BlockInfo.modificationDate ** Timestamp of last known block modification. Make ENTRY_LIFETIME_DAYS days ago to get everything. (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call blockInfoGetCall(String geohash, DateTime minModificationDate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/block/info".replaceAll("\\{format\\}","json");
+        String localVarPath = "/block/info";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (geohash != null)
@@ -317,12 +333,18 @@ public class BlockApi {
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
-    /* Build call for blockInfoRandomGet */
-    private com.squareup.okhttp.Call blockInfoRandomGetCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    /**
+     * Build call for blockInfoRandomGet
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call blockInfoRandomGetCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/block/info/random".replaceAll("\\{format\\}","json");
+        String localVarPath = "/block/info/random";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 

@@ -18,7 +18,7 @@ import io.github.froodyapp.api.invoker.Pair;
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T17:38:04.070+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-27T19:43:32.369+02:00")
 public class OAuth implements Authentication {
   private String accessToken;
 

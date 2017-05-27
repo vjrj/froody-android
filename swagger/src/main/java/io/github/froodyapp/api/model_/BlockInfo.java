@@ -24,7 +24,7 @@ import java.io.Serializable;
  * Informations about a Geohash-Block
  */
 @ApiModel(description = "Informations about a Geohash-Block")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T17:38:04.070+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-27T19:43:32.369+02:00")
 public class BlockInfo implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -46,7 +46,7 @@ public class BlockInfo implements Serializable {
    * BlockInfo ** GeoHash of location(lat,lng)
    * @return geohash
   **/
-  @ApiModelProperty(example = "null", value = "BlockInfo ** GeoHash of location(lat,lng)")
+  @ApiModelProperty(value = "BlockInfo ** GeoHash of location(lat,lng)")
   public String getGeohash() {
     return geohash;
   }
@@ -64,7 +64,7 @@ public class BlockInfo implements Serializable {
    * BlockInfo ** Timestamp of last modification of entries in this block
    * @return modificationDate
   **/
-  @ApiModelProperty(example = "null", value = "BlockInfo ** Timestamp of last modification of entries in this block")
+  @ApiModelProperty(value = "BlockInfo ** Timestamp of last modification of entries in this block")
   public DateTime getModificationDate() {
     return modificationDate;
   }
@@ -82,7 +82,7 @@ public class BlockInfo implements Serializable {
    * BlockInfo ** True if the block has changed since requested min modification time
    * @return hasBlockBeenModified
   **/
-  @ApiModelProperty(example = "null", value = "BlockInfo ** True if the block has changed since requested min modification time")
+  @ApiModelProperty(value = "BlockInfo ** True if the block has changed since requested min modification time")
   public Boolean getHasBlockBeenModified() {
     return hasBlockBeenModified;
   }

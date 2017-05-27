@@ -56,12 +56,26 @@ public class EntryApi {
         this.apiClient = apiClient;
     }
 
-    /* Build call for entryAddPost */
-    private com.squareup.okhttp.Call entryAddPostCall(Long userId, String geohash, Integer entryType, Integer distributionType, Integer certificationType, String description, String contact, String address, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    /**
+     * Build call for entryAddPost
+     * @param userId User.userId ** UID which identifies the User (required)
+     * @param geohash Entry.geohash ** Geohash (&#x3D;position) of entry with precision &gt;&#x3D; 9 (required)
+     * @param entryType Entry.entryType ** Type of entry (e.g. pear, apple,..) (required)
+     * @param distributionType Entry.distributionType .&gt; Dist-type of entry (required)
+     * @param certificationType Entry.certificationType ** Cert-type of entry (required)
+     * @param description Entry.description ** Description of entry (required)
+     * @param contact Entry.contact ** Contact info of entry (required)
+     * @param address Entry.address ** Address of entry (reverse geocoded) (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call entryAddPostCall(Long userId, String geohash, Integer entryType, Integer distributionType, Integer certificationType, String description, String contact, String address, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/entry/add".replaceAll("\\{format\\}","json");
+        String localVarPath = "/entry/add";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (userId != null)
@@ -246,12 +260,19 @@ public class EntryApi {
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
-    /* Build call for entryByIdGet */
-    private com.squareup.okhttp.Call entryByIdGetCall(Long entryId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    /**
+     * Build call for entryByIdGet
+     * @param entryId Entry.entryId ** Entry ID (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call entryByIdGetCall(Long entryId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/entry/byId".replaceAll("\\{format\\}","json");
+        String localVarPath = "/entry/byId";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (entryId != null)
@@ -366,12 +387,21 @@ public class EntryApi {
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
-    /* Build call for entryDeleteGet */
-    private com.squareup.okhttp.Call entryDeleteGetCall(Long userId, Integer managementCode, Long entryId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    /**
+     * Build call for entryDeleteGet
+     * @param userId User.userId ** UID of client (required)
+     * @param managementCode Entry.managementCode ** Code for check if allowed to delete (required)
+     * @param entryId Entry.entryId ** Id of entry that should be deleted (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call entryDeleteGetCall(Long userId, Integer managementCode, Long entryId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/entry/delete".replaceAll("\\{format\\}","json");
+        String localVarPath = "/entry/delete";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (userId != null)
@@ -506,12 +536,19 @@ public class EntryApi {
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
-    /* Build call for entryPopularEntryTypesGet */
-    private com.squareup.okhttp.Call entryPopularEntryTypesGetCall(String geohash, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    /**
+     * Build call for entryPopularEntryTypesGet
+     * @param geohash BlockInfo.geohash ** Geohash to get popular types around (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call entryPopularEntryTypesGetCall(String geohash, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/entry/popularEntryTypes".replaceAll("\\{format\\}","json");
+        String localVarPath = "/entry/popularEntryTypes";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (geohash != null)

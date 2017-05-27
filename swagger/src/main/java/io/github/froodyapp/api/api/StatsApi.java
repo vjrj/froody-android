@@ -55,12 +55,18 @@ public class StatsApi {
         this.apiClient = apiClient;
     }
 
-    /* Build call for statsOverallGet */
-    private com.squareup.okhttp.Call statsOverallGetCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    /**
+     * Build call for statsOverallGet
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call statsOverallGetCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/stats/overall".replaceAll("\\{format\\}","json");
+        String localVarPath = "/stats/overall";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 

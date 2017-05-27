@@ -23,7 +23,7 @@ import java.io.Serializable;
  * Represents a user of the application with userId
  */
 @ApiModel(description = "Represents a user of the application with userId")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T17:38:04.070+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-27T19:43:32.369+02:00")
 public class FroodyUser implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -39,7 +39,7 @@ public class FroodyUser implements Serializable {
    * User ** Unique ID for the client
    * @return userId
   **/
-  @ApiModelProperty(example = "null", value = "User ** Unique ID for the client")
+  @ApiModelProperty(value = "User ** Unique ID for the client")
   public Long getUserId() {
     return userId;
   }

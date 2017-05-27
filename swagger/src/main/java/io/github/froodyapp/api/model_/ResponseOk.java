@@ -23,7 +23,7 @@ import java.io.Serializable;
  * General result, returns success or failure of a call
  */
 @ApiModel(description = "General result, returns success or failure of a call")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T17:38:04.070+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-27T19:43:32.369+02:00")
 public class ResponseOk implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -39,7 +39,7 @@ public class ResponseOk implements Serializable {
    * true if successful, false if not
    * @return success
   **/
-  @ApiModelProperty(example = "null", value = "true if successful, false if not")
+  @ApiModelProperty(value = "true if successful, false if not")
   public Boolean getSuccess() {
     return success;
   }

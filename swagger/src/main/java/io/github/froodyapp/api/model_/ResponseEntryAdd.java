@@ -24,7 +24,7 @@ import java.io.Serializable;
  * Represents the Result of the /entry/add endpoint
  */
 @ApiModel(description = "Represents the Result of the /entry/add endpoint")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T17:38:04.070+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-27T19:43:32.369+02:00")
 public class ResponseEntryAdd implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -46,7 +46,7 @@ public class ResponseEntryAdd implements Serializable {
    * Entry.entryId ** UID of the entry, which was added to DB
    * @return entryId
   **/
-  @ApiModelProperty(example = "null", value = "Entry.entryId ** UID of the entry, which was added to DB")
+  @ApiModelProperty(value = "Entry.entryId ** UID of the entry, which was added to DB")
   public Long getEntryId() {
     return entryId;
   }
@@ -64,7 +64,7 @@ public class ResponseEntryAdd implements Serializable {
    * Entry.ManagementCode ** Needed for deleting and managing entry
    * @return managementCode
   **/
-  @ApiModelProperty(example = "null", value = "Entry.ManagementCode ** Needed for deleting and managing entry")
+  @ApiModelProperty(value = "Entry.ManagementCode ** Needed for deleting and managing entry")
   public Integer getManagementCode() {
     return managementCode;
   }
@@ -82,7 +82,7 @@ public class ResponseEntryAdd implements Serializable {
    * Entry ** Timestamp of creation
    * @return creationDate
   **/
-  @ApiModelProperty(example = "null", value = "Entry ** Timestamp of creation")
+  @ApiModelProperty(value = "Entry ** Timestamp of creation")
   public DateTime getCreationDate() {
     return creationDate;
   }

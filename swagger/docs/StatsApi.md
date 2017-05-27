@@ -1,6 +1,6 @@
 # StatsApi
 
-All URIs are relative to *https://fruity-app.at/froody*
+All URIs are relative to *https://api.froody-app.at/froody*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

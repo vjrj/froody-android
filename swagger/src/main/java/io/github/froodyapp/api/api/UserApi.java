@@ -55,12 +55,19 @@ public class UserApi {
         this.apiClient = apiClient;
     }
 
-    /* Build call for userIsEnabledGet */
-    private com.squareup.okhttp.Call userIsEnabledGetCall(Long userId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    /**
+     * Build call for userIsEnabledGet
+     * @param userId User.userId ** UID of client (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call userIsEnabledGetCall(Long userId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/user/isEnabled".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/isEnabled";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (userId != null)
@@ -175,12 +182,18 @@ public class UserApi {
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
-    /* Build call for userRegisterGet */
-    private com.squareup.okhttp.Call userRegisterGetCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    /**
+     * Build call for userRegisterGet
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call userRegisterGetCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/user/register".replaceAll("\\{format\\}","json");
+        String localVarPath = "/user/register";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 

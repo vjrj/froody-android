@@ -24,7 +24,7 @@ import java.io.Serializable;
  * Represents an entry in the froody database, with its id, location and other details
  */
 @ApiModel(description = "Represents an entry in the froody database, with its id, location and other details")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T17:38:04.070+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-27T19:43:32.369+02:00")
 public class FroodyEntry implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -76,7 +76,7 @@ public class FroodyEntry implements Serializable {
    * Entry ** Unique ID representing the entry ID in the database
    * @return entryId
   **/
-  @ApiModelProperty(example = "null", value = "Entry ** Unique ID representing the entry ID in the database")
+  @ApiModelProperty(value = "Entry ** Unique ID representing the entry ID in the database")
   public Long getEntryId() {
     return entryId;
   }
@@ -94,7 +94,7 @@ public class FroodyEntry implements Serializable {
    * User.userId ** UserId that this entry belongs to. -1 if not belongs to client
    * @return userId
   **/
-  @ApiModelProperty(example = "null", value = "User.userId ** UserId that this entry belongs to. -1 if not belongs to client")
+  @ApiModelProperty(value = "User.userId ** UserId that this entry belongs to. -1 if not belongs to client")
   public Long getUserId() {
     return userId;
   }
@@ -112,7 +112,7 @@ public class FroodyEntry implements Serializable {
    * Entry ** GeoHash of location(lat,lng) with precision >= 9
    * @return geohash
   **/
-  @ApiModelProperty(example = "null", value = "Entry ** GeoHash of location(lat,lng) with precision >= 9")
+  @ApiModelProperty(value = "Entry ** GeoHash of location(lat,lng) with precision >= 9")
   public String getGeohash() {
     return geohash;
   }
@@ -130,7 +130,7 @@ public class FroodyEntry implements Serializable {
    * Entry ** Timestamp of creation
    * @return creationDate
   **/
-  @ApiModelProperty(example = "null", value = "Entry ** Timestamp of creation")
+  @ApiModelProperty(value = "Entry ** Timestamp of creation")
   public DateTime getCreationDate() {
     return creationDate;
   }
@@ -148,7 +148,7 @@ public class FroodyEntry implements Serializable {
    * Entry ** Timestamp of modification
    * @return modificationDate
   **/
-  @ApiModelProperty(example = "null", value = "Entry ** Timestamp of modification")
+  @ApiModelProperty(value = "Entry ** Timestamp of modification")
   public DateTime getModificationDate() {
     return modificationDate;
   }
@@ -166,7 +166,7 @@ public class FroodyEntry implements Serializable {
    * Entry ** Type of entry (e.g. pear, apple)
    * @return entryType
   **/
-  @ApiModelProperty(example = "null", value = "Entry ** Type of entry (e.g. pear, apple)")
+  @ApiModelProperty(value = "Entry ** Type of entry (e.g. pear, apple)")
   public Integer getEntryType() {
     return entryType;
   }
@@ -184,7 +184,7 @@ public class FroodyEntry implements Serializable {
    * Entry ** Type of certification (None=0/bio=1/demeter=2)
    * @return certificationType
   **/
-  @ApiModelProperty(example = "null", value = "Entry ** Type of certification (None=0/bio=1/demeter=2)")
+  @ApiModelProperty(value = "Entry ** Type of certification (None=0/bio=1/demeter=2)")
   public Integer getCertificationType() {
     return certificationType;
   }
@@ -202,7 +202,7 @@ public class FroodyEntry implements Serializable {
    * Entry ** Type of distribution (Free=0/Selling=1/..)
    * @return distributionType
   **/
-  @ApiModelProperty(example = "null", value = "Entry ** Type of distribution (Free=0/Selling=1/..)")
+  @ApiModelProperty(value = "Entry ** Type of distribution (Free=0/Selling=1/..)")
   public Integer getDistributionType() {
     return distributionType;
   }
@@ -220,7 +220,7 @@ public class FroodyEntry implements Serializable {
    * Entry ** Description what is offered
    * @return description
   **/
-  @ApiModelProperty(example = "null", value = "Entry ** Description what is offered")
+  @ApiModelProperty(value = "Entry ** Description what is offered")
   public String getDescription() {
     return description;
   }
@@ -238,7 +238,7 @@ public class FroodyEntry implements Serializable {
    * Entry ** Contact informations
    * @return contact
   **/
-  @ApiModelProperty(example = "null", value = "Entry ** Contact informations")
+  @ApiModelProperty(value = "Entry ** Contact informations")
   public String getContact() {
     return contact;
   }
@@ -256,7 +256,7 @@ public class FroodyEntry implements Serializable {
    * Entry ** Resolved address from latitude and longitude
    * @return address
   **/
-  @ApiModelProperty(example = "null", value = "Entry ** Resolved address from latitude and longitude")
+  @ApiModelProperty(value = "Entry ** Resolved address from latitude and longitude")
   public String getAddress() {
     return address;
   }
@@ -274,7 +274,7 @@ public class FroodyEntry implements Serializable {
    * Entry ** True if the entry was requested for deletion
    * @return wasDeleted
   **/
-  @ApiModelProperty(example = "null", value = "Entry ** True if the entry was requested for deletion")
+  @ApiModelProperty(value = "Entry ** True if the entry was requested for deletion")
   public Boolean getWasDeleted() {
     return wasDeleted;
   }
@@ -292,7 +292,7 @@ public class FroodyEntry implements Serializable {
    * Entry ** Management code, or -1 if not belongs to client
    * @return managementCode
   **/
-  @ApiModelProperty(example = "null", value = "Entry ** Management code, or -1 if not belongs to client")
+  @ApiModelProperty(value = "Entry ** Management code, or -1 if not belongs to client")
   public Integer getManagementCode() {
     return managementCode;
   }

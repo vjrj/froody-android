@@ -23,7 +23,7 @@ import java.io.Serializable;
  * General result, returns success or failure of a call
  */
 @ApiModel(description = "General result, returns success or failure of a call")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T17:38:04.070+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-05-27T19:43:32.369+02:00")
 public class ServerOverallStats implements Serializable {
   private static final long serialVersionUID = 1L;
 
@@ -42,7 +42,7 @@ public class ServerOverallStats implements Serializable {
    * User.checkDate ** Count of users checking in the last ENTRY_LIFETIME_DAYS days
    * @return userCount
   **/
-  @ApiModelProperty(example = "null", value = "User.checkDate ** Count of users checking in the last ENTRY_LIFETIME_DAYS days")
+  @ApiModelProperty(value = "User.checkDate ** Count of users checking in the last ENTRY_LIFETIME_DAYS days")
   public Long getUserCount() {
     return userCount;
   }
@@ -60,7 +60,7 @@ public class ServerOverallStats implements Serializable {
    * Entry.modificationDate ** Count of active entries
    * @return entryCount
   **/
-  @ApiModelProperty(example = "null", value = "Entry.modificationDate ** Count of active entries")
+  @ApiModelProperty(value = "Entry.modificationDate ** Count of active entries")
   public Long getEntryCount() {
     return entryCount;
   }

@@ -54,12 +54,19 @@ public class AdminApi {
         this.apiClient = apiClient;
     }
 
-    /* Build call for adminCleanupGet */
-    private com.squareup.okhttp.Call adminCleanupGetCall(String adminCode, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    /**
+     * Build call for adminCleanupGet
+     * @param adminCode AdminCode - defined in config.php (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call adminCleanupGetCall(String adminCode, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/admin/cleanup".replaceAll("\\{format\\}","json");
+        String localVarPath = "/admin/cleanup";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (adminCode != null)
