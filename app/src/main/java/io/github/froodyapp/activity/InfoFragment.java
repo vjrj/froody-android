@@ -84,7 +84,7 @@ public class InfoFragment extends BaseFragment {
         }
     }
 
-    @OnClick({R.id.info__fragment__text_app_version, R.id.info__fragment__button_third_party_licenses, R.id.info__fragment__button_gplv3_license})
+    @OnClick({R.id.info__fragment__text_app_version, R.id.info__fragment__button_third_party_licenses, R.id.info__fragment__button_show_app_license})
     public void onButtonClicked(View v) {
         Context context = v.getContext();
         switch (v.getId()) {
@@ -92,7 +92,7 @@ public class InfoFragment extends BaseFragment {
                 Helpers.openWebpageWithExternalBrowser(context, getString(R.string.project_github_page));
                 break;
             }
-            case R.id.info__fragment__button_gplv3_license: {
+            case R.id.info__fragment__button_show_app_license: {
                 Helpers.showDialogWithHtmlTextView(context, null, R.string.license, Helpers.loadMarkdownFromRawForTextView(context, R.raw.license, ""));
                 break;
             }

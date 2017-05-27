@@ -5,8 +5,8 @@
 <span class="badge-bitcoin"><a href="https://gsantner.github.io/donate/#donate" title="Donate once-off to this project using Bitcoin"><img src="https://img.shields.io/badge/bitcoin-donate-yellow.svg" alt="Bitcoin donate button" /></a></span>
 
 Android part of the [Froody](https://froodyapp.github.io) application.
-Developed and maintained by [Gregor Santner](<https://gsantner.github.io>), 2016-
-License: **GPLv3**
+Developed and maintained by [Gregor Santner](<https://gsantner.github.io>), 2016-  
+License: **Apache 2.0**  
 
 [![F-Droid](https://f-droid.org/wiki/images/0/06/F-Droid-button_get-it-on.png)](https://f-droid.org/repository/browse/?fdid=io.github.froodyapp) [![Google Play](https://raw.githubusercontent.com/froodyapp/froody-extras/master/graphics/stores/en_badge_web_generic_small.png)](https://play.google.com/store/apps/details?id=io.github.froodyapp&referrer=utm_source%3Dgithub)
 

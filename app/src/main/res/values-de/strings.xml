@@ -48,6 +48,7 @@
   <string name="error_cannot_publish_entry">Fehler: Konnte Eintrag nicht veröffentlichen</string>
   <!-- Info -->
   <string name="show_licenses">Lizenzen anzeigen</string>
+  <string name="show_license_of_app">Lizenz der App anzeigen</string>
   <string name="show_gplv3_license">GNU GPLv3 Lizenz anzeigen</string>
   <string name="show_third_party_licenses">Drittanbieter Lizenzen anzeigen</string>
   <string name="more_information">Mehr Informationen</string>

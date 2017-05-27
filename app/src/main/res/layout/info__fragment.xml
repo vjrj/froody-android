@@ -119,7 +119,7 @@
                 android:layout_marginTop="10dp"
                 android:autoLink="web|email"
                 android:gravity="start"
-                android:text="@string/gpl_v3_license_text"
+                android:text="@string/apache2_license_text"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textColor="@color/secondary_text" />
 
@@ -130,11 +130,11 @@
                 android:layout_marginStart="10dp">
 
                 <Button
-                    android:id="@+id/info__fragment__button_gplv3_license"
+                    android:id="@+id/info__fragment__button_show_app_license"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/show_gplv3_license" />
+                    android:text="@string/show_license_of_app" />
 
                 <Button
                     android:id="@+id/info__fragment__button_third_party_licenses"
