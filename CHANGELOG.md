@@ -1,3 +1,7 @@
+### v0.2.11 (2017-05-27)
+* Update API & license
+* Move to plural entry types
+
 ### v0.2.10 (2017-05-19)
 * Update colors, entryTypeSelectionDialog
 * Use opoc/AppSettingsBase as base of AppSettings
