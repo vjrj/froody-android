@@ -32,6 +32,7 @@
         android:layout_alignBottom="@+id/botsheet__entry_single_unused0"
         android:layout_alignTop="@+id/botsheet__entry_single_unused0"
         android:layout_toEndOf="@+id/ui__froody_item__type_image"
+        android:layout_toRightOf="@+id/ui__froody_item__type_image"
         android:gravity="center"
         android:text="@string/entry_type__blueberry"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
@@ -43,8 +44,10 @@
         android:layout_width="match_parent"
         android:layout_height="54dp"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/botsheet__entry_single__text_froodytype"
+        android:layout_toRightOf="@+id/botsheet__entry_single__text_froodytype"
         android:orientation="horizontal">
 
         <View
@@ -58,6 +61,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical|end"
             android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
             android:src="@drawable/ic_delete_white_48px"
             android:visibility="gone"
             app:elevation="1dp" />
@@ -78,7 +82,9 @@
         android:layout_height="match_parent"
         android:layout_alignEnd="@+id/botsheet__entry_single_unused0"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/botsheet__entry_single_unused0"
         android:layout_below="@+id/botsheet__entry_single__text_froodytype"
         android:minHeight="90dp">
 

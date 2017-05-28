@@ -273,7 +273,6 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
         new EntryPublisher(getActivity(), froodyEntry, this).start();
     }
 
-    
 
     private void showInputHelp() {
         MainActivity activity = (MainActivity) getActivity();

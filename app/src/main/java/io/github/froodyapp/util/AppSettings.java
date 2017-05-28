@@ -100,7 +100,7 @@ public class AppSettings extends AppSettingsBase {
     public int getLastDistribution() {
         return getInt(prefApp, R.string.pref_key__entry__last_distribution, 0);
     }
-    
+
     public void setLastSelectedEntryTypes(ArrayList<Integer> values) {
         setIntList(prefApp, R.string.pref_key__entry__last_selected_entry_types, values);
     }

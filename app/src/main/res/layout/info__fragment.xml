@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clickable="true"
     android:background="@color/default_activity_bgcolor"
+    android:clickable="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="io.github.froodyapp.activity.InfoFragment">
 
