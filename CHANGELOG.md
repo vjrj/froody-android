@@ -1,3 +1,7 @@
+### v0.2.12
+- Lower API-level to 14
+- Addded opoc/helpers
+
 ### v0.2.11 (2017-05-27)
 * Update API & license
 * Move to plural entry types

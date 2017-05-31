@@ -21,6 +21,7 @@ import io.github.froodyapp.api.model_.BlockInfo;
 import io.github.froodyapp.api.model_.FroodyEntry;
 import io.github.froodyapp.model.BlockInfoPlus;
 import io.github.froodyapp.model.FroodyEntryPlus;
+import io.github.froodyapp.util.Helpers;
 
 /**
  * Cache of blocks (containing lists of FroodyEntries)
@@ -175,7 +176,7 @@ public class BlockCache {
             if (cacheItem == null) {
                 // Won't happen, because extended entries will retrieved by existing ones
                 cacheItem = new BlockCacheItem();
-                cacheItem.blockInfo = new BlockInfoPlus(block5, Helpers.getNow());
+                cacheItem.blockInfo = new BlockInfoPlus(block5, Helpers.get().getNow());
             }
 
             // Delete from cache

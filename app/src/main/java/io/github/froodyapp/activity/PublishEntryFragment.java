@@ -149,7 +149,7 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
         // Simulate a location
         String[] lastFoundLocation = appSettings.getLastFoundLocation();
         if (!lastFoundLocation[0].isEmpty()) {
-            Double[] latlng = Helpers.geohashToLatLng(lastFoundLocation[0]);
+            Double[] latlng = Helpers.get().geohashToLatLng(lastFoundLocation[0]);
             if (latlng != null) {
                 LocationTool.LocationToolResponse location = new LocationTool.LocationToolResponse();
                 location.provider = "net";
@@ -189,10 +189,10 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
 
         // Apply to UI
         for (AppCompatButton b : buttonDistribution) {
-            Helpers.setTintColor(b, R.color.default_button_bgcolor);
+            Helpers.get().setTintColorOfButton(b, R.color.default_button_bgcolor);
             //b.setTextColor(ContextCompat.getColor(getContext(), R.color.primary_text));
         }
-        Helpers.setTintColor(buttonDistribution[index], R.color.app_some_yellow);
+        Helpers.get().setTintColorOfButton(buttonDistribution[index], R.color.app_some_yellow);
         //buttonDistribution[index].setTextColor(ContextCompat.getColor(getContext(), R.color.white));
     }
 
@@ -218,10 +218,10 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
 
         // Apply to UI
         for (AppCompatButton b : buttonCertification) {
-            Helpers.setTintColor(b, R.color.default_button_bgcolor);
+            Helpers.get().setTintColorOfButton(b, R.color.default_button_bgcolor);
             //b.setTextColor(ContextCompat.getColor(getContext(), R.color.primary_text));
         }
-        Helpers.setTintColor(buttonCertification[index], R.color.app_some_yellow);
+        Helpers.get().setTintColorOfButton(buttonCertification[index], R.color.app_some_yellow);
         //buttonCertification[index].setTextColor(ContextCompat.getColor(getContext(), R.color.white));
     }
 
@@ -239,8 +239,8 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
      */
     private void recheckUserInput() {
         boolean valid = hasValidInput();
-        int black = Helpers.getColorFromRes(getContext(), R.color.primary_text);
-        int red = Helpers.getColorFromRes(getContext(), R.color.app_very_red);
+        int black = Helpers.get().color(R.color.primary_text);
+        int red = Helpers.get().color(R.color.app_very_red);
 
         textDescriptionHeader.setTextColor(editDescription.getText().toString().isEmpty() ? red : black);
         textContactHeader.setTextColor(editContact.getText().toString().isEmpty() ? red : black);

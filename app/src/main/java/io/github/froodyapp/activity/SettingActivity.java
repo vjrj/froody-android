@@ -125,7 +125,7 @@ public class SettingActivity extends AppCompatActivity implements SharedPreferen
                 switch (preference.getTitleRes()) {
                     case R.string.pref_title__clear_cache: {
                         BlockCache.getInstance().clearCache(context);
-                        Helpers.restartApp(context);
+                        Helpers.get().restartApp(MainActivity.class);
                         break;
                     }
 
@@ -133,11 +133,10 @@ public class SettingActivity extends AppCompatActivity implements SharedPreferen
                         BlockCache.getInstance().clearCache(context);
                         new MyEntriesHelper(context).deleteMyEntries();
                         settings.resetSettings();
-                        Helpers.restartApp(context);
+                        Helpers.get().restartApp(MainActivity.class);
                         break;
                     }
                 }
-
             }
             return super.onPreferenceTreeClick(screen, preference);
         }

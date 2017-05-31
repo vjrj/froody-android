@@ -42,11 +42,11 @@ public class BlockInfoPlus extends BlockInfo implements Serializable {
 
 
     private void setModificationDateToEntryLifetimeDaysAgo() {
-        setModificationDate(Helpers.getNow().minusDays(BuildConfig.ENTRY_LIFETIME_DAYS));
+        setModificationDate(Helpers.get().getNow().minusDays(BuildConfig.ENTRY_LIFETIME_DAYS));
     }
 
     public void setModificationDateToNow() {
-        setModificationDate(Helpers.getNow());
+        setModificationDate(Helpers.get().getNow());
     }
 
     public void setNewerBlockInfo(BlockInfo newerBlockInfo) {

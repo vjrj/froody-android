@@ -68,7 +68,7 @@ public class RecyclerEntryTypeAdapter extends RecyclerView.Adapter<UiFroodyItemV
         holder.textInfo.setVisibility(View.GONE);
         holder.textEntryTypeName.setTextSize(TypedValue.COMPLEX_UNIT_SP, 19);
         holder.textEntryTypeName.setTypeface(null, Typeface.NORMAL);
-        holder.divider.setBackgroundColor(Helpers.getColorFromRes(context, R.color.divider));
+        holder.divider.setBackgroundColor(Helpers.get().color(R.color.divider));
 
 
         final int entryType = adapterDataFiltered.get(position);

@@ -59,7 +59,7 @@ public class EntryByBlockLoader extends Thread {
         BlockInfo blockInfo;
         BlockCache.BlockCacheItem blockCacheItem = blockCache.getBlockCacheItemAt(geohash);
         if (blockCacheItem == null) {
-            blockInfo = new BlockInfoPlus(geohash, Helpers.getNow().minusDays(BuildConfig.ENTRY_LIFETIME_DAYS));
+            blockInfo = new BlockInfoPlus(geohash, Helpers.get().getNow().minusDays(BuildConfig.ENTRY_LIFETIME_DAYS));
         } else {
             blockInfo = blockCacheItem.blockInfo;
         }
@@ -74,7 +74,7 @@ public class EntryByBlockLoader extends Thread {
                 // For every block
                 try {
                     // Request new/modified blocks from server
-                    DateTime requestedAt = Helpers.getNow();
+                    DateTime requestedAt = Helpers.get().getNow();
                     List<FroodyEntry> entries = blockApi.blockGetGet(bpu.getGeohash(), bpu.getPreviousModificationDate());
 
                     // Process entries from server into local cache

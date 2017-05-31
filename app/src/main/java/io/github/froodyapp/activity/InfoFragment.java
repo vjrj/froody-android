@@ -20,6 +20,7 @@ import butterknife.OnClick;
 import io.github.froodyapp.R;
 import io.github.froodyapp.ui.BaseFragment;
 import io.github.froodyapp.util.Helpers;
+import io.github.gsantner.opoc.util.HelpersA;
 import io.github.gsantner.opoc.util.SimpleMarkdownParser;
 
 /**
@@ -66,11 +67,11 @@ public class InfoFragment extends BaseFragment {
 
         Context context = getContext();
         textMaintainers.setText(new SpannableString(Html.fromHtml(
-                Helpers.loadMarkdownFromRawForTextView(context, R.raw.maintainers, ""))));
+                Helpers.get().loadMarkdownForTextViewFromRaw(R.raw.maintainers, ""))));
         textMaintainers.setMovementMethod(LinkMovementMethod.getInstance());
 
         textContributors.setText(new SpannableString(Html.fromHtml(
-                Helpers.loadMarkdownFromRawForTextView(context, R.raw.contributors, "* ")
+                Helpers.get().loadMarkdownForTextViewFromRaw(R.raw.contributors, "* ")
         )));
         textContributors.setMovementMethod(LinkMovementMethod.getInstance());
 
@@ -89,16 +90,16 @@ public class InfoFragment extends BaseFragment {
         Context context = v.getContext();
         switch (v.getId()) {
             case R.id.info__fragment__text_app_version: {
-                Helpers.openWebpageWithExternalBrowser(context, getString(R.string.project_github_page));
+                Helpers.get().openWebpageInExternalBrowser(getString(R.string.project_github_page));
                 break;
             }
             case R.id.info__fragment__button_show_app_license: {
-                Helpers.showDialogWithHtmlTextView(context, null, R.string.license, Helpers.loadMarkdownFromRawForTextView(context, R.raw.license, ""));
+                HelpersA.get(getActivity()).showDialogWithHtmlTextView(R.string.license, Helpers.get().loadMarkdownForTextViewFromRaw(R.raw.license, ""));
                 break;
             }
             case R.id.info__fragment__button_third_party_licenses: {
                 try {
-                    Helpers.showDialogWithHtmlTextView(context, null, R.string.license, new SimpleMarkdownParser().parse(
+                    HelpersA.get(getActivity()).showDialogWithHtmlTextView(R.string.license, new SimpleMarkdownParser().parse(
                             getResources().openRawResource(R.raw.licenses_3rd_party),
                             SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml());
                 } catch (IOException e) {

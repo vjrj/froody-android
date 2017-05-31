@@ -125,7 +125,7 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
         map.getOverlays().add(overlayCopyrightOsm);
 
         // Cluster
-        Drawable clusterIconD = Helpers.getDrawableFromRes(c, R.drawable.green_circle);
+        Drawable clusterIconD = Helpers.get().drawable(R.drawable.green_circle);
         mapCluster.setIcon(((BitmapDrawable) clusterIconD).getBitmap());
 
         // Load entries with existing management code
