@@ -9,7 +9,7 @@
   <string name="pref_desc__clear_cache">Nettoyer le cache d\'entrées, dernière position</string>
   <string name="pref_desc__froody_server">Changer de serveur pour récupérer les entrées</string>
   <!-- App -->
-  <string name="pref_cat__app">Application</string>
+  <string name="pref_cat__expert">Application</string>
   <string name="pref_desc__reset_app">Réinitialise l\'appli à son état de 1e installation</string>
   <string name="pref_title__reset_app">Réinitialiser l\'appli</string>
 </resources>

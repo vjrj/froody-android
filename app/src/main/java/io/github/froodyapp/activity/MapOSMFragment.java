@@ -186,6 +186,26 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
     }
 
     public void addOrUpdateFroodyEntryToCluster(FroodyEntryPlus entry, boolean autoRecluster) {
+        // Check if should be shown
+        AppSettings appSettings = AppSettings.get();
+        int distType = entry.getDistributionType();
+        int certType = entry.getCertificationType();
+        if (distType == 0 && !appSettings.getBool(R.string.pref_key__map_show_distribution_type__free, true))
+            return;
+        else if (distType == 1 && !appSettings.getBool(R.string.pref_key__map_show_distribution_type__donation, true))
+            return;
+        else if (distType == 2 && !appSettings.getBool(R.string.pref_key__map_show_distribution_type__sale, true))
+            return;
+        else if (distType == 3 && !appSettings.getBool(R.string.pref_key__map_show_distribution_type__swap, true))
+            return;
+        if (certType == 0 && !appSettings.getBool(R.string.pref_key__map_show_certification_type__none, true))
+            return;
+        else if (certType == 1 && !appSettings.getBool(R.string.pref_key__map_show_certification_type__bio, true))
+            return;
+        else if (certType == 2 && !appSettings.getBool(R.string.pref_key__map_show_certification_type__demeter, true))
+            return;
+
+        // Create marker
         EntryMarker marker = new EntryMarker(map, entry);
 
         // Remove + Insert then = Update/replace marker

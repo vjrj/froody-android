@@ -20,10 +20,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_margin="@dimen/activity_horizontal_margin_half"
             android:clickable="true"
             android:focusable="true"
             android:minHeight="75dp"
-            card_view:cardBackgroundColor="@color/accent"
+            card_view:cardBackgroundColor="@color/primary"
             card_view:cardCornerRadius="8dp">
 
             <LinearLayout
@@ -59,11 +60,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_margin="@dimen/activity_horizontal_margin_half"
             android:layout_marginTop="@dimen/input_field_margin"
             android:clickable="true"
             android:focusable="true"
             android:minHeight="80dp"
-            card_view:cardBackgroundColor="@color/accent"
+            card_view:cardBackgroundColor="@color/primary"
             card_view:cardCornerRadius="8dp">
 
             <TextView
@@ -85,9 +87,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_margin="@dimen/activity_horizontal_margin_half"
             android:layout_marginTop="@dimen/input_field_margin"
             android:minHeight="80dp"
-            card_view:cardBackgroundColor="@color/primary_light"
             card_view:cardCornerRadius="8dp">
 
             <LinearLayout
@@ -118,13 +120,6 @@
                         android:orientation="horizontal">
 
                         <android.support.v7.widget.AppCompatButton
-                            android:id="@+id/more__fragment__button_support__bug_report"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:drawableTop="@drawable/ic_bug_report_black_52dp"
-                            android:text="@string/report_bugs" />
-
-                        <android.support.v7.widget.AppCompatButton
                             android:id="@+id/more__fragment__button_support__bitcoin_donation"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
@@ -138,6 +133,13 @@
                             android:layout_height="match_parent"
                             android:drawableTop="@drawable/ic_thumb_up_black_52dp"
                             android:text="@string/spread" />
+
+                        <android.support.v7.widget.AppCompatButton
+                            android:id="@+id/more__fragment__button_support__bug_report"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:drawableTop="@drawable/ic_bug_report_black_52dp"
+                            android:text="@string/report_bugs" />
 
                         <android.support.v7.widget.AppCompatButton
                             android:id="@+id/more__fragment__button_support__translate"
@@ -156,9 +158,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_margin="@dimen/activity_horizontal_margin_half"
             android:layout_marginTop="@dimen/input_field_margin"
             android:minHeight="80dp"
-            card_view:cardBackgroundColor="@color/primary_light"
             card_view:cardCornerRadius="8dp">
 
             <LinearLayout

@@ -23,11 +23,6 @@ import io.github.froodyapp.util.BlockCache;
 import io.github.froodyapp.util.Helpers;
 import io.github.froodyapp.util.MyEntriesHelper;
 
-/**
- * SettingsActivity
- * Created by vanitas on 24.10.16.
- */
-
 public class SettingActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
     static final int ACTIVITY_ID = 10;
 

@@ -102,6 +102,7 @@
         <item>@string/entry_type__seed</item>
         <item>@string/entry_type__soy_bean</item>
         <item>@string/entry_type__currant_black</item>
+        <item>@string/entry_type__blackberry</item>
     </string-array>
 
     <integer-array name="entry_type__images">
@@ -163,6 +164,7 @@
         <item>@drawable/entry_type__seed</item>
         <item>@drawable/entry_type__soy_bean</item>
         <item>@drawable/entry_type__currant_black</item>
+        <item>@drawable/entry_type__blackberry</item>
     </integer-array>
 
     <!-- Index of entry types which are not allowed to be sold-->

@@ -1,6 +1,10 @@
 ### v0.2.12
 - Lower API-level to 14
-- Addded opoc/helpers
+- Update image resources of all _type__ images
+- Show/Hide cert/dist types on map
+- Update settings, More frag
+- Added opoc/helpers
+
 
 ### v0.2.11 (2017-05-27)
 * Update API & license

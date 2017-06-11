@@ -9,7 +9,7 @@
   <string name="pref_desc__clear_cache">Svuota cache</string>
   <string name="pref_desc__froody_server">Modificare il server per il recupero di voci</string>
   <!-- App -->
-  <string name="pref_cat__app">App</string>
+  <string name="pref_cat__expert">App</string>
   <string name="pref_desc__reset_app">Reimposta l\'app alle impostazioni di origine</string>
   <string name="pref_title__reset_app">Resetta app</string>
 </resources>

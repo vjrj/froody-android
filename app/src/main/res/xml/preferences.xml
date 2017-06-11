@@ -2,15 +2,8 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory
-        android:key="@string/pref_catkey__network"
-        android:title="@string/pref_cat__network">
-
-        <EditTextPreference
-            android:defaultValue="@string/server_default"
-            android:icon="@drawable/ic_public_black_52px"
-            android:key="@string/pref_key__froody_server"
-            android:summary="@string/pref_desc__froody_server"
-            android:title="@string/pref_title__froody_server" />
+        android:key="@string/pref_catkey__map"
+        android:title="@string/map">
 
         <Preference
             android:icon="@drawable/ic_close_black_48px"
@@ -18,11 +11,68 @@
             android:summary="@string/pref_desc__clear_cache"
             android:title="@string/pref_title__clear_cache" />
 
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:icon="@drawable/general_type__okay"
+            android:key="@string/pref_key__map_show_distribution_type__free"
+            android:summary="@string/pref_summary__map_show_distribution_type"
+            android:title="@string/distribution_type__free" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:icon="@drawable/distribution_type__donation"
+            android:key="@string/pref_key__map_show_distribution_type__donation"
+            android:summary="@string/pref_summary__map_show_distribution_type"
+            android:title="@string/distribution_type__voluntary_donation" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:icon="@drawable/distribution_type__sale"
+            android:key="@string/pref_key__map_show_distribution_type__sale"
+            android:summary="@string/pref_summary__map_show_distribution_type"
+            android:title="@string/distribution_type__sale" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:icon="@drawable/distribution_type__swap"
+            android:key="@string/pref_key__map_show_distribution_type__swap"
+            android:summary="@string/pref_summary__map_show_distribution_type"
+            android:title="@string/distribution_type__swap" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:icon="@drawable/general_type__okay"
+            android:key="@string/pref_key__map_show_certification_type__none"
+            android:summary="@string/pref_summary__map_show_certification_type"
+            android:title="@string/certification_type__none" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:icon="@drawable/certification_type__bio"
+            android:key="@string/pref_key__map_show_certification_type__bio"
+            android:summary="@string/pref_summary__map_show_certification_type"
+            android:title="@string/certification_type__bio" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:icon="@drawable/certification_type__demeter"
+            android:key="@string/pref_key__map_show_certification_type__demeter"
+            android:summary="@string/pref_summary__map_show_certification_type"
+            android:title="@string/certification_type__demeter" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="@string/pref_catkey__app"
-        android:title="@string/pref_cat__app">
+        android:key="@string/pref_catkey__expert"
+        android:title="@string/pref_cat__expert">
+
+        <EditTextPreference
+            android:defaultValue="@string/server_default"
+            android:icon="@drawable/ic_public_black_52px"
+            android:key="@string/pref_key__froody_server"
+            android:summary="@string/pref_desc__froody_server"
+            android:title="@string/pref_title__froody_server" />
 
         <Preference
             android:icon="@drawable/ic_close_black_48px"
