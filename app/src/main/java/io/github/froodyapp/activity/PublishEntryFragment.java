@@ -448,7 +448,7 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
         // Format entry type line
         FroodyEntryFormatter formatter = new FroodyEntryFormatter(getContext(), froodyEntry);
         froodyEntry.setEntryType(entryType);
-        imageEntryTypeImage.setImageResource(formatter.getEntryTypeImageId(R.drawable.general__finger_leading));
+        imageEntryTypeImage.setImageResource(formatter.getEntryTypeImageId(R.drawable.ic_search_black_64dp));
         textEntryTypeName.setText(formatter.getEntryTypeName());
 
         // Disable not allowed elements

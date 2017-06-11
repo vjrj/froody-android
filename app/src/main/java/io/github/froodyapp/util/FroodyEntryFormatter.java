@@ -82,7 +82,7 @@ public class FroodyEntryFormatter extends FroodyEntryPlus {
     public @DrawableRes
     int getCertifciationTypeImageId() {
         TypedArray imgs = context.getResources().obtainTypedArray(R.array.certification_types_images);
-        int resId = imgs.getResourceId(getCertificationType(), R.drawable.ic_cutout_circle_64dp);
+        int resId = imgs.getResourceId(getCertificationType(), R.drawable.general_type__okay);
         imgs.recycle();
         return resId;
     }
@@ -117,7 +117,7 @@ public class FroodyEntryFormatter extends FroodyEntryPlus {
     public @DrawableRes
     int getDistributionTypeImageId() {
         TypedArray imgs = context.getResources().obtainTypedArray(R.array.distribution_types__images);
-        int resId = imgs.getResourceId(getDistributionType(), R.drawable.ic_cutout_circle_64dp);
+        int resId = imgs.getResourceId(getDistributionType(), R.drawable.general_type__okay);
         imgs.recycle();
         return resId;
     }

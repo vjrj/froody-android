@@ -98,14 +98,14 @@
                         android:id="@+id/publish_entry__fragment__button_distribution__free"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:drawableTop="@drawable/ic_cutout_circle_64dp"
+                        android:drawableTop="@drawable/general_type__okay"
                         android:text="@string/distribution_type__free" />
 
                     <android.support.v7.widget.AppCompatButton
                         android:id="@+id/publish_entry__fragment__button_distribution__voluntary_donation"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:drawableTop="@drawable/distribution_type__voluntary_donation"
+                        android:drawableTop="@drawable/distribution_type__donation"
                         android:text="@string/distribution_type__voluntary_donation"
                         tools:backgroundTint="@color/app_some_yellow" />
 
@@ -148,7 +148,7 @@
                         android:id="@+id/publish_entry__fragment__button_certification_none"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:drawableTop="@drawable/ic_cutout_circle_64dp"
+                        android:drawableTop="@drawable/general_type__okay"
                         android:text="@string/certification_type__none"
                         tools:backgroundTint="@color/app_some_yellow" />
 

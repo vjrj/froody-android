@@ -145,7 +145,7 @@
                         android:layout_height="64dp"
                         android:layout_gravity="center_horizontal|top"
                         android:scaleType="fitXY"
-                        android:src="@drawable/ic_cutout_circle_64dp" />
+                        android:src="@drawable/general_type__okay" />
 
                     <TextView
                         android:layout_width="wrap_content"

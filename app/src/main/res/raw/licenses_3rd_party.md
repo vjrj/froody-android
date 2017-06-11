@@ -1,13 +1,5 @@
 ## Creative Commons
 See <https://creativecommons.org/licenses> for full license texts.  
-### CC BY 4.0
-* **EmojiOne**
-~°  Copyright 2016 Ranks.com Inc.  
-~°  Icons provided free by [EmojiOne](http://emojione.com/)  
-
-### CC BY 3.0
-* Mango icon by [Nikita Golubev](http://www.flaticon.com/free-icon/mango_361939)
-
 ### CC BY-SA
 * **OpenStreetMap cartography**
 ~° See <http://www.openstreetmap.org/copyright>
@@ -80,14 +72,5 @@ SOFTWARE.</small>
 
 `---------------`  
 <small>See https://www.gnu.org/licenses/lgpl-3.0.html.</small>  
-`---------------`  
-
-
-
-##  Flaticon Basic License
-* [Gastronomy Set](http://www.flaticon.com/packs/gastronomy-set) made by Madebyoliver 
-
-`---------------`  
-<small>See http://file000.flaticon.com/downloads/license/license.pdf.</small>  
 `---------------`  
 
