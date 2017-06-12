@@ -1,8 +1,9 @@
-### v0.2.12
+### v0.3.0
 - Lower API-level to 14
 - Update image resources of all _type__ images
 - Show/Hide cert/dist types on map
 - Update settings, More frag
+- Added: Navigation to entry
 - Added opoc/helpers
 
 

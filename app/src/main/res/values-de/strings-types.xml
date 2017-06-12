@@ -63,4 +63,5 @@
   <string name="entry_type__seed">Samen</string>
   <string name="entry_type__soy_bean">Soja-Bohnen</string>
   <string name="entry_type__currant_black">Johannisbeeren</string>
+  <string name="entry_type__blackberry">Brombeeren</string>
 </resources>

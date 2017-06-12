@@ -26,10 +26,15 @@ License: **Apache 2.0**
 * Supply artwork or vector icons for the different types of entries
 
 
-## Permissions & Privacy
-* The app requests your location so you can create entries, and to automatically zoom to your location.
-If you add a new entry your location gets sent to the setted server (default server uses https).
-Others users can find entries when they swipe to this location. You can delete your entries by tapping the trash icon. Entries will get automatically deleted after 60 days.
+## Permissions & Privacy<a name="privacy"></a>
+* The app requests your location so you can create entries and automatically zoom to your location
+* If you add a new entry the location gets
+  * Reverse geocoded via OpenStreetMap Nominatim
+  * Stored on the setted server - together with other input data (visible in Publish tab)
+* The connection to the default server makes use of SSL/TLS
+* Others can find your created entries if they are using the same server
+* You can delete your entries by tapping the trash icon or ask for removal by email
+  * Entries will get automatically get removed after 60 days unless deleted
 
 ## Notices
 Influenced by ideas and snippets from other apps by gsantner ([kimai-android](https://github.com/gsantner/kimai-android), [dandelion\*](https://github.com/Diaspora-for-Android/dandelion), ..) which this app is allowed to use.

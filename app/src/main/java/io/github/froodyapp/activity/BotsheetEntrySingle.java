@@ -2,6 +2,8 @@ package io.github.froodyapp.activity;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialogFragment;
@@ -13,6 +15,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import butterknife.BindView;
@@ -144,16 +147,14 @@ public class BotsheetEntrySingle extends BottomSheetDialogFragment implements En
     }
 
     // Delete or Share button was pressed
-    @OnClick({R.id.botsheet__entry_single__button_delete, R.id.botsheet__entry_single__button_share})
+    @OnClick({R.id.botsheet__entry_single__button_delete, R.id.botsheet__entry_single__button_share, R.id.botsheet__entry_single__button_navigate})
     public void onEntryButtonClicked(View view) {
         switch (view.getId()) {
-            // Share entry
             case R.id.botsheet__entry_single__button_share: {
                 MyEntriesHelper.shareEntry(view.getContext(), froodyEntry);
                 break;
             }
 
-            // Delete entry
             case R.id.botsheet__entry_single__button_delete: {
                 if (myEntriesHelper.isMyEntry(froodyEntry.getEntryId())) {
                     dismiss();
@@ -165,6 +166,15 @@ public class BotsheetEntrySingle extends BottomSheetDialogFragment implements En
                         }
                     });
                 }
+                break;
+            }
+
+            case R.id.botsheet__entry_single__button_navigate: {
+                Uri uri = Uri.parse(String.format(Locale.ENGLISH,
+                        "google.navigation:q=%f,%f", froodyEntry.getLatitude(), froodyEntry.getLongitude()));
+                Intent navIntent = new Intent(Intent.ACTION_VIEW, uri);
+                //navIntent.setPackage("com.google.android.apps.maps");
+                startActivity(navIntent);
                 break;
             }
         }

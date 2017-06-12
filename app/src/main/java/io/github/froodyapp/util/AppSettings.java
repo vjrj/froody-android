@@ -51,9 +51,13 @@ public class AppSettings extends AppSettingsBase {
     }
 
     public boolean isDevDebugModeEnabled() {
-        // <boolean name="pref_key__dev_mode_debugging" value="true" />
         return getBool(prefApp, R.string.pref_key__dev_mode_debugging, false);
     }
+
+    public void setDevDebugModeEnabled(boolean value) {
+        setBool(prefApp, R.string.pref_key__dev_mode_debugging, value);
+    }
+
 
     public String getFroodyServer() {
         return getString(prefApp, R.string.pref_key__froody_server, context.getString(R.string.server_default));
