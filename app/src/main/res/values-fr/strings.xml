@@ -48,6 +48,7 @@
   <string name="error_cannot_publish_entry">Erreur : impossible de publier l\'entrée</string>
   <!-- Info -->
   <string name="show_licenses">Afficher les licences</string>
+  <string name="show_license_of_app">Afficher la licence</string>
   <string name="show_gplv3_license">Licence GNU GPLv3</string>
   <string name="show_third_party_licenses">Licences tierces</string>
   <string name="more_information">En savoir plus</string>

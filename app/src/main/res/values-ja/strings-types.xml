@@ -20,9 +20,9 @@
   <!-- Entry Types -->
   <string name="entry_type__apple">リンゴ</string>
   <string name="entry_type__pear">梨</string>
-  <string name="entry_type__cherry">チェリー</string>
+  <string name="entry_type__cherry">さくらんぼ</string>
   <string name="entry_type__plum">梅</string>
-  <string name="entry_type__currant_red">干しぶどう</string>
+  <string name="entry_type__currant_red">フサスグリ</string>
   <string name="entry_type__grape">ブドウ</string>
   <string name="entry_type__hazelnut">ヘーゼルナッツ</string>
   <string name="entry_type__milk">牛乳</string>
@@ -30,7 +30,7 @@
   <string name="entry_type__walnut">クルミ</string>
   <string name="entry_type__carrot">ニンジン</string>
   <string name="entry_type__cereal">穀物</string>
-  <string name="entry_type__chili">チリ</string>
+  <string name="entry_type__chili">唐辛子</string>
   <string name="entry_type__corn">トウモロコシ</string>
   <string name="entry_type__cucumber">キュウリ</string>
   <string name="entry_type__egg">卵</string>
@@ -62,4 +62,6 @@
   <string name="entry_type__salad">サラダ</string>
   <string name="entry_type__seed">種</string>
   <string name="entry_type__soy_bean">大豆</string>
+  <string name="entry_type__currant_black">黒スグリ</string>
+  <string name="entry_type__blackberry">ブラックベリー</string>
 </resources>

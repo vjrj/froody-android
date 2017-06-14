@@ -36,7 +36,7 @@
   <string name="duration_days_left_text">Преостало дана</string>
   <!-- Publish -->
   <string name="suggested">Понуђено</string>
-  <string name="select_froody">изаберите шта нудите&#8230;</string>
+  <string name="select_froody">шта се нуди&#8230;</string>
   <string name="hint__description__enter_here">унесите опис овде (нпр. квалитет, за прављење мармеладе, подврста&#8230;)</string>
   <string name="hint__contact__enter_here">унесите податке за контакт (требало би да садржи телефон или е-адресу)</string>
   <string name="publish_entry_now">Објави сада</string>
@@ -48,7 +48,8 @@
   <string name="error_cannot_publish_entry">Грешка: не могу да објавим унос</string>
   <!-- Info -->
   <string name="show_licenses">Прикажи лиценце</string>
-  <string name="show_gplv3_license">Прикажи ГНУ ОЈЛ вер3 лиценцу</string>
+  <string name="show_license_of_app">Прикажи лиценцу програма</string>
+  <string name="show_gplv3_license">Прикажи ГНУ ОЈЛ в3 лиценцу</string>
   <string name="show_third_party_licenses">Прикажи лиценце треће стране</string>
   <string name="more_information">Више информација</string>
   <!-- Location -->
@@ -56,7 +57,7 @@
   <string name="gps_locating_user">Лоцирам&#8230;</string>
   <string name="address_most_near">у близини</string>
   <string name="error_bad_permissions">Дозволите Фрудију да приступа локацији уређаја.\n\nБез те дозволе, не можете објављивати уносе и ваша тренутна позиција на мапи се не може одредити.\n\nПоновно лоцирање можете урадити додиром на дугме локације на горњој траки алатки.</string>
-  <string name="show_map_on_current_location">Приказати мапу око тренутне локације?</string>
+  <string name="show_map_on_current_location">Приказ око тренутне локације?</string>
   <string name="zoom_out">Одаљи</string>
   <string name="cannot_locate_user">Не могу да лоцирам корисника. Укључите услугу локације у поставкама система!</string>
   <string name="error_couldnt_connect_or_register">Грешка: не могу да се повежем на сервер или да проверим корисника.</string>

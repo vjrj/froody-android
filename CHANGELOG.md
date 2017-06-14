@@ -1,11 +1,11 @@
-### v0.3.0
-- Lower API-level to 14
+### v1.0.0 (2017-06-14)
+- Allow devices starting with API 14
 - Update image resources of all _type__ images
 - Show/Hide cert/dist types on map
 - Update settings, More frag
 - Added: Navigation to entry
 - Added opoc/helpers
-
+- Increase count of loaded entries at /block/info/random
 
 ### v0.2.11 (2017-05-27)
 * Update API & license

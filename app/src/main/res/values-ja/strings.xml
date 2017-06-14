@@ -48,6 +48,7 @@
   <string name="error_cannot_publish_entry">エラー: エントリを公開できません</string>
   <!-- Info -->
   <string name="show_licenses">ライセンスを表示</string>
+  <string name="show_license_of_app">アプリのライセンスを表示</string>
   <string name="show_gplv3_license">GNU GPLv3 ライセンスを表示</string>
   <string name="show_third_party_licenses">サードパーティ ライセンスを表示</string>
   <string name="more_information">詳細情報</string>

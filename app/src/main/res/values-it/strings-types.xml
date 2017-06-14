@@ -22,7 +22,7 @@
   <string name="entry_type__pear">Pere</string>
   <string name="entry_type__cherry">Ciliegie</string>
   <string name="entry_type__plum">Prugne</string>
-  <string name="entry_type__currant_red">Ribes</string>
+  <string name="entry_type__currant_red">Ribes rosso</string>
   <string name="entry_type__grape">Uva</string>
   <string name="entry_type__hazelnut">Nocciole</string>
   <string name="entry_type__milk">Latte</string>
@@ -30,7 +30,7 @@
   <string name="entry_type__walnut">Noci</string>
   <string name="entry_type__carrot">Carote</string>
   <string name="entry_type__cereal">Cereali</string>
-  <string name="entry_type__chili">Peperoncino</string>
+  <string name="entry_type__chili">Peperoncini rossi</string>
   <string name="entry_type__corn">Pannocchie</string>
   <string name="entry_type__cucumber">Cetrioli</string>
   <string name="entry_type__egg">Uova</string>
@@ -48,18 +48,20 @@
   <string name="entry_type__wood">Legna</string>
   <string name="entry_type__zucchini">Zucchine</string>
   <string name="entry_type__aubergine">Melanzane</string>
-  <string name="entry_type__mango">Mango</string>
+  <string name="entry_type__mango">Manghi</string>
   <string name="entry_type__asparagus">Asparagi</string>
   <string name="entry_type__avocado">Avocado</string>
-  <string name="entry_type__green_bean">Piselli a baccello</string>
+  <string name="entry_type__green_bean">Fagiolini verdi</string>
   <string name="entry_type__blueberry">Mirtilli</string>
   <string name="entry_type__garlic">Aglio</string>
-  <string name="entry_type__onion">Cipolla</string>
+  <string name="entry_type__onion">Cipolle</string>
   <string name="entry_type__pea">Piselli</string>
   <string name="entry_type__pepper">Peperoni</string>
-  <string name="entry_type__pumpkin">Zucca</string>
-  <string name="entry_type__radish">Ravanello</string>
-  <string name="entry_type__salad">Insalate</string>
+  <string name="entry_type__pumpkin">Zucche</string>
+  <string name="entry_type__radish">Ravanelli</string>
+  <string name="entry_type__salad">Insalata</string>
   <string name="entry_type__seed">Semi</string>
   <string name="entry_type__soy_bean">Fagioli di soia</string>
+  <string name="entry_type__currant_black">Ribes nero</string>
+  <string name="entry_type__blackberry">More</string>
 </resources>

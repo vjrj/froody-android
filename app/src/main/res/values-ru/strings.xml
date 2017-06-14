@@ -18,7 +18,7 @@
   <string name="distribution_type">Распространяется</string>
   <string name="certification">Сертификация</string>
   <string name="contact">Контакт</string>
-  <string name="maintainers">Поддержка</string>
+  <string name="maintainers">Разработчики</string>
   <string name="map">Карта</string>
   <string name="blog">Блог</string>
   <string name="license">Лицензия</string>
@@ -48,6 +48,7 @@
   <string name="error_cannot_publish_entry">Ошибка: невозможно опубликовать запись</string>
   <!-- Info -->
   <string name="show_licenses">Показать лицензии</string>
+  <string name="show_license_of_app">Показать лицензию</string>
   <string name="show_gplv3_license">Показать лицензию GNU GPLv3</string>
   <string name="show_third_party_licenses">Показать лицензии 3 сторон</string>
   <string name="more_information">Больше информации</string>
@@ -55,6 +56,7 @@
   <string name="request_location">Запросить местоположение</string>
   <string name="gps_locating_user">Местоположение&#8230;</string>
   <string name="address_most_near">Поблизости</string>
+  <string name="error_bad_permissions">Позвольте приложению Froody доступ к расположению вашего устройства.\n\nБез этого разрешения, вы не сможете публиковать записи во Froody и ваше текущее положение на карте не будет определено.\n\nВы также можете повторно определить своё текущее местоположение, нажав на Указатель в верхней панели инструментов.</string>
   <string name="show_map_on_current_location">Показать на карте текущее местоположение?</string>
   <string name="zoom_out">Уменьшить</string>
   <string name="cannot_locate_user">Невозможно определить местоположение пользователя. Пожалуйста включите определение местоположения по GPS в настройках!</string>
