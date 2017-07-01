@@ -50,8 +50,7 @@ public class Helpers extends io.github.gsantner.opoc.util.Helpers {
         apiClient.setBasePath(server);
 
         if (appSettings.isNetworkHttpProxyEnabled()) {
-            Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(appSettings.getNetworkHttpProxyHost(), appSettings.getNetworkHttpProxyPort()));
-            apiClient.getHttpClient().setProxy(proxy);
+            apiClient.getHttpClient().setProxy(appSettings.getNetworkHttpProxy());
         }
     }
 }

@@ -48,6 +48,8 @@
     <string name="pref_title__clear_cache">Clear cache</string>
     <string name="pref_desc__clear_cache">Clear the entry cache, last position</string>
     <string name="pref_desc__froody_server">Change the server for fetching entries</string>
+    <string name="pref_summary__network__http_proxy_enabled">Use Tor as http proxy for most traffic. Some third-party-libraries (e.g. reverse gecocoder) might not support connections via proxy. Change requires restart</string>
+    <string name="pref_title__network__http_proxy_enabled">Use http proxy (Tor)</string>
 
     <!-- App -->
     <string name="pref_cat__expert">Expert settings</string>

@@ -42,6 +42,7 @@ import io.github.froodyapp.util.AppSettings;
 import io.github.froodyapp.util.BlockCache;
 import io.github.froodyapp.util.Helpers;
 
+@SuppressWarnings("FieldCanBeLocal")
 public class MapOSMFragment extends BaseFragment implements MapListener {
     //#####################
     //##      Statics
@@ -66,7 +67,6 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
     private CopyrightOverlay overlayCopyrightOsm;
     private RadiusMarkerClusterWithClusterClick mapCluster;
     private ArrayList<EntryMarker> entryMarkersInCluster;
-    private AppSettings appSettings;
 
 
     @Nullable
@@ -79,10 +79,15 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
     }
 
     private void beforeMapInit(Context context) {
+        AppSettings appSettings = AppSettings.get();
         IConfigurationProvider osmConfig = Configuration.getInstance();
+
         File cacheFolder = new File(context.getCacheDir().getAbsolutePath(), "osmdroid");
         osmConfig.setOsmdroidBasePath(cacheFolder);
         osmConfig.setOsmdroidTileCache((new File(cacheFolder, "tiles")));
+        osmConfig.setHttpProxy(appSettings.isNetworkHttpProxyEnabled()
+                ? appSettings.getNetworkHttpProxy() : null
+        );
     }
 
     @Override
@@ -99,7 +104,6 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
         }
 
         // Init
-        appSettings = AppSettings.get();
         mapController = map.getController();
         entryMarkersInCluster = new ArrayList<>();
         mapCluster = new RadiusMarkerClusterWithClusterClick(c);
@@ -142,6 +146,7 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
 
     // Load position from last movement on map
     public void tryZoomToLastMapLocation() {
+        AppSettings appSettings = AppSettings.get();
         if (appSettings.hasLastMapLocation()) {
             zoomToPosition(
                     appSettings.getLastMapLocationLatitude(),

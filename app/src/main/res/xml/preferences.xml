@@ -74,6 +74,13 @@
             android:summary="@string/pref_desc__froody_server"
             android:title="@string/pref_title__froody_server" />
 
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:icon="@drawable/entry_type__onion"
+            android:key="@string/pref_key__network__http_proxy_enabled"
+            android:summary="@string/pref_summary__network__http_proxy_enabled"
+            android:title="@string/pref_title__network__http_proxy_enabled" />
+
         <Preference
             android:icon="@drawable/ic_close_black_48px"
             android:key="@string/pref_key__reset_app"
