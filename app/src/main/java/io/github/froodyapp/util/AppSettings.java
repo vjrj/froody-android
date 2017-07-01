@@ -162,4 +162,14 @@ public class AppSettings extends AppSettingsBase {
     public int getEntryTypeSelectionDialogTabLastUsed() {
         return getInt(prefApp, R.string.pref_key__entry_type_selection_dialog__tab_last_used, 0);
     }
+
+    public boolean isNetworkHttpProxyEnabled(){
+        return getBool(R.string.pref_key__network__http_proxy_enabled, false);
+    }
+    public String getNetworkHttpProxyHost(){
+        return getString(R.string.pref_key__network__http_proxy_host, "127.0.0.1");
+    }
+    public int getNetworkHttpProxyPort(){
+        return getIntOfStringPref(R.string.pref_key__network__http_proxy_port, 8118);
+    }
 }

@@ -5,9 +5,9 @@ import android.support.v7.app.AppCompatDelegate;
 import android.text.TextUtils;
 import android.util.Log;
 
-import io.github.froodyapp.api.invoker.Configuration;
 import io.github.froodyapp.service.UserRegisterer;
 import io.github.froodyapp.util.AppSettings;
+import io.github.froodyapp.util.Helpers;
 import io.github.froodyapp.util.MyEntriesHelper;
 
 
@@ -49,14 +49,13 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         app = this;
+        appSettings = AppSettings.get();
+
 
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
+        Helpers.get().setupFroodyApi();
 
-        appSettings = AppSettings.get();
-        String server = appSettings.getFroodyServer();
-        Configuration.getDefaultApiClient().setBasePath(server);
         new UserRegisterer(this).start();
-
         new MyEntriesHelper(this).processMyEntriesToBlockCache();
     }
 

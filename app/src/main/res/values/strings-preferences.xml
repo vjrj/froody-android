@@ -21,6 +21,9 @@
     <string name="pref_key__clear_cache" translatable="false">pref_key__clear_cache</string>
     <string name="pref_catkey__expert" translatable="false">pref_catkey__expert</string>
     <string name="pref_key__reset_app" translatable="false">pref_key__reset_app</string>
+    <string name="pref_key__network__http_proxy_enabled" translatable="false">pref_key__network__http_proxy_enabled</string>
+    <string name="pref_key__network__http_proxy_port" translatable="false">pref_key__network__http_proxy_port</string>
+    <string name="pref_key__network__http_proxy_host" translatable="false">pref_key__network__http_proxy_host</string>
     <string name="pref_key__app_first_start_current_version" translatable="false">pref_key__app_first_start_current_version</string>
     <string name="pref_key__app_first_start" translatable="false">pref_key__app_first_start</string>
     <string name="pref_key__entry_type_selection_dialog__tab_last_used" translatable="false">pref_key__entry_type_selection_dialog__tab_last_used</string>
