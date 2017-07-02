@@ -16,7 +16,6 @@ import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Locale;
 import java.util.Random;
 
 import butterknife.BindView;
@@ -113,7 +112,7 @@ public class EntryTypeSelectionDialog extends DialogFragment implements EntryTyp
         collator.setStrength(Collator.SECONDARY);
         Collections.sort(list, new Comparator<Integer>() {
             public int compare(final Integer o1, final Integer o2) {
-                return collator.compare(entryTypeResource[o1],entryTypeResource[o2]);
+                return collator.compare(entryTypeResource[o1], entryTypeResource[o2]);
             }
         });
         list.add(0, FroodyEntryFormatter.ENTRY_TYPE_CUSTOM);
