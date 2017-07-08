@@ -63,4 +63,5 @@
   <string name="entry_type__seed">Semillas</string>
   <string name="entry_type__soy_bean">Frijoles de soya</string>
   <string name="entry_type__currant_black">Grosellas negras</string>
+  <string name="entry_type__blackberry">Zarzamoras</string>
 </resources>

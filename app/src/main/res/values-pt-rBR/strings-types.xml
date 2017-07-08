@@ -30,7 +30,7 @@
   <string name="entry_type__walnut">Noz</string>
   <string name="entry_type__carrot">Cenoura</string>
   <string name="entry_type__cereal">Cereal</string>
-  <string name="entry_type__chili">Pimenta</string>
+  <string name="entry_type__chili">Pimentão</string>
   <string name="entry_type__corn">Milho</string>
   <string name="entry_type__cucumber">Pepino</string>
   <string name="entry_type__egg">Ovo</string>
@@ -62,4 +62,6 @@
   <string name="entry_type__salad">Salada</string>
   <string name="entry_type__seed">Semente</string>
   <string name="entry_type__soy_bean">Soja</string>
+  <string name="entry_type__currant_black">Groselha</string>
+  <string name="entry_type__blackberry">Amoras silvestres</string>
 </resources>

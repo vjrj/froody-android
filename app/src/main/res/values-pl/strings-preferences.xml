@@ -11,6 +11,7 @@
   <string name="pref_title__clear_cache">Wyczyść pamięć podręczną</string>
   <string name="pref_desc__clear_cache">Usuń wpis pamięci podręcznej, ostatnia pozycja</string>
   <string name="pref_desc__froody_server">Zmień serwer do pobierania wpisów</string>
+  <string name="pref_title__network__http_proxy_enabled">Używaj http proxy (Tor)</string>
   <!-- App -->
   <string name="pref_cat__expert">Ustawienia zaawansowane</string>
   <string name="pref_desc__reset_app">Wyzeruj aplikację do stanu początkowego</string>

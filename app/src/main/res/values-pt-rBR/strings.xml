@@ -48,6 +48,7 @@
   <string name="error_cannot_publish_entry">Erro: Impossível publicar a oferta</string>
   <!-- Info -->
   <string name="show_licenses">Exibir licenças</string>
+  <string name="show_license_of_app">Mostrar a licença do app</string>
   <string name="show_gplv3_license">Mostrar licença GNU GPLv3</string>
   <string name="show_third_party_licenses">Exibir licenças de terceiros</string>
   <string name="more_information">Mais informação</string>
@@ -55,6 +56,7 @@
   <string name="request_location">Solicitar localização</string>
   <string name="gps_locating_user">Localizando...</string>
   <string name="address_most_near">Arredores</string>
+  <string name="error_bad_permissions">Por favor. Autorize o Froody a acessar os dados de localização do seu aparelho\n\nSem esta permissão você não conseguirá publicar suas ofertas e sua localização no mapa não poderá ser registrada.\n\nVocê pode registrar sua posição novamente pressionando o botão respectivo no menu acima.</string>
   <string name="show_map_on_current_location">Exibir mapa com a localização atual?</string>
   <string name="zoom_out">Afastar</string>
   <string name="cannot_locate_user">Impossível achar o usuário. Habilite os serviços de localização do android.</string>
@@ -62,6 +64,7 @@
   <string name="support_the_project">Apoiar o projeto</string>
   <string name="translate">Traduza</string>
   <string name="spread">Espalhar</string>
+  <string name="report_bugs">Relatar\nerros</string>
   <string name="about_the_app">Sobre este\naplicativo</string>
   <string name="error_incomplete_input">Erro: Entrada incompleta</string>
 </resources>
