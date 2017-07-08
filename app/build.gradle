@@ -10,7 +10,7 @@ android {
         targetSdkVersion 25
 
         versionCode 21
-        versionName "1.0.1-dev"
+        versionName "1.0.1"
 
         applicationId "io.github.froodyapp"
         resValue 'string', 'app_name', "Froody"

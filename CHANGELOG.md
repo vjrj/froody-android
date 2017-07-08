@@ -1,3 +1,7 @@
+### v1.0.1 (2017-07-08)
+- Connection improvements
+- Update froody-api
+
 ### v1.0.0 (2017-06-14)
 - Allow devices starting with API 14
 - Update image resources of all _type__ images
