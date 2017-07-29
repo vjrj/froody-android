@@ -94,7 +94,7 @@ public class MoreFragment extends BaseFragment {
         Context context = view.getContext();
         switch (view.getId()) {
             case R.id.more__fragment__button_info__app: {
-                activity.showFragment(activity.getFragment(InfoFragment.FRAGMENT_TAG));
+                activity.showFragment(activity.getFragment(AboutFragment.FRAGMENT_TAG));
                 break;
             }
             case R.id.more__fragment__button_info__blog: {

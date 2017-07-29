@@ -26,27 +26,30 @@ import io.github.gsantner.opoc.util.SimpleMarkdownParser;
 /**
  * Activity for information about the app
  */
-public class InfoFragment extends BaseFragment {
+public class AboutFragment extends BaseFragment {
     //########################
     //## Static
     //########################
-    public static final String FRAGMENT_TAG = "InfoFragment";
+    public static final String FRAGMENT_TAG = "AboutFragment";
 
-    public static InfoFragment newInstance() {
-        return new InfoFragment();
+    public static AboutFragment newInstance() {
+        return new AboutFragment();
     }
 
     //####################
     //##  Ui Binding
     //####################
-    @BindView(R.id.info__fragment__text_app_version)
+    @BindView(R.id.about__activity__text_app_version)
     TextView textAppVersion;
 
-    @BindView(R.id.info__fragment__text_maintainers)
-    TextView textMaintainers;
+    @BindView(R.id.about__activity__text_team)
+    TextView textTeam;
 
-    @BindView(R.id.info__fragment__text_contributors)
+    @BindView(R.id.about__activity__text_contributors)
     TextView textContributors;
+
+    @BindView(R.id.about__activity__text_license)
+    TextView textLicense;
 
 
     //####################
@@ -66,42 +69,63 @@ public class InfoFragment extends BaseFragment {
 
 
         Context context = getContext();
-        textMaintainers.setText(new SpannableString(Html.fromHtml(
-                Helpers.get().loadMarkdownForTextViewFromRaw(R.raw.maintainers, ""))));
-        textMaintainers.setMovementMethod(LinkMovementMethod.getInstance());
-
-        textContributors.setText(new SpannableString(Html.fromHtml(
-                Helpers.get().loadMarkdownForTextViewFromRaw(R.raw.contributors, "* ")
-        )));
+        textTeam.setMovementMethod(LinkMovementMethod.getInstance());
+        textLicense.setMovementMethod(LinkMovementMethod.getInstance());
         textContributors.setMovementMethod(LinkMovementMethod.getInstance());
+
+        Helpers helpers = Helpers.get();
+        helpers.setHtmlToTextView(textTeam,
+                Helpers.get().loadMarkdownForTextViewFromRaw(R.raw.maintainers, "")
+        );
+
+        helpers.setHtmlToTextView(textContributors,
+                Helpers.get().loadMarkdownForTextViewFromRaw(R.raw.contributors, "")
+        );
+
+        // License text MUST be shown
+        try {
+            helpers.setHtmlToTextView(textLicense,
+                    SimpleMarkdownParser.get().parse(getString(R.string.copyright_license_text_official).replace("\n", "  \n"),
+                            "", SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW).getHtml()
+            );
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
 
         // App version
         try {
-            PackageManager manager = getActivity().getPackageManager();
-            PackageInfo info = manager.getPackageInfo(getActivity().getPackageName(), 0);
+            PackageManager manager = context.getPackageManager();
+            PackageInfo info = manager.getPackageInfo(context.getPackageName(), 0);
             textAppVersion.setText(getString(R.string.app_version_v, info.versionName));
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
     }
 
-    @OnClick({R.id.info__fragment__text_app_version, R.id.info__fragment__button_third_party_licenses, R.id.info__fragment__button_show_app_license})
+    @OnClick(R.id.about__activity__text_app_version)
+    public void onVersionClicked(View v) {
+        Helpers.get().openWebpageInExternalBrowser(getString(R.string.app_www_source));
+    }
+
+    @OnClick({R.id.about__activity__text_app_version, R.id.about__activity__button_third_party_licenses, R.id.about__activity__button_app_license})
     public void onButtonClicked(View v) {
         Context context = v.getContext();
         switch (v.getId()) {
-            case R.id.info__fragment__text_app_version: {
-                Helpers.get().openWebpageInExternalBrowser(getString(R.string.project_github_page));
+            case R.id.about__activity__text_app_version: {
+                HelpersA.get(getActivity()).openWebpageInExternalBrowser(getString(R.string.app_www_source));
                 break;
             }
-            case R.id.info__fragment__button_show_app_license: {
-                HelpersA.get(getActivity()).showDialogWithHtmlTextView(R.string.license, Helpers.get().loadMarkdownForTextViewFromRaw(R.raw.license, ""));
+            case R.id.about__activity__button_app_license: {
+                HelpersA.get(getActivity()).showDialogWithHtmlTextView(R.string.license, Helpers.get().readTextfileFromRawRes(R.raw.license, "", ""), false, null);
                 break;
             }
-            case R.id.info__fragment__button_third_party_licenses: {
+            case R.id.about__activity__button_third_party_licenses: {
                 try {
                     HelpersA.get(getActivity()).showDialogWithHtmlTextView(R.string.license, new SimpleMarkdownParser().parse(
                             getResources().openRawResource(R.raw.licenses_3rd_party),
-                            SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml());
+                            "", SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW).getHtml()
+                    );
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

@@ -6,8 +6,7 @@
   <string name="pref_summary__map_show_distribution_type">Mostrar no mapa o tipo de distribuição</string>
   <string name="pref_summary__map_show_certification_type">Mostrar no mapa o tipo de distribuição</string>
   <!-- Network -->
-  <string name="pref_cat__network">Rede</string>
-  <string name="pref_title__froody_server">Mudar servidor</string>
+    <string name="pref_title__froody_server">Mudar servidor</string>
   <string name="pref_title__clear_cache">Limpar cache</string>
   <string name="pref_desc__clear_cache">Limpar cache de entrada, à última posição</string>
   <string name="pref_desc__froody_server">Trocar servidor de busca de ofertas</string>

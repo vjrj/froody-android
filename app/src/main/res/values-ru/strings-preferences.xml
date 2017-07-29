@@ -6,8 +6,7 @@
   <string name="pref_summary__map_show_distribution_type">Показать по типу распространения на карте</string>
   <string name="pref_summary__map_show_certification_type">Показать по типу сертификации на карте</string>
   <!-- Network -->
-  <string name="pref_cat__network">Сеть</string>
-  <string name="pref_title__froody_server">Сменить сервер</string>
+    <string name="pref_title__froody_server">Сменить сервер</string>
   <string name="pref_title__clear_cache">Очистить кэш</string>
   <string name="pref_desc__clear_cache">Очистить кэш, последнего местоположения</string>
   <string name="pref_desc__froody_server">Измените сервер для выборки записей</string>

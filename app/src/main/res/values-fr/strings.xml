@@ -9,8 +9,7 @@
   <string name="more">Plus</string>
   <string name="description">Description</string>
   <string name="location">Emplacement</string>
-  <string name="error">Erreur</string>
-  <string name="all">Tous</string>
+    <string name="all">Tous</string>
   <string name="contributors">Contributeurs</string>
   <string name="about_">A propos</string>
   <!-- More general words -->
@@ -18,22 +17,17 @@
   <string name="distribution_type">Distribution</string>
   <string name="certification">Certification</string>
   <string name="contact">Contact</string>
-  <string name="maintainers">Mainteneurs</string>
-  <string name="map">Carte</string>
+    <string name="map">Carte</string>
   <string name="blog">Blog</string>
   <string name="license">Licence</string>
   <string name="changelog">Journal des modifications</string>
   <!-- Main -->
-  <string name="navigation_drawer_open">Ouvrir le menu</string>
-  <string name="navigation_drawer_close">Fermer le menu</string>
-  <string name="no_entries_were_published_by_me">Aucun résultat</string>
-  <string name="help_and_share"><![CDATA[Aider et partager]]></string>
-  <string name="really_delete_entry">Souhaitez-vous vraiment supprimer cette entrée ?</string>
+    <string name="no_entries_were_published_by_me">Aucun résultat</string>
+    <string name="really_delete_entry">Souhaitez-vous vraiment supprimer cette entrée ?</string>
   <string name="share_entry_ask">Partager l\'entrée ?</string>
   <string name="share">Partager&#8230;</string>
   <string name="donate_bitcoin">Faire un don\nBitcoin</string>
-  <string name="duration_days_left">%1$d Jours restants</string>
-  <string name="duration_days_left_text">Jours restants</string>
+    <string name="duration_days_left_text">Jours restants</string>
   <!-- Publish -->
   <string name="suggested">Suggérés</string>
   <string name="select_froody">Choisir Froody&#8230;</string>
@@ -47,10 +41,8 @@
   <string name="nav__my_entries">Mes entrées</string>
   <string name="error_cannot_publish_entry">Erreur : impossible de publier l\'entrée</string>
   <!-- Info -->
-  <string name="show_licenses">Afficher les licences</string>
-  <string name="show_license_of_app">Afficher la licence</string>
-  <string name="show_gplv3_license">Licence GNU GPLv3</string>
-  <string name="show_third_party_licenses">Licences tierces</string>
+  <string name="show_app_licenses">Afficher les licences</string>
+    <string name="show_third_party_licenses">Licences tierces</string>
   <string name="more_information">En savoir plus</string>
   <!-- Location -->
   <string name="request_location">Demander la localisation</string>
@@ -58,8 +50,7 @@
   <string name="address_most_near">À proximité</string>
   <string name="error_bad_permissions">Veuillez permettre à Froody d\'accéder à la localisation de votre appareil.\n\nSans cela, vous ne pourrez pas poster sur Froody et votre position sur la carte ne pourra être établie.\n\nVous pouvez vous localiser à nouveau avec le bouton de localisation sur la barre des tâches du haut.</string>
   <string name="show_map_on_current_location">Centrer la carte à l\'emplacement actuel ?</string>
-  <string name="zoom_out">Dézoomer</string>
-  <string name="cannot_locate_user">Localisation impossible. Veuillez activer les services de localisation dans les paramètres système !</string>
+    <string name="cannot_locate_user">Localisation impossible. Veuillez activer les services de localisation dans les paramètres système !</string>
   <string name="error_couldnt_connect_or_register">Erreur : Impossible de se connecter au serveur pour vérifier l\'utilisateur.</string>
   <string name="support_the_project">Apportez votre soutien au projet</string>
   <string name="translate">Traduire</string>

@@ -1,0 +1,68 @@
+<resources>
+
+    <!-- General -->
+    <string name="app_www_source" translatable="false">https://github.com/gsantner/froodyapp/froody-android</string>
+    <string name="app_version_v" translatable="false">App Version  v%1$s</string>
+    <string name="team" translatable="false">Team</string>
+
+    <string name="yes" translatable="false">@android:string/yes</string>
+    <string name="no" translatable="false">@android:string/no</string>
+    <string name="ok" translatable="false">@android:string/ok</string>
+    <string name="cancel" translatable="false">@android:string/cancel</string>
+
+    <!-- You are NOT allowed to remove parts of the license text below-->
+    <string name="copyright_license_text_official" translatable="false"><![CDATA[
+        ### Copyright © 2016-2017
+        \n**Froody contributors**
+        \n
+        \n**Get the official version of Froody:**
+        \n
+            [Source code](https://github.com/froodyapp/froody-android) | [Homepage](https://froodyapp.github.io)
+        \n[Google Play](https://play.google.com/store/apps/details?id=io.github.froodyapp)~°| [F-Droid](https://f-droid.org/repository/browse/?fdid=io.github.froodyapp)
+        \n
+        \nLicensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
+        \n
+        \nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+        \n
+    ]]></string>
+    <!-- License end -->
+
+    <string name="donate__bitcoin_id" translatable="false">1B9ZyYdQoY9BxMe9dRUEKaZbJWsbQqfXU5</string>
+    <string name="donate__bitcoin_amount" translatable="false">0.01</string>
+    <string name="donate__bitcoin_message" translatable="false">Have some coke, and a nice day</string>
+    <string name="donate__bitcoin_url" translatable="false">https://gsantner.github.io/#donate</string>
+
+
+    <!-- Pref keys -->
+    <string name="pref_key__user_id" translatable="false">pref_key__user_id</string>
+    <string name="pref_key__dev_mode_debugging" translatable="false">pref_key__dev_mode_debugging</string>
+    <string name="pref_key__last_map_location_latitude" translatable="false">pref_key__last_map_location_latitude</string>
+    <string name="pref_key__last_map_location_longitude" translatable="false">pref_key__last_map_location_longitude</string>
+    <string name="pref_key__last_map_location_zoom" translatable="false">pref_key__last_map_location_zoom</string>
+    <string name="pref_key__last_found_location_geohash" translatable="false">pref_key__last_found_location_geohash</string>
+    <string name="pref_key__last_found_location_address" translatable="false">pref_key__last_found_location_address</string>
+    <string name="pref_key__entry__last_contact_info" translatable="false">pref_key__entry__last_contact_info</string>
+    <string name="pref_key__entry__last_certification" translatable="false">pref_key__entry__last_certification</string>
+    <string name="pref_key__entry__last_distribution" translatable="false">pref_key__entry__last_distribution</string>
+    <string name="pref_key__entry__last_selected_entry_types" translatable="false">pref_key__entry__last_selected_entry_types</string>
+    <string name="pref_key__allow_location_listening_gps" translatable="false">pref_key__allow_location_listening_gps</string>
+    <string name="pref_key__allow_location_listening_net" translatable="false">pref_key__allow_location_listening_net</string>
+    <string name="pref_key__froody_server" translatable="false">pref_key__froody_server</string>
+    <string name="pref_key__clear_cache" translatable="false">pref_key__clear_cache</string>
+    <string name="pref_catkey__expert" translatable="false">pref_catkey__expert</string>
+    <string name="pref_key__reset_app" translatable="false">pref_key__reset_app</string>
+    <string name="pref_key__network__http_proxy_enabled" translatable="false">pref_key__network__http_proxy_enabled</string>
+    <string name="pref_key__network__http_proxy_port" translatable="false">pref_key__network__http_proxy_port</string>
+    <string name="pref_key__network__http_proxy_host" translatable="false">pref_key__network__http_proxy_host</string>
+    <string name="pref_key__app_first_start_current_version" translatable="false">pref_key__app_first_start_current_version</string>
+    <string name="pref_key__app_first_start" translatable="false">pref_key__app_first_start</string>
+    <string name="pref_key__entry_type_selection_dialog__tab_last_used" translatable="false">pref_key__entry_type_selection_dialog__tab_last_used</string>
+    <string name="pref_catkey__map" translatable="false">pref_catkey__map</string>
+    <string name="pref_key__map_show_distribution_type__free" translatable="false">pref_key__map_show_distribution_type__free</string>
+    <string name="pref_key__map_show_distribution_type__sale" translatable="false">pref_key__map_show_distribution_type__sale</string>
+    <string name="pref_key__map_show_distribution_type__swap" translatable="false">pref_key__map_show_distribution_type__swap</string>
+    <string name="pref_key__map_show_distribution_type__donation" translatable="false">pref_key__map_show_distribution_type__donation</string>
+    <string name="pref_key__map_show_certification_type__none" translatable="false">pref_key__map_show_certification_type__none</string>
+    <string name="pref_key__map_show_certification_type__demeter" translatable="false">pref_key__map_show_certification_type__demeter</string>
+    <string name="pref_key__map_show_certification_type__bio" translatable="false">pref_key__map_show_certification_type__bio</string>
+</resources>

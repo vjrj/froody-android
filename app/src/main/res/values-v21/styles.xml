@@ -7,7 +7,4 @@
         <!--<item name="android:statusBarColor">@android:color/transparent</item>-->
     </style>
 
-    <style name="fab_bottomsheet">
-        <item name="android:layout_margin">0dp</item>
-    </style>
 </resources>

@@ -6,8 +6,7 @@
   <string name="pref_summary__map_show_distribution_type">Mostra sulla mappa il tipo di distribuzione</string>
   <string name="pref_summary__map_show_certification_type">Mostra sulla mappa il tipo di certificazione</string>
   <!-- Network -->
-  <string name="pref_cat__network">Rete</string>
-  <string name="pref_title__froody_server">Cambia Server</string>
+    <string name="pref_title__froody_server">Cambia Server</string>
   <string name="pref_title__clear_cache">Svuota cache</string>
   <string name="pref_desc__clear_cache">Svuota cache</string>
   <string name="pref_desc__froody_server">Modificare il server per il recupero di voci</string>

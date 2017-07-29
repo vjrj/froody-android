@@ -111,16 +111,15 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
         // Show first start dialog / changelog
         String dialogHtml = null;
         int dialogTitleResId = 0;
+        SimpleMarkdownParser mdParser = SimpleMarkdownParser.get().setDefaultSmpFilter(SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW);
         try {
             if (appSettings.isAppFirstStart()) {
-                dialogHtml = new SimpleMarkdownParser().parse(
-                        getResources().openRawResource(R.raw.licenses_3rd_party),
-                        SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml();
+                dialogHtml = mdParser.parse(getString(R.string.copyright_license_text_official).replace("\n", "  \n"), "").getHtml();
+                dialogHtml += mdParser.parse(getResources().openRawResource(R.raw.licenses_3rd_party), "").getHtml();
                 dialogTitleResId = R.string.license;
             } else if (appSettings.isAppFirstStartCurrentVersion()) {
-                dialogHtml = new SimpleMarkdownParser().parse(
-                        getResources().openRawResource(R.raw.changelog),
-                        SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, "").getHtml();
+                dialogHtml = mdParser.parse(
+                        getResources().openRawResource(R.raw.changelog), "").getHtml();
                 dialogTitleResId = R.string.changelog;
             }
         } catch (IOException e) {
@@ -128,7 +127,7 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
         }
         // Show dialog
         if (dialogHtml != null) {
-            HelpersA.get(this).showDialogWithHtmlTextView(dialogTitleResId, dialogHtml, new DialogInterface.OnDismissListener() {
+            HelpersA.get(this).showDialogWithHtmlTextView(dialogTitleResId, dialogHtml, true, new DialogInterface.OnDismissListener() {
                 public void onDismiss(DialogInterface dialog) {
                     requestLocation(getClass().getName());
                 }
@@ -214,8 +213,8 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
                 fragmentManager.beginTransaction().add(frag, fragmentTag).commit();
                 return frag;
             }
-            case InfoFragment.FRAGMENT_TAG: {
-                InfoFragment frag = InfoFragment.newInstance();
+            case AboutFragment.FRAGMENT_TAG: {
+                AboutFragment frag = AboutFragment.newInstance();
                 fragmentManager.beginTransaction().add(frag, fragmentTag).commit();
                 return frag;
             }

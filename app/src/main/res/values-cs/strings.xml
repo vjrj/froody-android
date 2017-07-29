@@ -9,8 +9,7 @@
   <string name="more">Více</string>
   <string name="description">Popis</string>
   <string name="location">Pozice</string>
-  <string name="error">Chyba</string>
-  <string name="all">Vše</string>
+    <string name="all">Vše</string>
   <string name="contributors">Spoluautoři</string>
   <string name="about_">O aplikaci</string>
   <!-- More general words -->
@@ -18,22 +17,17 @@
   <string name="distribution_type">Distribuce</string>
   <string name="certification">Certifikace</string>
   <string name="contact">Kontakt</string>
-  <string name="maintainers">Správce</string>
-  <string name="map">Mapa</string>
+    <string name="map">Mapa</string>
   <string name="blog">Blog</string>
   <string name="license">Licence</string>
   <string name="changelog">Seznam změn</string>
   <!-- Main -->
-  <string name="navigation_drawer_open">Otevřít draw navigací</string>
-  <string name="navigation_drawer_close">Zavřít draw navigací</string>
-  <string name="no_entries_were_published_by_me">Nejsou dostupné žádné záznamy</string>
-  <string name="help_and_share"><![CDATA[Pomoci a sdílet]]></string>
-  <string name="really_delete_entry">Chceš tento záznam opravdu smazat?</string>
+    <string name="no_entries_were_published_by_me">Nejsou dostupné žádné záznamy</string>
+    <string name="really_delete_entry">Chceš tento záznam opravdu smazat?</string>
   <string name="share_entry_ask">Sdílet záznam?</string>
   <string name="share">Sdílet&#8230;</string>
   <string name="donate_bitcoin">Darovat\nBitcoiny</string>
-  <string name="duration_days_left">Zbývá %1$d dní</string>
-  <string name="duration_days_left_text">Zbývá dnů</string>
+    <string name="duration_days_left_text">Zbývá dnů</string>
   <!-- Publish -->
   <string name="suggested">Doporučené</string>
   <string name="select_froody">Vybrat Froody&#8230;</string>
@@ -46,17 +40,15 @@
   <string name="nav__my_entries">Mé příspěvky</string>
   <string name="error_cannot_publish_entry">Chyba: Nelze publikovat položku</string>
   <!-- Info -->
-  <string name="show_licenses">Ukázat licence</string>
-  <string name="show_gplv3_license">Ukázat GNU GPLv3 licenci</string>
-  <string name="show_third_party_licenses">Ukázat licence třetích stran</string>
+  <string name="show_app_licenses">Ukázat licence</string>
+    <string name="show_third_party_licenses">Ukázat licence třetích stran</string>
   <string name="more_information">Více informací</string>
   <!-- Location -->
   <string name="request_location">Načíst informace o místu</string>
   <string name="gps_locating_user">Lokalizuji&#8230;</string>
   <string name="address_most_near">V blízkosti</string>
   <string name="show_map_on_current_location">Ukázat aktuální pozici na mapě?</string>
-  <string name="zoom_out">Oddálit</string>
-  <string name="cannot_locate_user">Uživatel nemohl být lokalizován. Prosím, zapni místní služby v systémovém nastavení!</string>
+    <string name="cannot_locate_user">Uživatel nemohl být lokalizován. Prosím, zapni místní služby v systémovém nastavení!</string>
   <string name="error_couldnt_connect_or_register">Chyba: Aplikace se nemůže připojit k serveru, aby mohl být zkontrolován uživatel.</string>
   <string name="support_the_project">Podpora projektu</string>
   <string name="translate">Přeložit</string>

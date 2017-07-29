@@ -9,8 +9,7 @@
   <string name="more">Altro</string>
   <string name="description">Descrizione</string>
   <string name="location">Ubicazione</string>
-  <string name="error">Errore</string>
-  <string name="all">Tutto</string>
+    <string name="all">Tutto</string>
   <string name="contributors">Collaboratori</string>
   <string name="about_">Info</string>
   <!-- More general words -->
@@ -18,22 +17,17 @@
   <string name="distribution_type">Distribuzione</string>
   <string name="certification">Certificazione</string>
   <string name="contact">Contatti</string>
-  <string name="maintainers">Manutentori</string>
-  <string name="map">Mappa</string>
+    <string name="map">Mappa</string>
   <string name="blog">Blog</string>
   <string name="license">Licenza</string>
   <string name="changelog">Log delle modifiche</string>
   <!-- Main -->
-  <string name="navigation_drawer_open">Apri menù laterale</string>
-  <string name="navigation_drawer_close">Chiudi menù laterale</string>
-  <string name="no_entries_were_published_by_me">Nessuna merce disponibile</string>
-  <string name="help_and_share"><![CDATA[Aiuta & Condividi]]></string>
-  <string name="really_delete_entry">Vuoi davvero eliminare questa merce?</string>
+    <string name="no_entries_were_published_by_me">Nessuna merce disponibile</string>
+    <string name="really_delete_entry">Vuoi davvero eliminare questa merce?</string>
   <string name="share_entry_ask">Condividi la merce?</string>
   <string name="share">Condividi&#8230;</string>
   <string name="donate_bitcoin">Dona\nBitcoin</string>
-  <string name="duration_days_left">%1$d giorni rimasti</string>
-  <string name="duration_days_left_text">Giorni restanti</string>
+    <string name="duration_days_left_text">Giorni restanti</string>
   <!-- Publish -->
   <string name="suggested">Suggerita</string>
   <string name="select_froody">Selezionare Froody&#8230;</string>
@@ -47,10 +41,8 @@
   <string name="nav__my_entries">Mia merce</string>
   <string name="error_cannot_publish_entry">Errore: Impossibile pubblicare l\'inserimento</string>
   <!-- Info -->
-  <string name="show_licenses">Visualizza licenze</string>
-  <string name="show_license_of_app">Mostra la licenza dell\'app</string>
-  <string name="show_gplv3_license">Visualizza la licenza GNU GPLv3</string>
-  <string name="show_third_party_licenses">Visualizza la licenza di terze parti</string>
+  <string name="show_app_licenses">Visualizza licenze</string>
+    <string name="show_third_party_licenses">Visualizza la licenza di terze parti</string>
   <string name="more_information">Altre informazioni</string>
   <!-- Location -->
   <string name="request_location">Richiesta Posizione</string>
@@ -58,8 +50,7 @@
   <string name="address_most_near">Nelle vicinanze</string>
   <string name="error_bad_permissions">Si prega di consentire a Froody di accedere alla localizzazione del tuo dispositivo.\n\nSenza questa autorizzazione non è possibile pubblicare voci con Froody e la tua posizione attuale sulla mappa non può essere determinata.\n\nPuoi localizzarti di nuovo premendo il pulsante di localizzazione sulla barra degli strumenti superiore.</string>
   <string name="show_map_on_current_location">Mostra la posizione corrente sulla mappa?</string>
-  <string name="zoom_out">Riduci ingrandimento</string>
-  <string name="cannot_locate_user">Non è possibile individuare l\'utente. Si prega di abilitare il servizio di localizzazione nelle impostazioni di sistema!</string>
+    <string name="cannot_locate_user">Non è possibile individuare l\'utente. Si prega di abilitare il servizio di localizzazione nelle impostazioni di sistema!</string>
   <string name="error_couldnt_connect_or_register">Errore: Impossibile connettersi al Server o controllo utente fallito.</string>
   <string name="support_the_project">Supporta il progetto</string>
   <string name="translate">Traduci</string>

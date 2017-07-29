@@ -1,3 +1,8 @@
+### v1.0.2
+- Update SimpleMarkdownParser
+- Update AboutFragment
+- Update license notice appearance
+
 ### v1.0.1 (2017-07-08)
 - Connection improvements
 - Update froody-api

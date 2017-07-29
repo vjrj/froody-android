@@ -9,8 +9,7 @@
   <string name="more">Ещё</string>
   <string name="description">Описание</string>
   <string name="location">Местонахождение</string>
-  <string name="error">Ошибка</string>
-  <string name="all">Все</string>
+    <string name="all">Все</string>
   <string name="contributors">Разработчики</string>
   <string name="about_">О приложении</string>
   <!-- More general words -->
@@ -18,22 +17,17 @@
   <string name="distribution_type">Распространяется</string>
   <string name="certification">Сертификация</string>
   <string name="contact">Контакт</string>
-  <string name="maintainers">Разработчики</string>
-  <string name="map">Карта</string>
+    <string name="map">Карта</string>
   <string name="blog">Блог</string>
   <string name="license">Лицензия</string>
   <string name="changelog">История изменений</string>
   <!-- Main -->
-  <string name="navigation_drawer_open">Открыть  боковое меню</string>
-  <string name="navigation_drawer_close">Закрыть боковое меню</string>
-  <string name="no_entries_were_published_by_me">Нет записей</string>
-  <string name="help_and_share"><![CDATA[Помочь и поделиться]]></string>
-  <string name="really_delete_entry">Вы действительно хотите удалить эту запись?</string>
+    <string name="no_entries_were_published_by_me">Нет записей</string>
+    <string name="really_delete_entry">Вы действительно хотите удалить эту запись?</string>
   <string name="share_entry_ask">Поделиться записью?</string>
   <string name="share">Поделиться&#8230;</string>
   <string name="donate_bitcoin">Пожертвовать\nBitcoin</string>
-  <string name="duration_days_left">%1$d дней прошло</string>
-  <string name="duration_days_left_text">Осталось дней</string>
+    <string name="duration_days_left_text">Осталось дней</string>
   <!-- Publish -->
   <string name="suggested">Предложено</string>
   <string name="select_froody">Выбрать Froody&#8230;</string>
@@ -47,10 +41,8 @@
   <string name="nav__my_entries">Мои записи</string>
   <string name="error_cannot_publish_entry">Ошибка: невозможно опубликовать запись</string>
   <!-- Info -->
-  <string name="show_licenses">Показать лицензии</string>
-  <string name="show_license_of_app">Показать лицензию</string>
-  <string name="show_gplv3_license">Показать лицензию GNU GPLv3</string>
-  <string name="show_third_party_licenses">Показать лицензии 3 сторон</string>
+  <string name="show_app_licenses">Показать лицензии</string>
+    <string name="show_third_party_licenses">Показать лицензии 3 сторон</string>
   <string name="more_information">Больше информации</string>
   <!-- Location -->
   <string name="request_location">Запросить местоположение</string>
@@ -58,8 +50,7 @@
   <string name="address_most_near">Поблизости</string>
   <string name="error_bad_permissions">Позвольте приложению Froody доступ к расположению вашего устройства.\n\nБез этого разрешения, вы не сможете публиковать записи во Froody и ваше текущее положение на карте не будет определено.\n\nВы также можете повторно определить своё текущее местоположение, нажав на Указатель в верхней панели инструментов.</string>
   <string name="show_map_on_current_location">Показать на карте текущее местоположение?</string>
-  <string name="zoom_out">Уменьшить</string>
-  <string name="cannot_locate_user">Невозможно определить местоположение пользователя. Пожалуйста включите определение местоположения по GPS в настройках!</string>
+    <string name="cannot_locate_user">Невозможно определить местоположение пользователя. Пожалуйста включите определение местоположения по GPS в настройках!</string>
   <string name="error_couldnt_connect_or_register">Ошибка: Невозможно подсоединиться к серверу или проверить пользователя.</string>
   <string name="support_the_project">Поддержать проект</string>
   <string name="translate">Переводите</string>

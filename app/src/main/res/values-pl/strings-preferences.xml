@@ -6,8 +6,7 @@
   <string name="pref_summary__map_show_distribution_type">Pokaż na mapie rodzaj dystrybucji</string>
   <string name="pref_summary__map_show_certification_type">Pokaż na mapie rodzaj certyfikacji</string>
   <!-- Network -->
-  <string name="pref_cat__network">Sieć</string>
-  <string name="pref_title__froody_server">Zmień serwer</string>
+    <string name="pref_title__froody_server">Zmień serwer</string>
   <string name="pref_title__clear_cache">Wyczyść pamięć podręczną</string>
   <string name="pref_desc__clear_cache">Usuń wpis pamięci podręcznej, ostatnia pozycja</string>
   <string name="pref_desc__froody_server">Zmień serwer do pobierania wpisów</string>

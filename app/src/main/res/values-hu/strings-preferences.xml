@@ -4,8 +4,7 @@
   <!-- Keys (not translate able -->
   <!-- Map -->
   <!-- Network -->
-  <string name="pref_cat__network">Hálózat</string>
-  <string name="pref_title__froody_server">Szerver megváltoztatása</string>
+    <string name="pref_title__froody_server">Szerver megváltoztatása</string>
   <string name="pref_title__clear_cache">Gyorsítótár kiürítése</string>
   <string name="pref_desc__clear_cache">Bejegyzés gyorsítótárjának és utolsó helyzet törlése</string>
   <string name="pref_desc__froody_server">Szerver megváltoztatása a bejegyzések lekéréséhez</string>

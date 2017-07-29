@@ -6,8 +6,7 @@
   <string name="pref_summary__map_show_distribution_type">Verteilungs-Typ auf der Karte anzeigen</string>
   <string name="pref_summary__map_show_certification_type">Zertifizierungs-Typ auf der Karte anzeigen</string>
   <!-- Network -->
-  <string name="pref_cat__network">Netzwerk</string>
-  <string name="pref_title__froody_server">Server wechseln</string>
+    <string name="pref_title__froody_server">Server wechseln</string>
   <string name="pref_title__clear_cache">Cache leeren</string>
   <string name="pref_desc__clear_cache">Den Eintrags-Cache und die ermittelten Ortsdaten löschen</string>
   <string name="pref_desc__froody_server">Den Server für die Daten-Abfrage ändern</string>

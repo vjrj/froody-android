@@ -10,7 +10,6 @@
     <string name="more">Mais</string>
     <string name="description">Descrição</string>
     <string name="location">Localização</string>
-    <string name="error">Erro</string>
     <string name="all">Todos</string>
     <string name="contributors">Contribuidores</string>
     <string name="about_">Sobre</string>
@@ -20,16 +19,12 @@
     <string name="distribution_type">Distribuição</string>
     <string name="certification">Certificação</string>
     <string name="contact">Contato</string>
-    <string name="maintainers">Mantenedores</string>
     <string name="map">Mapa</string>
     <string name="blog">Blogue</string>
     <string name="license">Licença</string>
 
     <!-- Main -->
-    <string name="navigation_drawer_open">Abrir nav-drawer</string>
-    <string name="navigation_drawer_close">Fechar nav-drawer</string>
     <string name="no_entries_were_published_by_me">Sem ofertas</string>
-    <string name="help_and_share">Ajude &amp; Partilhe</string>
     <string name="really_delete_entry">Quer mesmo cancelar esta oferta?</string>
     <string name="share_entry_ask">Partilhar oferta?</string>
 
@@ -44,7 +39,7 @@
     <string name="nav__my_entries">Minhas ofertas</string>
 
     <!-- Info -->
-    <string name="show_licenses">Exibir licenças</string>
+    <string name="show_app_licenses">Exibir licenças</string>
 
     <!-- Location -->
     <string name="request_location">Solicitar localização</string>
@@ -52,6 +47,5 @@
     <string name="address_most_near">Arredores</string>
     <string name="error_bad_permissions">Dê permissão ao Froody de acessar o GPS e de escrever dados. Sem essas permissões o aplicativo não funciona.</string>
     <string name="show_map_on_current_location">Exibir mapa com a localização atual?</string>
-    <string name="zoom_out">Afastar</string>
     <string name="cannot_locate_user">Impossível achar o usuário. Habilite os serviços de localização do android.</string>
 </resources>

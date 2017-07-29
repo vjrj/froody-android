@@ -7,159 +7,158 @@
     android:background="@color/default_activity_bgcolor"
     android:clickable="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="io.github.froodyapp.activity.InfoFragment">
+    tools:context="io.github.froodyapp.activity.AboutFragment">
 
-    <android.support.v4.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/info__fragment__text_app_version"
-        android:layout_alignParentTop="true">
-
-        <LinearLayout
+        <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/info__fragment__text_header"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorAccent"
-                android:gravity="center"
-                android:minHeight="50dp"
-                android:text="@string/maintainers"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:id="@+id/info__fragment__text_maintainers"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:autoLink="all"
-                android:clickable="true"
-                android:gravity="start"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/secondary_text"
-                tools:text="Maintainer 1\n  * Text\n  * Text" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:background="@color/colorAccent"
-                android:gravity="center"
-                android:minHeight="50dp"
-                android:text="@string/contributors"
-                android:textAlignment="center"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:id="@+id/info__fragment__text_contributors"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:autoLink="web|email"
-                android:gravity="start"
-                android:textAppearance="@style/TextAppearance.AppCompat"
-                android:textColor="@color/secondary_text"
-                tools:text="Contributor 1: Person 1\nContributor 2: Person 2\n" />
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:background="@color/colorAccent"
-                android:gravity="center"
-                android:minHeight="50dp"
-                android:text="@string/more_information"
-                android:textAlignment="center"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/white"
-                android:visibility="gone" />
-
-            <TextView
-                android:id="@+id/info__fragment__text_more_information"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:autoLink="web|email"
-                android:gravity="start"
-                android:text=""
-                android:textAppearance="@style/TextAppearance.AppCompat"
-                android:textColor="@color/secondary_text"
-                android:visibility="gone" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:background="@color/colorAccent"
-                android:gravity="center"
-                android:minHeight="50dp"
-                android:text="@string/license"
-                android:textAlignment="center"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:id="@+id/info__fragment__text_license"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:autoLink="web|email"
-                android:gravity="start"
-                android:text="@string/apache2_license_text"
-                android:textAppearance="@style/TextAppearance.AppCompat"
-                android:textColor="@color/secondary_text" />
+            android:layout_above="@+id/about__activity__text_app_version"
+            android:layout_alignParentTop="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginStart="10dp">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/info__fragment__button_show_app_license"
+                <TextView
+                    android:id="@+id/about__activity__text_header"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorAccent"
+                    android:gravity="center"
+                    android:minHeight="50dp"
+                    android:text="@string/team"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/about__activity__text_team"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/show_license_of_app" />
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:clickable="true"
+                    android:gravity="start"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/secondary_text"
+                    tools:ignore="KeyboardInaccessibleWidget"
+                    tools:text="Maintainer 1\n  * Text\n  * Text" />
 
-                <Button
-                    android:id="@+id/info__fragment__button_third_party_licenses"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/colorAccent"
+                    android:gravity="center"
+                    android:minHeight="50dp"
+                    android:text="@string/contributors"
+                    android:textAlignment="center"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/about__activity__text_contributors"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/show_third_party_licenses" />
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="start"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textColor="@color/secondary_text"
+                    tools:text="* Contributor 1\n   German translation\n* Contributor 1\n   Spanish translation" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/colorAccent"
+                    android:gravity="center"
+                    android:minHeight="50dp"
+                    android:text="@string/more_information"
+                    android:textAlignment="center"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/about__activity__text_more_information"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="start"
+                    android:text=""
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textColor="@color/secondary_text"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/colorAccent"
+                    android:gravity="center"
+                    android:minHeight="50dp"
+                    android:text="@string/license"
+                    android:textAlignment="center"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/about__activity__text_license"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="start"
+                    android:text="@string/copyright_license_text_official"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textColor="@color/secondary_text" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp">
+
+                    <Button
+                        android:id="@+id/about__activity__button_app_license"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/show_app_licenses" />
+
+                    <Button
+                        android:id="@+id/about__activity__button_third_party_licenses"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/show_third_party_licenses" />
+                </LinearLayout>
+
+
             </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+        <TextView
+            android:id="@+id/about__activity__text_app_version"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/colorPrimaryDark"
+            android:clickable="true"
+            android:gravity="center"
+            android:minHeight="50dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white"
+            tools:ignore="KeyboardInaccessibleWidget"
+            tools:text="App Version   v0.9.42" />
 
 
-        </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
-
-    <TextView
-        android:id="@+id/info__fragment__text_app_version"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:background="@color/colorPrimaryDark"
-        android:clickable="true"
-        android:gravity="center"
-        android:minHeight="50dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/white"
-        tools:text="App Version   v0.9.42" />
-
-</RelativeLayout>
+    </RelativeLayout>
