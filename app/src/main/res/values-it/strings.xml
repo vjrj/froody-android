@@ -9,7 +9,7 @@
   <string name="more">Altro</string>
   <string name="description">Descrizione</string>
   <string name="location">Ubicazione</string>
-    <string name="all">Tutto</string>
+  <string name="all">Tutto</string>
   <string name="contributors">Collaboratori</string>
   <string name="about_">Info</string>
   <!-- More general words -->
@@ -17,32 +17,32 @@
   <string name="distribution_type">Distribuzione</string>
   <string name="certification">Certificazione</string>
   <string name="contact">Contatti</string>
-    <string name="map">Mappa</string>
+  <string name="map">Mappa</string>
   <string name="blog">Blog</string>
   <string name="license">Licenza</string>
   <string name="changelog">Log delle modifiche</string>
   <!-- Main -->
-    <string name="no_entries_were_published_by_me">Nessuna merce disponibile</string>
-    <string name="really_delete_entry">Vuoi davvero eliminare questa merce?</string>
+  <string name="no_entries_were_published_by_me">Nessuna merce disponibile</string>
+  <string name="really_delete_entry">Vuoi davvero eliminare questa merce?</string>
   <string name="share_entry_ask">Condividi la merce?</string>
   <string name="share">Condividi&#8230;</string>
   <string name="donate_bitcoin">Dona\nBitcoin</string>
-    <string name="duration_days_left_text">Giorni restanti</string>
+  <string name="duration_days_left_text">Giorni restanti</string>
   <!-- Publish -->
   <string name="suggested">Suggerita</string>
   <string name="select_froody">Selezionare Froody&#8230;</string>
   <string name="hint__description__enter_here">Immettere qui la descrizione per questa merce (ad es. qualità, per fare la marmellata, sottotipo...)</string>
   <string name="hint__contact__enter_here">Inserite qui i dati di contatto per questa merce (può contenere il tuo nr. di tel. o e-mail)</string>
   <string name="publish_entry_now">Pubblica ora</string>
-  <string name="publish_entry">Pubblicare</string>
+  <string name="publish_entry">Pubblica</string>
   <string name="limited_time_active_notice">Attenzione! La voce è disponibile da ora per %1$d giorni.</string>
   <string name="share_my_entry_at_froody">La mia merce nell\'app Froody</string>
   <string name="share_chooser_share_entry">Condividi la merce</string>
   <string name="nav__my_entries">Mia merce</string>
   <string name="error_cannot_publish_entry">Errore: Impossibile pubblicare l\'inserimento</string>
   <!-- Info -->
-  <string name="show_app_licenses">Visualizza licenze</string>
-    <string name="show_third_party_licenses">Visualizza la licenza di terze parti</string>
+  <string name="show_app_licenses">Mostra licenze</string>
+  <string name="show_third_party_licenses">Visualizza la licenza di terze parti</string>
   <string name="more_information">Altre informazioni</string>
   <!-- Location -->
   <string name="request_location">Richiesta Posizione</string>
@@ -50,12 +50,12 @@
   <string name="address_most_near">Nelle vicinanze</string>
   <string name="error_bad_permissions">Si prega di consentire a Froody di accedere alla localizzazione del tuo dispositivo.\n\nSenza questa autorizzazione non è possibile pubblicare voci con Froody e la tua posizione attuale sulla mappa non può essere determinata.\n\nPuoi localizzarti di nuovo premendo il pulsante di localizzazione sulla barra degli strumenti superiore.</string>
   <string name="show_map_on_current_location">Mostra la posizione corrente sulla mappa?</string>
-    <string name="cannot_locate_user">Non è possibile individuare l\'utente. Si prega di abilitare il servizio di localizzazione nelle impostazioni di sistema!</string>
+  <string name="cannot_locate_user">Non è possibile individuare l\'utente. Si prega di abilitare il servizio di localizzazione nelle impostazioni di sistema!</string>
   <string name="error_couldnt_connect_or_register">Errore: Impossibile connettersi al Server o controllo utente fallito.</string>
   <string name="support_the_project">Supporta il progetto</string>
   <string name="translate">Traduci</string>
   <string name="spread">Diffondi</string>
-  <string name="report_bugs">Segnala\nun bug</string>
+  <string name="report_bugs">Segnala\nbugs</string>
   <string name="about_the_app">Informazioni\nsull\'app</string>
   <string name="error_incomplete_input">Errore: inserimento incompleto</string>
 </resources>

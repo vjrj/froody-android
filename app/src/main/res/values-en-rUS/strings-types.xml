@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- GPS Types -->
-    <!-- Certification Types -->
-    <!-- Distribution Types -->
-    <!-- Entry Types (Special) -->
-    <!-- Entry Types -->
-    <string name="entry_type__aubergine">Eggplant</string>
-</resources>

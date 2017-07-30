@@ -16,11 +16,12 @@ Where:
 -->
 * **[Gregor Santner](https://gsantner.github.io)**<br/>~° Current developer of Froody
 * **[Robert Diesenreither](http://www.zero-emission.at/index.php)**<br/>~° Idea and domain
+* **[Maximilan Stader]()**<br/>~° Development of early builds of Froody
+* **[Christopher Köllner]()**<br/>~° Development of early builds of Froody
 * **[Armando Luescher](https://noplanman.ch)**<br/>~° Reviews of froody-server
 * **[Naofumi Fukue](https://github.com/naofum)**<br/>~° Japanese translation
-* **[secitem](https://github.com/bezcitu)**<br/>~° Czech translation
 * **[Слободан Симић](https://crowdin.com/profile/slsimic)**<br/>~° Serbian translation
 * **[Zsolt Szakács](https://github.com/maxigaz)**<br/>~° Hungarian translation
-* **[Jorge López](https://github.com/ToasterRaider)**<br/>~° Spanish translation
 * **[Luís F.S. Rosa](https://github.com/luisfsr)**<br/>~° Brazilian Portuguese translation
 * **[Danilo Raffaelli](https://crowdin.com/profile/Daraf)**<br/>~° Italian translation
+* **[Andrei Guliaikin](https://crowdin.com/profile/guland2000)**<br/>~° Russian translation

@@ -3,19 +3,19 @@
 <resources>
   <string name="unknown">Неизвестно</string>
   <!-- GPS Types -->
-  <string name="gps_type__none">Нет местоположения</string>
+  <string name="gps_type__none">Место не указано</string>
   <string name="gps_type__previous">Предыдущее местоположение</string>
   <string name="gps_type__current">Текущее местоположение</string>
   <!-- Certification Types -->
-  <string name="certification_type__none">Нет</string>
-  <string name="certification_type__bio">Биопродукт</string>
+  <string name="certification_type__none">Отсутствует</string>
+  <string name="certification_type__bio">Био</string>
   <!-- Distribution Types -->
   <string name="distribution_type__sale">Продажа</string>
   <string name="distribution_type__swap">Обмен</string>
   <string name="distribution_type__free">Бесплатно</string>
   <string name="distribution_type__voluntary_donation">В дар</string>
   <!-- Entry Types (Special) -->
-  <string name="entry_type__special__miscellaneous">Прочее</string>
+  <string name="entry_type__special__miscellaneous">Прочие</string>
   <string name="entry_type__special__water">Вода</string>
   <!-- Entry Types -->
   <string name="entry_type__apple">Яблоки</string>
@@ -46,7 +46,7 @@
   <string name="entry_type__strawberry">Клубника</string>
   <string name="entry_type__tomato">Помидоры</string>
   <string name="entry_type__wood">Деревья</string>
-  <string name="entry_type__zucchini">Кабачки</string>
+  <string name="entry_type__zucchini">Цуккини</string>
   <string name="entry_type__aubergine">Баклажаны</string>
   <string name="entry_type__mango">Манго</string>
   <string name="entry_type__asparagus">Спаржа</string>

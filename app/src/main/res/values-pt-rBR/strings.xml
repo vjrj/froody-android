@@ -3,59 +3,22 @@
 <resources>
   <!-- General & Important things -->
   <!-- General words -->
-  <string name="image">Imagem</string>
-  <string name="reset">Zerar</string>
-  <string name="settings">Configurações</string>
-  <string name="more">Mais</string>
-  <string name="description">Descrição</string>
-  <string name="location">Localização</string>
-    <string name="all">Todos</string>
   <string name="contributors">Colaboradores</string>
-  <string name="about_">Sobre</string>
   <!-- More general words -->
-  <string name="search_dotdotdot">Procurar...</string>
-  <string name="distribution_type">Distribuição</string>
-  <string name="certification">Certificação</string>
-  <string name="contact">Contato</string>
-    <string name="map">Mapa</string>
-  <string name="blog">Blogue</string>
-  <string name="license">Licença</string>
   <string name="changelog">Histórico de mudanças</string>
   <!-- Main -->
-    <string name="no_entries_were_published_by_me">Sem ofertas</string>
-    <string name="really_delete_entry">Quer mesmo cancelar esta oferta?</string>
   <string name="share_entry_ask">Publicar oferta?</string>
   <string name="share">Compartilhar&#8230;</string>
-  <string name="donate_bitcoin">Doar\nBitcoins</string>
-    <string name="duration_days_left_text">Dias restantes</string>
   <!-- Publish -->
-  <string name="suggested">Sugerido</string>
-  <string name="select_froody">Selecionar Froody...</string>
-  <string name="hint__description__enter_here">Insira uma descrição (e.g. qualidade, subtipo, para fazer ximia...)</string>
-  <string name="hint__contact__enter_here">Insira seus dados de contato aqui (telefone e/ou e-mail)</string>
-  <string name="publish_entry_now">Publicar agora</string>
-  <string name="publish_entry">Publicar</string>
+  <string name="hint__description__enter_here">Insira uma descrição (e.g. qualidade, subtipo, para fazer ximia&#8230;)</string>
   <string name="limited_time_active_notice">Atenção! A entrada está disponível a partir de agora por %1$d dias.</string>
-  <string name="share_my_entry_at_froody">Minha oferta no aplicativo Froody</string>
   <string name="share_chooser_share_entry">Publicar oferta</string>
-  <string name="nav__my_entries">Minhas ofertas</string>
   <string name="error_cannot_publish_entry">Erro: Impossível publicar a oferta</string>
   <!-- Info -->
-  <string name="show_app_licenses">Exibir licenças</string>
-    <string name="show_third_party_licenses">Exibir licenças de terceiros</string>
+  <string name="show_third_party_licenses">Exibir licenças de terceiros</string>
   <string name="more_information">Mais informação</string>
   <!-- Location -->
-  <string name="request_location">Solicitar localização</string>
-  <string name="gps_locating_user">Localizando...</string>
-  <string name="address_most_near">Arredores</string>
   <string name="error_bad_permissions">Por favor. Autorize o Froody a acessar os dados de localização do seu aparelho\n\nSem esta permissão você não conseguirá publicar suas ofertas e sua localização no mapa não poderá ser registrada.\n\nVocê pode registrar sua posição novamente pressionando o botão respectivo no menu acima.</string>
-  <string name="show_map_on_current_location">Exibir mapa com a localização atual?</string>
-    <string name="cannot_locate_user">Impossível achar o usuário. Habilite os serviços de localização do android.</string>
   <string name="error_couldnt_connect_or_register">Impossível conectar ao servidor ou detectar o usuário.</string>
-  <string name="support_the_project">Apoiar o projeto</string>
-  <string name="translate">Traduza</string>
-  <string name="spread">Espalhar</string>
   <string name="report_bugs">Relatar\nerros</string>
-  <string name="about_the_app">Sobre este\naplicativo</string>
-  <string name="error_incomplete_input">Erro: Entrada incompleta</string>
 </resources>

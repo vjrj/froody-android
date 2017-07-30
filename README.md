@@ -37,9 +37,13 @@ License: **Apache 2.0**
   * Entries will get automatically get removed after 60 days unless deleted
 
 ## Notices
-Influenced by ideas and snippets from other apps by gsantner ([kimai-android](https://github.com/gsantner/kimai-android), [memetastic](https://github.com/gsantner/memetastic),[dandelion\*](https://github.com/Diaspora-for-Android/dandelion), ..) which this app is allowed to use.
+Influenced by ideas and snippets from other apps by gsantner ([kimai-android](https://github.com/gsantner/kimai-android), [MemeTastic](https://github.com/gsantner/memetastic),[dandelion\*](https://github.com/Diaspora-for-Android/dandelion), ..) which this app is allowed to use.
 Main servers domain `froody-app.at` is sponsored by [Robert Diesenreither](http://www.zero-emission.at/index.php), the `froody-server` is hosted by @gsantner.
 The app uses OpenStreetMap for displaying maps.
+
+### License
+Froody is released under Apache 2.0 LICENSE (see [LICENCE](https://github.com/froodyapp/froody-android/blob/master/LICENSE.txt)).
+The translations (strings.xml) are licensed CC0 1.0.
 
 ## Screenshots
 

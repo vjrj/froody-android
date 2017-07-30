@@ -9,7 +9,7 @@
   <string name="more">Egyebek</string>
   <string name="description">Leírás</string>
   <string name="location">Hely</string>
-    <string name="all">Mind</string>
+  <string name="all">Mind</string>
   <string name="contributors">Hozzájárulók</string>
   <string name="about_">Névjegy</string>
   <!-- More general words -->
@@ -17,44 +17,33 @@
   <string name="distribution_type">Átvétel</string>
   <string name="certification">Tanúsítvány</string>
   <string name="contact">Elérhetőség</string>
-    <string name="map">Térkép</string>
+  <string name="map">Térkép</string>
   <string name="blog">Blog</string>
   <string name="license">Licenc</string>
   <string name="changelog">Újdonságok</string>
   <!-- Main -->
-    <string name="no_entries_were_published_by_me">Nincs elérhető bejegyzés</string>
-    <string name="really_delete_entry">Biztosan törölni akarod ezt a bejegyzést?</string>
+  <string name="no_entries_were_published_by_me">Nincs elérhető bejegyzés</string>
+  <string name="really_delete_entry">Biztosan törölni akarod ezt a bejegyzést?</string>
   <string name="share_entry_ask">Megosztod a bejegyzést?</string>
-  <string name="share">Megosztás&#8230;</string>
-  <string name="donate_bitcoin">Adomány\nBitcoinnal</string>
-    <string name="duration_days_left_text">Hátralévő napok</string>
   <!-- Publish -->
   <string name="suggested">Ajánlott</string>
   <string name="select_froody">Froody kiválasztása&#8230;</string>
   <string name="hint__description__enter_here">Írj egy leírást ehhez a bejegyzéshez (pl. minőség, limonádénak, altípus)</string>
   <string name="hint__contact__enter_here">Írj elérhetőségeket ehhez a bejegyzéshez (tartalmazhatná a telefonszámodat vagy emailcímedet)</string>
-  <string name="publish_entry_now">Közlés most</string>
-  <string name="publish_entry">Közzétesz</string>
   <string name="limited_time_active_notice">Vigyázat! Ez a bejegyzés mostantól %1$d napig érhető el.</string>
   <string name="share_my_entry_at_froody">Bejegyzésem a Froody alkalmazáson</string>
   <string name="share_chooser_share_entry">Bejegyzés megosztása</string>
   <string name="nav__my_entries">Bejegyzéseim</string>
   <string name="error_cannot_publish_entry">Hiba: nem lehet közzétenni a bejegyzést</string>
   <!-- Info -->
-  <string name="show_app_licenses">Licencek mutatása</string>
-    <string name="show_third_party_licenses">Harmadik fél licencek mutatása</string>
+  <string name="show_third_party_licenses">Harmadik fél licencek mutatása</string>
   <string name="more_information">További információ</string>
   <!-- Location -->
   <string name="request_location">Helyzet lekérése</string>
   <string name="gps_locating_user">Helyzet meghatározása&#8230;</string>
   <string name="address_most_near">A közelben</string>
+  <string name="error_bad_permissions">Kérlek, engedélyezd a Froodyt, hogy hozzáférhessen az eszközöd helyéhez!\n\nE nélkül az engedély nélkül nem tudsz bejegyzéseket publikálni a Froodyval és nem lehet megállapítani a jelenlegi pozíciódat a térképen.\n\nÚjra meg tudod határozni a helyzetedet a fenti eszköztáron lévő helygomb megnyomásával.</string>
   <string name="show_map_on_current_location">Legyen mutatva a térkép a jelenlegi helynél?</string>
-    <string name="cannot_locate_user">Nem lehet meghatározni a felhasználó helyét. Kérlek, engedélyezd a helylekérdező-szolgáltatásokat a rendszerbeállításoknál!</string>
+  <string name="cannot_locate_user">Nem lehet meghatározni a felhasználó helyét. Kérlek, engedélyezd a helylekérdező-szolgáltatásokat a rendszerbeállításoknál!</string>
   <string name="error_couldnt_connect_or_register">Hiba: Nem lehetett csatlakozni a szerverhez vagy nem lehetett ellenőrizni a felhasználót.</string>
-  <string name="support_the_project">Támogasd a Projektet</string>
-  <string name="translate">Fordít</string>
-  <string name="spread">Kétujjas\nnagyítás</string>
-  <string name="report_bugs">Hibajelentés</string>
-  <string name="about_the_app">A programról</string>
-  <string name="error_incomplete_input">Hiba: Hiányos bemenet</string>
 </resources>
