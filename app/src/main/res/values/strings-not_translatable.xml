@@ -1,7 +1,7 @@
 <resources>
 
     <!-- General -->
-    <string name="app_www_source" translatable="false">https://github.com/gsantner/froodyapp/froody-android</string>
+    <string name="app_www_source" translatable="false">https://github.com/froodyapp/froody-android</string>
     <string name="app_version_v" translatable="false">App Version  v%1$s</string>
     <string name="team" translatable="false">Team</string>
 

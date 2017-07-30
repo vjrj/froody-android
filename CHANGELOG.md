@@ -1,4 +1,4 @@
-### v1.0.2
+### v1.0.2 (2017-07-30)
 - Update SimpleMarkdownParser
 - Update AboutFragment
 - Update license notice appearance

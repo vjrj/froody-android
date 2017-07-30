@@ -15,7 +15,7 @@ Where:
 ## LIST OF CONTRIBUTORS
 -->
 * **[Gregor Santner](https://gsantner.github.io)**<br/>~° Current developer of Froody
-* **[Robert Diesenreither](www.zero-ermissions.at)**<br/>~° Idea and domain
+* **[Robert Diesenreither](http://www.zero-emission.at/index.php)**<br/>~° Idea and domain
 * **[Armando Luescher](https://noplanman.ch)**<br/>~° Reviews of froody-server
 * **[Naofumi Fukue](https://github.com/naofum)**<br/>~° Japanese translation
 * **[secitem](https://github.com/bezcitu)**<br/>~° Czech translation
