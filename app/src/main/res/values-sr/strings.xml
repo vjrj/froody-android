@@ -41,6 +41,7 @@
   <string name="nav__my_entries">Моји уноси</string>
   <string name="error_cannot_publish_entry">Грешка: не могу да објавим унос</string>
   <!-- Info -->
+  <string name="show_app_licenses">Прикажи лиценце</string>
   <string name="show_third_party_licenses">Прикажи лиценце треће стране</string>
   <string name="more_information">Више информација</string>
   <!-- Location -->

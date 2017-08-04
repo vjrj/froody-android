@@ -25,3 +25,5 @@ Where:
 * **[Luís F.S. Rosa](https://github.com/luisfsr)**<br/>~° Brazilian Portuguese translation
 * **[Danilo Raffaelli](https://crowdin.com/profile/Daraf)**<br/>~° Italian translation
 * **[Andrei Guliaikin](https://crowdin.com/profile/guland2000)**<br/>~° Russian translation
+* **[Victor Fisker](https://discord.gg/49dwg58)**<br/>~° Danish translation
+* **[Ayoub Ayad](https://crowdin.com/profile/ayoubzaem)**<br/>~° Arabic translation

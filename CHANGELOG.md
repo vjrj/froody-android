@@ -1,3 +1,10 @@
+### v1.0.3 (2017-08-04)
+- Update to android sdk26
+- Improve build script
+- Update translation file license
+- New languages supported: Arabic, Norwegian
+- Move swagger-api to froody-api
+
 ### v1.0.2 (2017-07-30)
 - Update SimpleMarkdownParser
 - Update AboutFragment

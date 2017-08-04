@@ -12,16 +12,56 @@
   <!-- Distribution Types -->
   <string name="distribution_type__sale">Salg</string>
   <string name="distribution_type__swap">Bytte</string>
+  <string name="distribution_type__free">Gratis</string>
   <string name="distribution_type__voluntary_donation">Donation</string>
   <!-- Entry Types (Special) -->
   <string name="entry_type__special__miscellaneous">Diverse</string>
   <string name="entry_type__special__water">Vand</string>
   <!-- Entry Types -->
+  <string name="entry_type__apple">Æbler</string>
+  <string name="entry_type__pear">Pærer</string>
+  <string name="entry_type__cherry">Kirsebær</string>
+  <string name="entry_type__plum">Blommer</string>
+  <string name="entry_type__currant_red">Røde ribs</string>
+  <string name="entry_type__grape">Druer</string>
+  <string name="entry_type__hazelnut">Hasselnøder</string>
   <string name="entry_type__milk">Mælk</string>
+  <string name="entry_type__raspberry">Hindbær</string>
+  <string name="entry_type__walnut">Valnøder</string>
+  <string name="entry_type__carrot">Gulerødder</string>
+  <string name="entry_type__cereal">Korn</string>
+  <string name="entry_type__chili">Chili</string>
+  <string name="entry_type__corn">Majs</string>
+  <string name="entry_type__cucumber">Agurker</string>
+  <string name="entry_type__egg">Æg</string>
   <string name="entry_type__fish">Fisk</string>
+  <string name="entry_type__flower">Blomster</string>
   <string name="entry_type__honey">Honning</string>
+  <string name="entry_type__lemon">Citroner</string>
+  <string name="entry_type__mushroom">Svampe</string>
+  <string name="entry_type__orange">Appelsiner</string>
+  <string name="entry_type__peach">Ferskner</string>
+  <string name="entry_type__potato">Kartofler</string>
+  <string name="entry_type__sapling">Træ frø</string>
+  <string name="entry_type__strawberry">Jordbær</string>
+  <string name="entry_type__tomato">Tomater</string>
   <string name="entry_type__wood">Tømmer</string>
   <string name="entry_type__zucchini">Zucchini</string>
+  <string name="entry_type__aubergine">Auberginer</string>
+  <string name="entry_type__mango">Mangoer</string>
   <string name="entry_type__asparagus">Asparges</string>
+  <string name="entry_type__avocado">Avocadoer</string>
+  <string name="entry_type__green_bean">Grønne bønner</string>
+  <string name="entry_type__blueberry">Blåbær</string>
   <string name="entry_type__garlic">Hvidløg</string>
+  <string name="entry_type__onion">Løg</string>
+  <string name="entry_type__pea">Ærter</string>
+  <string name="entry_type__pepper">Peberfrugter</string>
+  <string name="entry_type__pumpkin">Græskar</string>
+  <string name="entry_type__radish">Radiser</string>
+  <string name="entry_type__salad">Salater</string>
+  <string name="entry_type__seed">Frø</string>
+  <string name="entry_type__soy_bean">Sojabønner</string>
+  <string name="entry_type__currant_black">Solbær</string>
+  <string name="entry_type__blackberry">Brombær</string>
 </resources>
