@@ -3,18 +3,19 @@ package io.github.froodyapp.activity;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.res.TypedArray;
 import android.os.Bundle;
-import android.text.Html;
-import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.IOException;
 
 import butterknife.BindView;
+import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.github.froodyapp.R;
@@ -50,6 +51,9 @@ public class AboutFragment extends BaseFragment {
 
     @BindView(R.id.about__activity__text_license)
     TextView textLicense;
+
+    @BindViews({R.id.about__activity__sponsor_001, R.id.about__activity__sponsor_002})
+    ImageView[] imageSponsors;
 
 
     //####################
@@ -101,6 +105,21 @@ public class AboutFragment extends BaseFragment {
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
+
+
+        TypedArray sponsorDrawables = context.getResources().obtainTypedArray(R.array.sponsor_image);
+        final String[] sponsorLinks = getActivity().getResources().getStringArray(R.array.sponsor_link);
+        for (int i = 0; i < imageSponsors.length; i++) {
+            final int i_f = i;
+            int resId = sponsorDrawables.getResourceId(i, R.drawable.divider_h16dp);
+            imageSponsors[i].setImageResource(resId);
+            imageSponsors[i].setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+                    Helpers.get().openWebpageInExternalBrowser(sponsorLinks[i_f]);
+                }
+            });
+        }
+        sponsorDrawables.recycle();
     }
 
     @OnClick(R.id.about__activity__text_app_version)

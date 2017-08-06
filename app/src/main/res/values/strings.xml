@@ -53,6 +53,7 @@
     <string name="show_app_licenses">Show licenses</string>
     <string name="show_third_party_licenses">Show 3rd party licenses</string>
     <string name="more_information">More information</string>
+    <string name="sponsors">Sponsors</string>
 
     <!-- Location -->
     <string name="gps_located_user" translatable="false">$LOCATION$</string>

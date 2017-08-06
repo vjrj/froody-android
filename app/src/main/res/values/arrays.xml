@@ -1,11 +1,11 @@
 <resources>
-    <array name="gps_colors">
+    <array name="gps_colors" translatable="false">
         <item>@color/app_very_red</item>
         <item>@color/app_some_yellow</item>
         <item>@color/app_much_green</item>
     </array>
 
-    <string-array name="certification_types">
+    <string-array name="certification_types" translatable="false">
         <item>@string/certification_type__none</item>
         <item>@string/certification_type__bio</item>
         <item>@string/certification_type__demeter</item>
@@ -17,33 +17,44 @@
         <item>@drawable/certification_type__demeter</item>
     </integer-array>
 
-    <string-array name="distribution_types">
+    <string-array name="distribution_types" translatable="false">
         <item>@string/distribution_type__free</item>
         <item>@string/distribution_type__voluntary_donation</item>
         <item>@string/distribution_type__sale</item>
         <item>@string/distribution_type__swap</item>
     </string-array>
 
-    <integer-array name="distribution_types__images">
+    <integer-array name="distribution_types__images" translatable="false">
         <item>@drawable/general_type__okay</item>
         <item>@drawable/distribution_type__donation</item>
         <item>@drawable/distribution_type__sale</item>
         <item>@drawable/distribution_type__swap</item>
     </integer-array>
 
-    <string-array name="gps_types_header">
+    <string-array name="gps_types_header" translatable="false">
         <item>@string/gps_type__none</item>
         <item>@string/gps_type__previous</item>
         <item>@string/gps_type__current</item>
     </string-array>
 
-    <string-array name="gps_types_text">
+    <string-array name="gps_types_text" translatable="false">
         <item>@string/gps_locating_user</item>
         <item>@string/gps_located_user</item>
         <item>@string/gps_located_user</item>
     </string-array>
 
-    <string-array name="entry_type__names">
+
+    <integer-array name="sponsor_image" translateable="false">
+        <item>@drawable/sponsor__01_land_oberoesterreich</item>
+        <item>@drawable/sponsor__02_klimaretterung</item>
+    </integer-array>
+
+    <string-array name="sponsor_link" translateable="false">
+        <item>https://www.land-oberoesterreich.gv.at/</item>
+        <item>http://www.klimarettung.at/</item>
+    </string-array>
+
+    <string-array name="entry_type__names" translatable="false">
         <!-- 000 -->
         <item>@string/entry_type__special__miscellaneous</item>
         <item>@string/entry_type__special__unknown</item>
