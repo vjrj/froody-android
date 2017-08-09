@@ -1,3 +1,6 @@
+### v1.0.4
+- Update opoc
+
 ### v1.0.3 (2017-08-04)
 - Update to android sdk26
 - Improve build script

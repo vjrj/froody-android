@@ -104,7 +104,7 @@ public class MoreFragment extends BaseFragment {
                 break;
             }
             case R.id.more__fragment__button_support__bitcoin_donation: {
-                Helpers.get().showDonateBitcoinRequest();
+                Helpers.get().showDonateBitcoinRequest(R.string.donate__bitcoin_id, R.string.donate__bitcoin_amount, R.string.donate__bitcoin_message, R.string.donate__bitcoin_url);
                 break;
             }
             case R.id.more__fragment__button_support__bug_report: {

@@ -67,7 +67,7 @@ public class Helpers extends io.github.gsantner.opoc.util.Helpers {
     }
 
     public Bitmap drawTextToBitmap(@DrawableRes int resId, String text, int textSize) {
-        Resources resources = context.getResources();
+        Resources resources = _context.getResources();
         float scale = resources.getDisplayMetrics().density;
         Bitmap bitmap = getBitmapFromDrawable(resId);
 
@@ -89,7 +89,7 @@ public class Helpers extends io.github.gsantner.opoc.util.Helpers {
 
     public Bitmap getBitmapFromDrawable(int drawableId) {
         Bitmap bitmap = null;
-        Drawable drawable = ContextCompat.getDrawable(context, drawableId);
+        Drawable drawable = ContextCompat.getDrawable(_context, drawableId);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && (drawable instanceof VectorDrawable || drawable instanceof VectorDrawableCompat)) {
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
                 drawable = (DrawableCompat.wrap(drawable)).mutate();

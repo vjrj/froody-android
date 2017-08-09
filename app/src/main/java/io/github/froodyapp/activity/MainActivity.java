@@ -41,7 +41,7 @@ import io.github.froodyapp.util.AppCast;
 import io.github.froodyapp.util.AppSettings;
 import io.github.froodyapp.util.BlockCache;
 import io.github.froodyapp.util.Helpers;
-import io.github.gsantner.opoc.util.HelpersA;
+import io.github.froodyapp.util.HelpersA;
 import io.github.gsantner.opoc.util.SimpleMarkdownParser;
 
 

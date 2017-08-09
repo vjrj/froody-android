@@ -15,7 +15,7 @@ import butterknife.ButterKnife;
 import io.github.froodyapp.BuildConfig;
 import io.github.froodyapp.R;
 import io.github.froodyapp.ui.CustomDialogs;
-import io.github.gsantner.opoc.util.HelpersA;
+import io.github.froodyapp.util.HelpersA;
 
 /**
  * Splash Screen
