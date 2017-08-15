@@ -1,4 +1,6 @@
 ### v1.0.4
+- App translated to more languages
+- Added metadata submodule
 - Update opoc
 
 ### v1.0.3 (2017-08-04)

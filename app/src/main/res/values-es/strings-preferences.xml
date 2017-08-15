@@ -3,7 +3,16 @@
 <resources>
   <!-- Map -->
   <string name="pref_summary__map_show_distribution_type">Mostrar el tipo de distribución en el mapa</string>
+  <string name="pref_summary__map_show_certification_type">Mostar el tipo de certificación en el mapa</string>
   <!-- Network -->
+  <string name="pref_title__froody_server">Cambiar servidor</string>
+  <string name="pref_title__clear_cache">Limpiar caché</string>
+  <string name="pref_desc__clear_cache">Limpiar la entrada de caché, última posición</string>
+  <string name="pref_desc__froody_server">Cambiar el servidor para recuperar entradas</string>
+  <string name="pref_summary__network__http_proxy_enabled">Usar Tor como proxy http para la mayoría del tráfico. Es posible que algunas librerías (ej. reverse geocoder) no soporten las conexiones vía un servidor proxy. El cambio requiere reinciar</string>
+  <string name="pref_title__network__http_proxy_enabled">Usar proxy http (Tor)</string>
   <!-- App -->
+  <string name="pref_cat__expert">Ajustes avanzados</string>
+  <string name="pref_desc__reset_app">Reinicia la app a su configuración inicial</string>
   <string name="pref_title__reset_app">Restablecer la app</string>
 </resources>

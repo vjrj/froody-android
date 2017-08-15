@@ -44,6 +44,7 @@
   <string name="show_app_licenses">ライセンスを表示</string>
   <string name="show_third_party_licenses">サードパーティ ライセンスを表示</string>
   <string name="more_information">詳細情報</string>
+  <string name="sponsors">スポンサー</string>
   <!-- Location -->
   <string name="request_location">場所をリクエスト</string>
   <string name="gps_locating_user">探しています&#8230;</string>

@@ -5,8 +5,14 @@
   <string name="pref_summary__map_show_distribution_type">Pokaż na mapie rodzaj dystrybucji</string>
   <string name="pref_summary__map_show_certification_type">Pokaż na mapie rodzaj certyfikacji</string>
   <!-- Network -->
+  <string name="pref_title__froody_server">Zmień serwer</string>
+  <string name="pref_title__clear_cache">Wyczyść pamięć podręczną</string>
+  <string name="pref_desc__clear_cache">Wyczyść pamięć podręczną, ostatnia pozycja</string>
+  <string name="pref_desc__froody_server">Zmiana serwera dla pobieranie wpisów</string>
   <string name="pref_summary__network__http_proxy_enabled">Używaj http proxy Tora do przesyłania większości danych. Niektóre biblioteki zewnętrzne (np. reverse geocoder) mogą nie wspierać połączenia przez proxy. Ta zmiana wymaga restartu</string>
   <string name="pref_title__network__http_proxy_enabled">Używaj http proxy (Tor)</string>
   <!-- App -->
   <string name="pref_cat__expert">Ustawienia zaawansowane</string>
+  <string name="pref_desc__reset_app">Uruchom ponownie aplikację aby odświeżyć zainstalowaną zawartość</string>
+  <string name="pref_title__reset_app">Uruchom aplikację ponownie</string>
 </resources>

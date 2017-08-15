@@ -27,3 +27,5 @@ Where:
 * **[Andrei Guliaikin](https://crowdin.com/profile/guland2000)**<br/>~° Russian translation
 * **[Victor Fisker](https://discord.gg/49dwg58)**<br/>~° Danish translation
 * **[Ayoub Ayad](https://crowdin.com/profile/ayoubzaem)**<br/>~° Arabic translation
+* **[Teo Bucur](https://crowdin.com/profile/morkeex)**<br/>~° Romanian translation
+* **[Bogdan Apostol](http://steamcommunity.com/id/danthegentleman)**<br/>~° Romanian translation
