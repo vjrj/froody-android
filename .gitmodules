@@ -1,3 +1,0 @@
-[submodule "fastlane/metadata"]
-	path = fastlane/metadata
-	url = https://github.com/froodyapp/froody-metadata-latest

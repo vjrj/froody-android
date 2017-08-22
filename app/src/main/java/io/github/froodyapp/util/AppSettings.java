@@ -180,4 +180,8 @@ public class AppSettings extends AppSettingsBase {
     public Proxy getNetworkHttpProxy() {
         return new Proxy(Proxy.Type.HTTP, InetSocketAddress.createUnresolved(getNetworkHttpProxyHost(), getNetworkHttpProxyPort()));
     }
+
+    public String getLanguage() {
+        return getString(R.string.pref_key__language, "");
+    }
 }

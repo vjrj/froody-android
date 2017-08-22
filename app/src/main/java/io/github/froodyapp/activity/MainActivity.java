@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Helpers.get().setAppLanguage(AppSettings.get().getLanguage());
         setContentView(R.layout.main__activity);
         ButterKnife.bind(this);
 
@@ -119,7 +120,8 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
                 dialogTitleResId = R.string.license;
             } else if (appSettings.isAppFirstStartCurrentVersion()) {
                 dialogHtml = mdParser.parse(
-                        getResources().openRawResource(R.raw.changelog), "").getHtml();
+                        getResources().openRawResource(R.raw.changelog), "",
+                        SimpleMarkdownParser.FILTER_ANDROID_TEXTVIEW, SimpleMarkdownParser.FILTER_CHANGELOG).getHtml();
                 dialogTitleResId = R.string.changelog;
             }
         } catch (IOException e) {
@@ -241,6 +243,11 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
 
     @Override
     protected void onResume() {
+        if (SettingActivity.activityRetVal == SettingActivity.RESULT.RESTART_REQ) {
+            SettingActivity.activityRetVal = SettingActivity.RESULT.NOCHANGE;
+            recreate();
+        }
+
         LocalBroadcastManager.getInstance(this).registerReceiver(localBroadcastReceiver, AppCast.getLocalBroadcastFilter());
         super.onResume();
     }

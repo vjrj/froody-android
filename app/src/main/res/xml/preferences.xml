@@ -67,6 +67,14 @@
         android:key="@string/pref_catkey__expert"
         android:title="@string/pref_cat__expert">
 
+        <!--suppress AndroidDomInspection -->
+        <io.github.gsantner.opoc.ui.LanguagePreference
+            android:icon="@drawable/ic_language_black_64dp"
+            android:defaultValue=""
+            android:key="@string/pref_key__language"
+            android:summary="@string/pref_desc__language"
+            android:title="@string/pref_title__language"/>
+
         <EditTextPreference
             android:defaultValue="@string/server_default"
             android:icon="@drawable/ic_public_black_52px"

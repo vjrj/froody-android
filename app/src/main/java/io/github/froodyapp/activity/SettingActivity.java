@@ -29,6 +29,7 @@ public class SettingActivity extends AppCompatActivity implements SharedPreferen
     static class RESULT {
         static final int NOCHANGE = -1;
         static final int CHANGED = 1;
+        static final int RESTART_REQ = 2;
     }
 
     @BindView(R.id.settings__appbar)
@@ -37,7 +38,7 @@ public class SettingActivity extends AppCompatActivity implements SharedPreferen
     protected Toolbar toolbar;
 
     private AppSettings appSettings;
-    private int activityRetVal = RESULT.NOCHANGE;
+    public static int activityRetVal = RESULT.NOCHANGE;
 
     public void onCreate(Bundle b) {
         super.onCreate(b);
@@ -94,6 +95,8 @@ public class SettingActivity extends AppCompatActivity implements SharedPreferen
             apiClient.setBasePath(appSettings.getFroodyServer());
             appSettings.setFroodyUserId(-1);
             new UserRegisterer(this).start();
+        } else if (key.equals(getString(R.string.pref_key__language))) {
+            activityRetVal = RESULT.RESTART_REQ;
         }
     }
 

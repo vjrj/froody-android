@@ -65,4 +65,5 @@
     <string name="pref_key__map_show_certification_type__none" translatable="false">pref_key__map_show_certification_type__none</string>
     <string name="pref_key__map_show_certification_type__demeter" translatable="false">pref_key__map_show_certification_type__demeter</string>
     <string name="pref_key__map_show_certification_type__bio" translatable="false">pref_key__map_show_certification_type__bio</string>
+    <string name="pref_key__language" translatable="false">pref_key__language</string>
 </resources>
