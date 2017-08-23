@@ -59,4 +59,6 @@
   <string name="report_bugs">Fehler\nmelden</string>
   <string name="about_the_app">Über\ndie App</string>
   <string name="error_incomplete_input">Unvollständige Eingabe</string>
+  <string name="pref_desc__language">Sprache der App ändern. Ein Neustart der App ist erforderlich um die Einstellung zu übernehmen</string>
+  <string name="pref_title__language">Sprache</string>
 </resources>

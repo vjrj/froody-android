@@ -3,17 +3,17 @@
 <resources>
   <string name="unknown">Невідомо</string>
   <!-- GPS Types -->
-  <string name="gps_type__none">Немає місця</string>
-  <string name="gps_type__previous">Попереднє місце</string>
-  <string name="gps_type__current">Поточне місце</string>
+  <string name="gps_type__none">Немає локації</string>
+  <string name="gps_type__previous">Попередня локація</string>
+  <string name="gps_type__current">Поточна локація</string>
   <!-- Certification Types -->
   <string name="certification_type__none">Немає</string>
-  <string name="certification_type__bio">Органічне</string>
+  <string name="certification_type__bio">Органіка</string>
   <!-- Distribution Types -->
   <string name="distribution_type__sale">Продаж</string>
   <string name="distribution_type__swap">Обмін</string>
   <string name="distribution_type__free">Безкоштовно</string>
-  <string name="distribution_type__voluntary_donation">Пожертвування</string>
+  <string name="distribution_type__voluntary_donation">Пожертва</string>
   <!-- Entry Types (Special) -->
   <string name="entry_type__special__miscellaneous">Різне</string>
   <string name="entry_type__special__water">Вода</string>

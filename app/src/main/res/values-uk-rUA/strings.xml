@@ -31,6 +31,12 @@
   <!-- Publish -->
   <string name="suggested">Пропоноване</string>
   <string name="select_froody">Обрати Froody&#8230;</string>
+  <string name="hint__description__enter_here">Введіть опис цього товару тут (напр. якість, для варення, підтип&#8230;)</string>
+  <string name="hint__contact__enter_here">Введіть контактні дані для цього товару тут (має містити ваш номер телефону чи email-адресу)</string>
+  <string name="publish_entry_now">Опублікувати зараз</string>
+  <string name="publish_entry">Опублікувати</string>
+  <string name="limited_time_active_notice">Увага! Товар дійсний ще %1$d дні(в) від цього часу.</string>
+  <string name="share_my_entry_at_froody">Мій товар у застосунку Froody</string>
   <string name="share_chooser_share_entry">Поділитися товаром</string>
   <string name="nav__my_entries">Мої товари</string>
   <string name="error_cannot_publish_entry">Помилка: неможливо опублікувати</string>
@@ -44,7 +50,12 @@
   <string name="gps_locating_user">Знаходження&#8230;</string>
   <string name="address_most_near">Поблизу</string>
   <string name="error_bad_permissions">Будь ласка, надайте Froody доступ до розташування вашого пристрою.\n\nБез цього дозволу ви не зможете публікувати товари у Froody і ваше поточне розташування буде неможливо визначити.\n\nВи зможете визначити розташування знову, натиснувши кнопку розташування на панелі вгорі.</string>
+  <string name="show_map_on_current_location">Показати мапу поточного розташування?</string>
+  <string name="cannot_locate_user">Неможливо визначити розташування користувача. Будь ласка, увімкніть визначення розташування в системних налаштуваннях!</string>
+  <string name="error_couldnt_connect_or_register">Помилка: неможливо під\'єднатися до сервера чи перевірити користувача.</string>
+  <string name="support_the_project">Підтримати проект</string>
   <string name="translate">Перекласти</string>
+  <string name="spread">Поширити</string>
   <string name="report_bugs">Повідомити\nпро помилку</string>
   <string name="about_the_app">Про\nзастосунок</string>
   <string name="error_incomplete_input">Помилка: незавершене введення</string>

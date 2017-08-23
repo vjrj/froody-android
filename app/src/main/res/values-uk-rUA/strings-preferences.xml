@@ -9,8 +9,8 @@
   <string name="pref_title__clear_cache">Очистити кеш</string>
   <string name="pref_desc__clear_cache">Очистити кеш товарів, останнє</string>
   <string name="pref_desc__froody_server">Змінити сервер для пошуку товарів</string>
-  <string name="pref_summary__network__http_proxy_enabled">Користуватися Tor як http-проксі для більшості трафіку. Окремі бібліотеки третіх осіб можуть не підтримувати з\'єднань із проксі. Потрібне перезавантаження</string>
-  <string name="pref_title__network__http_proxy_enabled">Використовувати http-проксі (Tor)</string>
+  <string name="pref_summary__network__http_proxy_enabled">Користуватися Tor як http-проксі для більшості трафіку. Окремі бібліотеки третіх сторін можуть не підтримувати з\'єднань із проксі. Потрібне перезавантаження</string>
+  <string name="pref_title__network__http_proxy_enabled">Користуватися http-проксі (Tor)</string>
   <!-- App -->
   <string name="pref_cat__expert">Розширені налаштування</string>
   <string name="pref_desc__reset_app">Скинути застосунок до початкового стану</string>

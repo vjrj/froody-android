@@ -44,6 +44,7 @@
   <string name="show_app_licenses">Прикажи лиценце</string>
   <string name="show_third_party_licenses">Прикажи лиценце треће стране</string>
   <string name="more_information">Више информација</string>
+  <string name="sponsors">Спонзори</string>
   <!-- Location -->
   <string name="request_location">Тражи локацију</string>
   <string name="gps_locating_user">Лоцирам&#8230;</string>

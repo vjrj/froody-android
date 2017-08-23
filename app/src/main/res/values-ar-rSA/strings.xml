@@ -26,6 +26,7 @@
   <string name="really_delete_entry">هل تريد حقاً أن حذف هذا الإدخال؟</string>
   <string name="share_entry_ask">إدخال حصة؟</string>
   <string name="share">مشاركة</string>
+  <string name="donate_bitcoin">تبرع\n بيتكوين</string>
   <string name="duration_days_left_text">أيام باقية</string>
   <!-- Publish -->
   <string name="suggested">مقترح</string>
@@ -36,12 +37,14 @@
   <string name="publish_entry">نشر</string>
   <string name="limited_time_active_notice">تحذير! الدخول متاحة الآن كمن أيام %1$d.</string>
   <string name="share_my_entry_at_froody">حسابي في التطبيق فرودي</string>
+  <string name="share_chooser_share_entry">إدخال حصة؟</string>
   <string name="nav__my_entries">عناصري</string>
   <string name="error_cannot_publish_entry">خطأ: لا يمكن نشر هذا</string>
   <!-- Info -->
   <string name="show_app_licenses">إظهار التراخيص</string>
   <string name="show_third_party_licenses">تراخيص الطرف الثالث</string>
   <string name="more_information">مزيد من المعلومات</string>
+  <string name="sponsors">الرعاة</string>
   <!-- Location -->
   <string name="request_location">مطلوب تحديد الموقع</string>
   <string name="gps_locating_user">تحديد مكان...</string>
