@@ -23,11 +23,9 @@ android {
         targetSdkVersion version_sdk.targetSdk
 
         versionCode 27
-        versionName "1.0.5"
+        versionName "1.0.5+"
 
         applicationId "io.github.froodyapp"
-        resValue 'string', 'app_name', "Froody"
-        manifestPlaceholders = [appIcon: "@drawable/ic_launcher"]
 
         buildConfigField "int", "ENTRY_LIFETIME_DAYS", "60"
         buildConfigField "boolean", "IS_TEST_BUILD", "false"
@@ -46,8 +44,6 @@ android {
 
         flavorTest {
             applicationId "io.github.froodyapp.test"
-            resValue 'string', 'app_name', "Frooty"
-            manifestPlaceholders = [appIcon: "@drawable/ic_launcher_test"]
             versionCode = Integer.parseInt(new Date().format('yyMMdd'))
             versionName = new Date().format('yyMMdd')
             buildConfigField "boolean", "IS_TEST_BUILD", "true"

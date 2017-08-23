@@ -36,10 +36,6 @@ public class SplashActivity extends AppCompatActivity {
         if (getSupportActionBar() != null)
             getSupportActionBar().hide();
 
-        if (BuildConfig.IS_TEST_BUILD) {
-            ((ImageView) findViewById(R.id.splash__activity__icon)).setImageResource(R.drawable.ic_launcher_test);
-        }
-
         requestStoragePermission();
     }
 
