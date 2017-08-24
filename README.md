@@ -1,15 +1,24 @@
-# ![Froody](https://avatars1.githubusercontent.com/u/24797651?v=3&s=48) Froody-Android
-
-<a name="badgers"></a>[![CircleCI](https://circleci.com/gh/froodyapp/froody-android.svg?style=shield)](https://circleci.com/gh/froodyapp/froody-android)
+[![GitHub release](https://img.shields.io/github/tag/froodyapp/froody-android.svg)](https://github.com/froodyapp/froody-android/releases)
+[![Donate](https://img.shields.io/badge/donate-bitcoin-orange.svg)](https://gsantner.github.io/#donate)
+[![CircleCI](https://circleci.com/gh/froodyapp/froody-android.svg?style=shield)](https://circleci.com/gh/froodyapp/froody-android)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/froodyapp/localized.svg)](https://crowdin.com/project/froodyapp)
-<span class="badge-bitcoin"><a href="https://gsantner.github.io/donate/#donate" title="Donate once-off to this project using Bitcoin"><img src="https://img.shields.io/badge/bitcoin-donate-yellow.svg" alt="Bitcoin donate button" /></a></span>[![Chat - Matrix](https://img.shields.io/badge/chat-on%20matrix-blue.svg)](https://matrix.to/#/#froodyapp:matrix.org) [![Chat - FreeNode IRC](https://img.shields.io/badge/chat-on%20irc-blue.svg)](https://kiwiirc.com/client/irc.freenode.net/?nick=froodyapp-anon|?#froodyapp)
+[![Chat - Matrix](https://img.shields.io/badge/chat-on%20matrix-blue.svg)](https://matrix.to/#/#froodyapp:matrix.org) [![Chat - FreeNode IRC](https://img.shields.io/badge/chat-on%20irc-blue.svg)](https://kiwiirc.com/client/irc.freenode.net/?nick=froody-anon|?#froodyapp)
 
+# Froody
+<img src="/app/src/main/ic_launcher-web.png" align="left" width="100" hspace="10" vspace="10">
+Android part of the <a href="https://froodyapp.github.io/">Froody</a> project.
+Share food that grows naturally. The projects idea is to share to and help other people by e.g. sharing pears, 
+which would rot anyway if unused. Intended to use in the local area.
 
-Android part of the [Froody](https://froodyapp.github.io) application.
-Developed and maintained by [Gregor Santner](<https://gsantner.github.io>), 2016-  
-License: **Apache 2.0**  
+<div style="display:flex;" >
+<a href="https://f-droid.org/repository/browse/?fdid=io.github.froodyapp">
+    <img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="80">
+</a>
+<a href="https://play.google.com/store/apps/details?id=io.github.froodyapp">
+    <img alt="Get it on Google Play" height="80" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" />
+</a>
+</div></br>
 
-[![F-Droid](https://f-droid.org/wiki/images/0/06/F-Droid-button_get-it-on.png)](https://f-droid.org/repository/browse/?fdid=io.github.froodyapp) [![Google Play](https://raw.githubusercontent.com/froodyapp/froody-extras/master/graphics/stores/en_badge_web_generic_small.png)](https://play.google.com/store/apps/details?id=io.github.froodyapp&referrer=utm_source%3Dgithub)
 
 ## Description
 * Lets you share (mainly naturally growing) food to others
@@ -19,21 +28,7 @@ License: **Apache 2.0**
 * Entries will be available 60 days
 * Available in many languages
 
-## Contributions<a name="contributions"></a>
-The project is always open for contributions and accepts pull requests.
-The project uses [AOSP Java Code Style](https://source.android.com/source/code-style#follow-field-naming-conventions), with one exception: private members are `_camelCase` instead of `mBigCamel`. You may use Android Studios _auto reformat feature_ before sending a PR.
-
-Join our IRC or Matrix channel (bridged) and say hello! Don't be afraid to start talking. [![Chat - Matrix](https://img.shields.io/badge/chat-on%20matrix-blue.svg)](https://matrix.to/#/#froodyapp:matrix.org) [![Chat - FreeNode IRC](https://img.shields.io/badge/chat-on%20irc-blue.svg)](https://kiwiirc.com/client/irc.freenode.net/?nick=froodyapp-anon|?#froodyapp)
-
-Translations can be contributed on [Crowdin](https://crowdin.com/project/froodyapp). [![Crowdin](https://d322cqt584bo4o.cloudfront.net/froodyapp/localized.svg)](https://crowdin.com/project/froodyapp)
-
-
-* Share the app and tell other people about it
-* Tell things that could be improvedp
-* Supply artwork or vector icons for the different types of entries
-
-
-## Permissions & Privacy<a name="privacy"></a>
+### Permissions & Privacy<a name="privacy"></a>
 * The app requests your location so you can create entries and automatically zoom to your location
 * If you add a new entry the location gets
   * Reverse geocoded via OpenStreetMap Nominatim
@@ -43,23 +38,54 @@ Translations can be contributed on [Crowdin](https://crowdin.com/project/froodya
 * You can delete your entries by tapping the trash icon or ask for removal by email
   * Entries will get automatically get removed after 60 days unless deleted
 
-## Notices
+## Contributions
+The project is always open for contributions and accepts pull requests.
+The project uses [AOSP Java Code Style](https://source.android.com/source/code-style#follow-field-naming-conventions), with one exception: private members are `_camelCase` instead of `mBigCamel`. You may use Android Studios _auto reformat feature_ before sending a PR.
+
+Translations can be contributed on [Crowdin](https://crowdin.com/project/froodyapp). [![Crowdin](https://d322cqt584bo4o.cloudfront.net/froodyapp/localized.svg)](https://crowdin.com/project/froodyapp)
+
+Join our IRC or Matrix channel (bridged) and say hello! Don't be afraid to start talking. [![Chat - Matrix](https://img.shields.io/badge/chat-on%20matrix-blue.svg)](https://matrix.to/#/#froodyapp:matrix.org) [![Chat - FreeNode IRC](https://img.shields.io/badge/chat-on%20irc-blue.svg)](https://kiwiirc.com/client/irc.freenode.net/?nick=froodyapp-anon|?#froodyapp)
+
+* Share the app and tell other people about it
+* Tell things that could be improvedp
+* Supply artwork or vector icons for the different types of entries
+
+
+If you like my work on <b>Froody</b> and many other Open Source projects, consider a small donation to my bitcoin address:
+<a href="https://gsantner.github.io/#donate">1B9ZyYdQoY9BxMe9dRUEKaZbJWsbQqfXU5</a>
+
+
+#### Resources
+* Project: [Changelog](/CHANGELOG.md) | [Issues level/beginner](https://github.com/froodyapp/froody-android/issues?q=is%3Aissue+is%3Aopen+label%3Alevel%2Fbeginner) | [License](/LICENSE.txt) | [CoC](/CODE_OF_CONDUCT.md)
+* App on F-Droid: [Metadata](https://gitlab.com/fdroid/fdroiddata/blob/master/metadata/io.github.froodyapp.txt) | [Page](https://f-droid.org/packages/io.github.froodyapp/) | [Wiki](https://f-droid.org/wiki/page/io.github.froodyapp) | [Build log](https://f-droid.org/wiki/page/io.github.froodyapp/lastbuild)
+* Froody: [Homepage](https://froodyapp.github.io/)
+
+Froody is released under Apache 2.0 LICENSE (see [LICENCE](https://github.com/froodyapp/froody-android/blob/master/LICENSE.txt)).  
+Localization files and resources (strings-\*.xml) are licensed CC0 1.0.
+
+## Licensing<a name="license"></a>
+Project created and maintained by <a href="https://gsantner.github.io">Gregor Santner</a> since 2016.
+The code of the app is licensed Apache 2.0. Localization files and resources (string\*.xml) are licensed CC0 1.0.
+For more licensing informations, see [`3rd party licenses`](/app/src/main/res/raw/licenses_3rd_party.md).
+
+## Screenshots
+<div style="display:flex;" >
+	<img src="https://raw.githubusercontent.com/froodyapp/froody-metadata-latest/master/en-US/phoneScreenshots/01.png" width="19%" >
+	<img src="https://raw.githubusercontent.com/froodyapp/froody-metadata-latest/master/en-US/phoneScreenshots/02.png" width="19%" style="margin-left:10px;" >
+	<img src="https://raw.githubusercontent.com/froodyapp/froody-metadata-latest/master/en-US/phoneScreenshots/03.png" width="19%" style="margin-left:10px;" >
+	<img src="https://raw.githubusercontent.com/froodyapp/froody-metadata-latest/master/en-US/phoneScreenshots/04.png" width="19%" style="margin-left:10px;" >
+	<img src="https://raw.githubusercontent.com/froodyapp/froody-metadata-latest/master/en-US/phoneScreenshots/05.png" width="19%" style="margin-left:10px;" >
+</div>
+
+<div style="display:flex;" >
+	<img src="https://raw.githubusercontent.com/froodyapp/froody-metadata-latest/master/en-US/phoneScreenshots/06.png" width="19%" >
+	<img src="https://raw.githubusercontent.com/froodyapp/froody-metadata-latest/master/en-US/phoneScreenshots/07.png" width="19%" style="margin-left:10px;" >
+	<img src="https://raw.githubusercontent.com/froodyapp/froody-metadata-latest/master/en-US/phoneScreenshots/08.png" width="19%" style="margin-left:10px;" >
+	<img src="https://raw.githubusercontent.com/froodyapp/froody-metadata-latest/master/en-US/phoneScreenshots/11.png" width="19%" style="margin-left:10px;" >
+</div>
+
+
+### Notice
 The default `froody-server` instance is hosted by [gsantner](https://gsantner.github.io/).
 The default server domain `froody-app.at` is sponsored by [Robert Diesenreither](http://www.zero-emission.at/index.php).
 The app uses OpenStreetMap for displaying maps.
-
-### License
-Froody is released under Apache 2.0 LICENSE (see [LICENCE](https://github.com/froodyapp/froody-android/blob/master/LICENSE.txt)).  
-Localization files and ressources (strings-\*.xml) are licensed CC0 1.0.
-
-## Screenshots
-
-<table>
-  <tr>
-    <td> <img src="https://raw.githubusercontent.com/froodyapp/froody-metadata-latest/master/en-US/phoneScreenshots/01.png" alt="Map view"/> </td>
-    <td> <img src="https://raw.githubusercontent.com/froodyapp/froody-metadata-latest/master/en-US/phoneScreenshots/07.png" alt="Detail view"/> </td>
-  </tr><tr>
-    <td> <img src="https://raw.githubusercontent.com/froodyapp/froody-metadata-latest/master/en-US/phoneScreenshots/02.png" alt="Publish view"/> </td>
-    <td> <img src="https://raw.githubusercontent.com/froodyapp/froody-metadata-latest/master/en-US/phoneScreenshots/04.png" alt="More view" /> </td>
-  </tr>
-</table>
