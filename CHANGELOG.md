@@ -1,3 +1,6 @@
+### v1.0.6
+- Fixed: Language list when building outside of project root
+
 ### v1.0.5
 - Added: Settings option: Language
 - Updated: Changelog text & visuals
