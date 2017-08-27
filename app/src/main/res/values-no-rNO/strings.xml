@@ -14,7 +14,7 @@
   <string name="about_">Om</string>
   <!-- More general words -->
   <string name="search_dotdotdot">Søk&#8230;</string>
-  <string name="distribution_type">Fordeling</string>
+  <string name="distribution_type">Tilgjengelighet</string>
   <string name="certification">Sertifisering</string>
   <string name="contact">Kontakt</string>
   <string name="map">Kart</string>
@@ -59,4 +59,6 @@
   <string name="report_bugs">Rapportér\nfeil</string>
   <string name="about_the_app">Om\nappen</string>
   <string name="error_incomplete_input">Feil: Ufullstendig data</string>
+  <string name="pref_desc__language">Bytt språket for denne appen og omstart den for at endringen skal ta sted</string>
+  <string name="pref_title__language">Språk</string>
 </resources>

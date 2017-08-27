@@ -59,4 +59,6 @@
   <string name="report_bugs">Rapporter\nfejl</string>
   <string name="about_the_app">Om</string>
   <string name="error_incomplete_input">Fejl: ukomplet input</string>
+  <string name="pref_desc__language">Ændre applikationens sprog. Genstart for at ændringen træder i kraft</string>
+  <string name="pref_title__language">Sprog</string>
 </resources>

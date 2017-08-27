@@ -59,4 +59,6 @@
   <string name="report_bugs">Повідомити\nпро помилку</string>
   <string name="about_the_app">Про\nзастосунок</string>
   <string name="error_incomplete_input">Помилка: незавершене введення</string>
+  <string name="pref_desc__language">Змінити мову застосунка. Перезапустіть, аби застосувати зміни</string>
+  <string name="pref_title__language">Мова</string>
 </resources>

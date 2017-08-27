@@ -59,4 +59,6 @@
   <string name="report_bugs">Segnala\nbugs</string>
   <string name="about_the_app">Informazioni\nsull\'app</string>
   <string name="error_incomplete_input">Errore: inserimento incompleto</string>
+  <string name="pref_desc__language">Cambia la lingua di questa app. Riavvia l\'app per rendere effettive le modifiche</string>
+  <string name="pref_title__language">Lingua</string>
 </resources>

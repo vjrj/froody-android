@@ -59,4 +59,6 @@
   <string name="report_bugs">バグを\n報告</string>
   <string name="about_the_app">アプリ\nについて</string>
   <string name="error_incomplete_input">エラー: 入力が不完全です</string>
+  <string name="pref_desc__language">このアプリの言語を変更します。アプリを再起動すると変更を反映します</string>
+  <string name="pref_title__language">言語</string>
 </resources>
