@@ -46,12 +46,12 @@
   <string name="more_information">Więcej informacji</string>
   <string name="sponsors">Sponsorzy</string>
   <!-- Location -->
-  <string name="request_location">Zapytaj o lokalizację</string>
+  <string name="request_location">Zapytanie o lokalizację</string>
   <string name="gps_locating_user">Lokalizowanie&#8230;</string>
   <string name="address_most_near">W pobliżu</string>
-  <string name="error_bad_permissions">Proszę o pozwolenie Froody na dostęp do lokalizacji urządzenia.\n\nW przeciwnym wypadku nie będziesz mógł dodawać wpisów do Froody i nie będzie można określić Twojej pozycji na mapie.\n\nMożesz ponownie ustalić położenie poprzez naciśnięcie przycisku położenia w górnym pasku narzędzi.</string>
+  <string name="error_bad_permissions">Froody prosi o pozwolenie na dostęp do lokalizacji urządzenia.\n\nW przeciwnym wypadku nie będziesz mógł dodawać wpisów do Froody i nie będzie można określić Twojej pozycji na mapie.\n\nMożesz ponownie ustalić położenie poprzez naciśnięcie przycisku położenia w górnym pasku narzędzi.</string>
   <string name="show_map_on_current_location">Wyśrodkować mapę na bieżącej lokalizacji?</string>
-  <string name="cannot_locate_user">Nie znaleziono użytkownika. Włącz usługę lokalizacji w ustawieniach systemu!</string>
+  <string name="cannot_locate_user">Nie udało się zlokalizować użytkownika. Włącz usługę lokalizacji w ustawieniach systemu!</string>
   <string name="error_couldnt_connect_or_register">Błąd: Nie udało się połączyć z serwerem lub sprawdzić użytkownika.</string>
   <string name="support_the_project">Wesprzyj projekt</string>
   <string name="translate">Przetłumacz</string>

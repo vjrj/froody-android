@@ -29,3 +29,6 @@ Where:
 * **[Ayoub Ayad](https://crowdin.com/profile/ayoubzaem)**<br/>~° Arabic translation
 * **[Teo Bucur](https://crowdin.com/profile/morkeex)**<br/>~° Romanian translation
 * **[Bogdan Apostol](http://steamcommunity.com/id/danthegentleman)**<br/>~° Romanian translation
+* **[asereze](https://github.com/asereze)**<br/>~° Sardinian translation
+* **[Gwilherm Baudic](https://github.com/gbaudic)**<br/>~° French translation
+

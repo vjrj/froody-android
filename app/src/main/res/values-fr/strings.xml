@@ -59,4 +59,6 @@
   <string name="report_bugs">Signaler\nun bug</string>
   <string name="about_the_app">A propos\nde l\'application</string>
   <string name="error_incomplete_input">Erreur : saisie incomplète</string>
+  <string name="pref_desc__language">Change la langue de l\'application. Redémarrez l\'application pour que les changements prennent effet</string>
+  <string name="pref_title__language">Langue</string>
 </resources>

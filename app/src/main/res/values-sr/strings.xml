@@ -59,4 +59,6 @@
   <string name="report_bugs">Пријавите\nгрешке</string>
   <string name="about_the_app">О програму</string>
   <string name="error_incomplete_input">Грешка: непотпун унос</string>
+  <string name="pref_desc__language">Промените језик апликације. Поново покрените након тога</string>
+  <string name="pref_title__language">Језик</string>
 </resources>
