@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 import io.github.froodyapp.BuildConfig;
 import io.github.froodyapp.api.model_.BlockInfo;
-import io.github.froodyapp.util.Helpers;
+import io.github.froodyapp.util.ContextUtils;
 
 /**
  * BlockInfo with more details
@@ -42,11 +42,11 @@ public class BlockInfoPlus extends BlockInfo implements Serializable {
 
 
     private void setModificationDateToEntryLifetimeDaysAgo() {
-        setModificationDate(Helpers.get().getNow().minusDays(BuildConfig.ENTRY_LIFETIME_DAYS));
+        setModificationDate(ContextUtils.get().getNow().minusDays(BuildConfig.ENTRY_LIFETIME_DAYS));
     }
 
     public void setModificationDateToNow() {
-        setModificationDate(Helpers.get().getNow());
+        setModificationDate(ContextUtils.get().getNow());
     }
 
     public void setNewerBlockInfo(BlockInfo newerBlockInfo) {

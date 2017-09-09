@@ -20,7 +20,7 @@ import io.github.froodyapp.api.invoker.Configuration;
 import io.github.froodyapp.service.UserRegisterer;
 import io.github.froodyapp.util.AppSettings;
 import io.github.froodyapp.util.BlockCache;
-import io.github.froodyapp.util.Helpers;
+import io.github.froodyapp.util.ContextUtils;
 import io.github.froodyapp.util.MyEntriesHelper;
 
 public class SettingActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
@@ -123,7 +123,7 @@ public class SettingActivity extends AppCompatActivity implements SharedPreferen
                 switch (preference.getTitleRes()) {
                     case R.string.pref_title__clear_cache: {
                         BlockCache.getInstance().clearCache(context);
-                        Helpers.get().restartApp(MainActivity.class);
+                        ContextUtils.get().restartApp(MainActivity.class);
                         break;
                     }
 
@@ -131,7 +131,7 @@ public class SettingActivity extends AppCompatActivity implements SharedPreferen
                         BlockCache.getInstance().clearCache(context);
                         new MyEntriesHelper(context).deleteMyEntries();
                         settings.resetSettings();
-                        Helpers.get().restartApp(MainActivity.class);
+                        ContextUtils.get().restartApp(MainActivity.class);
                         break;
                     }
                 }

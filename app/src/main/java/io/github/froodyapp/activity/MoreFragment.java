@@ -23,7 +23,7 @@ import io.github.froodyapp.model.FroodyEntryPlus;
 import io.github.froodyapp.ui.BaseFragment;
 import io.github.froodyapp.util.AppCast;
 import io.github.froodyapp.util.AppSettings;
-import io.github.froodyapp.util.Helpers;
+import io.github.froodyapp.util.ContextUtils;
 import io.github.froodyapp.util.MyEntriesHelper;
 
 public class MoreFragment extends BaseFragment {
@@ -104,7 +104,7 @@ public class MoreFragment extends BaseFragment {
                 break;
             }
             case R.id.more__fragment__button_support__bitcoin_donation: {
-                Helpers.get().showDonateBitcoinRequest(R.string.donate__bitcoin_id, R.string.donate__bitcoin_amount, R.string.donate__bitcoin_message, R.string.donate__bitcoin_url);
+                ContextUtils.get().showDonateBitcoinRequest(R.string.donate__bitcoin_id, R.string.donate__bitcoin_amount, R.string.donate__bitcoin_message, R.string.donate__bitcoin_url);
                 break;
             }
             case R.id.more__fragment__button_support__bug_report: {

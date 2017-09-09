@@ -15,7 +15,7 @@ import butterknife.ButterKnife;
 import io.github.froodyapp.BuildConfig;
 import io.github.froodyapp.R;
 import io.github.froodyapp.ui.CustomDialogs;
-import io.github.froodyapp.util.HelpersA;
+import io.github.froodyapp.util.ActivityUtils;
 
 /**
  * Splash Screen
@@ -93,7 +93,7 @@ public class SplashActivity extends AppCompatActivity {
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
-                HelpersA.get(SplashActivity.this).animateToActivity(MainActivity.class, true, null);
+                ActivityUtils.get(SplashActivity.this).animateToActivity(MainActivity.class, true, null);
             }
         }, skipDelay ? 0 : delay);
     }

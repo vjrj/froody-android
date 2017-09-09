@@ -40,9 +40,9 @@ import io.github.froodyapp.ui.BaseFragment;
 import io.github.froodyapp.util.AppCast;
 import io.github.froodyapp.util.AppSettings;
 import io.github.froodyapp.util.BlockCache;
-import io.github.froodyapp.util.Helpers;
-import io.github.froodyapp.util.HelpersA;
-import io.github.gsantner.opoc.util.SimpleMarkdownParser;
+import io.github.froodyapp.util.ContextUtils;
+import io.github.froodyapp.util.ActivityUtils;
+import net.gsantner.opoc.util.SimpleMarkdownParser;
 
 
 /**
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Helpers.get().setAppLanguage(AppSettings.get().getLanguage());
+        ContextUtils.get().setAppLanguage(AppSettings.get().getLanguage());
         setContentView(R.layout.main__activity);
         ButterKnife.bind(this);
 
@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
         }
         // Show dialog
         if (dialogHtml != null) {
-            HelpersA.get(this).showDialogWithHtmlTextView(dialogTitleResId, dialogHtml, true, new DialogInterface.OnDismissListener() {
+            ActivityUtils.get(this).showDialogWithHtmlTextView(dialogTitleResId, dialogHtml, true, new DialogInterface.OnDismissListener() {
                 public void onDismiss(DialogInterface dialog) {
                     requestLocation(getClass().getName());
                 }
@@ -369,7 +369,7 @@ public class MainActivity extends AppCompatActivity implements FroodyEntrySelect
 
                 // Show snackbar if far away
                 boolean isNear = false;
-                String curPosHash = Helpers.get().latLngToGeohash(location.lat, location.lng, 5);
+                String curPosHash = ContextUtils.get().latLngToGeohash(location.lat, location.lng, 5);
                 GeoHash center = mapFragment.getMapCenterAsGeohash(5);
                 for (GeoHash gh : center.getAdjacent()) {
                     isNear = gh.toBase32().equals(curPosHash) || isNear;

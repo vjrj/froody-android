@@ -16,7 +16,7 @@ import java.util.List;
 import io.github.froodyapp.R;
 import io.github.froodyapp.listener.EntryTypeSelectedListener;
 import io.github.froodyapp.util.FroodyEntryFormatter;
-import io.github.froodyapp.util.Helpers;
+import io.github.froodyapp.util.ContextUtils;
 
 /**
  * A recyclerview adapter for froody entries
@@ -68,7 +68,7 @@ public class RecyclerEntryTypeAdapter extends RecyclerView.Adapter<UiFroodyItemV
         holder.textInfo.setVisibility(View.GONE);
         holder.textEntryTypeName.setTextSize(TypedValue.COMPLEX_UNIT_SP, 19);
         holder.textEntryTypeName.setTypeface(null, Typeface.NORMAL);
-        holder.divider.setBackgroundColor(Helpers.get().color(R.color.divider));
+        holder.divider.setBackgroundColor(ContextUtils.get().color(R.color.divider));
 
 
         final int entryType = adapterDataFiltered.get(position);

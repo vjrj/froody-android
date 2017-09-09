@@ -15,7 +15,7 @@ import io.github.froodyapp.api.model_.FroodyEntry;
 import io.github.froodyapp.model.FroodyEntryPlus;
 
 /**
- * Froody entry util (formatting, helpers)
+ * Froody entry util (formatting, ContextUtils)
  */
 public class FroodyEntryFormatter extends FroodyEntryPlus {
     //########################

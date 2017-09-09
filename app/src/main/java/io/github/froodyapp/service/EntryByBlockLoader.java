@@ -20,7 +20,7 @@ import io.github.froodyapp.model.BlockInfoPlus;
 import io.github.froodyapp.model.FroodyEntryPlus;
 import io.github.froodyapp.util.AppCast;
 import io.github.froodyapp.util.BlockCache;
-import io.github.froodyapp.util.Helpers;
+import io.github.froodyapp.util.ContextUtils;
 
 /**
  * Task for loading blocks via API
@@ -59,7 +59,7 @@ public class EntryByBlockLoader extends Thread {
         BlockInfo blockInfo;
         BlockCache.BlockCacheItem blockCacheItem = blockCache.getBlockCacheItemAt(geohash);
         if (blockCacheItem == null) {
-            blockInfo = new BlockInfoPlus(geohash, Helpers.get().getNow().minusDays(BuildConfig.ENTRY_LIFETIME_DAYS));
+            blockInfo = new BlockInfoPlus(geohash, ContextUtils.get().getNow().minusDays(BuildConfig.ENTRY_LIFETIME_DAYS));
         } else {
             blockInfo = blockCacheItem.blockInfo;
         }
@@ -74,7 +74,7 @@ public class EntryByBlockLoader extends Thread {
                 // For every block
                 try {
                     // Request new/modified blocks from server
-                    DateTime requestedAt = Helpers.get().getNow();
+                    DateTime requestedAt = ContextUtils.get().getNow();
                     List<FroodyEntry> entries = blockApi.blockGetGet(bpu.getGeohash(), bpu.getPreviousModificationDate());
 
                     // Process entries from server into local cache

@@ -175,7 +175,7 @@ public class BlockCache {
             if (cacheItem == null) {
                 // Won't happen, because extended entries will retrieved by existing ones
                 cacheItem = new BlockCacheItem();
-                cacheItem.blockInfo = new BlockInfoPlus(block5, Helpers.get().getNow());
+                cacheItem.blockInfo = new BlockInfoPlus(block5, ContextUtils.get().getNow());
             }
 
             // Delete from cache

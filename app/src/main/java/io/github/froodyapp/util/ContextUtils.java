@@ -25,14 +25,14 @@ import io.github.froodyapp.api.invoker.ApiClient;
 import io.github.froodyapp.api.invoker.Configuration;
 
 @SuppressWarnings("WeakerAccess")
-public class Helpers extends io.github.gsantner.opoc.util.Helpers {
-    protected Helpers(Context context) {
+public class ContextUtils extends net.gsantner.opoc.util.ContextUtils {
+    protected ContextUtils(Context context) {
         super(context);
     }
 
 
-    public static Helpers get() {
-        return new Helpers(App.get());
+    public static ContextUtils get() {
+        return new ContextUtils(App.get());
     }
 
 

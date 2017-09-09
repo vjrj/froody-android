@@ -40,7 +40,7 @@ import io.github.froodyapp.model.FroodyEntryPlus;
 import io.github.froodyapp.ui.BaseFragment;
 import io.github.froodyapp.util.AppSettings;
 import io.github.froodyapp.util.BlockCache;
-import io.github.froodyapp.util.Helpers;
+import io.github.froodyapp.util.ContextUtils;
 
 @SuppressWarnings("FieldCanBeLocal")
 public class MapOSMFragment extends BaseFragment implements MapListener {
@@ -129,7 +129,7 @@ public class MapOSMFragment extends BaseFragment implements MapListener {
         map.getOverlays().add(overlayCopyrightOsm);
 
         // Cluster
-        Drawable clusterIconD = Helpers.get().drawable(R.drawable.green_circle);
+        Drawable clusterIconD = ContextUtils.get().drawable(R.drawable.green_circle);
         mapCluster.setIcon(((BitmapDrawable) clusterIconD).getBitmap());
 
         // Load entries with existing management code

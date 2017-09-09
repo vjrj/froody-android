@@ -44,7 +44,7 @@ import io.github.froodyapp.util.AppCast;
 import io.github.froodyapp.util.AppSettings;
 import io.github.froodyapp.util.BlockCache;
 import io.github.froodyapp.util.FroodyEntryFormatter;
-import io.github.froodyapp.util.Helpers;
+import io.github.froodyapp.util.ContextUtils;
 import io.github.froodyapp.util.MyEntriesHelper;
 
 /**
@@ -149,7 +149,7 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
         // Simulate a location
         String[] lastFoundLocation = appSettings.getLastFoundLocation();
         if (!lastFoundLocation[0].isEmpty()) {
-            Double[] latlng = Helpers.get().geohashToLatLng(lastFoundLocation[0]);
+            Double[] latlng = ContextUtils.get().geohashToLatLng(lastFoundLocation[0]);
             if (latlng != null) {
                 LocationTool.LocationToolResponse location = new LocationTool.LocationToolResponse();
                 location.provider = "net";
@@ -189,10 +189,10 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
 
         // Apply to UI
         for (AppCompatButton b : buttonDistribution) {
-            Helpers.get().setTintColorOfButton(b, R.color.default_button_bgcolor);
+            ContextUtils.get().setTintColorOfButton(b, R.color.default_button_bgcolor);
             //b.setTextColor(ContextCompat.getColor(getContext(), R.color.primary_text));
         }
-        Helpers.get().setTintColorOfButton(buttonDistribution[index], R.color.app_some_yellow);
+        ContextUtils.get().setTintColorOfButton(buttonDistribution[index], R.color.app_some_yellow);
         //buttonDistribution[index].setTextColor(ContextCompat.getColor(getContext(), R.color.white));
     }
 
@@ -218,10 +218,10 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
 
         // Apply to UI
         for (AppCompatButton b : buttonCertification) {
-            Helpers.get().setTintColorOfButton(b, R.color.default_button_bgcolor);
+            ContextUtils.get().setTintColorOfButton(b, R.color.default_button_bgcolor);
             //b.setTextColor(ContextCompat.getColor(getContext(), R.color.primary_text));
         }
-        Helpers.get().setTintColorOfButton(buttonCertification[index], R.color.app_some_yellow);
+        ContextUtils.get().setTintColorOfButton(buttonCertification[index], R.color.app_some_yellow);
         //buttonCertification[index].setTextColor(ContextCompat.getColor(getContext(), R.color.white));
     }
 
@@ -239,8 +239,8 @@ public class PublishEntryFragment extends BaseFragment implements EntryPublisher
      */
     private void recheckUserInput() {
         boolean valid = hasValidInput();
-        int black = Helpers.get().color(R.color.primary_text);
-        int red = Helpers.get().color(R.color.app_very_red);
+        int black = ContextUtils.get().color(R.color.primary_text);
+        int red = ContextUtils.get().color(R.color.app_very_red);
 
         textDescriptionHeader.setTextColor(editDescription.getText().toString().isEmpty() ? red : black);
         textContactHeader.setTextColor(editContact.getText().toString().isEmpty() ? red : black);

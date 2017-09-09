@@ -7,7 +7,7 @@ import android.util.Log;
 
 import io.github.froodyapp.service.UserRegisterer;
 import io.github.froodyapp.util.AppSettings;
-import io.github.froodyapp.util.Helpers;
+import io.github.froodyapp.util.ContextUtils;
 import io.github.froodyapp.util.MyEntriesHelper;
 
 
@@ -53,7 +53,7 @@ public class App extends Application {
 
 
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
-        Helpers.get().setupFroodyApi();
+        ContextUtils.get().setupFroodyApi();
 
         new UserRegisterer(this).start();
         new MyEntriesHelper(this).processMyEntriesToBlockCache();

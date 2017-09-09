@@ -11,7 +11,7 @@ import io.github.froodyapp.BuildConfig;
 import io.github.froodyapp.R;
 import io.github.froodyapp.activity.MapOSMFragment;
 import io.github.froodyapp.api.model_.FroodyUser;
-import io.github.gsantner.opoc.util.AppSettingsBase;
+import net.gsantner.opoc.util.AppSettingsBase;
 
 /**
  * Settings Wrapper for the app

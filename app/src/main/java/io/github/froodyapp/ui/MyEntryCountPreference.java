@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import io.github.froodyapp.R;
-import io.github.froodyapp.util.Helpers;
+import io.github.froodyapp.util.ContextUtils;
 import io.github.froodyapp.util.MyEntriesHelper;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
@@ -40,7 +40,7 @@ public class MyEntryCountPreference extends Preference {
         int newValue = new MyEntriesHelper(getContext()).getMyEntriesCount();
         if (bitmap == null || currentValue != newValue) {
             currentValue = newValue;
-            bitmap = Helpers.get().drawTextToBitmap(R.drawable.empty_64dp, String.valueOf(currentValue), 32);
+            bitmap = ContextUtils.get().drawTextToBitmap(R.drawable.empty_64dp, String.valueOf(currentValue), 32);
         }
         icon.setImageBitmap(bitmap);
     }
