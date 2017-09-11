@@ -18,6 +18,7 @@ files:
         pt-PT: pt       # Portugese
         pt-BR: pt-rBR   # Portugese (Brazilian)
         zh-CN: zh-rCN   # Chinese (Simplified)
+        sc: sc       # Sardinian
 #       hi: hi          # Hindi
 #       el: el          # Greel
 #       "no": 'no'      # Norwegian

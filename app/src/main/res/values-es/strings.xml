@@ -59,4 +59,6 @@
   <string name="report_bugs">Reportar\nerrores</string>
   <string name="about_the_app">Acerca de\nla app</string>
   <string name="error_incomplete_input">Error: Entrada incompleta</string>
+  <string name="pref_desc__language">Cambiar el idioma de esta app. Reinicie la aplicación para que los cambios surtan efecto</string>
+  <string name="pref_title__language">Idioma</string>
 </resources>
