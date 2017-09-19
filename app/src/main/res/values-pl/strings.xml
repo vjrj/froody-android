@@ -59,4 +59,6 @@
   <string name="report_bugs">Zgłaszaj\nbłędy</string>
   <string name="about_the_app">O aplikacji</string>
   <string name="error_incomplete_input">Błąd: nie wpisano wszystkich danych</string>
+  <string name="pref_desc__language">Zmień język aplikacji. Uruchom ponownie aplikację by zobaczyć zmianę</string>
+  <string name="pref_title__language">Język</string>
 </resources>

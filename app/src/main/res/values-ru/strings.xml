@@ -59,4 +59,6 @@
   <string name="report_bugs">Сообщить t\nоб ошибках</string>
   <string name="about_the_app">О\nприложении</string>
   <string name="error_incomplete_input">Ошибка: мало данных</string>
+  <string name="pref_desc__language">Изменить язык приложения. Перезапустите приложение, чтобы изменения вступили в силу</string>
+  <string name="pref_title__language">Язык</string>
 </resources>
