@@ -22,8 +22,8 @@ android {
         minSdkVersion version_sdk.minSdk
         targetSdkVersion version_sdk.targetSdk
 
-        versionCode 29
-        versionName "1.0.7"
+        versionCode 30
+        versionName "1.0.8"
 
         applicationId "io.github.froodyapp"
 
