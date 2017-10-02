@@ -1,5 +1,6 @@
 ### v1.0.8
 - Added: Kabyle translation
+- Modified: Default domain
 
 ### v1.0.6
 - Fixed: Language list when building outside of project root
