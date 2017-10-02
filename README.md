@@ -87,5 +87,4 @@ For more licensing informations, see [`3rd party licenses`](/app/src/main/res/ra
 
 ### Notice
 The default `froody-server` instance is hosted by [gsantner](https://gsantner.github.io/).
-The default server domain `froody-app.at` is sponsored by [Robert Diesenreither](http://www.zero-emission.at/index.php).
 The app uses OpenStreetMap for displaying maps.

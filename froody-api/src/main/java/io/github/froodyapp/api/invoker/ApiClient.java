@@ -1,6 +1,6 @@
 /*
  * Froody API
- * API for Froody - http://froody-app.at/
+ * API for Froody - http://froodyapp.gsantner.net/
  *
  * OpenAPI spec version: 1.0.1
  * 
@@ -112,7 +112,7 @@ public class ApiClient {
      */
     public static final String LENIENT_DATETIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSSZ";
 
-    private String basePath = "https://api.froody-app.at";
+    private String basePath = "https://api.froodyapp.gsantner.net";
     private boolean lenientOnJson = false;
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
@@ -179,7 +179,7 @@ public class ApiClient {
     /**
      * Set base path
      *
-     * @param basePath Base path of the URL (e.g https://api.froody-app.at
+     * @param basePath Base path of the URL (e.g https://api.froodyapp.gsantner.net
      * @return An instance of OkHttpClient
      */
     public ApiClient setBasePath(String basePath) {

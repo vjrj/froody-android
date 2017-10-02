@@ -1,6 +1,6 @@
 # EntryApi
 
-All URIs are relative to *https://api.froody-app.at*
+All URIs are relative to *https://api.froodyapp.gsantner.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

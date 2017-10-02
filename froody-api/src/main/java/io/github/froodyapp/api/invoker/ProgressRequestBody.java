@@ -1,6 +1,6 @@
 /*
  * Froody API
- * API for Froody - http://froody-app.at/
+ * API for Froody - http://froodyapp.gsantner.net/
  *
  * OpenAPI spec version: 1.0.1
  * 
