@@ -1,8 +1,8 @@
 [![GitHub release](https://img.shields.io/github/tag/froodyapp/froody-android.svg)](https://github.com/froodyapp/froody-android/releases)
 [![Donate](https://img.shields.io/badge/donate-bitcoin-orange.svg)](https://gsantner.github.io/#donate)
+[![Donate LiberaPay](https://img.shields.io/badge/donate-liberapay-orange.svg)](https://liberapay.com/gsantner/donate)
 [![CircleCI](https://circleci.com/gh/froodyapp/froody-android.svg?style=shield)](https://circleci.com/gh/froodyapp/froody-android)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/froodyapp/localized.svg)](https://crowdin.com/project/froodyapp)
-[![Chat - Matrix](https://img.shields.io/badge/chat-on%20matrix-blue.svg)](https://matrix.to/#/#froodyapp:matrix.org) [![Chat - FreeNode IRC](https://img.shields.io/badge/chat-on%20irc-blue.svg)](https://kiwiirc.com/client/irc.freenode.net/?nick=froody-anon|?#froodyapp)
 
 # Froody
 <img src="/app/src/main/ic_launcher-web.png" align="left" width="100" hspace="10" vspace="10">
@@ -44,10 +44,8 @@ The project uses [AOSP Java Code Style](https://source.android.com/source/code-s
 
 Translations can be contributed on [Crowdin](https://crowdin.com/project/froodyapp). [![Crowdin](https://d322cqt584bo4o.cloudfront.net/froodyapp/localized.svg)](https://crowdin.com/project/froodyapp)
 
-Join our IRC or Matrix channel (bridged) and say hello! Don't be afraid to start talking. [![Chat - Matrix](https://img.shields.io/badge/chat-on%20matrix-blue.svg)](https://matrix.to/#/#froodyapp:matrix.org) [![Chat - FreeNode IRC](https://img.shields.io/badge/chat-on%20irc-blue.svg)](https://kiwiirc.com/client/irc.freenode.net/?nick=froodyapp-anon|?#froodyapp)
-
 * Share the app and tell other people about it
-* Tell things that could be improvedp
+* Tell things that could be improved
 * Supply artwork or vector icons for the different types of entries
 
 
