@@ -22,6 +22,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import net.gsantner.opoc.util.SimpleMarkdownParser;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -37,12 +39,11 @@ import io.github.froodyapp.model.FroodyEntryPlus;
 import io.github.froodyapp.service.EntryByBlockLoader;
 import io.github.froodyapp.service.EntryDetailsLoader;
 import io.github.froodyapp.ui.BaseFragment;
+import io.github.froodyapp.util.ActivityUtils;
 import io.github.froodyapp.util.AppCast;
 import io.github.froodyapp.util.AppSettings;
 import io.github.froodyapp.util.BlockCache;
 import io.github.froodyapp.util.ContextUtils;
-import io.github.froodyapp.util.ActivityUtils;
-import net.gsantner.opoc.util.SimpleMarkdownParser;
 
 
 /**

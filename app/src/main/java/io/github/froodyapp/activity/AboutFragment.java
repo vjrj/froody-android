@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import net.gsantner.opoc.util.SimpleMarkdownParser;
+
 import java.io.IOException;
 
 import butterknife.BindView;
@@ -20,9 +22,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.github.froodyapp.R;
 import io.github.froodyapp.ui.BaseFragment;
-import io.github.froodyapp.util.ContextUtils;
 import io.github.froodyapp.util.ActivityUtils;
-import net.gsantner.opoc.util.SimpleMarkdownParser;
+import io.github.froodyapp.util.ContextUtils;
 
 /**
  * Activity for information about the app

@@ -2,6 +2,8 @@ package io.github.froodyapp.util;
 
 import android.content.Context;
 
+import net.gsantner.opoc.util.AppSettingsBase;
+
 import java.net.InetSocketAddress;
 import java.net.Proxy;
 import java.util.ArrayList;
@@ -11,7 +13,6 @@ import io.github.froodyapp.BuildConfig;
 import io.github.froodyapp.R;
 import io.github.froodyapp.activity.MapOSMFragment;
 import io.github.froodyapp.api.model_.FroodyUser;
-import net.gsantner.opoc.util.AppSettingsBase;
 
 /**
  * Settings Wrapper for the app

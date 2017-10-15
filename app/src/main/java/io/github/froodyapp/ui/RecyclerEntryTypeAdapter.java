@@ -15,8 +15,8 @@ import java.util.List;
 
 import io.github.froodyapp.R;
 import io.github.froodyapp.listener.EntryTypeSelectedListener;
-import io.github.froodyapp.util.FroodyEntryFormatter;
 import io.github.froodyapp.util.ContextUtils;
+import io.github.froodyapp.util.FroodyEntryFormatter;
 
 /**
  * A recyclerview adapter for froody entries

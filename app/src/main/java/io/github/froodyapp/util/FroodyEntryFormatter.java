@@ -79,7 +79,8 @@ public class FroodyEntryFormatter extends FroodyEntryPlus {
         return context.getString(R.string.unknown);
     }
 
-    public @DrawableRes
+    public
+    @DrawableRes
     int getCertifciationTypeImageId() {
         TypedArray imgs = context.getResources().obtainTypedArray(R.array.certification_types_images);
         int resId = imgs.getResourceId(getCertificationType(), R.drawable.general_type__okay);
@@ -114,7 +115,8 @@ public class FroodyEntryFormatter extends FroodyEntryPlus {
         return context.getString(R.string.unknown);
     }
 
-    public @DrawableRes
+    public
+    @DrawableRes
     int getDistributionTypeImageId() {
         TypedArray imgs = context.getResources().obtainTypedArray(R.array.distribution_types__images);
         int resId = imgs.getResourceId(getDistributionType(), R.drawable.general_type__okay);
@@ -159,7 +161,8 @@ public class FroodyEntryFormatter extends FroodyEntryPlus {
         return getBitmapFromDrawable(context, resId);
     }
 
-    public @DrawableRes
+    public
+    @DrawableRes
     int getEntryTypeImageId(@DrawableRes int unknownId) {
         TypedArray imgs = context.getResources().obtainTypedArray(R.array.entry_type__images);
         int resId = imgs.getResourceId(getEntryTypeResArrayIndex(), unknownId);
