@@ -11,6 +11,15 @@
     <string name="ok" translatable="false">@android:string/ok</string>
     <string name="cancel" translatable="false">@android:string/cancel</string>
 
+    <string name="project_bugtracker" translatable="false">https://github.com/froodyapp/froody-android/issues</string>
+    <string name="project_translation_service" translatable="false">https://crowdin.com/project/froodyapp</string>
+    <string name="share_link_url_with_entryid_param" translatable="false">https://froodyapp.github.io/share.html?entryId=%1$d</string>
+    <string name="share_link_url_with_entryid__and_server_param" translatable="false"><![CDATA[https://froodyapp.github.io/share.html?entryId=%1$d&server=%2$s]]></string>
+    <string name="project_github_page" translatable="false">https://froodyapp.github.io</string>
+    <string name="server_default" translatable="false">https://api.froodyapp.gsantner.net</string>
+
+    <string name="gps_located_user" translatable="false">$LOCATION$</string>
+
     <!-- You are NOT allowed to remove parts of the license text below-->
     <string name="copyright_license_text_official" translatable="false"><![CDATA[
         ### Copyright © 2016-2017
@@ -36,6 +45,7 @@
 
     <!-- Pref keys -->
     <string name="pref_key__user_id" translatable="false">pref_key__user_id</string>
+    <string name="pref_key__my_entries" translatable="false">pref_key__my_entries</string>
     <string name="pref_key__dev_mode_debugging" translatable="false">pref_key__dev_mode_debugging</string>
     <string name="pref_key__last_map_location_latitude" translatable="false">pref_key__last_map_location_latitude</string>
     <string name="pref_key__last_map_location_longitude" translatable="false">pref_key__last_map_location_longitude</string>
@@ -48,7 +58,7 @@
     <string name="pref_key__entry__last_selected_entry_types" translatable="false">pref_key__entry__last_selected_entry_types</string>
     <string name="pref_key__allow_location_listening_gps" translatable="false">pref_key__allow_location_listening_gps</string>
     <string name="pref_key__allow_location_listening_net" translatable="false">pref_key__allow_location_listening_net</string>
-    <string name="pref_key__froody_server" translatable="false">pref_key__froody_server</string>
+    <string name="pref_key__froody_server" translatable="false">pref_key__froody_server_1</string>
     <string name="pref_key__clear_cache" translatable="false">pref_key__clear_cache</string>
     <string name="pref_catkey__expert" translatable="false">pref_catkey__expert</string>
     <string name="pref_key__reset_app" translatable="false">pref_key__reset_app</string>

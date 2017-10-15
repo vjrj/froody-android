@@ -11,6 +11,9 @@ import android.support.design.widget.AppBarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Toast;
+
+import net.gsantner.opoc.ui.NumberDisplayPreference;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -76,8 +79,8 @@ public class SettingActivity extends AppCompatActivity implements SharedPreferen
 
     @Override
     protected void onResume() {
-        appSettings.registerPreferenceChangedListener(this);
         super.onResume();
+        appSettings.registerPreferenceChangedListener(this);
     }
 
     @Override
@@ -134,9 +137,30 @@ public class SettingActivity extends AppCompatActivity implements SharedPreferen
                         ContextUtils.get().restartApp(MainActivity.class);
                         break;
                     }
+
+                    case R.string.pref_title__user_id: {
+                        ContextUtils.get().setClipboard(preference.getSummary().toString());
+                        Toast.makeText(getActivity(), R.string.data_copied_to_clipboard, Toast.LENGTH_SHORT).show();
+                        break;
+                    }
+
+                    case R.string.nav__my_entries: {
+                        ContextUtils.get().setClipboard(new MyEntriesHelper(getActivity()).getMyEntriesExport());
+                        Toast.makeText(getActivity(), R.string.data_copied_to_clipboard, Toast.LENGTH_SHORT).show();
+                        break;
+                    }
                 }
             }
             return super.onPreferenceTreeClick(screen, preference);
+        }
+
+        @Override
+        public void onResume() {
+            super.onResume();
+            findPreference(getString(R.string.pref_key__user_id))
+                    .setSummary("" + AppSettings.get().getFroodyUserId());
+            ((NumberDisplayPreference) findPreference(getString(R.string.pref_key__my_entries)))
+                    .setValue(new MyEntriesHelper(getActivity()).getMyEntriesCount());
         }
     }
 }

@@ -15,6 +15,7 @@ import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.ActivityNotFoundException;
+import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -66,7 +67,7 @@ import java.util.Locale;
 
 import static android.graphics.Bitmap.CompressFormat;
 
-@SuppressWarnings({"WeakerAccess", "unused", "SameParameterValue", "SpellCheckingInspection", "deprecation"})
+@SuppressWarnings({"WeakerAccess", "unused", "SameParameterValue", "SpellCheckingInspection", "deprecation", "ObsoleteSdkInt"})
 public class ContextUtils {
     //########################
     //## Members, Constructors
@@ -334,6 +335,29 @@ public class ContextUtils {
             result = Html.fromHtml(html);
         }
         return result;
+    }
+
+    public void setClipboard(String text) {
+        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.HONEYCOMB) {
+            ((android.text.ClipboardManager) _context.getSystemService(Context.CLIPBOARD_SERVICE)).setText(text);
+        } else {
+            ClipData clip = ClipData.newPlainText(_context.getPackageName(), text);
+            ((android.content.ClipboardManager) _context.getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(clip);
+        }
+    }
+
+    public String[] getClipboard() {
+        String[] ret;
+        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.HONEYCOMB) {
+            ret = new String[]{((android.text.ClipboardManager) _context.getSystemService(Context.CLIPBOARD_SERVICE)).getText().toString()};
+        } else {
+            ClipData data = ((android.content.ClipboardManager) _context.getSystemService(Context.CLIPBOARD_SERVICE)).getPrimaryClip();
+            ret = new String[data.getItemCount()];
+            for (int i = 0; i < data.getItemCount() && i < ret.length; i++) {
+                ret[i] = data.getItemAt(i).getText().toString();
+            }
+        }
+        return ret;
     }
 
     public float px2dp(final float px) {

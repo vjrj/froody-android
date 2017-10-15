@@ -64,6 +64,21 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:title="@string/more_information">
+
+        <Preference
+            android:icon="@drawable/ic_public_black_52px"
+            android:key="@string/pref_key__user_id"
+            android:title="@string/pref_title__user_id" />
+
+        <net.gsantner.opoc.ui.NumberDisplayPreference
+            android:icon="@drawable/ic_public_black_52px"
+            android:key="@string/pref_key__my_entries"
+            android:title="@string/nav__my_entries" />
+
+    </PreferenceCategory>
+
+   <PreferenceCategory
         android:key="@string/pref_catkey__expert"
         android:title="@string/pref_cat__expert">
 

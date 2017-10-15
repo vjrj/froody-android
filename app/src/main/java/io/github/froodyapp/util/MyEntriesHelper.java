@@ -109,6 +109,25 @@ public class MyEntriesHelper {
         }
     }
 
+
+    public String getMyEntriesExport() {
+        long userId = AppSettings.get().getFroodyUserId();
+        StringBuilder sb = new StringBuilder("START__FROODY_ENTRIES\n");
+
+        // UserID:EntryId:Code\n
+        for (FroodyEntryPlus entry : getMyEntries()) {
+            sb.append(Long.toString(userId));
+            sb.append(":");
+            sb.append(Long.toString(entry.getEntryId()));
+            sb.append(":");
+            sb.append(Long.toString(entry.getManagementCode()));
+            sb.append("\n");
+        }
+
+        sb.append("END__FROODY_ENTRIES\n");
+        return sb.toString();
+    }
+
     public int getMyEntriesCount() {
         return getMyEntries().size();
     }

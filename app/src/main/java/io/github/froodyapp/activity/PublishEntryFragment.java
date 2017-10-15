@@ -43,8 +43,8 @@ import io.github.froodyapp.ui.RecyclerEntryTypeAdapter;
 import io.github.froodyapp.util.AppCast;
 import io.github.froodyapp.util.AppSettings;
 import io.github.froodyapp.util.BlockCache;
-import io.github.froodyapp.util.FroodyEntryFormatter;
 import io.github.froodyapp.util.ContextUtils;
+import io.github.froodyapp.util.FroodyEntryFormatter;
 import io.github.froodyapp.util.MyEntriesHelper;
 
 /**

@@ -1,12 +1,4 @@
 <resources>
-    <!-- General & Important things -->
-    <string name="project_bugtracker" translatable="false">https://github.com/froodyapp/froody-android/issues</string>
-    <string name="project_translation_service" translatable="false">https://crowdin.com/project/froodyapp</string>
-    <string name="share_link_url_with_entryid_param" translatable="false">https://froodyapp.github.io/share.html?entryId=%1$d</string>
-    <string name="share_link_url_with_entryid__and_server_param" translatable="false"><![CDATA[https://froodyapp.github.io/share.html?entryId=%1$d&server=%2$s]]></string>
-    <string name="project_github_page" translatable="false">https://froodyapp.github.io</string>
-    <string name="server_default" translatable="false">https://api.froodyapp.gsantner.net</string>
-
     <!-- General words -->
     <string name="image">Image</string>
     <string name="reset">Reset</string>
@@ -35,6 +27,7 @@
     <string name="share">Share…</string>
     <string name="donate_bitcoin">Donate\nBitcoin</string>
     <string name="duration_days_left_text">Days left</string>
+    <string name="duration_months_left_text">Months left</string>
 
     <!-- Publish -->
     <string name="suggested">Suggested</string>
@@ -56,7 +49,6 @@
     <string name="sponsors">Sponsors</string>
 
     <!-- Location -->
-    <string name="gps_located_user" translatable="false">$LOCATION$</string>
     <string name="request_location">Request location</string>
     <string name="gps_locating_user">Locating…</string>
     <string name="address_most_near">Nearby</string>
@@ -73,4 +65,7 @@
     <string name="error_incomplete_input">Error: Incomplete input</string>
     <string name="pref_desc__language">Change language of this app. Restart app for changes to take effect</string>
     <string name="pref_title__language">Language</string>
+
+    <string name="data_copied_to_clipboard">Data copied to clipboard</string>
+    <string name="load_from_clipboard">Load from clipboard</string>
 </resources>
