@@ -1,0 +1,13 @@
+<br/>🍎 Lets you share (mainly naturally growing) food to others
+<br/>🍒 Intended to use in the local area - zoom in to your location and look for entries
+<br/>🍐 The main idea is to share to and help other people by e.g. sharing pears, which would rot anyway if unused
+<br/>🌽 Everyone can add entries (and delete them), no login needed
+<br/>🍇 Entries will be available 60 days
+<br/>🍅 Available in many languages
+<br/>
+<br/>
+<br/>🍏🍎🍐🍋🍇🍓🍒🍅🍆🌽🌶
+<br/>
+<br/>
+<b>Support the project:</b>
+<br/> ✋ <a href="https://crowdin.com/projects/gsantner">Translate</a>
