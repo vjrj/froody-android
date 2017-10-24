@@ -1,3 +1,6 @@
+### v1.0.9
+- Updated translation
+
 ### v1.0.8
 - Added: Kabyle translation
 - Modified: Default domain
