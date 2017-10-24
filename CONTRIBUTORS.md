@@ -31,4 +31,4 @@ Where:
 * **[Bogdan Apostol](http://steamcommunity.com/id/danthegentleman)**<br/>~° Romanian translation
 * **[asereze](https://github.com/asereze)**<br/>~° Sardinian translation
 * **[Gwilherm Baudic](https://github.com/gbaudic)**<br/>~° French translation
-
+* **[Marcus Vinicius Santos](https://about.me/marcusvsantos)**<br/>~° Brazilian Portuguese translation

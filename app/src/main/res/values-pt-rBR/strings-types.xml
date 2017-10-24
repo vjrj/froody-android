@@ -12,13 +12,14 @@
   <!-- Distribution Types -->
   <string name="distribution_type__sale">À venda</string>
   <string name="distribution_type__swap">Trocar</string>
+  <string name="distribution_type__free">Grátis</string>
   <string name="distribution_type__voluntary_donation">Doação</string>
   <!-- Entry Types (Special) -->
   <string name="entry_type__special__miscellaneous">Diversos</string>
   <string name="entry_type__special__water">Água</string>
   <!-- Entry Types -->
   <string name="entry_type__apple">Maçãs</string>
-  <string name="entry_type__pear">Pêras</string>
+  <string name="entry_type__pear">Peras</string>
   <string name="entry_type__cherry">Cerejas</string>
   <string name="entry_type__plum">Ameixas</string>
   <string name="entry_type__currant_red">Groselhas</string>
@@ -30,9 +31,10 @@
   <string name="entry_type__carrot">Cenouras</string>
   <string name="entry_type__cereal">Cereais</string>
   <string name="entry_type__chili">Pimentas</string>
+  <string name="entry_type__corn">Milhos</string>
   <string name="entry_type__cucumber">Pepinos</string>
   <string name="entry_type__egg">Ovos</string>
-  <string name="entry_type__fish">Peixe</string>
+  <string name="entry_type__fish">Peixes</string>
   <string name="entry_type__flower">Flores</string>
   <string name="entry_type__honey">Mel</string>
   <string name="entry_type__lemon">Limões</string>
@@ -57,7 +59,9 @@
   <string name="entry_type__pepper">Pimentões</string>
   <string name="entry_type__pumpkin">Abóboras</string>
   <string name="entry_type__radish">Rabanetes</string>
+  <string name="entry_type__salad">Saladas</string>
   <string name="entry_type__seed">Sementes</string>
+  <string name="entry_type__soy_bean">Soja</string>
   <string name="entry_type__currant_black">Groselhas</string>
   <string name="entry_type__blackberry">Amoras silvestres</string>
 </resources>
