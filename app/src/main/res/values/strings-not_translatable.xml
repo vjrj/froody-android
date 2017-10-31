@@ -40,7 +40,7 @@
     <string name="donate__bitcoin_id" translatable="false">1B9ZyYdQoY9BxMe9dRUEKaZbJWsbQqfXU5</string>
     <string name="donate__bitcoin_amount" translatable="false">0.01</string>
     <string name="donate__bitcoin_message" translatable="false">Have some coke, and a nice day</string>
-    <string name="donate__bitcoin_url" translatable="false">https://gsantner.github.io/#donate</string>
+    <string name="donate__bitcoin_url" translatable="false">http://gsantner.net/#donate</string>
 
 
     <!-- Pref keys -->

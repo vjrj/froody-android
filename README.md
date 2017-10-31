@@ -1,5 +1,5 @@
 [![GitHub release](https://img.shields.io/github/tag/froodyapp/froody-android.svg)](https://github.com/froodyapp/froody-android/releases)
-[![Donate](https://img.shields.io/badge/donate-bitcoin-orange.svg)](https://gsantner.github.io/#donate)
+[![Donate](https://img.shields.io/badge/donate-bitcoin-orange.svg)](http://gsantner.net/#donate)
 [![Donate LiberaPay](https://img.shields.io/badge/donate-liberapay-orange.svg)](https://liberapay.com/gsantner/donate)
 [![CircleCI](https://circleci.com/gh/froodyapp/froody-android.svg?style=shield)](https://circleci.com/gh/froodyapp/froody-android)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/froodyapp/localized.svg)](https://crowdin.com/project/froodyapp)
@@ -50,7 +50,7 @@ Translations can be contributed on [Crowdin](https://crowdin.com/project/froodya
 
 
 If you like my work on <b>Froody</b> and many other Open Source projects, consider a small donation to my bitcoin address:
-<a href="https://gsantner.github.io/#donate">1B9ZyYdQoY9BxMe9dRUEKaZbJWsbQqfXU5</a>
+<a href="http://gsantner.net/#donate">1B9ZyYdQoY9BxMe9dRUEKaZbJWsbQqfXU5</a>
 
 
 #### Resources
@@ -62,7 +62,7 @@ Froody is released under Apache 2.0 LICENSE (see [LICENCE](https://github.com/fr
 Localization files and resources (strings-\*.xml) are licensed CC0 1.0.
 
 ## Licensing<a name="license"></a>
-Project created and maintained by <a href="https://gsantner.github.io">Gregor Santner</a> since 2016.
+Project created and maintained by <a href="http://gsantner.net">Gregor Santner</a> since 2016.
 The code of the app is licensed Apache 2.0. Localization files and resources (string\*.xml) are licensed CC0 1.0.
 For more licensing informations, see [`3rd party licenses`](/app/src/main/res/raw/licenses_3rd_party.md).
 
@@ -84,5 +84,5 @@ For more licensing informations, see [`3rd party licenses`](/app/src/main/res/ra
 
 
 ### Notice
-The default `froody-server` instance is hosted by [gsantner](https://gsantner.github.io/).
+The default `froody-server` instance is hosted by [gsantner](http://gsantner.net/).
 The app uses OpenStreetMap for displaying maps.

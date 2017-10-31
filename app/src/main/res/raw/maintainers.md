@@ -1,5 +1,5 @@
 * Gregor Santner
-~° [gsantner.github.io](https://gsantner.github.io)
+~° [gsantner.net](http://gsantner.net)
 
 * Robert Diesenreither
 ~° [zero-ermission.at](http://www.zero-emission.at/index.php)
