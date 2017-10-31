@@ -1,3 +1,6 @@
+### v1.0.10
+- Updated build for Android O / SDK27
+
 ### v1.0.9
 - Updated translation
 
