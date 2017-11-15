@@ -5,7 +5,7 @@
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/froodyapp/localized.svg)](https://crowdin.com/project/froodyapp)
 
 
-**Notice:** Development halted. See <https://github.com/froodyapp/froody-android/blob/master/app/src/main/res/values/strings-not_translatable.xml#L45>
+**Notice:** Development halted. See <https://github.com/froodyapp/froody-android/wiki/Thanks>
 
 # Froody
 <img src="/app/src/main/ic_launcher-web.png" align="left" width="100" hspace="10" vspace="10">
