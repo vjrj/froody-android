@@ -24,8 +24,8 @@ android {
         buildConfigField "String", "GITHASH", "\"${getGitHash()}\""
 
         applicationId "io.github.froodyapp"
-        versionName "1.0.10"
-        versionCode 32
+        versionName "1.0.25"
+        versionCode 42
 
         buildConfigField "int", "ENTRY_LIFETIME_DAYS", "60"
         //vectorDrawables.useSupportLibrary = true

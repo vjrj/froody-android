@@ -42,6 +42,22 @@
     <string name="donate__bitcoin_message" translatable="false">Have some coke, and a nice day</string>
     <string name="donate__bitcoin_url" translatable="false">http://gsantner.net/#donate</string>
 
+    <string name="thanks_message" translatable="false">Development of Froody is halted. Thank you very much for participating!\n\n
+        As noted by many users, there are existing platforms with some, but not the same goals like Froody, but
+        with an existing user base, which is the single most important thing when it comes to sharing global
+        with others. Froody was developed completely under non-commercial purpose, without any kind of public advertisements
+        which made it hard to reach out to people. Since publishing Froody under open source license there were no other people working
+        on the code other than the creator. As the author is currently busy with other open source projects aswell as studying at university,
+        and development of Froody is time consuming without not much people using it, development is halted. A big thanks to everybody
+        who made this project possible, especially the big amount of translators!\n\n
+
+        While development is halted, Froody servers are still active till the end of the year.
+        You can start the main Froody view by pressing the orange Froody button on the bottom.\n\n
+
+        Froody was a very exciting and educational project. It was heavily influenced by other apps developed or maintained by the author,
+        you can find some of them below.
+    </string>
+
 
     <!-- Pref keys -->
     <string name="pref_key__user_id" translatable="false">pref_key__user_id</string>

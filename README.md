@@ -4,6 +4,9 @@
 [![CircleCI](https://circleci.com/gh/froodyapp/froody-android.svg?style=shield)](https://circleci.com/gh/froodyapp/froody-android)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/froodyapp/localized.svg)](https://crowdin.com/project/froodyapp)
 
+
+**Notice:** Development halted. See <https://github.com/froodyapp/froody-android/blob/master/app/src/main/res/values/strings-not_translatable.xml#L45>
+
 # Froody
 <img src="/app/src/main/ic_launcher-web.png" align="left" width="100" hspace="10" vspace="10">
 Android part of the <a href="https://froodyapp.github.io/">Froody</a> project.
@@ -11,12 +14,13 @@ Share food that grows naturally. The projects idea is to share to and help other
 which would rot anyway if unused. Intended to use in the local area.
 
 <div style="display:flex;" >
-<a href="https://f-droid.org/repository/browse/?fdid=io.github.froodyapp">
+<!--<a href="https://f-droid.org/repository/browse/?fdid=io.github.froodyapp">
     <img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="80">
 </a>
 <a href="https://play.google.com/store/apps/details?id=io.github.froodyapp">
     <img alt="Get it on Google Play" height="80" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" />
 </a>
+-->
 </div></br>
 
 
@@ -48,9 +52,6 @@ Translations can be contributed on [Crowdin](https://crowdin.com/project/froodya
 * Tell things that could be improved
 * Supply artwork or vector icons for the different types of entries
 
-
-If you like my work on <b>Froody</b> and many other Open Source projects, consider a small donation to my bitcoin address:
-<a href="http://gsantner.net/#donate">1B9ZyYdQoY9BxMe9dRUEKaZbJWsbQqfXU5</a>
 
 
 #### Resources
